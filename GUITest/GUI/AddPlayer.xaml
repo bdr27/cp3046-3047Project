@@ -4,7 +4,7 @@
         Title="AddPlayer" Height="300" Width="300">
     <Grid>
         <TextBlock x:Name="tBlkFirstName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="First Name:" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <TextBlock x:Name="tBlkSurname" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Surname: " VerticalAlignment="Top" Margin="10,45,0,0"/>
+        <TextBlock x:Name="tBlkSurname" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Last Name: " VerticalAlignment="Top" Margin="10,45,0,0"/>
         <TextBlock x:Name="tBlkAge" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Age:" VerticalAlignment="Top" Margin="10,80,0,0"/>
         <TextBlock x:Name="tBlkContact" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Contact:" VerticalAlignment="Top" Margin="10,108,0,0"/>
         <TextBox x:Name="tBFirstName" HorizontalAlignment="Left" Height="23" Margin="75,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>

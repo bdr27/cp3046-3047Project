@@ -5,8 +5,8 @@
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="97,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
         <Button x:Name="btnStartStop" Content="Stop" HorizontalAlignment="Left" Margin="145,7,0,0" VerticalAlignment="Top" Width="75"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Team: SuperDoopers" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
-        <TextBlock HorizontalAlignment="Left" Margin="191,41,0,0" TextWrapping="Wrap" Text="Team: Lazy8" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Team: Catch em all" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
+        <TextBlock HorizontalAlignment="Left" Margin="153,41,0,0" TextWrapping="Wrap" Text="Team: Heart of the Cards" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625" Width="137"/>
         <TextBlock HorizontalAlignment="Left" Margin="36,72,0,0" TextWrapping="Wrap" Text="Score: 10" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="191,72,0,0" TextWrapping="Wrap" Text="Score: 7" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,139,0,0" TextWrapping="Wrap" Text="TAG: 5" VerticalAlignment="Top"/>

@@ -8,7 +8,7 @@
         <Button x:Name="btnAddPlayer" Content="Add Player" HorizontalAlignment="Left" Margin="242,7,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnDone" Content="Done" HorizontalAlignment="Left" Margin="242,283,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" Height="231" Width="306" FrozenColumnCount="-1">
+        <DataGrid HorizontalAlignment="Left" Margin="11,35,0,0" VerticalAlignment="Top" Height="231" Width="306" >
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="First Name"/>
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last Name"/>

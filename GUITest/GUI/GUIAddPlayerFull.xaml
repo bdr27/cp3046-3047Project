@@ -5,7 +5,7 @@
     <Grid>
         <Grid>
             <TextBlock x:Name="tBlkTeamName" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Team Name:" VerticalAlignment="Top" Width="74" Height="17"/>
-            <TextBox x:Name="tbTeamName" HorizontalAlignment="Left" Height="23" Margin="99,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="SuperCool"/>
+            <TextBox x:Name="tbTeamName" HorizontalAlignment="Left" Height="23" Margin="99,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="Heart of the cards"/>
             <Button x:Name="btnAddPlayer" Content="Add Player" HorizontalAlignment="Left" Margin="254,8,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Margin="23,283,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="btnDone" Content="Done" HorizontalAlignment="Left" Margin="242,283,0,0" VerticalAlignment="Top" Width="75"/>
