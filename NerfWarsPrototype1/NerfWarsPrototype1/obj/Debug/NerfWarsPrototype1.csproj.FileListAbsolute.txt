@@ -17,3 +17,5 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs

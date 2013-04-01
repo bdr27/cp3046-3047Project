@@ -7,8 +7,9 @@
         <TabControl>
             <TabItem Header="Registration" x:Name="tabReg">
                 <Grid>
-                <local:RegistrationMenu x:Name="regMenu" Visibility="Visible"/>
-                <local:AddPlayer x:Name="regAddPlayer" Visibility="Hidden"/>
+                    <local:RegistrationMenu x:Name="regMenu" Visibility="Visible"/>
+                    <local:AddPlayer x:Name="regAddPlayer" Visibility="Hidden"/>
+                    <local:AddTeam x:Name="regAddTeam" Visibility="Hidden"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Play">
