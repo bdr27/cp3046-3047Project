@@ -3,10 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:local="clr-namespace:NerfWarsPrototype1"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
+    <Grid Name="mainGrid">
         <TabControl>
-            <TabItem Header="Registration">
-                <local:RegistraionMenu x:Name="RegistraionMenu" />
+            <TabItem Header="Registration" x:Name="tabReg">
+                <Grid>
+                <local:RegistrationMenu x:Name="regMenu" Visibility="Visible"/>
+                <local:AddPlayer x:Name="regAddPlayer" Visibility="Hidden"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Play">
                 <Grid Background="Aqua"/>

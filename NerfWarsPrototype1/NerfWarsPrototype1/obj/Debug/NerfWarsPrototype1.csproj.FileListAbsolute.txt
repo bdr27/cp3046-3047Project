@@ -1,7 +1,6 @@
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
@@ -11,3 +10,10 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs

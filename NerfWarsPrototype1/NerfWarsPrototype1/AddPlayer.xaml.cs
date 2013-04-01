@@ -16,18 +16,23 @@ using System.Windows.Shapes;
 namespace NerfWarsPrototype1
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddPlayer.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddPlayer : UserControl
     {
-        public MainWindow()
+        public int pageBefore;
+
+        public AddPlayer()
         {
             InitializeComponent();
         }
-        public void ShowAddPlayer()
+
+        private void btnClear_Click(object sender, RoutedEventArgs e)
         {
-            this.regAddPlayer.Visibility = Visibility.Visible;
+            this.tBAge.Text = "";
+            this.tBContact.Text = "";
+            this.tBFirstName.Text = "";
+            this.tBSurename.Text = "";
         }
     }
-    
 }
