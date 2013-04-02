@@ -19,3 +19,7 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.g.cs

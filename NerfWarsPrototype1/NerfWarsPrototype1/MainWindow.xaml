@@ -13,7 +13,9 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Play">
-                <Grid Background="Aqua"/>
+                <Grid>
+                    <local:GamePlay x:Name="playGame" Visibility="Visible" />
+                </Grid>
             </TabItem>
         </TabControl>
 

@@ -14,12 +14,15 @@ namespace NerfWarsPrototype1
     public partial class App : Application
     {
         private MainWindow mainWindow;
-
+        private ProjectorWindow projectorWindow;
         public App()
             : base()
         {
             mainWindow = new MainWindow();
             mainWindow.Show();
+            projectorWindow = new ProjectorWindow();
+            projectorWindow.Show();
+        
             mainWindow.regMenu.btnAddPlayer.Click += btnAddPlayer_Click;
             mainWindow.regAddPlayer.btnDone.Click += btnDone_Click;
             mainWindow.regMenu.btnAddTeam.Click += btnAddTeam_Click;
