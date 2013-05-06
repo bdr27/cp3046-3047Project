@@ -2,9 +2,13 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Threading;
 
 namespace NerfWarsPrototype1
 {
@@ -13,8 +17,11 @@ namespace NerfWarsPrototype1
     /// </summary>
     public partial class App : Application
     {
+        private bool timerStarted = false;
         private MainWindow mainWindow;
         private ProjectorWindow projectorWindow;
+        private Timer gameTimer;
+        private string gameTime = "5:00";
         public App()
             : base()
         {
@@ -28,8 +35,77 @@ namespace NerfWarsPrototype1
             mainWindow.regMenu.btnAddTeam.Click += btnAddTeam_Click;
             mainWindow.regAddTeam.btnDone.Click += btnDoneAddTeam_Click;
             mainWindow.regAddTeam.btnAddPlayer.Click += btnAddPlayerTeam_Click;
-            
+            mainWindow.playGame.btnStartStop.Click += btnStartStop_Click;
+            mainWindow.playGame.btnReset.Click += btnReset_Click;
+            gameTimer = new Timer();
+            gameTimer.Interval = 1000;
+            gameTimer.Elapsed += gameTimer_Elapsed;
             Console.WriteLine(mainWindow.regMenu.Visibility.ToString());
+        }
+
+        void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+            gameTime = "5:00";
+            mainWindow.playGame.lblTime.Text = gameTime;
+            projectorWindow.lblTime.Text = gameTime;
+            mainWindow.playGame.btnReset.IsEnabled = false;
+        }
+
+        void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            Debug.Write("I am a timer tick");
+            string[] time = gameTime.Split(':');
+            int min = Int32.Parse(time[0]);
+            int sec = Int32.Parse(time[1]);
+
+            if (sec == 0 && min != 0)
+            {
+                sec = 59;
+                min -= 1;
+            }
+            else if (min == 0 && sec == 0)
+            {
+                gameTimer.Stop();
+            }
+            else
+            {
+                sec -= 1;
+            }
+            if (sec < 10)
+            {
+                gameTime = min + ":0" + sec;
+            }
+            else
+            {
+                gameTime = min + ":" + sec;
+            }
+           
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBlock>(setTimeValue), mainWindow.playGame.lblTime);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBlock>(setTimeValue), projectorWindow.lblTime);
+        }
+
+        private void setTimeValue(TextBlock time)
+        {
+            time.Text = gameTime;
+        }
+
+        void btnStartStop_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("You clicked start stop");
+            if (timerStarted)
+            {
+                gameTimer.Stop();
+                mainWindow.playGame.btnReset.IsEnabled = true;
+                mainWindow.playGame.btnStartStop.Content = "Start";
+                timerStarted = false;
+            }
+            else
+            {
+                gameTimer.Start();
+                mainWindow.playGame.btnReset.IsEnabled = false;
+                mainWindow.playGame.btnStartStop.Content = "Stop";
+                timerStarted = true;
+            }            
         }
 
         private void btnAddPlayerTeam_Click(object sender, RoutedEventArgs e)

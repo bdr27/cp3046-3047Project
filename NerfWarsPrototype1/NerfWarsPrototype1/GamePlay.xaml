@@ -6,8 +6,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="97,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
-        <Button x:Name="btnStartStop" Content="Stop" HorizontalAlignment="Left" Margin="145,7,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock x:Name="lblTime" HorizontalAlignment="Left" Margin="97,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
+        <Button x:Name="btnStartStop" Content="Start" HorizontalAlignment="Left" Margin="145,7,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Team: Catch em all" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
         <TextBlock HorizontalAlignment="Left" Margin="153,41,0,0" TextWrapping="Wrap" Text="Team: Heart of the Cards" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625" Width="137"/>
         <TextBlock HorizontalAlignment="Left" Margin="36,72,0,0" TextWrapping="Wrap" Text="Score: 10" VerticalAlignment="Top"/>
@@ -26,5 +26,6 @@
         <Button Content="+" HorizontalAlignment="Left" Margin="246,189,0,0" VerticalAlignment="Top" Width="18" Height="27" RenderTransformOrigin="2.778,0.412"/>
         <GridSplitter HorizontalAlignment="Left" Height="229" Margin="140,41,0,0" VerticalAlignment="Top" Width="8"/>
         <GridSplitter HorizontalAlignment="Left" Height="8" Margin="0,33,0,0" VerticalAlignment="Top" Width="292"/>
+        <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" Margin="225,7,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.573,0.5" IsEnabled="False"/>
     </Grid>
 </UserControl>

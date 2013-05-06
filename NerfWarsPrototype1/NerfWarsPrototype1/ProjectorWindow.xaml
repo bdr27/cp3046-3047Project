@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Projector" Height="300" Width="300">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
+        <TextBlock x:Name="lblTime" HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Team: Catch em all" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
         <TextBlock HorizontalAlignment="Left" Margin="153,41,0,0" TextWrapping="Wrap" Text="Team: Heart Of The Cards" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625" Width="139"/>
         <TextBlock HorizontalAlignment="Left" Margin="39,161,0,0" TextWrapping="Wrap" Text="Score: 10" VerticalAlignment="Top"/>
