@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="NerfWarsPrototype1.LiveMatchTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="800" d:DesignHeight="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition Height="0.25*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" Grid.Row="0" Name="lblLiveMatchDisplay" Content="Live Match Display" FontWeight="Bold" FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+            <GridSplitter Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Height="6" HorizontalAlignment="Stretch" Background="#FFE0E0E0" Grid.ColumnSpan="9" IsEnabled="False"/>
+
+            <Label Grid.Column="1" Grid.Row="1" Name="lblTeamA" Content="Team A" FontSize="15" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="5" Grid.Row="1" Name="lblTeamB" Content="Team B" FontSize="15" VerticalAlignment="Bottom"/>
+            <ComboBox Grid.Column="1" Grid.Row="2" Name="cmbTeamA"  VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+            <ComboBox Grid.Column="5" Grid.Row="2" Name="cmbTeamB"  VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+            <GridSplitter Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Width="6" Background="#FFE0E0E0" Grid.RowSpan="6" IsEnabled="False"/>
+
+            <Label Grid.Column="1" Grid.Row="3" Name="lblScoreA" Content="Score: X" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+            <Label Grid.Column="5" Grid.Row="3" Name="lblScoreB" Content="Score: X" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+
+            <Label Grid.Column="1" Grid.Row="4" Name="lblFlagA" Content="Flag: XXX" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Grid.Row="4" Margin="10,10,10,10" Name="btnFlagPlusA" Content="+" Background="LimeGreen" FontSize="30"/>
+            <Button Grid.Column="3" Grid.Row="4" Margin="10,10,10,10" Name="btnFlagMinusA" Content="-" Background="Salmon" FontSize="30"/>
+            <Label Grid.Column="5" Grid.Row="4" Name="lblFlagB" Content="Flag: X" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Grid.Column="6" Grid.Row="4" Margin="10,10,10,10" Name="btnFlagPlusB" Content="+" Background="LimeGreen" FontSize="30"/>
+            <Button Grid.Column="7" Grid.Row="4" Margin="10,10,10,10" Name="btnFlagMinusB" Content="-" Background="Salmon" FontSize="30"/>
+
+            <Label  Grid.Column="1" Grid.Row="5" Name="lblTagA" Content="Tag: X" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Grid.Row="5" Margin="10,10,10,10" Name="btnTagPlusA" Content="+" Background="LimeGreen" FontSize="30"/>
+            <Button Grid.Column="3" Grid.Row="5" Margin="10,10,10,10" Name="btnTagMinusA" Content="-" Background="Salmon" FontSize="30"/>
+            <Label Grid.Column="5" Grid.Row="5" Name="lblTagB" Content="Tag: X" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+            <Button Grid.Column="6" Grid.Row="5" Margin="10,10,10,10" Name="btnTagPlusB" Content="+" Background="LimeGreen" FontSize="30"/>
+            <Button Grid.Column="7" Grid.Row="5" Margin="10,10,10,10" Name="btnTagMinusB" Content="-" Background="Salmon" FontSize="30"/>
+            <GridSplitter Grid.Column="0" Grid.Row="6" VerticalAlignment="Bottom" Height="6" HorizontalAlignment="Stretch" Background="#FFE0E0E0" Grid.ColumnSpan="9" IsEnabled="False"/>
+                
+
+
+
+
+
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+
+           
+            <WrapPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Label Content="Timer" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="17"/>
+                <TextBox x:Name="TbMinutes" Width="30" Height="25" Text="5" TextAlignment="Center" MaxLength="2" RenderTransformOrigin="-0.133,0.4"/>
+                <Label Content="minutes" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.212,0.346"/>
+                <TextBox x:Name="TbSeconds" Width="30" Height="25" Text="00" TextAlignment="Center" MaxLength="2" RenderTransformOrigin="0.667,0.04"/>
+                <Label Content="seconds" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.212,0.346"/>
+                <Button Margin="10,0,0,0" x:Name="btnStartPause" Content="Start" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25"/>
+                <Button Margin="10,0,0,0" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25" IsEnabled="False"/>
+            </WrapPanel>
+            
+            <WrapPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="lblEndOfMatch" Content="End match and save results" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                <Button Margin="10,0,0,0" x:Name="btnRecord" Content="End match" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25"/>
+            </WrapPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Background="#FFE0E0E0" Grid.RowSpan="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="0.5*"/>
+            </Grid.RowDefinitions>
+            
+             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="1" Name="txblProjector" Content="Change Project Display" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
+            <Button Grid.Column="1" Grid.Row="3" Name="btnLiveMatch" Content="Live Match" FontSize="20" Background="LightGreen"/>
+            <Button Grid.Column="1" Grid.Row="5" Name="btnTournament" Content="Ladder" FontSize="20" Background="LightBlue"/>
+            <Button Grid.Column="1" Grid.Row="7" Name="btnStandby" Content="Standby" FontSize="20" Background="LightCoral"/>
+        </Grid>
+    </Grid>
+</UserControl>

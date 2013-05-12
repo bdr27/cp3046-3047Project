@@ -1,0 +1,297 @@
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210239\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GamePlay.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectorWindow.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationMenu.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\Brendan\Desktop\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master\cp3046-3047Project-master\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectTab.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectTab.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+G:\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v2\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\CreatePlayerWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddPlayer.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\AddTeam.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\CreatePlayerWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v3\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v3\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v3\cp3046-3047Project-master v3\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\CreatePlayerWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\CreatePlayerWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\EditTeamModal.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\EditTeamModal.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\EditDeletePlayerModal.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v4\cp3046-3047Project-master v4\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\EditDeletePlayerModal.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.g.cs
+C:\Users\jc210335\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csprojResolveAssemblyReference.cache
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+C:\Users\Martini3\Desktop\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\PlayerWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\App.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v6\NerfWarsPrototype1\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.csproj.GenerateResource.Cache

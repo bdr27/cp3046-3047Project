@@ -59,6 +59,7 @@
     <Compile Include="AddTeam.xaml.cs">
       <DependentUpon>AddTeam.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Game.cs" />
     <Compile Include="GamePlay.xaml.cs">
       <DependentUpon>GamePlay.xaml</DependentUpon>
     </Compile>
@@ -68,6 +69,7 @@
     <Compile Include="RegistrationMenu.xaml.cs">
       <DependentUpon>RegistrationMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Score.cs" />
     <Page Include="AddPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -22,6 +22,7 @@ namespace NerfWarsPrototype1
         private ProjectorWindow projectorWindow;
         private Timer gameTimer;
         private string gameTime = "5:00";
+
         public App()
             : base()
         {
@@ -29,7 +30,15 @@ namespace NerfWarsPrototype1
             mainWindow.Show();
             projectorWindow = new ProjectorWindow();
             projectorWindow.Show();
-        
+            wireHandlers();
+
+            gameTimer = new Timer();
+            gameTimer.Interval = 1000;
+            gameTimer.Elapsed += gameTimer_Elapsed;
+            Console.WriteLine(mainWindow.regMenu.Visibility.ToString());
+        }
+        void wireHandlers()
+        {
             mainWindow.regMenu.btnAddPlayer.Click += btnAddPlayer_Click;
             mainWindow.regAddPlayer.btnDone.Click += btnDone_Click;
             mainWindow.regMenu.btnAddTeam.Click += btnAddTeam_Click;
@@ -37,10 +46,18 @@ namespace NerfWarsPrototype1
             mainWindow.regAddTeam.btnAddPlayer.Click += btnAddPlayerTeam_Click;
             mainWindow.playGame.btnStartStop.Click += btnStartStop_Click;
             mainWindow.playGame.btnReset.Click += btnReset_Click;
-            gameTimer = new Timer();
-            gameTimer.Interval = 1000;
-            gameTimer.Elapsed += gameTimer_Elapsed;
-            Console.WriteLine(mainWindow.regMenu.Visibility.ToString());
+            mainWindow.playGame.AddTeam1TagMinusHandler(team1TagMinusHandler);
+            mainWindow.playGame.AddTeam1TagPlusHandler(team1TagPlusHandler);
+        }
+
+        private void team1TagPlusHandler(object sender, RoutedEventArgs e)
+        {
+            Debug.Write("I add team 1 :P");
+        }
+
+        private void team1TagMinusHandler(object sender, RoutedEventArgs e)
+        {
+            Debug.Write("I take team 1 :P");
         }
 
         void btnReset_Click(object sender, RoutedEventArgs e)
@@ -79,7 +96,7 @@ namespace NerfWarsPrototype1
             {
                 gameTime = min + ":" + sec;
             }
-           
+
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBlock>(setTimeValue), mainWindow.playGame.lblTime);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBlock>(setTimeValue), projectorWindow.lblTime);
         }
@@ -105,7 +122,7 @@ namespace NerfWarsPrototype1
                 mainWindow.playGame.btnReset.IsEnabled = false;
                 mainWindow.playGame.btnStartStop.Content = "Stop";
                 timerStarted = true;
-            }            
+            }
         }
 
         private void btnAddPlayerTeam_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,27 @@
+﻿<Window x:Class="NerfWarsPrototype1.TeamWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TeamWindow" Height="450" Width="310">
+    <Grid>
+        <Label Name="lblTeamWindowTitle" Content="Create Team" FontWeight="Bold" FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,357"/>
+
+        <Label HorizontalAlignment="Left" Margin="10,64,0,0" Content="Team Name" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,92,0,0" Content="Team Contact" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbCreateTeamName" HorizontalAlignment="Left" Height="23" Margin="106,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <TextBox x:Name="tbCreateTeamContact" HorizontalAlignment="Left" Height="23" Margin="106,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="btnTeamCreateNewPlayer" Content="Create New Player" HorizontalAlignment="Left" Margin="187,151,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnTeamAddExistingPlayer" Content="Add Existing Player" HorizontalAlignment="Left" Margin="12,151,0,0" VerticalAlignment="Top"/>
+
+        <Button x:Name="btnTeamClear" Content="Clear" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Left" Margin="215,368,0,0" VerticalAlignment="Top" Width="75"/>
+        <DataGrid HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Height="144" Width="280">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="First Name     "/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last Name      "/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Contact        "/>
+                <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Age"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

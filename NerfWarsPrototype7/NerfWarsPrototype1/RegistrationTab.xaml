@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="NerfWarsPrototype1.RegistrationTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="800" d:DesignHeight="600">
+    <Grid Name="Menu">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row = "0" Grid.Column="1" Name="lblIndividualRegistration" Content="Individual Registration" FontSize="17"
+               HorizontalAlignment="Left" VerticalAlignment="Center"  FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Button Grid.Row = "1" Grid.Column="2" Name="btnAddPlayer" Content="Add Player" Background="LightGreen" Click="btnAddPlayer_Click"/>
+        <Button Grid.Row = "1" Grid.Column="4" Name="btnEditPlayer" Content="Edit Player" Background="LightBlue" Click="btnEditPlayer_Click"/>
+        <Button Grid.Row = "1" Grid.Column="6" Name="btnDeletePlayer" Content="Delete Player" Background="LightCoral" Click="btnDeletePlayer_Click"/>
+
+        <Label Grid.Row = "3" Grid.Column="1" Name="lblTeamRegistration" Content="Team Registration" FontSize="17"
+               HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Button Grid.Row = "4" Grid.Column="2" Name="btnAddTeam" Content="Add Team" Background="LightGreen" Click="btnAddTeam_Click"/>
+        <Button Grid.Row = "4" Grid.Column="4" Name="btnEditTeam" Content="Edit Team" Background="LightBlue" Click="btnEditTeam_Click"/>
+        <Button Grid.Row = "4" Grid.Column="6" Name="btnDeleteTeam" Content="Delete Team" Background="LightCoral" Click="btnDeleteTeam_Click"/>
+        
+
+
+    </Grid>
+</UserControl>

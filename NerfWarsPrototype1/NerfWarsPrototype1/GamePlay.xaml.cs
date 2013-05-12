@@ -24,5 +24,17 @@ namespace NerfWarsPrototype1
         {
             InitializeComponent();
         }
+
+        public void AddTeam1TagMinusHandler(RoutedEventHandler handler)
+        {
+            btnTeam1TagMinus.Click += handler;
+            Console.Write("I handle minusing team 1 tags");
+        }
+
+        public void AddTeam1TagPlusHandler(RoutedEventHandler handler)
+        {
+            btnTeam1TagPlus.Click += handler;
+            Console.Write("I handle adding team 1 tags");
+        }
     }
 }
