@@ -12,7 +12,6 @@ namespace NerfWarsLeaderboard.Model
     {
         private TeamWindow playerTeam;
         private ButtonAction buttonAction;
-        private List<Player> players;
         private Team team;
 
         public AddEditTeamModel(Window mainWindow)
@@ -33,11 +32,13 @@ namespace NerfWarsLeaderboard.Model
         private void btnTeamDone_Click(object sender, RoutedEventArgs e)
         {
             buttonAction = ButtonAction.CONFIRM;
+            playerTeam.Hide();
         }
 
         private void btnTeamCreateNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             buttonAction = ButtonAction.CREATE;
+            team.SetTeamName(playerTeam.getTeamName());
             playerTeam.Hide();
         }
 
@@ -56,18 +57,29 @@ namespace NerfWarsLeaderboard.Model
             return buttonAction;
         }
 
-        internal void addPlayer(Player player)
+        public Team getTeam()
         {
-            throw new NotImplementedException();
+            return team;
         }
 
-        internal void showWindow(CurrentAction currentAction)
+        public void showWindow(CurrentAction currentAction)
         {
             switch (currentAction)
             {
                 case CurrentAction.ADD:
+                    playerTeam.ClearText();
+                    team = new Team();
+                    break;
+                case CurrentAction.EDIT:                    
                     break;
             }
+            playerTeam.ShowDialog();
+        }
+
+        public void showWindow(Player player)
+        {
+            team.AddTeamPlayer(player);
+            playerTeam.ShowDetails(team);
             playerTeam.ShowDialog();
         }
     }

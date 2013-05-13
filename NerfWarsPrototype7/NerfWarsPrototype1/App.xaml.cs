@@ -29,6 +29,7 @@ namespace NerfWarsLeaderboard
         private AddEditPlayerModel addEditPlayerModel;
         private SelectPlayerModel editDeletePlayerModel;
         private AddEditTeamModel addEditTeamModel;
+        private SelectTeamModel selectTeamModel;
 
         public App()
             : base()
@@ -77,6 +78,7 @@ namespace NerfWarsLeaderboard
             addEditPlayerModel = new AddEditPlayerModel(mainWindow);
             editDeletePlayerModel = new SelectPlayerModel(mainWindow);
             addEditTeamModel = new AddEditTeamModel(mainWindow);
+            selectTeamModel = new SelectTeamModel(mainWindow);
         }
 
         private void wireHandlers()
@@ -101,25 +103,51 @@ namespace NerfWarsLeaderboard
             regTab.btnEditPlayer.Click += btnEditPlayer_Click;
             regTab.btnDeletePlayer.Click += btnDeletePlayer_Click;
             regTab.btnAddTeam.Click += btnAddTeam_Click;
+            regTab.btnDeleteTeam.Click += btnDeleteTeam_Click;
+        }
+
+        void btnDeleteTeam_Click(object sender, RoutedEventArgs e)
+        {
+            while (!selectTeamModel.getButtonAction().Equals(ButtonAction.CLEAR))
+            {
+                selectTeamModel.updateTeams(teams);
+                selectTeamModel.show();
+                Team deletedTeam = selectTeamModel.getRemovedTeam();
+                teams.Remove(deletedTeam);
+            }
         }
 
         private void btnAddTeam_Click(object sender, RoutedEventArgs e)
         {
-            addEditTeamModel.showWindow(CurrentAction.ADD);
+            CurrentAction currentAction = CurrentAction.ADD;
+            addEditTeamModel.showWindow(currentAction);
             ButtonAction buttonAction = addEditTeamModel.getButtonAction();
-            switch (buttonAction)
+            while (!buttonAction.Equals(ButtonAction.CLOSE))
             {
-                case ButtonAction.ADD:
-                    addEditPlayerModel.showWindow(CurrentAction.ADD);
-                    if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
-                    {
-                        Player player = addEditPlayerModel.getPlayer();
-                        addEditTeamModel.addPlayer(player);
-                        addEditTeamModel.showWindow();
-                    }
-                    break;
+                switch (buttonAction)
+                {
+                    case ButtonAction.CREATE:
+                        addEditPlayerModel.showWindow(CurrentAction.ADD);
+                        if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
+                        {
+                            Player player = addEditPlayerModel.getPlayer();
+                            currentAction = CurrentAction.EDIT;
+                            addEditTeamModel.showWindow(player);
+                            buttonAction = addEditTeamModel.getButtonAction();
+                        }
+                        else
+                        {
+                            buttonAction = ButtonAction.CLOSE;
+                        }
+                        break;
+                    case ButtonAction.CONFIRM:
+                        teams.Add(addEditTeamModel.getTeam());
+                        buttonAction = ButtonAction.CLOSE;
+                        break;                        
+                }
+                }
+                
             }
-        }
 
         /// <summary>
         /// This code is bad. I need to rewrite it when I have more time. More then likely on the weekend

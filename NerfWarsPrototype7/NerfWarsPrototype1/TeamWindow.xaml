@@ -14,7 +14,7 @@
 
         <Button x:Name="btnTeamClear" Content="Clear" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="75"/>
         <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Left" Margin="215,368,0,0" VerticalAlignment="Top" Width="75"/>
-        <DataGrid HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Height="144" Width="280">
+        <DataGrid x:Name="dataGridPlayerNames" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Height="144" Width="280">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="First Name     "/>
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last Name      "/>

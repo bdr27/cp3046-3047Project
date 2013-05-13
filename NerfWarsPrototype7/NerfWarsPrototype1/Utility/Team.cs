@@ -60,27 +60,30 @@ namespace NerfWarsLeaderboard.Utility
             try
             {
                 other = obj as Team;
-                if (teamName.Equals(other.teamName))
+                if (other != null)
                 {
-                    //Checks all the players in team A are not in team B
-                    for (int i = 0; i < players.Count; i++)
+                    if (teamName.Equals(other.teamName))
                     {
-                        //Checks if player name is not in other team
-                        bool validPlayer = false;
-                        for (int j = 0; j < other.players.Count; j++)
+                        //Checks all the players in team A are not in team B
+                        for (int i = 0; i < players.Count; i++)
                         {
-                            if (players[i].Equals(other.players[j]))
+                            //Checks if player name is not in other team
+                            bool validPlayer = false;
+                            for (int j = 0; j < other.players.Count; j++)
                             {
-                                validPlayer = true;
-                                break;
+                                if (players[i].Equals(other.players[j]))
+                                {
+                                    validPlayer = true;
+                                    break;
+                                }
+                            }
+                            if (!validPlayer)
+                            {
+                                return false;
                             }
                         }
-                        if (!validPlayer)
-                        {
-                            return false;
-                        }
+                        return true;
                     }
-                    return true;
                 }
             }
             catch (Exception)

@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media;
+using NerfWarsLeaderboard.Utility;
 
 namespace NerfWarsLeaderboard
 {
@@ -22,18 +24,18 @@ namespace NerfWarsLeaderboard
             btnModalTeamEdit.Background = Brushes.LightCoral;
         }
 
-  /*      private void btnModalTeamEdit_Click(object sender, RoutedEventArgs e)
+        public void updateCombo(List<Team> teams)
         {
-            if (btnModalTeamEdit.Content.ToString() == "Edit")
+            cmbTeamName.Items.Clear();
+            foreach (var team in teams)
             {
-                TeamWindow dialogue = new TeamWindow("Edit Team");
-                Close();
-                dialogue.Show();
+                cmbTeamName.Items.Add(team);
             }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("DEBUG - stub for delete");
-            }
-        }*/
+        }
+
+        internal Team getTeam()
+        {
+            return cmbTeamName.SelectedItem as Team;
+        }
     }
 }
