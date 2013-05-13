@@ -125,12 +125,20 @@ namespace NerfWarsTests
         private List<Player> setPlayerList()
         {
             List<Player> players = new List<Player>();
-            players.Add(new Player("John", "Smith"));
-            players.Add(new Player("Mary", "Yohan"));
-            players.Add(new Player("Jill", "Bowe"));
-            players.Add(new Player("Bob", "Winter"));
+            players.Add(setPlayerDetails("John", "Smith"));
+            players.Add(setPlayerDetails("Mary", "Yohan"));
+            players.Add(setPlayerDetails("Jill", "Bowe"));
+            players.Add(setPlayerDetails("Bob", "Winter"));
 
             return players;
+        }
+
+        private Player setPlayerDetails(string firstName, string lastName)
+        {
+            Player player = new Player();
+            player.setFirstName(firstName);
+            player.setLastname(lastName);
+            return player;
         }
 
         private List<string> setPlayerNames()

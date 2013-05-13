@@ -9,11 +9,11 @@
         private string contact;
         private string medicalConditions;
 
-        public Player(string firstname, string lastname)
+      /*  public Player(string firstname, string lastname)
         {
             this.firstName = firstname;
             this.lastName = lastname;
-        }
+        }*/
      
         public Player()
         {

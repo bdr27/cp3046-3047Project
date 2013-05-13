@@ -60,11 +60,20 @@ namespace NerfWars
         private List<Player> loadTempPlayers()
         {
             List<Player> players = new List<Player>();
-            players.Add(new Player("Bob", "Smith"));
-            players.Add(new Player("John", "Jane"));
-            players.Add(new Player("Sarah", "Luan"));
-            players.Add(new Player("I am", "a person"));
+
+            players.Add(setPlayerDetails("Bob", "Smith"));
+            players.Add(setPlayerDetails("John", "Jane"));
+            players.Add(setPlayerDetails("Sarah", "Luan"));
+            players.Add(setPlayerDetails("I am", "a person"));
             return players;
+        }
+
+        private Player setPlayerDetails(string firstName, string lastName)
+        {
+            Player player = new Player();
+            player.setFirstName(firstName);
+            player.setLastname(lastName);
+            return player;
         }
 
 
