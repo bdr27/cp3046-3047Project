@@ -34,8 +34,8 @@ namespace NerfWars
             Debug.WriteLine("I got this far");
             mainWindow = new MainWindow();
             mainWindow.Show();
-             projectorWindow = new ProjectorWindow();
-             projectorWindow.Show();
+            projectorWindow = new ProjectorWindow();
+            projectorWindow.Show();
 
             //Setup up test data
             testData();
@@ -114,6 +114,11 @@ namespace NerfWars
             liveMatchTab.btnReset.Click += btnReset_Click;
         }
 
+        /// <summary>
+        /// When the reset button is clicked reset the game
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnReset_Click(object sender, RoutedEventArgs e)
         {
             resetMatch();

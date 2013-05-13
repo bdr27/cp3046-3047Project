@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utility\DataBaseHandler.cs" />
     <Compile Include="Utility\Game.cs" />
     <Compile Include="Utility\GameState.cs" />
     <Compile Include="Utility\Player.cs" />
