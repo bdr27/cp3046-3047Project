@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace NerfWarsPrototype1
+namespace NerfWars
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

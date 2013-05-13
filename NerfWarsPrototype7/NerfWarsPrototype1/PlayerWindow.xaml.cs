@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace NerfWarsPrototype1
+namespace NerfWars
 {
     /// <summary>
     /// Interaction logic for CreatePlayerWindow.xaml

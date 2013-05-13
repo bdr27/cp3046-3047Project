@@ -7,7 +7,7 @@
     <ProjectGuid>{1601EB9D-65BB-4E54-BC3D-BBD232BDBDDE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>NerfWarsPrototype1</RootNamespace>
+    <RootNamespace>NerfWarsTests.Utility</RootNamespace>
     <AssemblyName>NerfWarsPrototype1</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

@@ -13,9 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using Utility;
+using NerfWars.Utility;
 
-namespace NerfWarsPrototype1
+namespace NerfWars
 {
     /// <summary>
     /// Interaction logic for GamePlay.xaml

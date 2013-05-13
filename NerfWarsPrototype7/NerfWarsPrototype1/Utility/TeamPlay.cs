@@ -5,9 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-//[assembly: InternalsVisibleTo("Testing")]
+[assembly: InternalsVisibleTo("NerfWarsTests")]
 
-namespace Utility
+namespace NerfWars.Utility
 {
     public class TeamPlay
     {

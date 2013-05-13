@@ -1,4 +1,4 @@
-﻿<Window x:Class="NerfWarsPrototype1.PlayerWindow"
+﻿<Window x:Class="NerfWars.PlayerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="CreatePlayerWindow" Height="450" Width="310" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" SizeToContent="WidthAndHeight">

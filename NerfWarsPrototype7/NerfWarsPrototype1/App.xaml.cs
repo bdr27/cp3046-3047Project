@@ -8,9 +8,9 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using Utility;
+using NerfWars.Utility;
 
-namespace NerfWarsPrototype1
+namespace NerfWars
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -20,12 +20,10 @@ namespace NerfWarsPrototype1
         private int GAME_TIMER_INTERVAL = 1000;
         private int DEFAULT_MIN = 5;
         private int DEFAULT_SEC = 0;
-     //   private bool gameBegun = false;
         private Game game = new Game();
         private List<Team> teams;
         private List<Player> tempPlayers;
         private Timer gameTimer;
-       // private bool gamePause;
         private MainWindow mainWindow;
         private ProjectorWindow projectorWindow;
         private GameState gameState;
@@ -33,10 +31,11 @@ namespace NerfWarsPrototype1
         public App()
             : base()
         {
+            Debug.WriteLine("I got this far");
             mainWindow = new MainWindow();
             mainWindow.Show();
-            // projectorWindow = new ProjectorWindow();
-            // projectorWindow.Show();
+             projectorWindow = new ProjectorWindow();
+             projectorWindow.Show();
 
             //Setup up test data
             testData();
