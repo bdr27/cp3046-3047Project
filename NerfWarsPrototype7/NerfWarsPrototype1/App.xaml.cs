@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Diagnostics;
-using System.Linq;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
-using NerfWars.Utility;
+using NerfWarsLeaderboard.Utility;
 
-namespace NerfWars
+namespace NerfWarsLeaderboard
 {
     /// <summary>
     /// Interaction logic for App.xaml

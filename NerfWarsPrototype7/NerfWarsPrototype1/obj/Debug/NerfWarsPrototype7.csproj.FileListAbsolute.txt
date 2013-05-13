@@ -55,3 +55,4 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype7.csproj.GenerateResource.Cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsTests.Utility.Properties.Resources.resources
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.exe.config

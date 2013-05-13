@@ -1,9 +1,8 @@
-﻿using System;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
-using NerfWars.Utility;
+using NerfWarsLeaderboard.Utility;
 
-namespace NerfWars
+namespace NerfWarsLeaderboard
 {
     [TestClass]
     public class TeamPlayeTests

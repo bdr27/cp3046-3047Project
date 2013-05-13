@@ -1,4 +1,4 @@
-﻿namespace NerfWars.Utility
+﻿namespace NerfWarsLeaderboard.Utility
 {
     public class Player
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NerfWars.Utility
+namespace NerfWarsLeaderboard.Utility
 {
     public class Team
     {

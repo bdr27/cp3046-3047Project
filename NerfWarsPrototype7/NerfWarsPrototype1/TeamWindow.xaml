@@ -1,4 +1,4 @@
-﻿<Window x:Class="NerfWars.TeamWindow"
+﻿<Window x:Class="NerfWarsLeaderboard.TeamWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="TeamWindow" Height="450" Width="310">
