@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Media;
+using NerfWarsLeaderboard.Utility;
 
 namespace NerfWarsLeaderboard
 {
@@ -20,21 +22,34 @@ namespace NerfWarsLeaderboard
             btnPlayerModalEdit.Content = newButtonContent;
             btnPlayerModalEdit.Background = Brushes.LightCoral;
         }
-
-        private void btnPlayerModalEdit_Click(object sender, RoutedEventArgs e)
+        public void setEdit()
         {
-            if (btnPlayerModalEdit.Content.ToString() == "Edit")
-            {
-                PlayerWindow dialogue = new PlayerWindow("Edit Player");
-                Close();
-                dialogue.Show();
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("DEBUG - stub for deleting a player");
-            }
-            
+            tblSearchAPlayer.Text = "Search for a player to edit";
+            btnPlayerModalEdit.Content = "Edit";
         }
 
+        public void setDelete()
+        {
+            tblSearchAPlayer.Text = "Search for a player to delete";
+            btnPlayerModalEdit.Content = "Delete";
+        }
+
+        public void FillComboBox(List<Player> players)
+        {
+            cmbPlayerNames.Items.Clear();
+            foreach (var player in players)
+            {
+                //Add if not in the list
+                if (!cmbPlayerNames.Items.Contains(player))
+                {
+                    cmbPlayerNames.Items.Add(player);
+                }
+            }
+        }
+
+        internal Player getPlayer()
+        {
+            return cmbPlayerNames.SelectedItem as Player;
+        }
     }
 }

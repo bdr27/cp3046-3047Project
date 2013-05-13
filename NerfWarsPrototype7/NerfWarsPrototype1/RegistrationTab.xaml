@@ -26,15 +26,15 @@
         </Grid.ColumnDefinitions>
         <Label Grid.Row = "0" Grid.Column="1" Name="lblIndividualRegistration" Content="Individual Registration" FontSize="17"
                HorizontalAlignment="Left" VerticalAlignment="Center"  FontWeight="Bold" Grid.ColumnSpan="3"/>
-        <Button Grid.Row = "1" Grid.Column="2" Name="btnAddPlayer" Content="Add Player" Background="LightGreen" Click="btnAddPlayer_Click"/>
-        <Button Grid.Row = "1" Grid.Column="4" Name="btnEditPlayer" Content="Edit Player" Background="LightBlue" Click="btnEditPlayer_Click"/>
-        <Button Grid.Row = "1" Grid.Column="6" Name="btnDeletePlayer" Content="Delete Player" Background="LightCoral" Click="btnDeletePlayer_Click"/>
+        <Button Grid.Row = "1" Grid.Column="2" Name="btnAddPlayer" Content="Add Player" Background="LightGreen" />
+        <Button Grid.Row = "1" Grid.Column="4" Name="btnEditPlayer" Content="Edit Player" Background="LightBlue" />
+        <Button Grid.Row = "1" Grid.Column="6" Name="btnDeletePlayer" Content="Delete Player" Background="LightCoral" />
 
         <Label Grid.Row = "3" Grid.Column="1" Name="lblTeamRegistration" Content="Team Registration" FontSize="17"
                HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold" Grid.ColumnSpan="3"/>
-        <Button Grid.Row = "4" Grid.Column="2" Name="btnAddTeam" Content="Add Team" Background="LightGreen" Click="btnAddTeam_Click"/>
-        <Button Grid.Row = "4" Grid.Column="4" Name="btnEditTeam" Content="Edit Team" Background="LightBlue" Click="btnEditTeam_Click"/>
-        <Button Grid.Row = "4" Grid.Column="6" Name="btnDeleteTeam" Content="Delete Team" Background="LightCoral" Click="btnDeleteTeam_Click"/>
+        <Button Grid.Row = "4" Grid.Column="2" Name="btnAddTeam" Content="Add Team" Background="LightGreen" />
+        <Button Grid.Row = "4" Grid.Column="4" Name="btnEditTeam" Content="Edit Team" Background="LightBlue" />
+        <Button Grid.Row = "4" Grid.Column="6" Name="btnDeleteTeam" Content="Delete Team" Background="LightCoral" />
         
 
 

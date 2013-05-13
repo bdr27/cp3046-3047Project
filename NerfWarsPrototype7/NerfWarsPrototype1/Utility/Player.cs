@@ -1,4 +1,6 @@
-﻿namespace NerfWarsLeaderboard.Utility
+﻿using System;
+using System.Diagnostics;
+namespace NerfWarsLeaderboard.Utility
 {
     public class Player
     {
@@ -9,15 +11,20 @@
         private string contact;
         private string medicalConditions;
 
-      /*  public Player(string firstname, string lastname)
-        {
-            this.firstName = firstname;
-            this.lastName = lastname;
-        }*/
-     
-        public Player()
+       public Player()
         {
         }
+
+       public Player(string firstName, string lastName, int age, string guardian, string contact, string medicalConditions)
+       {
+           // TODO: Complete member initialization
+           this.firstName = firstName;
+           this.lastName = lastName;
+           this.age = age;
+           this.guardian = guardian;
+           this.contact = contact;
+           this.medicalConditions = medicalConditions;
+       }
 
         public void setFirstName(string firstname)
         {
@@ -77,6 +84,35 @@
         public string getMedicalConditions()
         {
             return medicalConditions;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Player other;
+            try
+            {
+                if (obj != null)
+                {
+                    other = obj as Player;
+                    if (other != null)
+                    {
+                        if (firstName.Equals(other.getFirstName()) && lastName.Equals(other.getLastName()) && age == other.getAge() && guardian.Equals(other.getGuardian()) && contact.Equals(other.getContact()) && medicalConditions.Equals(other.getMedicalConditions()))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //Wrong object entered
+            }
+            return false;
+        }
+
+        public override string ToString()
+        {
+            return firstName + " " + lastName;
         }
     }
 }

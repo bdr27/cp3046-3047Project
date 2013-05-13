@@ -15,7 +15,7 @@ namespace NerfWarsTests
             string teamName = "Crazy 8's";
             Game gameTest = new Game();
 
-            Team teamPlayTest = new Team(playersNames, teamName);
+            Team teamPlayTest = new Team(teamName, playersNames);
             gameTest.loadTeamA(teamPlayTest);
             Assert.AreEqual(teamPlayTest.getTeamName(), gameTest.getTeamA().getTeamName());
             for (int i = 0; i < teamPlayTest.getPlayerFirstName().Count; i++)
@@ -25,7 +25,7 @@ namespace NerfWarsTests
 
             //Creates another list of players
             List<Player> playersNames2 = setPlayerList();
-            Team secondTeam = new Team(playersNames2, "john smith");
+            Team secondTeam = new Team("john smith", playersNames2);
 
             gameTest.loadTeamB(secondTeam);
             //Checks the name's are the same
@@ -45,7 +45,7 @@ namespace NerfWarsTests
             string teamName = "Crazy 8's";
             Game gameTest = new Game();
 
-            Team teamPlayTest = new Team(playersNames, teamName);
+            Team teamPlayTest = new Team(teamName, playersNames);
             gameTest.loadTeamB(teamPlayTest);
 
             int sec = 29;
@@ -79,8 +79,8 @@ namespace NerfWarsTests
         private void TestWinner()
         {
             List<Player> playerNames = setPlayerList();
-            Team team1 = new Team(playerNames, "team1");
-            Team team2 = new Team(playerNames, "team2");
+            Team team1 = new Team("team1", playerNames);
+            Team team2 = new Team("team2", playerNames);
 
             Game game = new Game();
             TeamPlay teamPlayer = new TeamPlay(new List<string>(), "");
@@ -124,19 +124,17 @@ namespace NerfWarsTests
         private List<Player> setPlayerList()
         {
             List<Player> players = new List<Player>();
-            players.Add(setPlayerDetails("John", "Smith"));
-            players.Add(setPlayerDetails("Mary", "Yohan"));
-            players.Add(setPlayerDetails("Jill", "Bowe"));
-            players.Add(setPlayerDetails("Bob", "Winter"));
+            players.Add(setPlayerDetails("John", "Smith", 5, "Allow Smith", "444", "Sick"));
+            players.Add(setPlayerDetails("Mary", "Yohan", 5, "Allow Yohan", "444", "Sick"));
+            players.Add(setPlayerDetails("Jill", "Bowe", 5, "Allow Bowe", "444", "Sick"));
+            players.Add(setPlayerDetails("Bob", "Winter", 5, "Allow Winter", "444", "Sick"));
 
             return players;
         }
 
-        private Player setPlayerDetails(string firstName, string lastName)
+        private Player setPlayerDetails(string firstName, string lastName, int age, string guardian, string contact, string medicalConditions)
         {
-            Player player = new Player();
-            player.setFirstName(firstName);
-            player.setLastname(lastName);
+            Player player = new Player(firstName, lastName, age, guardian, contact,medicalConditions);
             return player;
         }
 

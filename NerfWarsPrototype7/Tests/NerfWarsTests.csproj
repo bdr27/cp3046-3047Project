@@ -53,11 +53,13 @@
     <Compile Include="GameTests.cs" />
     <Compile Include="TeamPlayeTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MOCKDataBaseHandlerTests.cs" />
+    <Compile Include="PlayerTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NerfWarsPrototype1\NerfWarsPrototype7.csproj">
+    <ProjectReference Include="..\NerfWarsPrototype1\NerfWarsPrototype8.csproj">
       <Project>{1601eb9d-65bb-4e54-bc3d-bbd232bdbdde}</Project>
-      <Name>NerfWarsPrototype7</Name>
+      <Name>NerfWarsPrototype8</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

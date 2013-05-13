@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NerfWarsLeaderboard.Utility
 {
@@ -16,7 +13,7 @@ namespace NerfWarsLeaderboard.Utility
             players = new List<Player>();
         }
 
-        public Team(List<Player> playerNames, string teamName)
+        public Team(string teamName, List<Player> playerNames)
         {
             this.teamName = teamName;
             this.players = playerNames;
@@ -55,6 +52,42 @@ namespace NerfWarsLeaderboard.Utility
         public override string ToString()
         {
             return teamName;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Team other;
+            try
+            {
+                other = obj as Team;
+                if (teamName.Equals(other.teamName))
+                {
+                    //Checks all the players in team A are not in team B
+                    for (int i = 0; i < players.Count; i++)
+                    {
+                        //Checks if player name is not in other team
+                        bool validPlayer = false;
+                        for (int j = 0; j < other.players.Count; j++)
+                        {
+                            if (players[i].Equals(other.players[j]))
+                            {
+                                validPlayer = true;
+                                break;
+                            }
+                        }
+                        if (!validPlayer)
+                        {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                //Wrong object entered
+            }
+            return false;
         }
     }
 }

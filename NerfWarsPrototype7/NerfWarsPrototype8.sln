@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerfWarsPrototype7", "NerfWarsPrototype1\NerfWarsPrototype7.csproj", "{1601EB9D-65BB-4E54-BC3D-BBD232BDBDDE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerfWarsPrototype8", "NerfWarsPrototype1\NerfWarsPrototype8.csproj", "{1601EB9D-65BB-4E54-BC3D-BBD232BDBDDE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerfWarsTests", "Tests\NerfWarsTests.csproj", "{2660BA86-EF5E-4FF5-B679-83803C4775DD}"
 EndProject

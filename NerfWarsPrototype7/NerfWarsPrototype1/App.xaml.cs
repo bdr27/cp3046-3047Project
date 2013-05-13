@@ -5,6 +5,7 @@ using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Threading;
+using NerfWarsLeaderboard.Model;
 using NerfWarsLeaderboard.Utility;
 
 namespace NerfWarsLeaderboard
@@ -19,11 +20,15 @@ namespace NerfWarsLeaderboard
         private int DEFAULT_SEC = 0;
         private Game game = new Game();
         private List<Team> teams;
-        private List<Player> tempPlayers;
+        private List<Player> players;
         private Timer gameTimer;
         private MainWindow mainWindow;
         private ProjectorWindow projectorWindow;
         private GameState gameState;
+        private DataBaseHandler dbHandler;
+        private AddEditPlayerModel addEditPlayerModel;
+        private SelectPlayerModel editDeletePlayerModel;
+        private AddEditTeamModel addEditTeamModel;
 
         public App()
             : base()
@@ -34,53 +39,50 @@ namespace NerfWarsLeaderboard
             projectorWindow = new ProjectorWindow();
             projectorWindow.Show();
 
+            dbHandler = new MOCKDataBaseHandler();
+
             //Setup up test data
-            testData();
+
 
             //Starting game state
             gameState = GameState.WAITING;
             //Loads the teams to the combo box
             //TODO should probably be done when the tab is pressed.
-            loadTeamComboBoxes(mainWindow.playGame, teams);
+
+            load();
+        }
+        private void load()
+        {
+            loadData();
             //Wires up the live match button handlers
-            wireLiveMatchButtons(mainWindow.playGame);
+            wireHandlers();
+            loadModels();
             //Sets up the game timer.
             setupGameTime();
+
+            loadTeamComboBoxes(mainWindow.playGame, teams);
         }
 
-        private void testData()
+        /// <summary>
+        /// Loads various data
+        /// </summary>
+        private void loadData()
         {
-            tempPlayers = loadTempPlayers();
-            teams = loadTeams();
+            players = dbHandler.loadPlayers();
+            teams = dbHandler.loadTeams();
         }
 
-        private List<Player> loadTempPlayers()
+        private void loadModels()
         {
-            List<Player> players = new List<Player>();
-
-            players.Add(setPlayerDetails("Bob", "Smith"));
-            players.Add(setPlayerDetails("John", "Jane"));
-            players.Add(setPlayerDetails("Sarah", "Luan"));
-            players.Add(setPlayerDetails("I am", "a person"));
-            return players;
+            addEditPlayerModel = new AddEditPlayerModel(mainWindow);
+            editDeletePlayerModel = new SelectPlayerModel(mainWindow);
+            addEditTeamModel = new AddEditTeamModel(mainWindow);
         }
 
-        private Player setPlayerDetails(string firstName, string lastName)
+        private void wireHandlers()
         {
-            Player player = new Player();
-            player.setFirstName(firstName);
-            player.setLastname(lastName);
-            return player;
-        }
-
-
-        private List<Team> loadTeams()
-        {
-            List<Team> newTeams = new List<Team>();
-            newTeams.Add(new Team(tempPlayers, "Wildcats"));
-            newTeams.Add(new Team(tempPlayers, "Wildcats"));
-            newTeams.Add(new Team(tempPlayers, "Super Awesome Wildcats"));
-            return newTeams;
+            wireLiveMatchButtons(mainWindow.playGame);
+            wierRegistrationButtons(mainWindow.regMenu);
         }
 
         /// <summary>
@@ -91,6 +93,101 @@ namespace NerfWarsLeaderboard
         private void loadTeamComboBoxes(LiveMatchTab liveMatchTab, List<Team> teams)
         {
             liveMatchTab.loadTeamSelectComboBox(teams);
+        }
+
+        private void wierRegistrationButtons(RegistrationTab regTab)
+        {
+            regTab.btnAddPlayer.Click += btnAddPlayer_Click;
+            regTab.btnEditPlayer.Click += btnEditPlayer_Click;
+            regTab.btnDeletePlayer.Click += btnDeletePlayer_Click;
+            regTab.btnAddTeam.Click += btnAddTeam_Click;
+        }
+
+        private void btnAddTeam_Click(object sender, RoutedEventArgs e)
+        {
+            addEditTeamModel.showWindow(CurrentAction.ADD);
+            ButtonAction buttonAction = addEditTeamModel.getButtonAction();
+            switch (buttonAction)
+            {
+                case ButtonAction.ADD:
+                    addEditPlayerModel.showWindow(CurrentAction.ADD);
+                    if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
+                    {
+                        Player player = addEditPlayerModel.getPlayer();
+                        addEditTeamModel.addPlayer(player);
+                        addEditTeamModel.showWindow();
+                    }
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// This code is bad. I need to rewrite it when I have more time. More then likely on the weekend
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnDeletePlayer_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentAction currentAction = CurrentAction.DELETE;
+            while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
+            {
+                editDeletePlayerModel.showWindow(players, currentAction);
+                Player player = editDeletePlayerModel.getPlayer();
+                switch(editDeletePlayerModel.getButtonAction())
+                {
+                    case ButtonAction.EDIT:
+                        players = editDeletePlayerModel.deletePlayer(player);
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// More bad code needs to be rewritten with the message handler in mind
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void btnEditPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentAction currentAction = CurrentAction.EDIT;       
+            while(!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
+            {
+                editDeletePlayerModel.showWindow(players, currentAction);
+                Player player = editDeletePlayerModel.getPlayer();
+                switch (editDeletePlayerModel.getButtonAction())
+                {
+                    case ButtonAction.EDIT:
+                        addEditPlayerModel.showWindow(currentAction, player);
+                        break;
+                }
+            }
+        }
+
+        private void addPlayerAction(ButtonAction buttonAction)
+        {
+            switch (buttonAction)
+            {
+                case ButtonAction.NONE:
+                    Debug.WriteLine("I don't do anything");
+                    break;
+                case ButtonAction.CLEAR:
+                    Debug.WriteLine("I clear things");
+                    break;
+                case ButtonAction.CONFIRM:
+                    Debug.WriteLine("I need to add a player");
+                    players.Add(addEditPlayerModel.getPlayer());
+                    break;
+                case ButtonAction.CLOSE:
+                    Debug.WriteLine("Window randomly closed");
+                    break;
+            }
+        }
+
+        private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentAction currentAction = CurrentAction.ADD;
+            addEditPlayerModel.showWindow(currentAction);
+            addPlayerAction(addEditPlayerModel.getButtonAction());
         }
 
         /// <summary>
@@ -258,7 +355,7 @@ namespace NerfWarsLeaderboard
             enableReset();
             gameTimer.Stop();
             changeStartPauseButton();
-        }        
+        }
 
         private void resetMatch()
         {
@@ -274,6 +371,7 @@ namespace NerfWarsLeaderboard
 
         private void createNewMatch()
         {
+            //TODO clean up this code
             Team teamA = mainWindow.playGame.getTeamA();
             Team teamB = mainWindow.playGame.getTeamB();
 
@@ -362,7 +460,7 @@ namespace NerfWarsLeaderboard
 
         private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            
+
             //Checks if game is over
             if (game.CountDown())
             {

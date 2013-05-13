@@ -22,6 +22,5 @@
                 <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Age"/>
             </DataGrid.Columns>
         </DataGrid>
-
     </Grid>
 </Window>

@@ -22,7 +22,7 @@ namespace NerfWarsLeaderboard
             btnModalTeamEdit.Background = Brushes.LightCoral;
         }
 
-        private void btnModalTeamEdit_Click(object sender, RoutedEventArgs e)
+  /*      private void btnModalTeamEdit_Click(object sender, RoutedEventArgs e)
         {
             if (btnModalTeamEdit.Content.ToString() == "Edit")
             {
@@ -34,6 +34,6 @@ namespace NerfWarsLeaderboard
             {
                 System.Diagnostics.Debug.WriteLine("DEBUG - stub for delete");
             }
-        }
+        }*/
     }
 }
