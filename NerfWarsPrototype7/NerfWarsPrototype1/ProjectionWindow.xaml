@@ -1,26 +1,56 @@
-﻿<Window x:Class="NerfWarsLeaderboard.ProjectorWindow"
+﻿<UserControl x:Class="NerfWarsLeaderboard.ProjectorWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Projector Window" Height="300" Width="300">
+        Height="768" Width="1024" Background="WhiteSmoke">
     <Grid>
-        <TextBlock x:Name="lblTime" HorizontalAlignment="Left" Margin="133,10,0,0" TextWrapping="Wrap" Text="3:00" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Team: Catch em all" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625"/>
-        <TextBlock HorizontalAlignment="Left" Margin="153,41,0,0" TextWrapping="Wrap" Text="Team: Heart Of The Cards" VerticalAlignment="Top" RenderTransformOrigin="-0.06,-0.625" Width="139"/>
-        <TextBlock HorizontalAlignment="Left" Margin="39,161,0,0" TextWrapping="Wrap" Text="Score: 10" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="191,161,0,0" TextWrapping="Wrap" Text="Score: 7" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="44,193,0,0" TextWrapping="Wrap" Text="TAG: 5" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flap Cap: 1" VerticalAlignment="Top" Margin="35,222,0,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="196,195,0,0" TextWrapping="Wrap" Text="TAG: 7" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Flap Cap: 0" VerticalAlignment="Top" Margin="180,223,0,0"/>
-        <GridSplitter HorizontalAlignment="Left" Height="229" Margin="140,41,0,0" VerticalAlignment="Top" Width="8"/>
-        <GridSplitter HorizontalAlignment="Left" Height="8" Margin="0,33,0,0" VerticalAlignment="Top" Width="292"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,126,0,0" TextWrapping="Wrap" Text="Oak " VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,105,0,0" TextWrapping="Wrap" Text="Brock" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,84,0,0" TextWrapping="Wrap" Text="Misty" VerticalAlignment="Top" RenderTransformOrigin="0.56,2.438"/>
-        <TextBlock HorizontalAlignment="Left" Margin="50,63,0,0" TextWrapping="Wrap" Text="Ash" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,84,0,0" TextWrapping="Wrap" Text="Joey" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,126,0,0" TextWrapping="Wrap" Text="Tristan " VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="208,63,0,0" TextWrapping="Wrap" Text="Yugi" VerticalAlignment="Top" RenderTransformOrigin="0.56,2.438"/>
-        <TextBlock HorizontalAlignment="Left" Margin="209,105,0,0" TextWrapping="Wrap" Text="Téa " VerticalAlignment="Top"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0" Name="lblTimeProjector" Content="5:00" FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label Grid.Column="0" Name="lblTeamAScoreProjector" Content="0"  FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="2" Name="lblTeamBScoreProjector" Content="0"  FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <GridSplitter Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Height="15" HorizontalAlignment="Stretch" Background="#FFE0E0E0" Grid.ColumnSpan="9" IsEnabled="False"/>
+        <GridSplitter Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="15" Background="#FFE0E0E0" Grid.RowSpan="20" IsEnabled="False"/>
+
+        <Label Grid.Column="0" Grid.Row="1" Name="lblTeamAProjector" Content="Team A" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Name="lblTeamAPlayer1" Content="Player 1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="3" Name="lblTeamAPlayer2" Content="Player 2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="4" Name="lblTeamAPlayer3" Content="Player 3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="5" Name="lblTeamAPlayer4" Content="Player 4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="6" Name="lblTeamAPlayer5" Content="" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="8" Name="lblTeamATagCount" Content="Tags: XX" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="9" Name="lblTeamAFlagCount" Content="Flags Captured: X" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+
+        <Label Grid.Column="2" Grid.Row="1" Name="lblTeamBProjector" Content="Team B" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="2" Grid.Row="2" Name="lblTeamBPlayer1" Content="Player 1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="3" Name="lblTeamBPlayer2" Content="Player 2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="4" Name="lblTeamBPlayer3" Content="Player 3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="5" Name="lblTeamBPlayer4" Content="Player 4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="6" Name="lblTeamBPlayer5" Content="" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="8" Name="lblTeamBTagCount" Content="Tags: XX" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="9" Name="lblTeamBFlagCount" Content="Flags Captured: X" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+
+
+
     </Grid>
-</Window>
+</UserControl>
