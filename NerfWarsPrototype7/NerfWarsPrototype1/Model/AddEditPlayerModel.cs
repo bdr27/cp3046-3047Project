@@ -94,5 +94,10 @@ namespace NerfWarsLeaderboard.Model
             }
             playerAdd.ShowDialog();
         }
+
+        internal void setToNothing()
+        {
+            buttonAction = ButtonAction.NONE;
+        }
     }
 }

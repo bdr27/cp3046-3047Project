@@ -10,7 +10,7 @@
                     <local:RegistrationTab x:Name="regMenu" Visibility="Visible"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Live Match">
+            <TabItem x:Name="TabLiveMatch" Header="Live Match">
                 <Grid>
                     <local:LiveMatchTab x:Name="playGame" Visibility="Visible" />
                 </Grid>

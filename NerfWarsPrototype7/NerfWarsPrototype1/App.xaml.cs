@@ -52,6 +52,7 @@ namespace NerfWarsLeaderboard
 
             load();
         }
+
         private void load()
         {
             loadData();
@@ -94,6 +95,7 @@ namespace NerfWarsLeaderboard
         /// <param name="teams"></param>
         private void loadTeamComboBoxes(LiveMatchTab liveMatchTab, List<Team> teams)
         {
+            liveMatchTab.ClearTeamComboBox();
             liveMatchTab.loadTeamSelectComboBox(teams);
         }
 
@@ -115,6 +117,7 @@ namespace NerfWarsLeaderboard
                 Team deletedTeam = selectTeamModel.getRemovedTeam();
                 teams.Remove(deletedTeam);
             }
+            selectTeamModel.setToNothing();
         }
 
         private void btnAddTeam_Click(object sender, RoutedEventArgs e)
@@ -143,11 +146,12 @@ namespace NerfWarsLeaderboard
                     case ButtonAction.CONFIRM:
                         teams.Add(addEditTeamModel.getTeam());
                         buttonAction = ButtonAction.CLOSE;
-                        break;                        
+                        break;
                 }
-                }
-                
             }
+            addEditTeamModel.setToNothing();
+            loadTeamComboBoxes(mainWindow.playGame, teams);
+        }
 
         /// <summary>
         /// This code is bad. I need to rewrite it when I have more time. More then likely on the weekend
@@ -161,13 +165,14 @@ namespace NerfWarsLeaderboard
             {
                 editDeletePlayerModel.showWindow(players, currentAction);
                 Player player = editDeletePlayerModel.getPlayer();
-                switch(editDeletePlayerModel.getButtonAction())
+                switch (editDeletePlayerModel.getButtonAction())
                 {
                     case ButtonAction.EDIT:
                         players = editDeletePlayerModel.deletePlayer(player);
                         break;
                 }
             }
+            editDeletePlayerModel.setToNothing();
         }
 
         /// <summary>
@@ -177,8 +182,8 @@ namespace NerfWarsLeaderboard
         /// <param name="e"></param>
         void btnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            CurrentAction currentAction = CurrentAction.EDIT;       
-            while(!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
+            CurrentAction currentAction = CurrentAction.EDIT;
+            while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
             {
                 editDeletePlayerModel.showWindow(players, currentAction);
                 Player player = editDeletePlayerModel.getPlayer();
@@ -189,6 +194,7 @@ namespace NerfWarsLeaderboard
                         break;
                 }
             }
+            editDeletePlayerModel.setToNothing();
         }
 
         private void addPlayerAction(ButtonAction buttonAction)

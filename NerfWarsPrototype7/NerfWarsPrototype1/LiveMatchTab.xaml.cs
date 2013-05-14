@@ -86,5 +86,11 @@ namespace NerfWarsLeaderboard
         {
             button.IsEnabled = true;
         }
+
+        public void ClearTeamComboBox()
+        {
+            cmbTeamA.Items.Clear();
+            cmbTeamB.Items.Clear();
+        }
     }
 }

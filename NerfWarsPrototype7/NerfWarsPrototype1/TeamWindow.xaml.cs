@@ -22,6 +22,7 @@ namespace NerfWarsLeaderboard
         public void ClearText()
         {
             //Combo Box for team contact
+            lblTeamWindowTitle.Content = "Create Team";
             tbCreateTeamContact.Text = "";
             tbCreateTeamName.Text = "";
             dataGridPlayerNames.Items.Clear();

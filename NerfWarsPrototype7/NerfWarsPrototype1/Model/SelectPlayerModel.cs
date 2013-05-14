@@ -84,5 +84,10 @@ namespace NerfWarsLeaderboard.Model
             players.Remove(player);
             return players;
         }
+
+        internal void setToNothing()
+        {
+            buttonAction = ButtonAction.NONE;
+        }
     }
 }

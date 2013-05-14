@@ -82,5 +82,10 @@ namespace NerfWarsLeaderboard.Model
             playerTeam.ShowDetails(team);
             playerTeam.ShowDialog();
         }
+
+        internal void setToNothing()
+        {
+            buttonAction = ButtonAction.NONE;
+        }
     }
 }
