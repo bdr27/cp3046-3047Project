@@ -32,7 +32,6 @@ C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\ob
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype.pdb
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.exe
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.pdb
-C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype8.csprojResolveAssemblyReference.cache
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
