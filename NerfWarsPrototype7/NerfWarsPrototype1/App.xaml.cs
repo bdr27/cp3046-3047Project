@@ -30,7 +30,12 @@ namespace NerfWarsLeaderboard
         private SelectPlayerModel editDeletePlayerModel;
         private AddEditTeamModel addEditTeamModel;
         private SelectTeamModel selectTeamModel;
-
+        private TeamAddModel teamAddModel;
+        private TeamEditModel teamEditModel;
+        private TeamDeleteModel teamDeleteModel;
+        private PlayerAddModel playerAddModel;
+        private PlayerEditModel playerEditModel;
+        private PlayerDeleteModel playerDeleteModel;
 
         public App()
             : base()
@@ -76,10 +81,12 @@ namespace NerfWarsLeaderboard
 
         private void LoadModels()
         {
-            addEditPlayerModel = new AddEditPlayerModel(mainWindow);
-            editDeletePlayerModel = new SelectPlayerModel(mainWindow);
-            addEditTeamModel = new AddEditTeamModel(mainWindow);
-            selectTeamModel = new SelectTeamModel(mainWindow);
+            teamAddModel = new TeamAddModel(mainWindow);
+            teamEditModel = new TeamEditModel(mainWindow);
+            teamDeleteModel = new TeamDeleteModel(mainWindow);
+            playerAddModel = new PlayerAddModel(mainWindow);
+            playerEditModel = new PlayerEditModel(mainWindow);
+            playerDeleteModel = new PlayerDeleteModel(mainWindow);
         }
 
         private void WireHandlers()
@@ -106,51 +113,132 @@ namespace NerfWarsLeaderboard
             regTab.btnDeletePlayer.Click += BtnDeletePlayer_Click;
             regTab.btnAddTeam.Click += BtnAddTeam_Click;
             regTab.btnDeleteTeam.Click += BtnDeleteTeam_Click;
+            regTab.btnEditTeam.Click += BtnEditTeam_Click;
         }
 
-        void BtnDeleteTeam_Click(object sender, RoutedEventArgs e)
+        private void DisplayTeamModal(CurrentAction regButtonClick)
         {
-            while (!selectTeamModel.getButtonAction().Equals(ButtonAction.CLEAR))
+            switch (regButtonClick)
             {
-                selectTeamModel.updateTeams(teams);
-                selectTeamModel.show();
-                Team deletedTeam = selectTeamModel.getRemovedTeam();
-                teams.Remove(deletedTeam);
+                case CurrentAction.ADD:
+                    Debug.WriteLine("I add things");
+                    openAddTeamDialog();
+                    break;
+                case CurrentAction.DELETE:
+                    Debug.WriteLine("I delelet things");
+                    openDeleteTeamDialog();
+                    break;
+                case CurrentAction.EDIT:
+                    Debug.WriteLine("I edit things");
+                    openEditTeamDialog();
+                    break;
             }
-            selectTeamModel.setToNothing();
+        }
+
+        private void openDeleteTeamDialog()
+        {
+            teamDeleteModel.Show();
+        }
+
+        private void openEditTeamDialog()
+        {
+            teamEditModel.Show();
+        }
+
+        private void openAddTeamDialog()
+        {
+            teamAddModel.Show();
+        }
+
+        private void DisplayPlayerModal(CurrentAction regButtonClick)
+        {
+            switch (regButtonClick)
+            {
+                case CurrentAction.ADD:
+                    Debug.WriteLine("I add players");
+                    openAddPlayerDialog();
+                    break;
+                case CurrentAction.EDIT:
+                    Debug.WriteLine("I edit players");
+                    openEditPlayerDialog();
+                    break;
+                case CurrentAction.DELETE:
+                    Debug.WriteLine("I delete players");
+                    openDeletePlayerDialog();
+                    break;
+            }
+        }
+
+        private void openDeletePlayerDialog()
+        {
+            playerDeleteModel.Show();
+        }
+
+        private void openEditPlayerDialog()
+        {
+            playerEditModel.Show();
+        }
+
+        private void openAddPlayerDialog()
+        {
+            playerAddModel.Show();
+        }
+
+        private void BtnEditTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentAction regButtonClick = CurrentAction.EDIT;
+            DisplayTeamModal(regButtonClick);
+        }
+
+        private void BtnDeleteTeam_Click(object sender, RoutedEventArgs e)
+        {
+            CurrentAction regButtonClick = CurrentAction.DELETE;
+            DisplayTeamModal(regButtonClick);
+            /*       while (!selectTeamModel.getButtonAction().Equals(ButtonAction.CLEAR))
+                   {
+                       selectTeamModel.updateTeams(teams);
+                       selectTeamModel.show();
+                       Team deletedTeam = selectTeamModel.getRemovedTeam();
+                       teams.Remove(deletedTeam);
+                   }
+                   selectTeamModel.setToNothing();
+              */
         }
 
         private void BtnAddTeam_Click(object sender, RoutedEventArgs e)
         {
-            CurrentAction currentAction = CurrentAction.ADD;
-            addEditTeamModel.showWindow(currentAction);
-            ButtonAction buttonAction = addEditTeamModel.getButtonAction();
-            while (!buttonAction.Equals(ButtonAction.CLOSE))
-            {
-                switch (buttonAction)
-                {
-                    case ButtonAction.CREATE:
-                        addEditPlayerModel.showWindow(CurrentAction.ADD);
-                        if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
-                        {
-                            Player player = addEditPlayerModel.getPlayer();
-                            currentAction = CurrentAction.EDIT;
-                            addEditTeamModel.showWindow(player);
-                            buttonAction = addEditTeamModel.getButtonAction();
-                        }
-                        else
-                        {
-                            buttonAction = ButtonAction.CLOSE;
-                        }
-                        break;
-                    case ButtonAction.CONFIRM:
-                        teams.Add(addEditTeamModel.getTeam());
-                        buttonAction = ButtonAction.CLOSE;
-                        break;
-                }
-            }
-            addEditTeamModel.setToNothing();
-            LoadTeamComboBoxes(mainWindow.playGame, teams);
+            CurrentAction regButtonClick = CurrentAction.ADD;
+            DisplayTeamModal(regButtonClick);
+            /*     CurrentAction currentAction = CurrentAction.ADD;
+                 addEditTeamModel.showWindow(currentAction);
+                 ButtonAction buttonAction = addEditTeamModel.getButtonAction();
+                 while (!buttonAction.Equals(ButtonAction.CLOSE))
+                 {
+                     switch (buttonAction)
+                     {
+                         case ButtonAction.CREATE:
+                             addEditPlayerModel.showWindow(CurrentAction.ADD);
+                             if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
+                             {
+                                 Player player = addEditPlayerModel.getPlayer();
+                                 currentAction = CurrentAction.EDIT;
+                                 addEditTeamModel.showWindow(player);
+                                 buttonAction = addEditTeamModel.getButtonAction();
+                             }
+                             else
+                             {
+                                 buttonAction = ButtonAction.CLOSE;
+                             }
+                             break;
+                         case ButtonAction.CONFIRM:
+                             teams.Add(addEditTeamModel.getTeam());
+                             buttonAction = ButtonAction.CLOSE;
+                             break;
+                     }
+                 }
+                 addEditTeamModel.setToNothing();
+                 LoadTeamComboBoxes(mainWindow.playGame, teams);
+            */
         }
 
         /// <summary>
@@ -160,19 +248,22 @@ namespace NerfWarsLeaderboard
         /// <param name="e"></param>
         private void BtnDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
-            CurrentAction currentAction = CurrentAction.DELETE;
-            while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
-            {
-                editDeletePlayerModel.showWindow(players, currentAction);
-                Player player = editDeletePlayerModel.getPlayer();
-                switch (editDeletePlayerModel.getButtonAction())
-                {
-                    case ButtonAction.EDIT:
-                        players = editDeletePlayerModel.deletePlayer(player);
-                        break;
-                }
-            }
-            editDeletePlayerModel.setToNothing();
+            CurrentAction regButtonClick = CurrentAction.DELETE;
+            DisplayPlayerModal(regButtonClick);
+            /*         CurrentAction currentAction = CurrentAction.DELETE;
+                     while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
+                     {
+                         editDeletePlayerModel.showWindow(players, currentAction);
+                         Player player = editDeletePlayerModel.getPlayer();
+                         switch (editDeletePlayerModel.getButtonAction())
+                         {
+                             case ButtonAction.EDIT:
+                                 players = editDeletePlayerModel.deletePlayer(player);
+                                 break;
+                         }
+                     }
+                     editDeletePlayerModel.setToNothing();
+              */
         }
 
         /// <summary>
@@ -182,46 +273,34 @@ namespace NerfWarsLeaderboard
         /// <param name="e"></param>
         void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            CurrentAction currentAction = CurrentAction.EDIT;
-            while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
-            {
-                editDeletePlayerModel.showWindow(players, currentAction);
-                Player player = editDeletePlayerModel.getPlayer();
-                switch (editDeletePlayerModel.getButtonAction())
-                {
-                    case ButtonAction.EDIT:
-                        addEditPlayerModel.showWindow(currentAction, player);
-                        break;
-                }
-            }
-            editDeletePlayerModel.setToNothing();
+            CurrentAction regButtonClick = CurrentAction.EDIT;
+            DisplayPlayerModal(regButtonClick);
+            /*         CurrentAction currentAction = CurrentAction.EDIT;
+                     while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
+                     {
+                         editDeletePlayerModel.showWindow(players, currentAction);
+                         Player player = editDeletePlayerModel.getPlayer();
+                         switch (editDeletePlayerModel.getButtonAction())
+                         {
+                             case ButtonAction.EDIT:
+                                 addEditPlayerModel.showWindow(currentAction, player);
+                                 break;
+                         }
+                     }
+                     editDeletePlayerModel.setToNothing();
+              */
         }
-
-        private void AddPlayerAction(ButtonAction buttonAction)
-        {
-            switch (buttonAction)
-            {
-                case ButtonAction.NONE:
-                    Debug.WriteLine("I don't do anything");
-                    break;
-                case ButtonAction.CLEAR:
-                    Debug.WriteLine("I clear things");
-                    break;
-                case ButtonAction.CONFIRM:
-                    Debug.WriteLine("I need to add a player");
-                    players.Add(addEditPlayerModel.getPlayer());
-                    break;
-                case ButtonAction.CLOSE:
-                    Debug.WriteLine("Window randomly closed");
-                    break;
-            }
-        }
+        
 
         private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
-            CurrentAction currentAction = CurrentAction.ADD;
-            addEditPlayerModel.showWindow(currentAction);
-            AddPlayerAction(addEditPlayerModel.getButtonAction());
+            CurrentAction regButtonClick = CurrentAction.ADD;
+            DisplayPlayerModal(regButtonClick);
+            
+            /*         CurrentAction currentAction = CurrentAction.ADD;
+                     addEditPlayerModel.showWindow(currentAction);
+                     AddPlayerAction(addEditPlayerModel.getButtonAction());
+              */
         }
 
         /// <summary>

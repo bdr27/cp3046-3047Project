@@ -24,7 +24,7 @@ namespace NerfWarsLeaderboard
             btnModalTeamEdit.Background = Brushes.LightCoral;
         }
 
-        public void updateCombo(List<Team> teams)
+        public void UpdateCombo(List<Team> teams)
         {
             cmbTeamName.Items.Clear();
             foreach (var team in teams)
@@ -33,7 +33,7 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        internal Team getTeam()
+        internal Team GetTeam()
         {
             return cmbTeamName.SelectedItem as Team;
         }
