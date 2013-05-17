@@ -20,12 +20,12 @@ namespace NerfWarsLeaderboard
             lblPlayerWindowTitle.Content = newLabel;
         }
 
-        private void btnClearPlayer_Click(object sender, RoutedEventArgs e)
+        private void BtnClearPlayer_Click(object sender, RoutedEventArgs e)
         {
-            clearText();
+            ClearText();
         }
 
-        public void clearText()
+        public void ClearText()
         {
             tbAge.Text = "";
             tbContact.Text = "";
@@ -35,32 +35,32 @@ namespace NerfWarsLeaderboard
             tbMedical.Text = "";
         }
 
-        internal string getFirstName()
+        internal string GetFirstName()
         {
             return tbFirstName.Text;
         }
 
-        internal string getLastName()
+        internal string GetLastName()
         {
             return tbLastName.Text;
         }
 
-        internal int getAge()
+        internal int GetAge()
         {
             return Int32.Parse(tbAge.Text);
         }
 
-        internal string getGuardian()
+        internal string GetGuardian()
         {
             return tbGuardian.Text;
         }
 
-        internal string getContact()
+        internal string GetContact()
         {
             return tbContact.Text;
         }
 
-        internal string getMedicalConditions()
+        internal string GetMedicalConditions()
         {
             return tbMedical.Text;
         }
@@ -75,13 +75,13 @@ namespace NerfWarsLeaderboard
             lblPlayerWindowTitle.Content = "Edit Player";
         }
 
-        internal void loadText(Player player)
+        internal void LoadText(Player player)
         {
-            tbFirstName.Text = player.getFirstName();
-            tbLastName.Text = player.getLastName();
-            tbAge.Text = player.getAge() + "";
-            tbContact.Text = player.getContact();
-            tbGuardian.Text = player.getGuardian();
+            tbFirstName.Text = player.GetFirstName();
+            tbLastName.Text = player.GetLastName();
+            tbAge.Text = player.GetAge() + "";
+            tbContact.Text = player.GetContact();
+            tbGuardian.Text = player.GetGuardian();
         }
     }
 }

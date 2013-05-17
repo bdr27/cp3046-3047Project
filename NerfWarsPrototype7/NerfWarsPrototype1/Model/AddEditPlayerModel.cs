@@ -29,11 +29,11 @@ namespace NerfWarsLeaderboard.Model
             {
                 case CurrentAction.ADD:
                     playerAdd.TitleChangeToAdd();
-                    playerAdd.clearText();
+                    playerAdd.ClearText();
                     break;
                 case CurrentAction.EDIT:
                     playerAdd.TitleChangeToEdit();
-                    playerAdd.loadText(player);
+                    playerAdd.LoadText(player);
                     break;
             }            
             playerAdd.ShowDialog();
@@ -50,7 +50,7 @@ namespace NerfWarsLeaderboard.Model
             bool validName = false;
             try
             {
-                this.player = new Player(playerAdd.getFirstName(), playerAdd.getLastName(), playerAdd.getAge(), playerAdd.getGuardian(), playerAdd.getContact(), playerAdd.getMedicalConditions());
+                this.player = new Player(playerAdd.GetFirstName(), playerAdd.GetLastName(), playerAdd.GetAge(), playerAdd.GetGuardian(), playerAdd.GetContact(), playerAdd.GetMedicalConditions());
                 validName = true;
             }
             catch(Exception ex)
@@ -89,7 +89,7 @@ namespace NerfWarsLeaderboard.Model
             {
                 case CurrentAction.ADD:
                     playerAdd.TitleChangeToAdd();
-                    playerAdd.clearText();
+                    playerAdd.ClearText();
                     break;
             }
             playerAdd.ShowDialog();

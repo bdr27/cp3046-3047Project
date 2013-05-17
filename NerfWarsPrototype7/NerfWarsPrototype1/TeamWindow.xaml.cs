@@ -31,11 +31,11 @@ namespace NerfWarsLeaderboard
         internal void ShowDetails(Team team)
         {
             dataGridPlayerNames.Items.Clear();
-            tbCreateTeamName.Text = team.getTeamName();
-            if (team.getPlayerFirstName().Count > 0)
+            tbCreateTeamName.Text = team.GetTeamName();
+            if (team.GetPlayerFirstName().Count > 0)
             {
-                tbCreateTeamContact.Text = team.getPlayerFirstName()[0];
-                foreach (var player in team.getPlayerFirstName())
+                tbCreateTeamContact.Text = team.GetPlayerFirstName()[0];
+                foreach (var player in team.GetPlayerFirstName())
                 {
                     dataGridPlayerNames.Items.Add(player);
                 }
@@ -43,7 +43,7 @@ namespace NerfWarsLeaderboard
             
         }
 
-        internal string getTeamName()
+        internal string GetTeamName()
         {
             return tbCreateTeamName.Text;
         }

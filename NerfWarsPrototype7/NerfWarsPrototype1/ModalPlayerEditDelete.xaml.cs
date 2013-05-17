@@ -22,13 +22,13 @@ namespace NerfWarsLeaderboard
             btnPlayerModalEdit.Content = newButtonContent;
             btnPlayerModalEdit.Background = Brushes.LightCoral;
         }
-        public void setEdit()
+        public void SetEdit()
         {
             tblSearchAPlayer.Text = "Search for a player to edit";
             btnPlayerModalEdit.Content = "Edit";
         }
 
-        public void setDelete()
+        public void SetDelete()
         {
             tblSearchAPlayer.Text = "Search for a player to delete";
             btnPlayerModalEdit.Content = "Delete";
@@ -47,7 +47,7 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        internal Player getPlayer()
+        internal Player GetPlayer()
         {
             return cmbPlayerNames.SelectedItem as Player;
         }

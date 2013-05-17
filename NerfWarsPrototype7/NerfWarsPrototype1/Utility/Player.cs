@@ -26,62 +26,62 @@ namespace NerfWarsLeaderboard.Utility
            this.medicalConditions = medicalConditions;
        }
 
-        public void setFirstName(string firstname)
+        public void SetFirstName(string firstname)
         {
             this.firstName = firstname;
         }
 
-        public string getFirstName()
+        public string GetFirstName()
         {
             return firstName;
         }
 
-        public void setLastname(string lastName)
+        public void SetLastname(string lastName)
         {
             this.lastName = lastName;
         }
 
-        public string getLastName()
+        public string GetLastName()
         {
             return lastName;
         }
 
-        public void setAge(int age)
+        public void SetAge(int age)
         {
             this.age = age;
         }
 
-        public int getAge()
+        public int GetAge()
         {
             return age;
         }
 
-        public void setGuardian(string guardian)
+        public void SetGuardian(string guardian)
         {
             this.guardian = guardian;
         }
 
-        public string getGuardian()
+        public string GetGuardian()
         {
             return guardian;
         }
 
-        public void setContact(string contact)
+        public void SetContact(string contact)
         {
             this.contact = contact;
         }
 
-        public string getContact()
+        public string GetContact()
         {
             return contact;
         }
 
-        public void setMedicalConditions(string medicalConditions)
+        public void SetMedicalConditions(string medicalConditions)
         {
             this.medicalConditions = medicalConditions;
         }
 
-        public string getMedicalConditions()
+        public string GetMedicalConditions()
         {
             return medicalConditions;
         }
@@ -96,14 +96,14 @@ namespace NerfWarsLeaderboard.Utility
                     other = obj as Player;
                     if (other != null)
                     {
-                        if (firstName.Equals(other.getFirstName()) && lastName.Equals(other.getLastName()) && age == other.getAge() && guardian.Equals(other.getGuardian()) && contact.Equals(other.getContact()) && medicalConditions.Equals(other.getMedicalConditions()))
+                        if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
                         {
                             return true;
                         }
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //Wrong object entered
             }

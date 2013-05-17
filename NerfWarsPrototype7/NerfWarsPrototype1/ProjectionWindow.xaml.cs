@@ -28,48 +28,48 @@ namespace NerfWarsLeaderboard
         public void UpdateGameDetails(Game game)
         {
             this.game = game;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAScore), lblTeamAScoreProjector);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBScore), lblTeamBScoreProjector);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamATag), lblTeamATagCount);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAFlag), lblTeamAFlagCount);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBTag), lblTeamBTagCount);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBFlag), lblTeamBFlagCount);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTimer), lblTimeProjector);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAScore), lblTeamAScoreProjector);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBScore), lblTeamBScoreProjector);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamATag), lblTeamATagCount);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAFlag), lblTeamAFlagCount);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBTag), lblTeamBTagCount);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBFlag), lblTeamBFlagCount);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTimer), lblTimeProjector);
         }
 
-        public void loadTeams(Team teamA, Team teamB)
+        public void LoadTeams(Team teamA, Team teamB)
         {
             this.teamA = teamA;
             this.teamB = teamB;
             teamACount = 0;
             teamBCount = 0;
-            teamAName = teamA.getPlayerFirstName();
-            teamBName = teamB.getPlayerFirstName();
+            teamAName = teamA.GetPlayerFirstName();
+            teamBName = teamB.GetPlayerFirstName();
 
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAName), lblTeamAProjector);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBName), lblTeamBProjector);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAplayername), lblTeamAPlayer1);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAName), lblTeamAProjector);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBName), lblTeamBProjector);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAplayername), lblTeamAPlayer1);
             teamACount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAplayername), lblTeamAPlayer2);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAplayername), lblTeamAPlayer2);
             teamACount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAplayername), lblTeamAPlayer3);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAplayername), lblTeamAPlayer3);
             teamACount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAplayername), lblTeamAPlayer4);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAplayername), lblTeamAPlayer4);
             teamACount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAplayername), lblTeamAPlayer5);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAplayername), lblTeamAPlayer5);
 
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBplayername), lblTeamBPlayer1);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBplayername), lblTeamBPlayer1);
             teamBCount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBplayername), lblTeamBPlayer2);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBplayername), lblTeamBPlayer2);
             teamBCount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBplayername), lblTeamBPlayer3);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBplayername), lblTeamBPlayer3);
             teamBCount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBplayername), lblTeamBPlayer4);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBplayername), lblTeamBPlayer4);
             teamBCount++;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBplayername), lblTeamBPlayer5);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBplayername), lblTeamBPlayer5);
         }
 
-        private void setTeamBplayername(Label label)
+        private void SetTeamBplayername(Label label)
         {
             if (teamBName.Count > teamBCount)
             {
@@ -81,7 +81,7 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        private void setTeamAplayername(Label label)
+        private void SetTeamAplayername(Label label)
         {
             if (teamAName.Count > teamACount)
             {
@@ -93,20 +93,20 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        private void setTeamAName(Label label)
+        private void SetTeamAName(Label label)
         {
-            label.Content = teamA.getTeamName();
+            label.Content = teamA.GetTeamName();
         }
 
-        private void setTeamBName(Label label)
+        private void SetTeamBName(Label label)
         {
-            label.Content = teamB.getTeamName();
+            label.Content = teamB.GetTeamName();
         }
 
-        private void setTimer(Label label)
+        private void SetTimer(Label label)
         {
-            string time = game.getMin() + ":";
-            int min = game.getSec();
+            string time = game.GetMin() + ":";
+            int min = game.GetSec();
             if (min < 10)
             {
                 time = time + "0" + min;
@@ -118,34 +118,34 @@ namespace NerfWarsLeaderboard
             label.Content = time;
         }
 
-        private void setTeamBFlag(Label label)
+        private void SetTeamBFlag(Label label)
         {
-            label.Content = "Flag: " + game.getTeamBFlag();
+            label.Content = "Flag: " + game.GetTeamBFlag();
         }
 
-        private void setTeamBTag(Label label)
+        private void SetTeamBTag(Label label)
         {
-            label.Content = "Tag: " + game.getTeamBTag();
+            label.Content = "Tag: " + game.GetTeamBTag();
         }
 
-        private void setTeamAFlag(Label label)
+        private void SetTeamAFlag(Label label)
         {
-            label.Content = "Flag: " + game.getTeamAFlag();
+            label.Content = "Flag: " + game.GetTeamAFlag();
         }
 
-        private void setTeamATag(Label label)
+        private void SetTeamATag(Label label)
         {
-            label.Content = "Tag: " + game.getTeamATag();
+            label.Content = "Tag: " + game.GetTeamATag();
         }
 
-        private void setTeamBScore(Label label)
+        private void SetTeamBScore(Label label)
         {
-            label.Content = "" + game.getTeamBScore();
+            label.Content = "" + game.GetTeamBScore();
         }
 
-        private void setTeamAScore(Label label)
+        private void SetTeamAScore(Label label)
         {
-            label.Content = "" + game.getTeamAScore();
+            label.Content = "" + game.GetTeamAScore();
         }
     }
 }

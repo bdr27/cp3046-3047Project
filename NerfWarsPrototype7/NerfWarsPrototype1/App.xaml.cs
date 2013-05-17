@@ -50,31 +50,31 @@ namespace NerfWarsLeaderboard
             //Loads the teams to the combo box
             //TODO should probably be done when the tab is pressed.
 
-            load();
+            Load();
         }
 
-        private void load()
+        private void Load()
         {
-            loadData();
+            LoadData();
             //Wires up the live match button handlers
-            wireHandlers();
-            loadModels();
+            WireHandlers();
+            LoadModels();
             //Sets up the game timer.
-            setupGameTime();
+            SetupGameTime();
 
-            loadTeamComboBoxes(mainWindow.playGame, teams);
+            LoadTeamComboBoxes(mainWindow.playGame, teams);
         }
 
         /// <summary>
         /// Loads various data
         /// </summary>
-        private void loadData()
+        private void LoadData()
         {
-            players = dbHandler.loadPlayers();
-            teams = dbHandler.loadTeams();
+            players = dbHandler.LoadPlayers();
+            teams = dbHandler.LoadTeams();
         }
 
-        private void loadModels()
+        private void LoadModels()
         {
             addEditPlayerModel = new AddEditPlayerModel(mainWindow);
             editDeletePlayerModel = new SelectPlayerModel(mainWindow);
@@ -82,10 +82,10 @@ namespace NerfWarsLeaderboard
             selectTeamModel = new SelectTeamModel(mainWindow);
         }
 
-        private void wireHandlers()
+        private void WireHandlers()
         {
-            wireLiveMatchButtons(mainWindow.playGame);
-            wierRegistrationButtons(mainWindow.regMenu);
+            WireLiveMatchButtons(mainWindow.playGame);
+            WireRegistrationButtons(mainWindow.regMenu);
         }
 
         /// <summary>
@@ -93,22 +93,22 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="liveMatchTab"></param>
         /// <param name="teams"></param>
-        private void loadTeamComboBoxes(LiveMatchTab liveMatchTab, List<Team> teams)
+        private void LoadTeamComboBoxes(LiveMatchTab liveMatchTab, List<Team> teams)
         {
             liveMatchTab.ClearTeamComboBox();
-            liveMatchTab.loadTeamSelectComboBox(teams);
+            liveMatchTab.LoadTeamSelectComboBox(teams);
         }
 
-        private void wierRegistrationButtons(RegistrationTab regTab)
+        private void WireRegistrationButtons(RegistrationTab regTab)
         {
-            regTab.btnAddPlayer.Click += btnAddPlayer_Click;
-            regTab.btnEditPlayer.Click += btnEditPlayer_Click;
-            regTab.btnDeletePlayer.Click += btnDeletePlayer_Click;
-            regTab.btnAddTeam.Click += btnAddTeam_Click;
-            regTab.btnDeleteTeam.Click += btnDeleteTeam_Click;
+            regTab.btnAddPlayer.Click += BtnAddPlayer_Click;
+            regTab.btnEditPlayer.Click += BtnEditPlayer_Click;
+            regTab.btnDeletePlayer.Click += BtnDeletePlayer_Click;
+            regTab.btnAddTeam.Click += BtnAddTeam_Click;
+            regTab.btnDeleteTeam.Click += BtnDeleteTeam_Click;
         }
 
-        void btnDeleteTeam_Click(object sender, RoutedEventArgs e)
+        void BtnDeleteTeam_Click(object sender, RoutedEventArgs e)
         {
             while (!selectTeamModel.getButtonAction().Equals(ButtonAction.CLEAR))
             {
@@ -120,7 +120,7 @@ namespace NerfWarsLeaderboard
             selectTeamModel.setToNothing();
         }
 
-        private void btnAddTeam_Click(object sender, RoutedEventArgs e)
+        private void BtnAddTeam_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction currentAction = CurrentAction.ADD;
             addEditTeamModel.showWindow(currentAction);
@@ -150,7 +150,7 @@ namespace NerfWarsLeaderboard
                 }
             }
             addEditTeamModel.setToNothing();
-            loadTeamComboBoxes(mainWindow.playGame, teams);
+            LoadTeamComboBoxes(mainWindow.playGame, teams);
         }
 
         /// <summary>
@@ -158,7 +158,7 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnDeletePlayer_Click(object sender, RoutedEventArgs e)
+        private void BtnDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction currentAction = CurrentAction.DELETE;
             while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
@@ -180,7 +180,7 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        void btnEditPlayer_Click(object sender, RoutedEventArgs e)
+        void BtnEditPlayer_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction currentAction = CurrentAction.EDIT;
             while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
@@ -197,7 +197,7 @@ namespace NerfWarsLeaderboard
             editDeletePlayerModel.setToNothing();
         }
 
-        private void addPlayerAction(ButtonAction buttonAction)
+        private void AddPlayerAction(ButtonAction buttonAction)
         {
             switch (buttonAction)
             {
@@ -217,29 +217,29 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        private void btnAddPlayer_Click(object sender, RoutedEventArgs e)
+        private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction currentAction = CurrentAction.ADD;
             addEditPlayerModel.showWindow(currentAction);
-            addPlayerAction(addEditPlayerModel.getButtonAction());
+            AddPlayerAction(addEditPlayerModel.getButtonAction());
         }
 
         /// <summary>
         /// Wires up the buttons for the live match
         /// </summary>
         /// <param name="liveMatchTab"></param>
-        private void wireLiveMatchButtons(LiveMatchTab liveMatchTab)
+        private void WireLiveMatchButtons(LiveMatchTab liveMatchTab)
         {
-            liveMatchTab.btnStartPause.Click += btnStartPause_Click;
-            liveMatchTab.btnFlagPlusA.Click += btnFlagPlusA_Click;
-            liveMatchTab.btnFlagPlusB.Click += btnFlagPlusB_Click;
-            liveMatchTab.btnFlagMinusA.Click += btnFlagMinusA_Click;
+            liveMatchTab.btnStartPause.Click += BtnStartPause_Click;
+            liveMatchTab.btnFlagPlusA.Click += BtnFlagPlusA_Click;
+            liveMatchTab.btnFlagPlusB.Click += BtnFlagPlusB_Click;
+            liveMatchTab.btnFlagMinusA.Click += BtnFlagMinusA_Click;
             liveMatchTab.btnFlagMinusB.Click += btnFlagMinusB_Click;
-            liveMatchTab.btnTagMinusA.Click += btnTagMinusA_Click;
-            liveMatchTab.btnTagMinusB.Click += btnTagMinusB_Click;
-            liveMatchTab.btnTagPlusA.Click += btnTagPlusA_Click;
-            liveMatchTab.btnTagPlusB.Click += btnTagPlusB_Click;
-            liveMatchTab.btnReset.Click += btnReset_Click;
+            liveMatchTab.btnTagMinusA.Click += BtnTagMinusA_Click;
+            liveMatchTab.btnTagMinusB.Click += BtnTagMinusB_Click;
+            liveMatchTab.btnTagPlusA.Click += BtnTagPlusA_Click;
+            liveMatchTab.btnTagPlusB.Click += BtnTagPlusB_Click;
+            liveMatchTab.btnReset.Click += BtnReset_Click;
         }
 
         /// <summary>
@@ -247,58 +247,58 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnReset_Click(object sender, RoutedEventArgs e)
+        private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
-            resetMatch();
+            ResetMatch();
         }
 
-        private void btnTagPlusB_Click(object sender, RoutedEventArgs e)
+        private void BtnTagPlusB_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamBaddTag();
-                setGameScoreLabels();
+                game.TeamBaddTag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnTagPlusA_Click(object sender, RoutedEventArgs e)
+        private void BtnTagPlusA_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamAaddTag();
-                setGameScoreLabels();
+                game.TeamAaddTag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnTagMinusB_Click(object sender, RoutedEventArgs e)
+        private void BtnTagMinusB_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamBMinusTag();
-                setGameScoreLabels();
+                game.TeamBMinusTag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnTagMinusA_Click(object sender, RoutedEventArgs e)
+        private void BtnTagMinusA_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamAMinusTag();
-                setGameScoreLabels();
+                game.TeamAMinusTag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnFlagMinusA_Click(object sender, RoutedEventArgs e)
+        private void BtnFlagMinusA_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamAMinusFlag();
-                setGameScoreLabels();
+                game.TeamAMinusFlag();
+                SetGameScoreLabels();
             }
         }
 
@@ -307,28 +307,28 @@ namespace NerfWarsLeaderboard
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamBMinusFlag();
-                setGameScoreLabels();
+                game.TeamBMinusFlag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnFlagPlusB_Click(object sender, RoutedEventArgs e)
+        private void BtnFlagPlusB_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamBaddFlag();
-                setGameScoreLabels();
+                game.TeamBaddFlag();
+                SetGameScoreLabels();
             }
         }
 
-        private void btnFlagPlusA_Click(object sender, RoutedEventArgs e)
+        private void BtnFlagPlusA_Click(object sender, RoutedEventArgs e)
         {
             //Can't edit scores while waiting for match
             if (!gameState.Equals(GameState.WAITING))
             {
-                game.teamAaddFlag();
-                setGameScoreLabels();
+                game.TeamAaddFlag();
+                SetGameScoreLabels();
             }
         }
 
@@ -338,76 +338,76 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnStartPause_Click(object sender, RoutedEventArgs e)
+        private void BtnStartPause_Click(object sender, RoutedEventArgs e)
         {
             switch (gameState)
             {
                 case GameState.WAITING:
-                    createNewMatch();
+                    CreateNewMatch();
                     break;
                 case GameState.IN_GAME:
-                    pauseMatch();
+                    PauseMatch();
                     break;
                 case GameState.PAUSE:
-                    resumeMatch();
+                    ResumeMatch();
                     break;
             }
         }
 
-        private void resumeMatch()
+        private void ResumeMatch()
         {
             gameState = GameState.IN_GAME;
-            changeStartPauseButton();
-            disableReset();
+            ChangeStartPauseButton();
+            DisableReset();
             gameTimer.Start();
         }
 
-        private void pauseMatch()
+        private void PauseMatch()
         {
             gameState = GameState.PAUSE;
-            changeStartPauseButton();
+            ChangeStartPauseButton();
             gameTimer.Stop();
             enableReset();
         }
 
-        private void disableReset()
+        private void DisableReset()
         {
             var liveMatch = mainWindow.playGame;
-            liveMatch.disableBtnReset();
+            liveMatch.DisableBtnReset();
         }
 
         private void enableReset()
         {
             var liveMatch = mainWindow.playGame;
-            liveMatch.enableBtnReset();
+            liveMatch.EnableBtnReset();
         }
 
-        private void finishedMatch()
+        private void FinishedMatch()
         {
             //Game is over
             gameState = GameState.GAME_OVER;
             enableReset();
             gameTimer.Stop();
-            changeStartPauseButton();
+            ChangeStartPauseButton();
         }
 
-        private void resetMatch()
+        private void ResetMatch()
         {
             //Changes values in the labels
             gameState = GameState.WAITING;
-            changeStartPauseButton();
-            game.reset(DEFAULT_MIN, DEFAULT_SEC);
-            enableTeamComboBoxes();
-            setTimerLabels();
-            setGameScoreLabels();
-            disableReset();
+            ChangeStartPauseButton();
+            game.Reset(DEFAULT_MIN, DEFAULT_SEC);
+            EnableTeamComboBoxes();
+            SetTimerLabels();
+            SetGameScoreLabels();
+            DisableReset();
         }
 
-        private void createNewMatch()
+        private void CreateNewMatch()
         {
             //TODO clean up this code
-            Team teamA = mainWindow.playGame.getTeamA();
-            Team teamB = mainWindow.playGame.getTeamB();
+            Team teamA = mainWindow.playGame.GetTeamA();
+            Team teamB = mainWindow.playGame.GetTeamB();
 
             //Returns if either team is null or teams are the same
             if (teamA == null || teamB == null || teamA.Equals(teamB))
@@ -416,14 +416,14 @@ namespace NerfWarsLeaderboard
             }
             else
             {
-                projectorWindow.loadTeams(teamA, teamB);
+                projectorWindow.LoadTeams(teamA, teamB);
                 gameState = GameState.IN_GAME;
-                disableTeamComboBoxes();
-                disableReset();
-                changeStartPauseButton();
-                loadTeams(teamA, teamB);
-                game.setMin(loadGameMin());
-                game.setSec(loadGameSec());
+                DisableTeamComboBoxes();
+                DisableReset();
+                ChangeStartPauseButton();
+                LoadTeams(teamA, teamB);
+                game.SetMin(LoadGameMin());
+                game.SetSec(LoadGameSec());
                 gameTimer.Start();
             }
         }
@@ -431,162 +431,162 @@ namespace NerfWarsLeaderboard
         /// <summary>
         /// Disable the team combo boxes
         /// </summary>
-        private void disableTeamComboBoxes()
+        private void DisableTeamComboBoxes()
         {
             var liveMatchTab = mainWindow.playGame;
-            liveMatchTab.disableTeamComboBoxes();
+            liveMatchTab.DisableTeamComboBoxes();
         }
 
-        private void enableTeamComboBoxes()
+        private void EnableTeamComboBoxes()
         {
             var liveMatchTab = mainWindow.playGame;
-            liveMatchTab.enableTeamComboBoxes();
+            liveMatchTab.EnableTeamComboBoxes();
         }
 
         /// <summary>
         /// Sets up the game timer.
         /// </summary>
-        private void setupGameTime()
+        private void SetupGameTime()
         {
             gameTimer = new Timer();
             gameTimer.Interval = GAME_TIMER_INTERVAL;
-            gameTimer.Elapsed += gameTimer_Elapsed;
+            gameTimer.Elapsed += GameTimer_Elapsed;
         }
 
         /// <summary>
         /// Change the value of the StartPause button based on what state the game currently is in. Should probably use a state machine
         /// </summary>
-        private void changeStartPauseButton()
+        private void ChangeStartPauseButton()
         {
             var btnStartPause = mainWindow.playGame.btnStartPause;
             switch (gameState)
             {
                 case GameState.IN_GAME:
-                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(setStartPauseToPause), btnStartPause);
+                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(SetStartPauseToPause), btnStartPause);
                     break;
                 case GameState.GAME_OVER:
-                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(setStartPauseToGameOver), btnStartPause);
+                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(SetStartPauseToGameOver), btnStartPause);
                     break;
                 case GameState.PAUSE:
                 case GameState.WAITING:
-                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(setStartPauseToStart), btnStartPause);
+                    Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(SetStartPauseToStart), btnStartPause);
                     break;
             }
         }
 
         //TODO move all these to the gui
-        private void setStartPauseToGameOver(Button btnStartPause)
+        private void SetStartPauseToGameOver(Button btnStartPause)
         {
             btnStartPause.IsEnabled = false;
             btnStartPause.Content = "GAME OVER";
         }
 
-        private void setStartPauseToStart(Button btnStartPause)
+        private void SetStartPauseToStart(Button btnStartPause)
         {
             btnStartPause.Content = "Start";
             btnStartPause.IsEnabled = true;
         }
 
-        private void setStartPauseToPause(Button btnStartPause)
+        private void SetStartPauseToPause(Button btnStartPause)
         {
             btnStartPause.Content = "Pause";
             btnStartPause.IsEnabled = true;
         }
 
-        private void gameTimer_Elapsed(object sender, ElapsedEventArgs e)
+        private void GameTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
 
             //Checks if game is over
             if (game.CountDown())
             {
-                finishedMatch();
+                FinishedMatch();
             }
             //Changes values in the labels
-            setTimerLabels();
-            setGameScoreLabels();
+            SetTimerLabels();
+            SetGameScoreLabels();
         }
 
         /// <summary>
         /// Sets the scores label for each Team A and Team B based on what the current score for each team is for the game
         /// </summary>
-        private void setGameScoreLabels()
+        private void SetGameScoreLabels()
         {
             var playGame = mainWindow.playGame;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamAScore), playGame.lblScoreA);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBScore), playGame.lblScoreB);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamATag), playGame.lblTagA);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBTag), playGame.lblTagB);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamACap), playGame.lblFlagA);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBCap), playGame.lblFlagB);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAScore), playGame.lblScoreA);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBScore), playGame.lblScoreB);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamATag), playGame.lblTagA);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBTag), playGame.lblTagB);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamACap), playGame.lblFlagA);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBCap), playGame.lblFlagB);
             projectorWindow.UpdateGameDetails(game);
         }
 
-        private void setTeamATag(Label lblTagA)
+        private void SetTeamATag(Label lblTagA)
         {
-            lblTagA.Content = "Tag: " + game.getTeamATag();
+            lblTagA.Content = "Tag: " + game.GetTeamATag();
         }
 
-        private void setTeamBTag(Label lblTagB)
+        private void SetTeamBTag(Label lblTagB)
         {
-            lblTagB.Content = "Tag: " + game.getTeamBTag();
+            lblTagB.Content = "Tag: " + game.GetTeamBTag();
         }
 
-        private void setTeamACap(Label lblFlagA)
+        private void SetTeamACap(Label lblFlagA)
         {
-            lblFlagA.Content = "Flag: " + game.getTeamAFlag();
+            lblFlagA.Content = "Flag: " + game.GetTeamAFlag();
         }
 
-        private void setTeamBCap(Label lblFlagB)
+        private void SetTeamBCap(Label lblFlagB)
         {
-            lblFlagB.Content = "Flag: " + game.getTeamBFlag();
+            lblFlagB.Content = "Flag: " + game.GetTeamBFlag();
         }
 
-        private void setTeamAScore(Label lblScoreA)
+        private void SetTeamAScore(Label lblScoreA)
         {
-            lblScoreA.Content = "Score: " + game.getTeamAScore();
+            lblScoreA.Content = "Score: " + game.GetTeamAScore();
         }
 
-        private void setTeamBScore(Label lblScoreB)
+        private void SetTeamBScore(Label lblScoreB)
         {
-            lblScoreB.Content = "Score: " + game.getTeamBScore();
+            lblScoreB.Content = "Score: " + game.GetTeamBScore();
         }
 
         /// <summary>
         /// Sets the minute and second label again based on what is in the game class.
         /// </summary>
-        private void setTimerLabels()
+        private void SetTimerLabels()
         {
             var playGame = mainWindow.playGame;
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBox>(setTextBlockMinute), playGame.TbMinutes);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBox>(setTextBlockSeconds), playGame.TbSeconds);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBox>(SetTextBlockMinute), playGame.TbMinutes);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<TextBox>(SetTextBlockSeconds), playGame.TbSeconds);
         }
 
-        private void setTextBlockSeconds(TextBox tbSeconds)
+        private void SetTextBlockSeconds(TextBox tbSeconds)
         {
-            tbSeconds.Text = "" + game.getSec();
+            tbSeconds.Text = "" + game.GetSec();
         }
 
-        private void setTextBlockMinute(TextBox tbMinutes)
+        private void SetTextBlockMinute(TextBox tbMinutes)
         {
-            tbMinutes.Text = "" + game.getMin();
+            tbMinutes.Text = "" + game.GetMin();
         }
 
         /// <summary>
         /// Returns the value of the minute TextBox so the game can have many different times
         /// </summary>
         /// <returns>Return an int for how long the game will be in minutes</returns>
-        private int loadGameMin()
+        private int LoadGameMin()
         {
-            return mainWindow.playGame.getMin();
+            return mainWindow.playGame.GetMin();
         }
 
         /// <summary>
         /// Returns the value of the seconds TextBox so the game can have many different times
         /// </summary>
         /// <returns>Return an int for how many seconds there are to start</returns>
-        private int loadGameSec()
+        private int LoadGameSec()
         {
-            return mainWindow.playGame.getSec();
+            return mainWindow.playGame.GetSec();
         }
 
         /// <summary>
@@ -594,10 +594,10 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="teamA"></param>
         /// <param name="teamB"></param>
-        private void loadTeams(Team teamA, Team teamB)
+        private void LoadTeams(Team teamA, Team teamB)
         {
-            game.loadTeamA(teamA);
-            game.loadTeamB(teamB);
+            game.LoadTeamA(teamA);
+            game.LoadTeamB(teamB);
             Debug.WriteLine(teamA);
             Debug.WriteLine(teamB);
         }

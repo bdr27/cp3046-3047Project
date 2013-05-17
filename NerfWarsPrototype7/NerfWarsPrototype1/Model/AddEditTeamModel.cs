@@ -38,7 +38,7 @@ namespace NerfWarsLeaderboard.Model
         private void btnTeamCreateNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             buttonAction = ButtonAction.CREATE;
-            team.SetTeamName(playerTeam.getTeamName());
+            team.SetTeamName(playerTeam.GetTeamName());
             playerTeam.Hide();
         }
 

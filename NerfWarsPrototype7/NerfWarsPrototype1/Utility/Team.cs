@@ -34,17 +34,17 @@ namespace NerfWarsLeaderboard.Utility
             this.players = player;
         }
 
-        public string getTeamName()
+        public string GetTeamName()
         {
             return teamName;
         }
 
-        public List<string> getPlayerFirstName()
+        public List<string> GetPlayerFirstName()
         {
             List<string> playerNames = new List<string>();
             foreach (var player in players)
             {
-                playerNames.Add(player.getFirstName());
+                playerNames.Add(player.GetFirstName());
             }
             return playerNames;
         }

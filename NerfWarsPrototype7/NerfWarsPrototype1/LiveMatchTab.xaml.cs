@@ -16,27 +16,27 @@ namespace NerfWarsLeaderboard
             InitializeComponent();
         }
 
-        public Team getTeamA()
+        public Team GetTeamA()
         {
             return cmbTeamA.SelectedItem as Team;
         }
 
-        public Team getTeamB()
+        public Team GetTeamB()
         {
             return cmbTeamB.SelectedItem as Team;
         }
 
-        public int getMin()
+        public int GetMin()
         {
             return Int32.Parse(TbMinutes.Text);
         }
 
-        public int getSec()
+        public int GetSec()
         {
             return Int32.Parse(TbSeconds.Text);
         }
 
-        public void loadTeamSelectComboBox(List<Team> teams)
+        public void LoadTeamSelectComboBox(List<Team> teams)
         {
             foreach (var team in teams)
             {
@@ -45,44 +45,44 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        public void disableTeamComboBoxes()
+        public void DisableTeamComboBoxes()
         {
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(disableComboBox), cmbTeamA);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(disableComboBox), cmbTeamB);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(DisableComboBox), cmbTeamA);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(DisableComboBox), cmbTeamB);
         }
 
-        private void disableComboBox(ComboBox comboBox)
+        private void DisableComboBox(ComboBox comboBox)
         {
             comboBox.IsEnabled = false;
         }
 
-        public void enableTeamComboBoxes()
+        public void EnableTeamComboBoxes()
         {
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(enableComboBox), cmbTeamA);
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(enableComboBox), cmbTeamB);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(EnableComboBox), cmbTeamA);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<ComboBox>(EnableComboBox), cmbTeamB);
         }
 
-        private void enableComboBox(ComboBox comboBox)
+        private void EnableComboBox(ComboBox comboBox)
         {
             comboBox.IsEnabled = true;
         }
 
-        public void enableBtnReset()
+        public void EnableBtnReset()
         {
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(enableButton), btnReset);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(EnableButton), btnReset);
         }
 
-        public void disableBtnReset()
+        public void DisableBtnReset()
         {
-            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(disableButton), btnReset);
+            Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Button>(DisableButton), btnReset);
         }
 
-        private void disableButton(Button button)
+        private void DisableButton(Button button)
         {
             button.IsEnabled = false;
         }
 
-        private void enableButton(Button button)
+        private void EnableButton(Button button)
         {
             button.IsEnabled = true;
         }

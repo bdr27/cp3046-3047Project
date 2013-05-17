@@ -23,81 +23,81 @@ namespace NerfWarsLeaderboard.Utility
             tag = 0;
         }
 
-        public int getCapScore()
+        public int GetCapScore()
         {
             return FLAG_SCORE;
         }
 
-        public int getTagScore()
+        public int GetTagScore()
         {
             return FLAG_SCORE;
         }
 
-        public List<string> getPlayerNames()
+        public List<string> GetPlayerNames()
         {
             return playerNames;
         }
 
-        public string getTeamName()
+        public string GetTeamName()
         {
             return teamName;
         }
 
-        public int getFlag()
+        public int GetFlag()
         {
             return flag;
         }
 
-        public int getTag()
+        public int GetTag()
         {
             return tag;
         }
 
-        public int getScore()
+        public int GetScore()
         {
             return score;
         }
 
-        public void addFlag()
+        public void AddFlag()
         {
             flag++;
-            updateScore();
+            UpdateScore();
         }
 
-        public void addTag()
+        public void AddTag()
         {
             tag++;
-            updateScore();
+            UpdateScore();
         }
 
-        public void minusFlag()
+        public void MinusFlag()
         {
             if (flag > 0)
             {
                 flag--;
-                updateScore();
+                UpdateScore();
             }            
         }
 
-        public void minusTag()
+        public void MinusTag()
         {
             if (tag > 0)
             {
                 tag--;
-                updateScore();
+                UpdateScore();
             }            
         }
 
-        private void updateScore()
+        private void UpdateScore()
         {
             score = tag * TAG_SCORE + flag * FLAG_SCORE;
         }
 
-        internal void resetScore()
+        internal void ResetScore()
         {
             tag = 0;
             flag = 0;
-            updateScore();
+            UpdateScore();
         }
     }
 }

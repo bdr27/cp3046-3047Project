@@ -57,10 +57,10 @@ namespace NerfWarsLeaderboard.Model
             {
                 case CurrentAction.EDIT:
                     buttonAction = ButtonAction.NONE;
-                    playerEdit.setEdit();
+                    playerEdit.SetEdit();
                     break;
                 case CurrentAction.DELETE:
-                    playerEdit.setDelete();
+                    playerEdit.SetDelete();
                     break;
             }
             
@@ -71,7 +71,7 @@ namespace NerfWarsLeaderboard.Model
 
         internal Player getPlayer()
         {
-            return playerEdit.getPlayer();
+            return playerEdit.GetPlayer();
         }
 
         public List<Player> getPlayers()

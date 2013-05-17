@@ -39,7 +39,7 @@ namespace NerfWarsLeaderboard.Model
         private void btnModalTeamEdit_Click(object sender, RoutedEventArgs e)
         {
             buttonAction = ButtonAction.EDIT;
-            teamRemove = playerEdit.getTeam();
+            teamRemove = playerEdit.GetTeam();
             playerEdit.Hide();
         }
 
@@ -55,7 +55,7 @@ namespace NerfWarsLeaderboard.Model
 
         internal void show()
         {
-            playerEdit.updateCombo(teams);
+            playerEdit.UpdateCombo(teams);
             playerEdit.ShowDialog();
         }
 

@@ -9,7 +9,7 @@ namespace NerfWarsLeaderboard.Utility
         private List<Player> players;
         private List<Team> teams;
 
-        public List<Player> loadPlayers()
+        public List<Player> LoadPlayers()
         {
             players = new List<Player>();
             players.Add(new Player("John", "Smith", 5, "Allow Smith", "444", "Sick"));
@@ -19,51 +19,51 @@ namespace NerfWarsLeaderboard.Utility
             return players;
         }
 
-        public void savePlayers(List<Player> players)
+        public void SavePlayers(List<Player> players)
         {
             throw new NotImplementedException();
         }
 
-        public void saveTeams(List<Team> teams)
+        public void SaveTeams(List<Team> teams)
         {
             throw new NotImplementedException();
         }
 
-        public List<Team> loadTeams()
+        public List<Team> LoadTeams()
         {
             List<Team> teams = new List<Team>();
-            teams.Add(new Team("Wildcats", loadPlayers()));
-            teams.Add(new Team("Super Awesome", loadPlayers()));
-            teams.Add(new Team("The cool kids", loadPlayers()));
+            teams.Add(new Team("Wildcats", LoadPlayers()));
+            teams.Add(new Team("Super Awesome", LoadPlayers()));
+            teams.Add(new Team("The cool kids", LoadPlayers()));
             return teams;
         }
 
-        public void updatePlayer(Player player)
+        public void UpdatePlayer(Player player)
         {
             throw new NotImplementedException();
         }
 
-        public void insertPlayer(Player player)
+        public void InsertPlayer(Player player)
         {
             throw new NotImplementedException();
         }
 
-        public void deletePlayer(Player player)
+        public void DeletePlayer(Player player)
         {
             throw new NotImplementedException();
         }
 
-        public void updateTeam(Team team)
+        public void UpdateTeam(Team team)
         {
             throw new NotImplementedException();
         }
 
-        public void insertTeam(Team team)
+        public void InsertTeam(Team team)
         {
             throw new NotImplementedException();
         }
 
-        public void deleteTeam(Team team)
+        public void DeleteTeam(Team team)
         {
             throw new NotImplementedException();
         }

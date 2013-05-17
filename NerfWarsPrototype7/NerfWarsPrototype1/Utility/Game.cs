@@ -12,112 +12,112 @@
         {
         }
 
-        public void loadTeamA(Team team)
+        public void LoadTeamA(Team team)
         {
-            teamA = new TeamPlay(team.getPlayerFirstName(), team.getTeamName());
+            teamA = new TeamPlay(team.GetPlayerFirstName(), team.GetTeamName());
         }
 
-        public void loadTeamB(Team team)
+        public void LoadTeamB(Team team)
         {
-            teamB = new TeamPlay(team.getPlayerFirstName(), team.getTeamName());
+            teamB = new TeamPlay(team.GetPlayerFirstName(), team.GetTeamName());
         }
 
-        public void setMin(int min)
+        public void SetMin(int min)
         {
             this.min = min;
         }
 
-        public void setSec(int sec)
+        public void SetSec(int sec)
         {
             this.sec = sec;
         }
 
-        public TeamPlay getTeamA()
+        public TeamPlay GetTeamA()
         {
             return teamA;
         }
 
-        public TeamPlay getTeamB()
+        public TeamPlay GetTeamB()
         {
             return teamB;
         }
 
-        public int getMin()
+        public int GetMin()
         {
             return min;
         }
 
-        public int getTeamAFlag()
+        public int GetTeamAFlag()
         {
-            return teamA.getFlag();
+            return teamA.GetFlag();
         }
 
-        public int getTeamATag()
+        public int GetTeamATag()
         {
-            return teamA.getTag();
+            return teamA.GetTag();
         }
 
-        public int getTeamAScore()
+        public int GetTeamAScore()
         {
-            return teamA.getScore();
+            return teamA.GetScore();
         }
 
-        public int getTeamBFlag()
+        public int GetTeamBFlag()
         {
-            return teamB.getFlag();
+            return teamB.GetFlag();
         }
 
-        public int getTeamBTag()
+        public int GetTeamBTag()
         {
-            return teamB.getTag();
+            return teamB.GetTag();
         }
 
-        public int getTeamBScore()
+        public int GetTeamBScore()
         {
-            return teamB.getScore();
+            return teamB.GetScore();
         }
 
-        public void teamAaddFlag()
+        public void TeamAaddFlag()
         {
-            teamA.addFlag();
+            teamA.AddFlag();
         }
 
-        public void teamBaddFlag()
+        public void TeamBaddFlag()
         {
-            teamB.addFlag();
+            teamB.AddFlag();
         }
 
-        public void teamAaddTag()
+        public void TeamAaddTag()
         {
-            teamA.addTag();
+            teamA.AddTag();
         }
 
-        public void teamBaddTag()
+        public void TeamBaddTag()
         {
-            teamB.addTag();
+            teamB.AddTag();
         }
 
-        public void teamBMinusTag()
+        public void TeamBMinusTag()
         {
-            teamB.minusTag();
+            teamB.MinusTag();
         }
 
-        public void teamAMinusTag()
+        public void TeamAMinusTag()
         {
-            teamA.minusTag();
+            teamA.MinusTag();
         }
 
-        public void teamAMinusFlag()
+        public void TeamAMinusFlag()
         {
-            teamA.minusFlag();
+            teamA.MinusFlag();
         }
 
-        public void teamBMinusFlag()
+        public void TeamBMinusFlag()
         {
-            teamB.minusFlag();
+            teamB.MinusFlag();
         }
 
-        public int getSec()
+        public int GetSec()
         {
             return sec;
         }
@@ -141,16 +141,16 @@
             return timerFinished;
         }
 
-        public Winner getWinner()
+        public Winner GetWinner()
         {
             Winner winner;
             //Team 1 wins
-            if (teamA.getScore() > teamB.getScore())
+            if (teamA.GetScore() > teamB.GetScore())
             {
                 winner = Winner.TEAM_1;
             }
             //Draw
-            else if (teamA.getScore() == teamB.getScore())
+            else if (teamA.GetScore() == teamB.GetScore())
             {
                 winner = Winner.DRAW;
             }
@@ -162,7 +162,7 @@
             return winner;
         }
 
-        public string getTime()
+        public string GetTime()
         {
             string minute = min.ToString();
             string second = sec.ToString();
@@ -175,12 +175,12 @@
             return minute + ":" + second;
         }
 
-        internal void reset(int min, int sec)
+        internal void Reset(int min, int sec)
         {
             this.min = min;
             this.sec = sec;
-            teamA.resetScore();
-            teamB.resetScore();
+            teamA.ResetScore();
+            teamB.ResetScore();
         }
     }
 }

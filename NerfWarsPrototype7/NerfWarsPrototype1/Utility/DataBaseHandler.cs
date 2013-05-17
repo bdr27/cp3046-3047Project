@@ -4,15 +4,15 @@ namespace NerfWarsLeaderboard.Utility
 {
     public interface DataBaseHandler
     {
-        List<Player> loadPlayers();
-        void savePlayers(List<Player> players);
-        void saveTeams(List<Team> teams); 
-        List<Team> loadTeams();
-        void updatePlayer(Player player);
-        void insertPlayer(Player player);
-        void deletePlayer(Player player);
-        void updateTeam(Team team);
-        void insertTeam(Team team);
-        void deleteTeam(Team team);
+        List<Player> LoadPlayers();
+        void SavePlayers(List<Player> players);
+        void SaveTeams(List<Team> teams); 
+        List<Team> LoadTeams();
+        void UpdatePlayer(Player player);
+        void InsertPlayer(Player player);
+        void DeletePlayer(Player player);
+        void UpdateTeam(Team team);
+        void InsertTeam(Team team);
+        void DeleteTeam(Team team);
     }
 }
