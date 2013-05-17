@@ -65,13 +65,13 @@ namespace NerfWarsLeaderboard.Model
             }
             
             this.players = players;
-            playerEdit.FillComboBox(this.players);
+           // playerEdit.FillComboBox(this.players);
             playerEdit.ShowDialog();
         }
 
-        internal Player getPlayer()
+        public Player getPlayer()
         {
-            return playerEdit.GetPlayer();
+            return playerEdit.GetPlayer() as Player;
         }
 
         public List<Player> getPlayers()

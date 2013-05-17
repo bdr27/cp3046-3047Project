@@ -12,7 +12,7 @@ namespace Tests
         public void TestLoadPlayers()
         {
             DataBaseHandler dbHandler = new MOCKDataBaseHandler();
-            List<Player> dbHandlerPlayers = dbHandler.loadPlayers();
+            List<Player> dbHandlerPlayers = dbHandler.LoadPlayers();
             List<Player> testPlayers = loadTestPlayers();
             for (int i = 0; i < dbHandlerPlayers.Count; i++)
             {
@@ -37,7 +37,7 @@ namespace Tests
         public void TestLoadTeams()
         {
             DataBaseHandler dbHandler = new MOCKDataBaseHandler();
-            List<Team> dbHandlerTeams = dbHandler.loadTeams();
+            List<Team> dbHandlerTeams = dbHandler.LoadTeams();
             List<Team> testTeams = loadTestTeams();
             for (int i = 0; i < dbHandlerTeams.Count; i++)
             {

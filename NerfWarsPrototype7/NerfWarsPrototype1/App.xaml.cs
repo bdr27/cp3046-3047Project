@@ -26,15 +26,15 @@ namespace NerfWarsLeaderboard
         private ProjectorWindow projectorWindow;
         private GameState gameState;
         private DataBaseHandler dbHandler;
-        private AddEditPlayerModel addEditPlayerModel;
-        private SelectPlayerModel editDeletePlayerModel;
-        private AddEditTeamModel addEditTeamModel;
-        private SelectTeamModel selectTeamModel;
+  //      private AddEditPlayerModel addEditPlayerModel;
+  //      private SelectPlayerModel editDeletePlayerModel;
+   //     private AddEditTeamModel addEditTeamModel;
+   //     private SelectTeamModel selectTeamModel;
         private TeamAddModel teamAddModel;
         private TeamEditModel teamEditModel;
         private TeamDeleteModel teamDeleteModel;
         private PlayerAddModel playerAddModel;
-        private PlayerEditModel playerEditModel;
+        private PlayerSelectEditModel playerSelectEditModel;
         private PlayerDeleteModel playerDeleteModel;
 
         public App()
@@ -85,7 +85,7 @@ namespace NerfWarsLeaderboard
             teamEditModel = new TeamEditModel(mainWindow);
             teamDeleteModel = new TeamDeleteModel(mainWindow);
             playerAddModel = new PlayerAddModel(mainWindow);
-            playerEditModel = new PlayerEditModel(mainWindow);
+            playerSelectEditModel = new PlayerSelectEditModel(mainWindow);
             playerDeleteModel = new PlayerDeleteModel(mainWindow);
         }
 
@@ -160,30 +160,40 @@ namespace NerfWarsLeaderboard
                     break;
                 case CurrentAction.EDIT:
                     Debug.WriteLine("I edit players");
-                    openEditPlayerDialog();
+                    openPlayerSelectEditDialog();
                     break;
                 case CurrentAction.DELETE:
                     Debug.WriteLine("I delete players");
                     openDeletePlayerDialog();
                     break;
             }
+            //Update the players
+            players = dbHandler.GetPlayers();
         }
 
         private void openDeletePlayerDialog()
         {
-            playerDeleteModel.Show();
+            playerDeleteModel.Show(players);
         }
 
-        private void openEditPlayerDialog()
+        private void openPlayerSelectEditDialog()
         {
-            playerEditModel.Show();
+            do
+            {
+                playerSelectEditModel.Show(players);
+                if (playerSelectEditModel.GetIsEditingPlayer())
+                {
+                    Debug.WriteLine("Display the other window");
+                    PlayerEditModel playerEditWindow = new PlayerEditModel(mainWindow);
+                    playerEditWindow.Show(players, playerSelectEditModel.GetPlayer());
+                }
+            } while (playerSelectEditModel.GetIsEditingPlayer());
         }
 
         private void openAddPlayerDialog()
         {
-            //Potentially pass in the players to see if player isn't in the list
-            playerAddModel.Show(dbHandler.LoadPlayers());
-            Debug.WriteLine(playerAddModel.GetPlayer().ToString());
+            playerAddModel.Show(players);
+            dbHandler.InsertPlayer(playerAddModel.GetPlayer());
         }
 
         private void BtnEditTeam_Click(object sender, RoutedEventArgs e)
@@ -292,13 +302,13 @@ namespace NerfWarsLeaderboard
                      editDeletePlayerModel.setToNothing();
               */
         }
-        
+
 
         private void BtnAddPlayer_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction regButtonClick = CurrentAction.ADD;
             DisplayPlayerModal(regButtonClick);
-            
+
             /*         CurrentAction currentAction = CurrentAction.ADD;
                      addEditPlayerModel.showWindow(currentAction);
                      AddPlayerAction(addEditPlayerModel.getButtonAction());

@@ -96,7 +96,8 @@ namespace NerfWarsLeaderboard.Utility
                     other = obj as Player;
                     if (other != null)
                     {
-                        if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
+                        if(firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge())
+                       // if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
                         {
                             return true;
                         }

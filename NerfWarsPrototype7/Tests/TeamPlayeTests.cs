@@ -14,10 +14,10 @@ namespace NerfWarsLeaderboard
             string teamName = "Crazy 8's";
 
             TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
-            Assert.AreEqual(playerNames, teamPlayTest.getPlayerNames());
-            Assert.AreEqual(teamName, teamPlayTest.getTeamName());
-            Assert.AreEqual(0, teamPlayTest.getTag());
-            Assert.AreEqual(0, teamPlayTest.getFlag());
+            Assert.AreEqual(playerNames, teamPlayTest.GetPlayerNames());
+            Assert.AreEqual(teamName, teamPlayTest.GetTeamName());
+            Assert.AreEqual(0, teamPlayTest.GetTag());
+            Assert.AreEqual(0, teamPlayTest.GetFlag());
         }
 
         private List<string> setPlayerNames()
@@ -38,10 +38,10 @@ namespace NerfWarsLeaderboard
             string teamName = "Crazy 8's";
 
             TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
-            teamPlayTest.addFlag();
-            Assert.AreEqual(1, teamPlayTest.getFlag());
-            teamPlayTest.minusFlag();
-            Assert.AreEqual(0, teamPlayTest.getFlag());
+            teamPlayTest.AddFlag();
+            Assert.AreEqual(1, teamPlayTest.GetFlag());
+            teamPlayTest.MinusFlag();
+            Assert.AreEqual(0, teamPlayTest.GetFlag());
         }
 
         [TestMethod]
@@ -51,10 +51,10 @@ namespace NerfWarsLeaderboard
             string teamName = "Crazy 8's";
 
             TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
-            teamPlayTest.addTag();
-            Assert.AreEqual(1, teamPlayTest.getTag());
-            teamPlayTest.minusTag();
-            Assert.AreEqual(0, teamPlayTest.getTag());
+            teamPlayTest.AddTag();
+            Assert.AreEqual(1, teamPlayTest.GetTag());
+            teamPlayTest.MinusTag();
+            Assert.AreEqual(0, teamPlayTest.GetTag());
         }
         [TestMethod]
         public void TeamPlayScoreTest()
@@ -63,14 +63,14 @@ namespace NerfWarsLeaderboard
             string teamName = "Crazy 8's";
 
             TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
-            teamPlayTest.addFlag();
-            teamPlayTest.addTag();
-            teamPlayTest.addTag();
-            teamPlayTest.addTag();
+            teamPlayTest.AddFlag();
+            teamPlayTest.AddTag();
+            teamPlayTest.AddTag();
+            teamPlayTest.AddTag();
 
-            Assert.AreEqual(1, teamPlayTest.getFlag());
-            Assert.AreEqual(3, teamPlayTest.getTag());
-            Assert.AreEqual(8, teamPlayTest.getScore());
+            Assert.AreEqual(1, teamPlayTest.GetFlag());
+            Assert.AreEqual(3, teamPlayTest.GetTag());
+            Assert.AreEqual(8, teamPlayTest.GetScore());
         }
     }
 }

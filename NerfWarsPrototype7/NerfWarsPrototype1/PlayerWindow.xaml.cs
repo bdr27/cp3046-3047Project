@@ -27,6 +27,11 @@ namespace NerfWarsLeaderboard
             ClearText();
         }
 
+        public void SetEdit()
+        {
+            lblPlayerWindowTitle.Content = "Edit Player";
+        }
+
         public void ClearText()
         {
             tbAge.Text = "";

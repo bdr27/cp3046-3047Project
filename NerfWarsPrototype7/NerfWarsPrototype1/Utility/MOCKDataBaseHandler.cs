@@ -45,7 +45,7 @@ namespace NerfWarsLeaderboard.Utility
 
         public void InsertPlayer(Player player)
         {
-            throw new NotImplementedException();
+            players.Add(player);
         }
 
         public void DeletePlayer(Player player)
@@ -67,5 +67,20 @@ namespace NerfWarsLeaderboard.Utility
         {
             throw new NotImplementedException();
         }
+
+        #region DataBaseHandler Members
+
+
+        public List<Player> GetPlayers()
+        {
+            return players;
+        }
+
+        public List<Team> GetTeam()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

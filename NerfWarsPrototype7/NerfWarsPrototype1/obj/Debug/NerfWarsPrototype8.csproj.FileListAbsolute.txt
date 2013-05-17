@@ -55,3 +55,4 @@ C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\ob
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype.g.resources
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsLeaderboard.Properties.Resources.resources
 C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype8.csproj.GenerateResource.Cache
+C:\Users\jc210239\Desktop\Project\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype8.csprojResolveAssemblyReference.cache

@@ -34,7 +34,12 @@ namespace NerfWarsLeaderboard
             btnPlayerModalEdit.Content = "Delete";
         }
 
-        public void FillComboBox(List<Player> players)
+        public object GetPlayer()
+        {
+            return cmbPlayerNames.SelectedItem;
+        }
+
+        public void LoadCmbPlayerNames(List<Player> players)
         {
             cmbPlayerNames.Items.Clear();
             foreach (var player in players)
@@ -45,11 +50,6 @@ namespace NerfWarsLeaderboard
                     cmbPlayerNames.Items.Add(player);
                 }
             }
-        }
-
-        internal Player GetPlayer()
-        {
-            return cmbPlayerNames.SelectedItem as Player;
         }
     }
 }
