@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using NerfWarsLeaderboard.Utility;
+using System.Text.RegularExpressions;
 
 namespace NerfWarsLeaderboard
 {
@@ -9,6 +10,7 @@ namespace NerfWarsLeaderboard
     /// </summary>
     public partial class PlayerWindow : Window
     {
+        private Player player;
         public PlayerWindow()
         {
             InitializeComponent();
@@ -35,53 +37,95 @@ namespace NerfWarsLeaderboard
             tbMedical.Text = "";
         }
 
-        internal string GetFirstName()
-        {
-            return tbFirstName.Text;
-        }
-
-        internal string GetLastName()
-        {
-            return tbLastName.Text;
-        }
-
-        internal int GetAge()
-        {
-            return Int32.Parse(tbAge.Text);
-        }
-
-        internal string GetGuardian()
-        {
-            return tbGuardian.Text;
-        }
-
-        internal string GetContact()
-        {
-            return tbContact.Text;
-        }
-
-        internal string GetMedicalConditions()
-        {
-            return tbMedical.Text;
-        }
-
-        internal void TitleChangeToAdd()
+        public void TitleChangeToAdd()
         {
             lblPlayerWindowTitle.Content = "Create Player";
         }
 
-        internal void TitleChangeToEdit()
+        public void TitleChangeToEdit()
         {
             lblPlayerWindowTitle.Content = "Edit Player";
         }
 
-        internal void LoadText(Player player)
+        public void LoadText(Player player)
         {
             tbFirstName.Text = player.GetFirstName();
             tbLastName.Text = player.GetLastName();
             tbAge.Text = player.GetAge() + "";
             tbContact.Text = player.GetContact();
             tbGuardian.Text = player.GetGuardian();
+        }
+
+        public bool ValidFields()
+        {
+            if (ValidName(tbFirstName.Text) && ValidName(tbLastName.Text) && ValidAge(tbAge.Text) && ValidPhone(tbContact.Text))
+            {
+                player = new Player(GetFirstName(), GetSecondName(), GetAge(), GetGuardian(), GetContact(), GetMedical());
+                return true;
+            }
+            return false;
+        }
+
+        private string GetMedical()
+        {
+            return tbMedical.Text;
+        }
+
+        private string GetContact()
+        {
+            return tbContact.Text;
+        }
+
+        private string GetGuardian()
+        {
+            return tbGuardian.Text;
+        }
+
+        private int GetAge()
+        {
+            return Int32.Parse(tbAge.Text);
+        }
+
+        private string GetSecondName()
+        {
+            return tbLastName.Text;
+        }
+
+        private string GetFirstName()
+        {
+            return tbFirstName.Text;
+        }
+
+        public Player GetPlayer()
+        {
+            return player;
+        }
+
+        private bool ValidPhone(string phone)
+        {
+            if (Regex.Match(phone, @"^[0-9]{1,15}$").Success)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool ValidAge(string age)
+        {
+            if (Regex.Match(age, @"^([0-9]|[1-9][0-9])$").Success)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private bool ValidName(string name)
+        {
+            if (Regex.Match(name, @"^[a-zA-Z]{1,100}$").Success)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

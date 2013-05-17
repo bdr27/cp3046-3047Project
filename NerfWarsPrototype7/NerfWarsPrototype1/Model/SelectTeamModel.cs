@@ -63,10 +63,5 @@ namespace NerfWarsLeaderboard.Model
         {
             return buttonAction;
         }
-
-        internal void setToNothing()
-        {
-            buttonAction = ButtonAction.NONE;
-        }
     }
 }

@@ -50,7 +50,7 @@ namespace NerfWarsLeaderboard.Model
             bool validName = false;
             try
             {
-                this.player = new Player(playerAdd.GetFirstName(), playerAdd.GetLastName(), playerAdd.GetAge(), playerAdd.GetGuardian(), playerAdd.GetContact(), playerAdd.GetMedicalConditions());
+    //            this.player = new Player(playerAdd.GetFirstName(), playerAdd.GetLastName(), playerAdd.GetAge(), playerAdd.GetGuardian(), playerAdd.GetContact(), playerAdd.GetMedicalConditions());
                 validName = true;
             }
             catch(Exception ex)

@@ -181,7 +181,9 @@ namespace NerfWarsLeaderboard
 
         private void openAddPlayerDialog()
         {
-            playerAddModel.Show();
+            //Potentially pass in the players to see if player isn't in the list
+            playerAddModel.Show(dbHandler.LoadPlayers());
+            Debug.WriteLine(playerAddModel.GetPlayer().ToString());
         }
 
         private void BtnEditTeam_Click(object sender, RoutedEventArgs e)
