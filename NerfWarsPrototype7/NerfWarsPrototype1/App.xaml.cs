@@ -31,14 +31,14 @@ namespace NerfWarsLeaderboard
         private AddEditTeamModel addEditTeamModel;
         private SelectTeamModel selectTeamModel;
 
+
         public App()
             : base()
         {
-            Debug.WriteLine("I got this far");
             mainWindow = new MainWindow();
-            mainWindow.Show();
             projectorWindow = new ProjectorWindow();
             projectorWindow.Show();
+            mainWindow.Show();
 
             dbHandler = new MOCKDataBaseHandler();
 
@@ -416,6 +416,7 @@ namespace NerfWarsLeaderboard
             }
             else
             {
+                projectorWindow.loadTeams(teamA, teamB);
                 gameState = GameState.IN_GAME;
                 disableTeamComboBoxes();
                 disableReset();
@@ -517,6 +518,7 @@ namespace NerfWarsLeaderboard
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBTag), playGame.lblTagB);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamACap), playGame.lblFlagA);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(setTeamBCap), playGame.lblFlagB);
+            projectorWindow.UpdateGameDetails(game);
         }
 
         private void setTeamATag(Label lblTagA)
