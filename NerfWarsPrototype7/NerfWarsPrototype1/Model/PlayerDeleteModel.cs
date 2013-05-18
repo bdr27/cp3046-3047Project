@@ -23,12 +23,32 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show(List<Player> players)
         {
-            playerDelete.Show();
+            playerDelete.LoadCmbPlayerNames(players);
+            playerDelete.ShowDialog();
         }
 
         private void WireHandlers()
         {
-            
+            playerDelete.btnPlayerModalCancel.Click += BtnPlayerModalCancel_Click;
+            playerDelete.btnPlayerModalEdit.Click += btnPlayerModalEdit_Click;
+        }
+
+        void btnPlayerModalEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (playerDelete.cmbPlayerNames.SelectedItem != null)
+            {
+                playerDelete.Hide();
+            }
+        }
+
+        private void BtnPlayerModalCancel_Click(object sender, RoutedEventArgs e)
+        {
+            playerDelete.Hide();
+        }
+
+        public Player GetPlayer()
+        {
+            return playerDelete.GetPlayer() as Player;
         }
     }
 }

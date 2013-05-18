@@ -59,16 +59,36 @@ namespace NerfWarsLeaderboard
             tbAge.Text = player.GetAge() + "";
             tbContact.Text = player.GetContact();
             tbGuardian.Text = player.GetGuardian();
+            tbMedical.Text = player.GetMedicalConditions();
         }
 
         public bool ValidFields()
         {
             if (ValidName(tbFirstName.Text) && ValidName(tbLastName.Text) && ValidAge(tbAge.Text) && ValidPhone(tbContact.Text))
             {
-                player = new Player(GetFirstName(), GetSecondName(), GetAge(), GetGuardian(), GetContact(), GetMedical());
                 return true;
             }
             return false;
+        }
+
+        public void GenerateNewPlayer()
+        {
+            player = new Player(GetFirstName(), GetSecondName(), GetAge(), GetGuardian(), GetContact(), GetMedical());
+        }
+
+        public void SetPlayer(Player player)
+        {
+            this.player = player;
+        }
+
+        public void UpdatePlayer()
+        {
+            player.SetAge(Int32.Parse(tbAge.Text));
+            player.SetContact(tbContact.Text);
+            player.SetFirstName(tbFirstName.Text);
+            player.SetGuardian(tbGuardian.Text);
+            player.SetLastname(tbLastName.Text);
+            player.SetMedicalConditions(tbMedical.Text);
         }
 
         private string GetMedical()

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace NerfWarsLeaderboard.Utility
@@ -32,15 +33,23 @@ namespace NerfWarsLeaderboard.Utility
         public List<Team> LoadTeams()
         {
             List<Team> teams = new List<Team>();
-            teams.Add(new Team("Wildcats", LoadPlayers()));
-            teams.Add(new Team("Super Awesome", LoadPlayers()));
-            teams.Add(new Team("The cool kids", LoadPlayers()));
+            teams.Add(new Team("Wildcats", players));
+            teams.Add(new Team("Super Awesome", players));
+            teams.Add(new Team("The cool kids", players));
             return teams;
         }
 
         public void UpdatePlayer(Player player)
         {
-            throw new NotImplementedException();
+            int ID = player.GetID();
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].GetID() == ID)
+                {
+                    players[i] = player;
+                    break;
+                }
+            }
         }
 
         public void InsertPlayer(Player player)
@@ -50,7 +59,7 @@ namespace NerfWarsLeaderboard.Utility
 
         public void DeletePlayer(Player player)
         {
-            throw new NotImplementedException();
+            players.Remove(player);
         }
 
         public void UpdateTeam(Team team)

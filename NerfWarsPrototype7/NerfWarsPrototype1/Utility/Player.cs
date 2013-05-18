@@ -4,6 +4,8 @@ namespace NerfWarsLeaderboard.Utility
 {
     public class Player
     {
+        private static int counter = 0;
+        private int ID;
         private string firstName;
         private string lastName;
         private int age;
@@ -18,6 +20,7 @@ namespace NerfWarsLeaderboard.Utility
        public Player(string firstName, string lastName, int age, string guardian, string contact, string medicalConditions)
        {
            // TODO: Complete member initialization
+           this.ID = counter++;
            this.firstName = firstName;
            this.lastName = lastName;
            this.age = age;
@@ -49,6 +52,11 @@ namespace NerfWarsLeaderboard.Utility
         public void SetAge(int age)
         {
             this.age = age;
+        }
+
+        public int GetID()
+        {
+            return ID;
         }
 
         public int GetAge()

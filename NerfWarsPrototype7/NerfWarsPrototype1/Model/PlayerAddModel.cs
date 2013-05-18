@@ -38,6 +38,7 @@ namespace NerfWarsLeaderboard.Model
         {
             if (playerAdd.ValidFields())
             {
+                playerAdd.GenerateNewPlayer();
                 player = playerAdd.GetPlayer();
                 if (currentPlayers.Contains(player))
                 {

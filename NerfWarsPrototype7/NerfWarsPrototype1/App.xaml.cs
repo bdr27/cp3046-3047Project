@@ -26,10 +26,6 @@ namespace NerfWarsLeaderboard
         private ProjectorWindow projectorWindow;
         private GameState gameState;
         private DataBaseHandler dbHandler;
-  //      private AddEditPlayerModel addEditPlayerModel;
-  //      private SelectPlayerModel editDeletePlayerModel;
-   //     private AddEditTeamModel addEditTeamModel;
-   //     private SelectTeamModel selectTeamModel;
         private TeamAddModel teamAddModel;
         private TeamEditModel teamEditModel;
         private TeamDeleteModel teamDeleteModel;
@@ -174,6 +170,7 @@ namespace NerfWarsLeaderboard
         private void openDeletePlayerDialog()
         {
             playerDeleteModel.Show(players);
+            dbHandler.DeletePlayer(playerDeleteModel.GetPlayer());
         }
 
         private void openPlayerSelectEditDialog()
@@ -181,11 +178,17 @@ namespace NerfWarsLeaderboard
             do
             {
                 playerSelectEditModel.Show(players);
+                //Checks for the user if they are editing a player
                 if (playerSelectEditModel.GetIsEditingPlayer())
                 {
-                    Debug.WriteLine("Display the other window");
+                    Debug.WriteLine("Display the edit");
                     PlayerEditModel playerEditWindow = new PlayerEditModel(mainWindow);
                     playerEditWindow.Show(players, playerSelectEditModel.GetPlayer());
+                    //Player has pressed confirmed so they do wish to update a player
+                    if (playerEditWindow.GetAction().Equals(ButtonAction.CONFIRM))
+                    {
+                        dbHandler.UpdatePlayer(playerEditWindow.GetPlayer());
+                    }
                 }
             } while (playerSelectEditModel.GetIsEditingPlayer());
         }
@@ -262,20 +265,6 @@ namespace NerfWarsLeaderboard
         {
             CurrentAction regButtonClick = CurrentAction.DELETE;
             DisplayPlayerModal(regButtonClick);
-            /*         CurrentAction currentAction = CurrentAction.DELETE;
-                     while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
-                     {
-                         editDeletePlayerModel.showWindow(players, currentAction);
-                         Player player = editDeletePlayerModel.getPlayer();
-                         switch (editDeletePlayerModel.getButtonAction())
-                         {
-                             case ButtonAction.EDIT:
-                                 players = editDeletePlayerModel.deletePlayer(player);
-                                 break;
-                         }
-                     }
-                     editDeletePlayerModel.setToNothing();
-              */
         }
 
         /// <summary>
@@ -287,20 +276,6 @@ namespace NerfWarsLeaderboard
         {
             CurrentAction regButtonClick = CurrentAction.EDIT;
             DisplayPlayerModal(regButtonClick);
-            /*         CurrentAction currentAction = CurrentAction.EDIT;
-                     while (!editDeletePlayerModel.getButtonAction().Equals(ButtonAction.CLOSE))
-                     {
-                         editDeletePlayerModel.showWindow(players, currentAction);
-                         Player player = editDeletePlayerModel.getPlayer();
-                         switch (editDeletePlayerModel.getButtonAction())
-                         {
-                             case ButtonAction.EDIT:
-                                 addEditPlayerModel.showWindow(currentAction, player);
-                                 break;
-                         }
-                     }
-                     editDeletePlayerModel.setToNothing();
-              */
         }
 
 

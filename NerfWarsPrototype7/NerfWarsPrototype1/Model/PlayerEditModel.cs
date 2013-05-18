@@ -12,9 +12,9 @@ namespace NerfWarsLeaderboard.Model
     public class PlayerEditModel
     {
         private PlayerWindow playerEdit;
-        private Player oldPlayer;
-        private Player newPlayer;
+        private Player player;
         private List<Player> currentPlayers;
+        private ButtonAction buttonAction;
 
         public PlayerEditModel(Window window)
         {
@@ -26,7 +26,8 @@ namespace NerfWarsLeaderboard.Model
         public void Show(List<Player> currentPlayers, Player player)
         {
             this.currentPlayers = currentPlayers;
-            this.oldPlayer = player;
+            this.player = player;
+            buttonAction = ButtonAction.NONE;
             playerEdit.LoadText(player);
             playerEdit.SetEdit();
             playerEdit.ShowDialog();
@@ -41,29 +42,32 @@ namespace NerfWarsLeaderboard.Model
         {
             if (playerEdit.ValidFields())
             {
-                newPlayer = playerEdit.GetPlayer();
-                if (currentPlayers.Contains(newPlayer))
+                playerEdit.SetPlayer(player);
+                playerEdit.UpdatePlayer();
+                var count = currentPlayers.Where(item => item == player).Count();
+                if (count < 2)
                 {
-                    Debug.WriteLine("Display an error");
-                }
-                else
-                {
+                    buttonAction = ButtonAction.CONFIRM;
                     playerEdit.Close();
                 }
-                Debug.WriteLine("Valid fields");
-            }            
+            }
         }
 
         public void BtnCloseAddPlayer_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I Close");
-
             playerEdit.Close();
+            buttonAction = ButtonAction.CLOSE;
         }
 
         public Player GetPlayer()
         {
             return player;
+        }
+
+        public object GetAction()
+        {
+            return buttonAction;
         }
     }
 }
