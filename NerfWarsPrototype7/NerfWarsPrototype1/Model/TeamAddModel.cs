@@ -12,8 +12,8 @@ namespace NerfWarsLeaderboard.Model
     public class TeamAddModel
     {
         private TeamWindow addTeam;
-    //    private ButtonAction buttonAction;
-    //    private Team team;
+        private ButtonAction buttonAction;
+        private Team team;
 
         public TeamAddModel(Window window)
         {
@@ -24,6 +24,8 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show()
         {
+            buttonAction = ButtonAction.NONE;
+            addTeam.ShowDetails(team);
             addTeam.ShowDialog();
         }
 
@@ -35,30 +37,62 @@ namespace NerfWarsLeaderboard.Model
             addTeam.btnTeamDone.Click += BtnTeamDone_Click;
         }
 
-        void BtnTeamDone_Click(object sender, RoutedEventArgs e)
+        private void BtnTeamDone_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I close");
-            addTeam.Hide();
+            buttonAction = ButtonAction.CLOSE;
+            ButtonClick();
         }
 
-        void BtnTeamCreateNewPlayer_Click(object sender, RoutedEventArgs e)
+        private void BtnTeamCreateNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I create a new player");
+            buttonAction = ButtonAction.ADD;
+            ButtonClick();
         }
 
-        void BtnTeamClear_Click(object sender, RoutedEventArgs e)
+        private void BtnTeamClear_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I clear the team stuff");
         }
 
-        void BtnTeamAddExistingPlayer_Click(object sender, RoutedEventArgs e)
+        private void BtnTeamAddExistingPlayer_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I add existing players");
+            buttonAction = ButtonAction.EXISTING;
+            ButtonClick();
         }
 
-        internal string GetPlayer()
+        private void ButtonClick()
         {
-            throw new NotImplementedException();
+            SetTeamDetails();
+            addTeam.Hide();
+        }
+
+        private void SetTeamDetails()
+        {
+            team.SetTeamName(addTeam.GetTeamName());
+            team.SetContact(addTeam.GetContact());
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
+        }
+
+        public Team GetTeam()
+        {
+            return team;
+        }
+
+        public void AddPlayer(Player player)
+        {
+            team.AddTeamPlayer(player);
+        }
+
+        public void SetTeam(Team team)
+        {
+            this.team = team;
         }
     }
 }

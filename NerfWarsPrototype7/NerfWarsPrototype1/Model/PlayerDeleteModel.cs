@@ -12,6 +12,7 @@ namespace NerfWarsLeaderboard.Model
     {
         private ModalPlayerEditDelete playerDelete;
         private List<Player> players;
+        private ButtonAction buttonAction;
 
         public PlayerDeleteModel(Window window)
         {
@@ -23,6 +24,7 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show(List<Player> players)
         {
+            buttonAction = ButtonAction.NONE;
             playerDelete.LoadCmbPlayerNames(players);
             playerDelete.ShowDialog();
         }
@@ -37,18 +39,25 @@ namespace NerfWarsLeaderboard.Model
         {
             if (playerDelete.cmbPlayerNames.SelectedItem != null)
             {
+                buttonAction = ButtonAction.CONFIRM;
                 playerDelete.Hide();
             }
         }
 
         private void BtnPlayerModalCancel_Click(object sender, RoutedEventArgs e)
         {
+            buttonAction = ButtonAction.NONE;
             playerDelete.Hide();
         }
 
         public Player GetPlayer()
         {
             return playerDelete.GetPlayer() as Player;
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
         }
     }
 }

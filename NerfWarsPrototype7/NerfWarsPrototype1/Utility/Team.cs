@@ -7,16 +7,18 @@ namespace NerfWarsLeaderboard.Utility
     {
         private List<Player> players;
         private string teamName;
+        private string contact;
 
         public Team()
         {
             players = new List<Player>();
         }
 
-        public Team(string teamName, List<Player> playerNames)
+        public Team(string teamName, string contact, List<Player> playerNames)
         {
             this.teamName = teamName;
             this.players = playerNames;
+            this.contact = contact;
         }
 
         public void SetTeamName(string teamName)
@@ -47,6 +49,10 @@ namespace NerfWarsLeaderboard.Utility
                 playerNames.Add(player.GetFirstName());
             }
             return playerNames;
+        }
+        public void SetContact(string contact)
+        {
+            this.contact = contact;
         }
 
         public override string ToString()

@@ -14,6 +14,7 @@ namespace NerfWarsLeaderboard.Model
         private PlayerWindow playerAdd;
         private Player player;
         private List<Player> currentPlayers;
+        private ButtonAction buttonAction;
 
         public PlayerAddModel(Window window)
         {
@@ -24,6 +25,7 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show(List<Player> currentPlayers)
         {
+            buttonAction = ButtonAction.NONE;
             this.currentPlayers = currentPlayers;
             playerAdd.ClearText();
             playerAdd.ShowDialog();
@@ -46,22 +48,29 @@ namespace NerfWarsLeaderboard.Model
                 }
                 else
                 {
+                    Debug.WriteLine("Valid fields");
+                    buttonAction = ButtonAction.CONFIRM;
                     playerAdd.Hide();
                 }
-                Debug.WriteLine("Valid fields");
+                
             }            
         }
 
         void BtnCloseAddPlayer_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I Close");
-
+            buttonAction = ButtonAction.CLOSE;
             playerAdd.Hide();
         }
 
         public Player GetPlayer()
         {
             return player;
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
         }
     }
 }

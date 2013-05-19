@@ -8,6 +8,6 @@ namespace NerfWarsLeaderboard.Utility
 {
     public enum ButtonAction
     {
-        NONE, CONFIRM, CLEAR, CLOSE, EDIT, ADD, CREATE
+        NONE, CONFIRM, CLEAR, CLOSE, EDIT, ADD, CREATE, EXISTING
     }
 }

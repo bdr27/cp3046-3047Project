@@ -37,6 +37,7 @@ namespace Tests
         public void TestLoadTeams()
         {
             DataBaseHandler dbHandler = new MOCKDataBaseHandler();
+            dbHandler.LoadPlayers();
             List<Team> dbHandlerTeams = dbHandler.LoadTeams();
             List<Team> testTeams = loadTestTeams();
             for (int i = 0; i < dbHandlerTeams.Count; i++)
@@ -48,9 +49,9 @@ namespace Tests
         private List<Team> loadTestTeams()
         {
             List<Team> teams = new List<Team>();
-            teams.Add(new Team("Wildcats", loadTestPlayers()));
-            teams.Add(new Team("Super Awesome", loadTestPlayers()));
-            teams.Add(new Team("The cool kids", loadTestPlayers()));
+            teams.Add(new Team("Wildcats","47454545", loadTestPlayers()));
+            teams.Add(new Team("Super Awesome","47454545", loadTestPlayers()));
+            teams.Add(new Team("The cool kids","47454545", loadTestPlayers()));
             return teams;
         }
     }

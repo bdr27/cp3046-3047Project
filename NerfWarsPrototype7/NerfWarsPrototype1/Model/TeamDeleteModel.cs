@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using NerfWarsLeaderboard.Utility;
 
 namespace NerfWarsLeaderboard.Model
 {
     public class TeamDeleteModel
     {
         private ModalTeamEditDelete teamDeleteModel;
+        private List<Team> teams;
+        private ButtonAction buttonAction;
 
         public TeamDeleteModel(Window window)
         {
@@ -20,8 +23,14 @@ namespace NerfWarsLeaderboard.Model
 
         }
 
+        public void UpdateTeams(List<Team> teams)
+        {
+            this.teams = teams;
+        }
         public void Show()
         {
+            buttonAction = ButtonAction.NONE;
+            teamDeleteModel.UpdateCombo(teams);
             teamDeleteModel.ShowDialog();
         }
 
@@ -31,15 +40,28 @@ namespace NerfWarsLeaderboard.Model
             teamDeleteModel.btnModalTeamEdit.Click += btnModalTeamEdit_Click;
         }
 
-        void btnModalTeamEdit_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void btnModalTeamEdit_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            Debug.WriteLine("I Delete things");
+            buttonAction = ButtonAction.CONFIRM;
+            Debug.WriteLine("I Delete the team");
             teamDeleteModel.Hide();
         }
 
         private void btnEditTeamCancel_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            buttonAction = ButtonAction.NONE;
             Debug.WriteLine("I Close the window");
+            teamDeleteModel.Hide();
+        }
+
+        public Team GetTeam()
+        {
+            return teamDeleteModel.GetTeam();
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
         }
     }
 }

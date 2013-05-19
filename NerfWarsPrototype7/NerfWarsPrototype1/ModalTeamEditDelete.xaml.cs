@@ -33,7 +33,7 @@ namespace NerfWarsLeaderboard
             }
         }
 
-        internal Team GetTeam()
+        public Team GetTeam()
         {
             return cmbTeamName.SelectedItem as Team;
         }

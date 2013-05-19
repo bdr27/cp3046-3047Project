@@ -32,10 +32,10 @@ namespace NerfWarsLeaderboard.Utility
 
         public List<Team> LoadTeams()
         {
-            List<Team> teams = new List<Team>();
-            teams.Add(new Team("Wildcats", players));
-            teams.Add(new Team("Super Awesome", players));
-            teams.Add(new Team("The cool kids", players));
+            teams = new List<Team>();
+            teams.Add(new Team("Wildcats", "47454545", players));
+            teams.Add(new Team("Super Awesome", "47454545", players));
+            teams.Add(new Team("The cool kids","47454545", players));
             return teams;
         }
 
@@ -69,27 +69,22 @@ namespace NerfWarsLeaderboard.Utility
 
         public void InsertTeam(Team team)
         {
-            throw new NotImplementedException();
+            teams.Add(team);
         }
 
         public void DeleteTeam(Team team)
         {
-            throw new NotImplementedException();
+            teams.Remove(team);
         }
-
-        #region DataBaseHandler Members
-
 
         public List<Player> GetPlayers()
         {
             return players;
         }
 
-        public List<Team> GetTeam()
+        public List<Team> GetTeams()
         {
-            throw new NotImplementedException();
+            return teams;
         }
-
-        #endregion
     }
 }

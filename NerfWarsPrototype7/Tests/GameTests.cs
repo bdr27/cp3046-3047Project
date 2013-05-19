@@ -15,7 +15,7 @@ namespace NerfWarsTests
             string teamName = "Crazy 8's";
             Game gameTest = new Game();
 
-            Team teamPlayTest = new Team(teamName, playersNames);
+            Team teamPlayTest = new Team(teamName, "47454545", playersNames);
             gameTest.LoadTeamA(teamPlayTest);
             Assert.AreEqual(teamPlayTest.GetTeamName(), gameTest.GetTeamA().GetTeamName());
             for (int i = 0; i < teamPlayTest.GetPlayerFirstName().Count; i++)
@@ -25,7 +25,7 @@ namespace NerfWarsTests
 
             //Creates another list of players
             List<Player> playersNames2 = setPlayerList();
-            Team secondTeam = new Team("john smith", playersNames2);
+            Team secondTeam = new Team("john smith","47454545", playersNames2);
 
             gameTest.LoadTeamB(secondTeam);
             //Checks the name's are the same
@@ -45,7 +45,7 @@ namespace NerfWarsTests
             string teamName = "Crazy 8's";
             Game gameTest = new Game();
 
-            Team teamPlayTest = new Team(teamName, playersNames);
+            Team teamPlayTest = new Team(teamName,"47454545", playersNames);
             gameTest.LoadTeamB(teamPlayTest);
 
             int sec = 29;
@@ -79,8 +79,8 @@ namespace NerfWarsTests
         private void TestWinner()
         {
             List<Player> playerNames = setPlayerList();
-            Team team1 = new Team("team1", playerNames);
-            Team team2 = new Team("team2", playerNames);
+            Team team1 = new Team("team1","47454545", playerNames);
+            Team team2 = new Team("team2","47454545", playerNames);
 
             Game game = new Game();
             TeamPlay teamPlayer = new TeamPlay(new List<string>(), "");

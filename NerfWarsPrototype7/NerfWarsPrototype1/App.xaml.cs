@@ -117,23 +117,29 @@ namespace NerfWarsLeaderboard
             switch (regButtonClick)
             {
                 case CurrentAction.ADD:
-                    Debug.WriteLine("I add things");
+                    Debug.WriteLine("Add new teams");
                     openAddTeamDialog();
                     break;
                 case CurrentAction.DELETE:
-                    Debug.WriteLine("I delelet things");
+                    Debug.WriteLine("Delete teams");
                     openDeleteTeamDialog();
                     break;
                 case CurrentAction.EDIT:
-                    Debug.WriteLine("I edit things");
+                    Debug.WriteLine("Edit Existing teams");
                     openEditTeamDialog();
                     break;
             }
+            teams = dbHandler.GetTeams();
         }
 
         private void openDeleteTeamDialog()
         {
+            teamDeleteModel.UpdateTeams(teams);
             teamDeleteModel.Show();
+            if (teamDeleteModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                dbHandler.DeleteTeam(teamDeleteModel.GetTeam());
+            }
         }
 
         private void openEditTeamDialog()
@@ -143,7 +149,33 @@ namespace NerfWarsLeaderboard
 
         private void openAddTeamDialog()
         {
-            teamAddModel.Show();
+            Team team = new Team();
+            teamAddModel.SetTeam(team);
+            do
+            {
+                teamAddModel.Show();
+                switch (teamAddModel.GetButtonAction())
+                {
+                    case ButtonAction.ADD:
+                        openAddPlayerDialog();
+                        checkAddNewPlayerToTeam(playerAddModel.GetPlayer());
+                        break;
+                    case ButtonAction.EXISTING:
+                        Debug.WriteLine("Going to add existing player to team");
+                        break;
+                }
+            } while (!teamAddModel.GetButtonAction().Equals(ButtonAction.CLOSE));
+            dbHandler.InsertTeam(teamAddModel.GetTeam());
+        }
+
+        private void checkAddNewPlayerToTeam(Player player)
+        {
+            if (playerAddModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                teamAddModel.AddPlayer(player);
+                players.Add(player);
+                dbHandler.InsertPlayer(player);
+            }
         }
 
         private void DisplayPlayerModal(CurrentAction regButtonClick)
@@ -151,15 +183,15 @@ namespace NerfWarsLeaderboard
             switch (regButtonClick)
             {
                 case CurrentAction.ADD:
-                    Debug.WriteLine("I add players");
+                    Debug.WriteLine("Add new players");
                     openAddPlayerDialog();
                     break;
                 case CurrentAction.EDIT:
-                    Debug.WriteLine("I edit players");
+                    Debug.WriteLine("Edit existing players");
                     openPlayerSelectEditDialog();
                     break;
                 case CurrentAction.DELETE:
-                    Debug.WriteLine("I delete players");
+                    Debug.WriteLine("Delete players");
                     openDeletePlayerDialog();
                     break;
             }
@@ -170,7 +202,11 @@ namespace NerfWarsLeaderboard
         private void openDeletePlayerDialog()
         {
             playerDeleteModel.Show(players);
-            dbHandler.DeletePlayer(playerDeleteModel.GetPlayer());
+            //Checks what button was pressed
+            if (playerDeleteModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                dbHandler.DeletePlayer(playerDeleteModel.GetPlayer());
+            }
         }
 
         private void openPlayerSelectEditDialog()
@@ -181,7 +217,7 @@ namespace NerfWarsLeaderboard
                 //Checks for the user if they are editing a player
                 if (playerSelectEditModel.GetIsEditingPlayer())
                 {
-                    Debug.WriteLine("Display the edit");
+                    Debug.WriteLine("Display selecting the player to edit");
                     PlayerEditModel playerEditWindow = new PlayerEditModel(mainWindow);
                     playerEditWindow.Show(players, playerSelectEditModel.GetPlayer());
                     //Player has pressed confirmed so they do wish to update a player
@@ -209,51 +245,12 @@ namespace NerfWarsLeaderboard
         {
             CurrentAction regButtonClick = CurrentAction.DELETE;
             DisplayTeamModal(regButtonClick);
-            /*       while (!selectTeamModel.getButtonAction().Equals(ButtonAction.CLEAR))
-                   {
-                       selectTeamModel.updateTeams(teams);
-                       selectTeamModel.show();
-                       Team deletedTeam = selectTeamModel.getRemovedTeam();
-                       teams.Remove(deletedTeam);
-                   }
-                   selectTeamModel.setToNothing();
-              */
         }
 
         private void BtnAddTeam_Click(object sender, RoutedEventArgs e)
         {
             CurrentAction regButtonClick = CurrentAction.ADD;
             DisplayTeamModal(regButtonClick);
-            /*     CurrentAction currentAction = CurrentAction.ADD;
-                 addEditTeamModel.showWindow(currentAction);
-                 ButtonAction buttonAction = addEditTeamModel.getButtonAction();
-                 while (!buttonAction.Equals(ButtonAction.CLOSE))
-                 {
-                     switch (buttonAction)
-                     {
-                         case ButtonAction.CREATE:
-                             addEditPlayerModel.showWindow(CurrentAction.ADD);
-                             if (addEditPlayerModel.getButtonAction().Equals(ButtonAction.CONFIRM))
-                             {
-                                 Player player = addEditPlayerModel.getPlayer();
-                                 currentAction = CurrentAction.EDIT;
-                                 addEditTeamModel.showWindow(player);
-                                 buttonAction = addEditTeamModel.getButtonAction();
-                             }
-                             else
-                             {
-                                 buttonAction = ButtonAction.CLOSE;
-                             }
-                             break;
-                         case ButtonAction.CONFIRM:
-                             teams.Add(addEditTeamModel.getTeam());
-                             buttonAction = ButtonAction.CLOSE;
-                             break;
-                     }
-                 }
-                 addEditTeamModel.setToNothing();
-                 LoadTeamComboBoxes(mainWindow.playGame, teams);
-            */
         }
 
         /// <summary>
@@ -283,11 +280,6 @@ namespace NerfWarsLeaderboard
         {
             CurrentAction regButtonClick = CurrentAction.ADD;
             DisplayPlayerModal(regButtonClick);
-
-            /*         CurrentAction currentAction = CurrentAction.ADD;
-                     addEditPlayerModel.showWindow(currentAction);
-                     AddPlayerAction(addEditPlayerModel.getButtonAction());
-              */
         }
 
         /// <summary>

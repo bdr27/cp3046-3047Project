@@ -9,7 +9,7 @@ namespace NerfWarsLeaderboard.Utility
         void SaveTeams(List<Team> teams); 
         List<Team> LoadTeams();
         List<Player> GetPlayers();
-        List<Team> GetTeam();
+        List<Team> GetTeams();
         void UpdatePlayer(Player player);
         void InsertPlayer(Player player);
         void DeletePlayer(Player player);

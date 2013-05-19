@@ -28,7 +28,7 @@ namespace NerfWarsLeaderboard
             dataGridPlayerNames.Items.Clear();
         }
 
-        internal void ShowDetails(Team team)
+        public void ShowDetails(Team team)
         {
             dataGridPlayerNames.Items.Clear();
             tbCreateTeamName.Text = team.GetTeamName();
@@ -43,9 +43,14 @@ namespace NerfWarsLeaderboard
             
         }
 
-        internal string GetTeamName()
+        public string GetTeamName()
         {
             return tbCreateTeamName.Text;
+        }
+
+        public string GetContact()
+        {
+            return tbCreateTeamContact.Text;
         }
     }
 }

@@ -58,7 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\AddEditPlayerModel.cs" />
     <Compile Include="Model\AddEditTeamModel.cs" />
     <Compile Include="Model\PlayerAddModel.cs" />
     <Compile Include="Model\PlayerDeleteModel.cs" />
@@ -67,7 +66,6 @@
     <Compile Include="Model\TeamAddModel.cs" />
     <Compile Include="Model\TeamDeleteModel.cs" />
     <Compile Include="Model\TeamEditModel.cs" />
-    <Compile Include="Model\SelectPlayerModel.cs" />
     <Compile Include="Model\SelectTeamModel.cs" />
     <Compile Include="Utility\ButtonAction.cs" />
     <Compile Include="Utility\CurrentAction.cs" />
