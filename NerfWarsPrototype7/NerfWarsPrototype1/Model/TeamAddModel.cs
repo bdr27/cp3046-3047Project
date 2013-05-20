@@ -71,8 +71,8 @@ namespace NerfWarsLeaderboard.Model
 
         private void SetTeamDetails()
         {
-            team.SetTeamName(addTeam.GetTeamName());
-            team.SetContact(addTeam.GetContact());
+            team.SetTName(addTeam.GetTeamName());
+            team.SetTContact(addTeam.GetContact());
         }
 
         public ButtonAction GetButtonAction()

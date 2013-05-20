@@ -41,10 +41,10 @@ namespace NerfWarsLeaderboard.Utility
 
         public void UpdatePlayer(Player player)
         {
-            int ID = player.GetID();
+            int ID = player.GetP_ID();
             for (int i = 0; i < players.Count; i++)
             {
-                if (players[i].GetID() == ID)
+                if (players[i].GetP_ID() == ID)
                 {
                     players[i] = player;
                     break;

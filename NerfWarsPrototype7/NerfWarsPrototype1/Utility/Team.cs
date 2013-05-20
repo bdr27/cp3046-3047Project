@@ -6,24 +6,24 @@ namespace NerfWarsLeaderboard.Utility
     public class Team
     {
         private List<Player> players;
-        private string teamName;
-        private string contact;
+        private string tName;
+        private string tContact;
 
         public Team()
         {
             players = new List<Player>();
         }
 
-        public Team(string teamName, string contact, List<Player> playerNames)
+        public Team(string tName, string tContact, List<Player> playerNames)
         {
-            this.teamName = teamName;
+            this.tName = tName;
             this.players = playerNames;
-            this.contact = contact;
+            this.tContact = tContact;
         }
 
-        public void SetTeamName(string teamName)
+        public void SetTName(string tName)
         {
-            this.teamName = teamName;
+            this.tName = tName;
         }
 
         public void AddTeamPlayer(Player player)
@@ -31,33 +31,33 @@ namespace NerfWarsLeaderboard.Utility
             players.Add(player);
         }
 
-        public void SetPlayerNames(List<Player> player)
+        public void SetTeamPlayers(List<Player> players)
         {
-            this.players = player;
+            this.players = players;
         }
 
-        public string GetTeamName()
+        public string GetTName()
         {
-            return teamName;
+            return tName;
         }
 
-        public List<string> GetPlayerFirstName()
+        public List<string> GetPlayerFName()
         {
             List<string> playerNames = new List<string>();
             foreach (var player in players)
             {
-                playerNames.Add(player.GetFirstName());
+                playerNames.Add(player.GetFName());
             }
             return playerNames;
         }
-        public void SetContact(string contact)
+        public void SetTContact(string tContact)
         {
-            this.contact = contact;
+            this.tContact = tContact;
         }
 
         public override string ToString()
         {
-            return teamName;
+            return tName;
         }
 
         public override bool Equals(object obj)
@@ -68,7 +68,7 @@ namespace NerfWarsLeaderboard.Utility
                 other = obj as Team;
                 if (other != null)
                 {
-                    if (teamName.Equals(other.teamName))
+                    if (tName.Equals(other.tName))
                     {
                         //Checks all the players in team A are not in team B
                         for (int i = 0; i < players.Count; i++)

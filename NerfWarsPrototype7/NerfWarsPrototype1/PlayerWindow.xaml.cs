@@ -54,12 +54,12 @@ namespace NerfWarsLeaderboard
 
         public void LoadText(Player player)
         {
-            tbFirstName.Text = player.GetFirstName();
-            tbLastName.Text = player.GetLastName();
+            tbFirstName.Text = player.GetFName();
+            tbLastName.Text = player.GetLName();
             tbAge.Text = player.GetAge() + "";
             tbContact.Text = player.GetContact();
             tbGuardian.Text = player.GetGuardian();
-            tbMedical.Text = player.GetMedicalConditions();
+            tbMedical.Text = player.GetMedical();
         }
 
         public bool ValidFields()
@@ -84,11 +84,11 @@ namespace NerfWarsLeaderboard
         public void UpdatePlayer()
         {
             player.SetAge(Int32.Parse(tbAge.Text));
-            player.SetContact(tbContact.Text);
-            player.SetFirstName(tbFirstName.Text);
+            player.SetPContact(tbContact.Text);
+            player.SetFName(tbFirstName.Text);
             player.SetGuardian(tbGuardian.Text);
-            player.SetLastname(tbLastName.Text);
-            player.SetMedicalConditions(tbMedical.Text);
+            player.SetLName(tbLastName.Text);
+            player.SetMedical(tbMedical.Text);
         }
 
         private string GetMedical()

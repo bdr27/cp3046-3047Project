@@ -39,6 +39,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.65.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -70,6 +74,7 @@
     <Compile Include="Utility\ButtonAction.cs" />
     <Compile Include="Utility\CurrentAction.cs" />
     <Compile Include="Utility\DataBaseHandler.cs" />
+    <Compile Include="Utility\DatabaseInteraction.cs" />
     <Compile Include="Utility\Game.cs" />
     <Compile Include="Utility\GameState.cs" />
     <Compile Include="Utility\MOCKDataBaseHandler.cs" />
@@ -93,7 +98,7 @@
       <DependentUpon>RegistrationTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\Team.cs" />
-    <Compile Include="Utility\TeamPlay.cs" />
+    <Compile Include="Utility\PlayerTeam.cs" />
     <Compile Include="TeamWindow.xaml.cs">
       <DependentUpon>TeamWindow.xaml</DependentUpon>
     </Compile>

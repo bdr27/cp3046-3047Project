@@ -11,19 +11,13 @@
             <Label HorizontalAlignment="Left" Margin="10,92,0,0" Content="Team Contact" VerticalAlignment="Top"/>
             <TextBox x:Name="tbCreateTeamName" HorizontalAlignment="Left" Height="23" Margin="106,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
             <TextBox x:Name="tbCreateTeamContact" HorizontalAlignment="Left" Height="23" Margin="106,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="163"/>
-            <Button x:Name="btnTeamCreateNewPlayer" Content="Create New Player" HorizontalAlignment="Left" Margin="187,151,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="btnTeamAddExistingPlayer" Content="Add Existing Player" HorizontalAlignment="Left" Margin="12,151,0,0" VerticalAlignment="Top"/>
 
+            <Button x:Name="btnTeamAddExistingPlayer" Content="Add Existing Player" HorizontalAlignment="Left" Margin="12,151,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="btnTeamCreateNewPlayer" Content="Create New Player" HorizontalAlignment="Left" Margin="187,151,0,0" VerticalAlignment="Top"/>
+            <ListView x:Name="dataGridPlayerNames" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Height="144" Width="280" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            
             <Button x:Name="btnTeamClear" Content="Clear" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Left" Margin="215,368,0,0" VerticalAlignment="Top" Width="75"/>
-            <DataGrid x:Name="dataGridPlayerNames" HorizontalAlignment="Left" Margin="10,197,0,0" VerticalAlignment="Top" Height="144" Width="280">
-                <DataGrid.Columns>
-                    <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="First Name     "/>
-                    <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Last Name      "/>
-                    <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Contact        "/>
-                    <DataGridCheckBoxColumn Binding="{x:Null}" ClipboardContentBinding="{x:Null}" Header="Age"/>
-                </DataGrid.Columns>
-            </DataGrid>
         </Grid>
     </Border>
 </Window>

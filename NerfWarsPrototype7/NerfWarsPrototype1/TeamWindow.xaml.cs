@@ -31,11 +31,11 @@ namespace NerfWarsLeaderboard
         public void ShowDetails(Team team)
         {
             dataGridPlayerNames.Items.Clear();
-            tbCreateTeamName.Text = team.GetTeamName();
-            if (team.GetPlayerFirstName().Count > 0)
+            tbCreateTeamName.Text = team.GetTName();
+            if (team.GetPlayerFName().Count > 0)
             {
-                tbCreateTeamContact.Text = team.GetPlayerFirstName()[0];
-                foreach (var player in team.GetPlayerFirstName())
+                tbCreateTeamContact.Text = team.GetPlayerFName()[0];
+                foreach (var player in team.GetPlayerFName())
                 {
                     dataGridPlayerNames.Items.Add(player);
                 }

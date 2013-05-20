@@ -5,58 +5,58 @@ namespace NerfWarsLeaderboard.Utility
     public class Player
     {
         private static int counter = 0;
-        private int ID;
-        private string firstName;
-        private string lastName;
+        private int p_ID;
+        private string fName;
+        private string lName;
         private int age;
         private string guardian;
-        private string contact;
-        private string medicalConditions;
+        private string pContact;
+        private string medical;
 
-       public Player()
+        public Player()
         {
         }
 
-       public Player(string firstName, string lastName, int age, string guardian, string contact, string medicalConditions)
-       {
-           // TODO: Complete member initialization
-           this.ID = counter++;
-           this.firstName = firstName;
-           this.lastName = lastName;
-           this.age = age;
-           this.guardian = guardian;
-           this.contact = contact;
-           this.medicalConditions = medicalConditions;
-       }
-
-        public void SetFirstName(string firstname)
+        public Player(string fName, string lName, int age, string guardian, string pContact, string medical)
         {
-            this.firstName = firstname;
+            // TODO: Complete member initialization
+            this.p_ID = counter++;
+            this.fName = fName;
+            this.lName = lName;
+            this.age = age;
+            this.guardian = guardian;
+            this.pContact = pContact;
+            this.medical = medical;
         }
 
-        public string GetFirstName()
+        public int GetP_ID()
         {
-            return firstName;
+            return p_ID;
         }
 
-        public void SetLastname(string lastName)
+        public void SetFName(string fName)
         {
-            this.lastName = lastName;
+            this.fName = fName;
         }
 
-        public string GetLastName()
+        public string GetFName()
         {
-            return lastName;
+            return fName;
+        }
+
+        public void SetLName(string lName)
+        {
+            this.lName = lName;
+        }
+
+        public string GetLName()
+        {
+            return lName;
         }
 
         public void SetAge(int age)
         {
             this.age = age;
-        }
-
-        public int GetID()
-        {
-            return ID;
         }
 
         public int GetAge()
@@ -74,24 +74,24 @@ namespace NerfWarsLeaderboard.Utility
             return guardian;
         }
 
-        public void SetContact(string contact)
+        public void SetPContact(string pContact)
         {
-            this.contact = contact;
+            this.pContact = pContact;
         }
 
         public string GetContact()
         {
-            return contact;
+            return pContact;
         }
 
-        public void SetMedicalConditions(string medicalConditions)
+        public void SetMedical(string medical)
         {
-            this.medicalConditions = medicalConditions;
+            this.medical = medical;
         }
 
-        public string GetMedicalConditions()
+        public string GetMedical()
         {
-            return medicalConditions;
+            return medical;
         }
 
         public override bool Equals(object obj)
@@ -104,8 +104,8 @@ namespace NerfWarsLeaderboard.Utility
                     other = obj as Player;
                     if (other != null)
                     {
-                        if(firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge())
-                       // if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
+                        if (fName.Equals(other.GetFName()) && lName.Equals(other.GetLName()) && age == other.GetAge())
+                        // if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
                         {
                             return true;
                         }
@@ -121,7 +121,7 @@ namespace NerfWarsLeaderboard.Utility
 
         public override string ToString()
         {
-            return firstName + " " + lastName;
+            return fName + " " + lName + " age: " + age;
         }
     }
 }
