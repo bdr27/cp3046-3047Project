@@ -32,12 +32,14 @@ namespace NerfWarsLeaderboard
         private PlayerAddModel playerAddModel;
         private PlayerSelectEditModel playerSelectEditModel;
         private PlayerDeleteModel playerDeleteModel;
+        private ProjectorState projectorState;
 
         public App()
             : base()
         {
             mainWindow = new MainWindow();
             projectorWindow = new ProjectorWindow();
+            projectorState = ProjectorState.EMTPY;
             projectorWindow.Show();
            // projectorWindow.Show();
             mainWindow.Show();
@@ -312,12 +314,33 @@ namespace NerfWarsLeaderboard
             liveMatchTab.btnTagPlusA.Click += BtnTagPlusA_Click;
             liveMatchTab.btnTagPlusB.Click += BtnTagPlusB_Click;
             liveMatchTab.btnReset.Click += BtnReset_Click;
-            liveMatchTab.btnLiveMatch.Click += btnLiveMatch_Click;
+            mainWindow.projectorController.btnLiveMatch.Click += btnLiveMatch_Click;
+            mainWindow.projectorController.btnLadder.Click += btnLadder_Click;
+            mainWindow.projectorController.btnStandby.Click += btnStandby_Click;
         }
 
         void btnLiveMatch_Click(object sender, RoutedEventArgs e)
         {
+            projectorState = ProjectorState.LIVE;
             projectorWindow.ProjectorGame.Visibility = Visibility.Visible;
+            projectorWindow.ProjectorLadder.Visibility = Visibility.Hidden;
+            projectorWindow.ProjectorStandby.Visibility = Visibility.Hidden;
+        }
+
+        void btnLadder_Click(object sender, RoutedEventArgs e)
+        {
+            projectorState = ProjectorState.LADDER;
+            projectorWindow.ProjectorGame.Visibility = Visibility.Hidden;
+            projectorWindow.ProjectorLadder.Visibility = Visibility.Visible;
+            projectorWindow.ProjectorStandby.Visibility = Visibility.Hidden;
+        }
+
+        void btnStandby_Click(object sender, RoutedEventArgs e)
+        {
+            projectorState = ProjectorState.STANDBY;
+            projectorWindow.ProjectorGame.Visibility = Visibility.Hidden;
+            projectorWindow.ProjectorLadder.Visibility = Visibility.Hidden;
+            projectorWindow.ProjectorStandby.Visibility = Visibility.Visible;
         }
 
         /// <summary>

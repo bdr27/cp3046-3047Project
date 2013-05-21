@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\App.xaml
-9-147381297
+12-1536166169
 
-30-1432481204
-141012385901
-PlayerWindow.xaml;ModalPlayerEditDelete.xaml;ModalTeamEditDelete.xaml;LiveMatchTab.xaml;MainWindow.xaml;ProjectionWindow.xaml;ProjectorGame.xaml;RegistrationTab.xaml;TeamWindow.xaml;
+341629734140
+21-1060425405
+PlayerWindow.xaml;ModalPlayerEditDelete.xaml;ModalTeamEditDelete.xaml;LiveMatchTab.xaml;MainWindow.xaml;ProjectionWindow.xaml;ProjectorController.xaml;ProjectorGame.xaml;ProjectorLadder.xaml;ProjectorStandby.xaml;RegistrationTab.xaml;TeamWindow.xaml;
 
 False
 

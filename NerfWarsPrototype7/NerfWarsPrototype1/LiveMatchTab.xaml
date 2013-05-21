@@ -13,7 +13,6 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Column="0">
@@ -92,30 +91,6 @@
                 <Label x:Name="lblEndOfMatch" Content="End match and save results" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <Button Margin="10,0,0,0" x:Name="btnRecord" Content="End match" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25"/>
             </WrapPanel>
-        </Grid>
-
-        <Grid Grid.Column="1" Background="#FFE0E0E0" Grid.RowSpan="2" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="3*"/>
-                <RowDefinition Height="0.5*"/>
-            </Grid.RowDefinitions>
-            
-             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.5*"/>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="0.5*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Grid.Row="1" Name="txblProjector" Content="Change Project Display" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
-            <Button Grid.Column="1" Grid.Row="3" x:Name="btnLiveMatch" Content="Live Match" FontSize="20" Background="LightGreen"/>
-            <Button Grid.Column="1" Grid.Row="5" Name="btnTournament" Content="Ladder" FontSize="20" Background="LightBlue"/>
-            <Button Grid.Column="1" Grid.Row="7" Name="btnStandby" Content="Standby" FontSize="20" Background="LightCoral"/>
         </Grid>
     </Grid>
 </UserControl>

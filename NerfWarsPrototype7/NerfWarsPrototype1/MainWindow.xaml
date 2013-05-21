@@ -4,7 +4,11 @@
         xmlns:local="clr-namespace:NerfWarsLeaderboard"
         Title="Splash Inc. - Nerf Wars Leaderboard - [THIS WINDOW IS NOT FOR PUBLIC DISPLAY]"  Width="800" Height="600" MinWidth="800" MinHeight="600">
     <Grid Name="mainGrid">
-        <TabControl>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Column="0">
             <TabItem Header="Registration" x:Name="tabReg">
                 <Grid>
                     <local:RegistrationTab x:Name="regMenu" Visibility="Visible"/>
@@ -28,6 +32,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <local:ProjectorController x:Name="projectorController"  Grid.Column="1" Visibility="Visible" />
 
     </Grid>
 </Window>
