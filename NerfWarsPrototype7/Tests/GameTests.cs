@@ -83,7 +83,7 @@ namespace NerfWarsTests
             Team team2 = new Team("team2","47454545", playerNames);
 
             Game game = new Game();
-            TeamPlay teamPlayer = new TeamPlay(new List<string>(), "");
+            PlayTeam teamPlayer = new PlayTeam(new List<string>(), "");
             game.LoadTeamA(team1);
             game.LoadTeamB(team2);
             int team1Tag = 30;

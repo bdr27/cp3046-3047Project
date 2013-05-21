@@ -13,26 +13,21 @@ namespace NerfWarsLeaderboard.Utility
         private string pContact;
         private string medical;
 
-        public Player()
+       public Player()
         {
         }
 
-        public Player(string fName, string lName, int age, string guardian, string pContact, string medical)
-        {
-            // TODO: Complete member initialization
-            this.p_ID = counter++;
-            this.fName = fName;
-            this.lName = lName;
-            this.age = age;
-            this.guardian = guardian;
-            this.pContact = pContact;
-            this.medical = medical;
-        }
-
-        public int GetP_ID()
-        {
-            return p_ID;
-        }
+       public Player(string fName, string lName, int age, string guardian, string pContact, string medical)
+       {
+           // TODO: Complete member initialization
+           this.p_ID = counter++;
+           this.fName = fName;
+           this.lName = lName;
+           this.age = age;
+           this.guardian = guardian;
+           this.pContact = pContact;
+           this.medical = medical;
+       }
 
         public void SetFName(string fName)
         {
@@ -59,6 +54,11 @@ namespace NerfWarsLeaderboard.Utility
             this.age = age;
         }
 
+        public int GetP_ID()
+        {
+            return p_ID;
+        }
+
         public int GetAge()
         {
             return age;
@@ -74,9 +74,9 @@ namespace NerfWarsLeaderboard.Utility
             return guardian;
         }
 
-        public void SetPContact(string pContact)
+        public void SetContact(string contact)
         {
-            this.pContact = pContact;
+            this.pContact = contact;
         }
 
         public string GetContact()
@@ -104,8 +104,8 @@ namespace NerfWarsLeaderboard.Utility
                     other = obj as Player;
                     if (other != null)
                     {
-                        if (fName.Equals(other.GetFName()) && lName.Equals(other.GetLName()) && age == other.GetAge())
-                        // if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
+                        if(fName.Equals(other.GetFName()) && lName.Equals(other.GetLName()) && age == other.GetAge())
+                       // if (firstName.Equals(other.GetFirstName()) && lastName.Equals(other.GetLastName()) && age == other.GetAge() && guardian.Equals(other.GetGuardian()) && contact.Equals(other.GetContact()) && medicalConditions.Equals(other.GetMedicalConditions()))
                         {
                             return true;
                         }
@@ -121,7 +121,7 @@ namespace NerfWarsLeaderboard.Utility
 
         public override string ToString()
         {
-            return fName + " " + lName + " age: " + age;
+            return fName + " " + lName;
         }
     }
 }

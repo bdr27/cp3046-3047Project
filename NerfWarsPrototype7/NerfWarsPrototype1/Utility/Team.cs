@@ -7,18 +7,18 @@ namespace NerfWarsLeaderboard.Utility
     {
         private List<Player> players;
         private string tName;
-        private string tContact;
+        private string contact;
 
         public Team()
         {
             players = new List<Player>();
         }
 
-        public Team(string tName, string tContact, List<Player> playerNames)
+        public Team(string tName, string contact, List<Player> playerNames)
         {
             this.tName = tName;
             this.players = playerNames;
-            this.tContact = tContact;
+            this.contact = contact;
         }
 
         public void SetTName(string tName)
@@ -31,17 +31,17 @@ namespace NerfWarsLeaderboard.Utility
             players.Add(player);
         }
 
-        public void SetTeamPlayers(List<Player> players)
+        public void SetPlayerNames(List<Player> player)
         {
-            this.players = players;
+            this.players = player;
         }
 
-        public string GetTName()
+        public string GetTeamName()
         {
             return tName;
         }
 
-        public List<string> GetPlayerFName()
+        public List<string> GetPlayerFirstName()
         {
             List<string> playerNames = new List<string>();
             foreach (var player in players)
@@ -50,9 +50,9 @@ namespace NerfWarsLeaderboard.Utility
             }
             return playerNames;
         }
-        public void SetTContact(string tContact)
+        public void SetContact(string contact)
         {
-            this.tContact = tContact;
+            this.contact = contact;
         }
 
         public override string ToString()

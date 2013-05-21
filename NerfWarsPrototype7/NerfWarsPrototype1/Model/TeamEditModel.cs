@@ -5,12 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using NerfWarsLeaderboard.Utility;
 
 namespace NerfWarsLeaderboard.Model
 {
     public class TeamEditModel
     {
         private ModalTeamEditDelete teamEditModal;
+        private List<Team> teams;
+        private ButtonAction buttonAction;
 
         public TeamEditModel(Window window)
         {
@@ -21,6 +24,7 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show()
         {
+            buttonAction = ButtonAction.NONE;
             teamEditModal.ShowDialog();
         }
 
@@ -30,16 +34,27 @@ namespace NerfWarsLeaderboard.Model
             teamEditModal.btnEditTeamCancel.Click += BtnEditTeamCancel_Click;
         }
 
-        void BtnModalTeamEdit_Click(object sender, RoutedEventArgs e)
+        private void BtnModalTeamEdit_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I Edit stuff");
-        }
-
-        void BtnEditTeamCancel_Click(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("I cancel and close the window");
+            buttonAction = ButtonAction.CONFIRM;
             teamEditModal.Hide();
         }
 
+        private void BtnEditTeamCancel_Click(object sender, RoutedEventArgs e)
+        {
+            Debug.WriteLine("I cancel and close the window");
+            buttonAction = ButtonAction.NONE;
+            teamEditModal.Hide();
+        }
+        public void UpdateTeams(List<Team> teams)
+        {
+            this.teams = teams;
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
+        }
     }
 }

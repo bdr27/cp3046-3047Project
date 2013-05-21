@@ -13,6 +13,7 @@ namespace NerfWarsLeaderboard.Model
         private ModalPlayerEditDelete playerSelectEdit;
         private List<Player> players;
         private Player player;
+        private ButtonAction buttonAction;
         private bool isEditingPlayer;
 
         public PlayerSelectEditModel(Window window)
@@ -38,6 +39,7 @@ namespace NerfWarsLeaderboard.Model
             }
             else
             {
+                buttonAction = ButtonAction.CONFIRM;
                 player = tempPlayer as Player;
                 isEditingPlayer = true;
                 playerSelectEdit.Hide();
@@ -46,6 +48,7 @@ namespace NerfWarsLeaderboard.Model
 
         private void BtnPlayerModalCancel_Click(object sender, RoutedEventArgs e)
         {
+            buttonAction = ButtonAction.NONE;
             playerSelectEdit.Hide();
         }
 
@@ -56,6 +59,7 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show(List<Player> players)
         {
+            buttonAction = ButtonAction.NONE;
             isEditingPlayer = false;
             this.players = players;
             playerSelectEdit.LoadCmbPlayerNames(players);
@@ -65,6 +69,11 @@ namespace NerfWarsLeaderboard.Model
         public Player GetPlayer()
         {
             return player;
+        }
+
+        public ButtonAction GetButtonAction()
+        {
+            return buttonAction;
         }
     }
 }

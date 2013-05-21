@@ -43,8 +43,8 @@ namespace NerfWarsLeaderboard
             this.teamB = teamB;
             teamACount = 0;
             teamBCount = 0;
-            teamAName = teamA.GetPlayerFName();
-            teamBName = teamB.GetPlayerFName();
+            teamAName = teamA.GetPlayerFirstName();
+            teamBName = teamB.GetPlayerFirstName();
 
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamAName), lblTeamAProjector);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBName), lblTeamBProjector);
@@ -95,12 +95,12 @@ namespace NerfWarsLeaderboard
 
         private void SetTeamAName(Label label)
         {
-            label.Content = teamA.GetTName();
+            label.Content = teamA.GetTeamName();
         }
 
         private void SetTeamBName(Label label)
         {
-            label.Content = teamB.GetTName();
+            label.Content = teamB.GetTeamName();
         }
 
         private void SetTimer(Label label)

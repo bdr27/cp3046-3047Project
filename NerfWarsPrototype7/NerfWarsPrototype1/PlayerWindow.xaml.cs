@@ -84,7 +84,7 @@ namespace NerfWarsLeaderboard
         public void UpdatePlayer()
         {
             player.SetAge(Int32.Parse(tbAge.Text));
-            player.SetPContact(tbContact.Text);
+            player.SetContact(tbContact.Text);
             player.SetFName(tbFirstName.Text);
             player.SetGuardian(tbGuardian.Text);
             player.SetLName(tbLastName.Text);

@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace NerfWarsLeaderboard.Utility
 {
-    public class TeamPlay
+    public class PlayTeam
     {
         private const int FLAG_SCORE = 5;
         private const int TAG_SCORE = 1;
@@ -15,7 +15,7 @@ namespace NerfWarsLeaderboard.Utility
         private int tag;
         private int score;
 
-        public TeamPlay(List<string> playerNames, string teamName)
+        public PlayTeam(List<string> playerNames, string teamName)
         {
             this.playerNames = playerNames;
             this.teamName = teamName;

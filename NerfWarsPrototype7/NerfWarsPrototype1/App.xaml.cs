@@ -43,9 +43,6 @@ namespace NerfWarsLeaderboard
 
             dbHandler = new MOCKDataBaseHandler();
 
-            //Setup up test data
-
-
             //Starting game state
             gameState = GameState.WAITING;
             //Loads the teams to the combo box
@@ -144,7 +141,12 @@ namespace NerfWarsLeaderboard
 
         private void openEditTeamDialog()
         {
+            teamEditModel.UpdateTeams(teams);
             teamEditModel.Show();
+            if (teamEditModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                Debug.WriteLine("Display the team add window with the ability to edit");
+            }
         }
 
         private void openAddTeamDialog()
@@ -162,10 +164,21 @@ namespace NerfWarsLeaderboard
                         break;
                     case ButtonAction.EXISTING:
                         Debug.WriteLine("Going to add existing player to team");
+                        openTeamAddExistingPlayer();
                         break;
                 }
             } while (!teamAddModel.GetButtonAction().Equals(ButtonAction.CLOSE));
             dbHandler.InsertTeam(teamAddModel.GetTeam());
+        }
+
+        private void openTeamAddExistingPlayer()
+        {
+            PlayerSelectEditModel existingPlayerWindow = new PlayerSelectEditModel(mainWindow);
+            existingPlayerWindow.Show(players);
+            if (existingPlayerWindow.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                teamAddModel.AddPlayer(existingPlayerWindow.GetPlayer());                
+            }
         }
 
         private void checkAddNewPlayerToTeam(Player player)

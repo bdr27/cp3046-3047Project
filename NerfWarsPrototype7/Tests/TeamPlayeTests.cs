@@ -13,7 +13,7 @@ namespace NerfWarsLeaderboard
             List<string> playerNames = setPlayerNames();
             string teamName = "Crazy 8's";
 
-            TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
+            PlayTeam teamPlayTest = new PlayTeam(playerNames, teamName);
             Assert.AreEqual(playerNames, teamPlayTest.GetPlayerNames());
             Assert.AreEqual(teamName, teamPlayTest.GetTeamName());
             Assert.AreEqual(0, teamPlayTest.GetTag());
@@ -37,7 +37,7 @@ namespace NerfWarsLeaderboard
             List<string> playerNames = setPlayerNames();
             string teamName = "Crazy 8's";
 
-            TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
+            PlayTeam teamPlayTest = new PlayTeam(playerNames, teamName);
             teamPlayTest.AddFlag();
             Assert.AreEqual(1, teamPlayTest.GetFlag());
             teamPlayTest.MinusFlag();
@@ -50,7 +50,7 @@ namespace NerfWarsLeaderboard
             List<string> playerNames = setPlayerNames();
             string teamName = "Crazy 8's";
 
-            TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
+            PlayTeam teamPlayTest = new PlayTeam(playerNames, teamName);
             teamPlayTest.AddTag();
             Assert.AreEqual(1, teamPlayTest.GetTag());
             teamPlayTest.MinusTag();
@@ -62,7 +62,7 @@ namespace NerfWarsLeaderboard
             List<string> playerNames = setPlayerNames();
             string teamName = "Crazy 8's";
 
-            TeamPlay teamPlayTest = new TeamPlay(playerNames, teamName);
+            PlayTeam teamPlayTest = new PlayTeam(playerNames, teamName);
             teamPlayTest.AddFlag();
             teamPlayTest.AddTag();
             teamPlayTest.AddTag();

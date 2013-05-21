@@ -5,8 +5,8 @@
         private bool gameStarted;
         private int min;
         private int sec;
-        private PlayerTeam teamA;
-        private PlayerTeam teamB;
+        private PlayTeam teamA;
+        private PlayTeam teamB;
 
         public Game()
         {
@@ -14,12 +14,12 @@
 
         public void LoadTeamA(Team team)
         {
-            teamA = new PlayerTeam(team.GetPlayerFName(), team.GetTName());
+            teamA = new PlayTeam(team.GetPlayerFirstName(), team.GetTeamName());
         }
 
         public void LoadTeamB(Team team)
         {
-            teamB = new PlayerTeam(team.GetPlayerFName(), team.GetTName());
+            teamB = new PlayTeam(team.GetPlayerFirstName(), team.GetTeamName());
         }
 
         public void SetMin(int min)
@@ -32,12 +32,12 @@
             this.sec = sec;
         }
 
-        public PlayerTeam GetTeamA()
+        public PlayTeam GetTeamA()
         {
             return teamA;
         }
 
-        public PlayerTeam GetTeamB()
+        public PlayTeam GetTeamB()
         {
             return teamB;
         }
