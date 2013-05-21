@@ -65,6 +65,9 @@
     <Compile Include="Model\TeamAddModel.cs" />
     <Compile Include="Model\TeamDeleteModel.cs" />
     <Compile Include="Model\TeamEditModel.cs" />
+    <Compile Include="ProjectorGame.xaml.cs">
+      <DependentUpon>ProjectorGame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utility\ButtonAction.cs" />
     <Compile Include="Utility\CurrentAction.cs" />
     <Compile Include="Utility\DataBaseHandler.cs" />
@@ -125,6 +128,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ProjectionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ProjectorGame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

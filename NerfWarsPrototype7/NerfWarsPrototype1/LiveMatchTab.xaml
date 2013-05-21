@@ -113,7 +113,7 @@
                 <ColumnDefinition Width="0.5*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="1" Name="txblProjector" Content="Change Project Display" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Grid.ColumnSpan="3"/>
-            <Button Grid.Column="1" Grid.Row="3" Name="btnLiveMatch" Content="Live Match" FontSize="20" Background="LightGreen"/>
+            <Button Grid.Column="1" Grid.Row="3" x:Name="btnLiveMatch" Content="Live Match" FontSize="20" Background="LightGreen"/>
             <Button Grid.Column="1" Grid.Row="5" Name="btnTournament" Content="Ladder" FontSize="20" Background="LightBlue"/>
             <Button Grid.Column="1" Grid.Row="7" Name="btnStandby" Content="Standby" FontSize="20" Background="LightCoral"/>
         </Grid>

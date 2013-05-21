@@ -39,6 +39,7 @@ namespace NerfWarsLeaderboard
             mainWindow = new MainWindow();
             projectorWindow = new ProjectorWindow();
             projectorWindow.Show();
+           // projectorWindow.Show();
             mainWindow.Show();
 
             dbHandler = new MOCKDataBaseHandler();
@@ -311,6 +312,12 @@ namespace NerfWarsLeaderboard
             liveMatchTab.btnTagPlusA.Click += BtnTagPlusA_Click;
             liveMatchTab.btnTagPlusB.Click += BtnTagPlusB_Click;
             liveMatchTab.btnReset.Click += BtnReset_Click;
+            liveMatchTab.btnLiveMatch.Click += btnLiveMatch_Click;
+        }
+
+        void btnLiveMatch_Click(object sender, RoutedEventArgs e)
+        {
+            projectorWindow.ProjectorGame.Visibility = Visibility.Visible;
         }
 
         /// <summary>
@@ -589,6 +596,7 @@ namespace NerfWarsLeaderboard
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBTag), playGame.lblTagB);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamACap), playGame.lblFlagA);
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBCap), playGame.lblFlagB);
+        
             projectorWindow.UpdateGameDetails(game);
         }
 
