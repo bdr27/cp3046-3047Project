@@ -19,3 +19,6 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\Backup\cp3046
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\Backup\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Debug\NerfWarsTests.csprojResolveAssemblyReference.cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\Backup\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Debug\Tests.dll
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\Backup\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Debug\Tests.pdb
+C:\Users\jc210335\Desktop\cp3046-3047Project.git\trunk\NerfWarsPrototype7\Tests\obj\Debug\NerfWarsTests.csprojResolveAssemblyReference.cache
+C:\Users\jc210335\Desktop\cp3046-3047Project.git\trunk\NerfWarsPrototype7\Tests\obj\Debug\Tests.dll
+C:\Users\jc210335\Desktop\cp3046-3047Project.git\trunk\NerfWarsPrototype7\Tests\obj\Debug\Tests.pdb

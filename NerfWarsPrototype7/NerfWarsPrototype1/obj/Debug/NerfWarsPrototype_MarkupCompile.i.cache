@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\
+C:\Users\jc210335\Desktop\cp3046-3047Project.git\trunk\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\
 NerfWarsLeaderboard
 none
 false
 DEBUG;TRACE
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\App.xaml
-12-1536166169
+C:\Users\jc210335\Desktop\cp3046-3047Project.git\trunk\NerfWarsPrototype7\NerfWarsPrototype1\App.xaml
+12-250581501
 
-381740814829
-21-1060425405
-PlayerWindow.xaml;ModalPlayerEditDelete.xaml;ModalTeamEditDelete.xaml;LiveMatchTab.xaml;MainWindow.xaml;ProjectionWindow.xaml;ProjectorController.xaml;ProjectorGame.xaml;ProjectorLadder.xaml;ProjectorStandby.xaml;RegistrationTab.xaml;TeamWindow.xaml;
+38-236561647
+21-774447172
+ModalPlayer.xaml;ModalPlayerEditDelete.xaml;ModalTeamEditDelete.xaml;TabLiveMatch.xaml;MainWindow.xaml;ProjectionWindow.xaml;ProjectorController.xaml;ProjectorGame.xaml;ProjectorLadder.xaml;ProjectorStandby.xaml;TabRegistration.xaml;ModalTeam.xaml;
 
 False
 

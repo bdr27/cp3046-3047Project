@@ -29,6 +29,7 @@ namespace NerfWarsLeaderboard.Model
         }
         public void Show()
         {
+            teamDeleteModel.SetDelete();
             buttonAction = ButtonAction.NONE;
             teamDeleteModel.UpdateCombo(teams);
             teamDeleteModel.ShowDialog();

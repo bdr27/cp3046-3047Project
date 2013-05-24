@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Media;
 using NerfWarsLeaderboard.Utility;
+using System.Windows.Controls;
 
 namespace NerfWarsLeaderboard
 {
@@ -24,12 +25,16 @@ namespace NerfWarsLeaderboard
         }
         public void SetEdit()
         {
+            BorderBrush = Brushes.LightBlue;
+            BorderThickness = new Thickness(2);
             tblSearchAPlayer.Text = "Search for a player to edit";
             btnPlayerModalEdit.Content = "Edit";
         }
 
         public void SetDelete()
         {
+            BorderBrush = Brushes.LightCoral;
+            BorderThickness = new Thickness(2);
             tblSearchAPlayer.Text = "Search for a player to delete";
             btnPlayerModalEdit.Content = "Delete";
         }

@@ -11,13 +11,13 @@ namespace NerfWarsLeaderboard.Model
 {
     public class TeamAddModel
     {
-        private TeamWindow addTeam;
+        private ModalTeam addTeam;
         private ButtonAction buttonAction;
         private Team team;
 
         public TeamAddModel(Window window)
         {
-            addTeam = new TeamWindow();
+            addTeam = new ModalTeam();
             addTeam.Owner = window;
             WireHandlers();
         }
@@ -25,6 +25,7 @@ namespace NerfWarsLeaderboard.Model
         public void Show()
         {
             buttonAction = ButtonAction.NONE;
+            addTeam.SetAdd();
             addTeam.ShowDetails(team);
             addTeam.ShowDialog();
         }
@@ -93,6 +94,11 @@ namespace NerfWarsLeaderboard.Model
         public void SetTeam(Team team)
         {
             this.team = team;
+        }
+
+        public void SetEdit()
+        {
+            addTeam.SetEdit();
         }
     }
 }

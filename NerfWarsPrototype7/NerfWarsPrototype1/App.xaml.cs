@@ -96,13 +96,13 @@ namespace NerfWarsLeaderboard
         /// </summary>
         /// <param name="liveMatchTab"></param>
         /// <param name="teams"></param>
-        private void LoadTeamComboBoxes(LiveMatchTab liveMatchTab, List<Team> teams)
+        private void LoadTeamComboBoxes(TabLiveMatch liveMatchTab, List<Team> teams)
         {
             liveMatchTab.ClearTeamComboBox();
             liveMatchTab.LoadTeamSelectComboBox(teams);
         }
 
-        private void WireRegistrationButtons(RegistrationTab regTab)
+        private void WireRegistrationButtons(TabRegistration regTab)
         {
             regTab.btnAddPlayer.Click += BtnAddPlayer_Click;
             regTab.btnEditPlayer.Click += BtnEditPlayer_Click;
@@ -310,7 +310,7 @@ namespace NerfWarsLeaderboard
         /// Wires up the buttons for the live match
         /// </summary>
         /// <param name="liveMatchTab"></param>
-        private void WireLiveMatchButtons(LiveMatchTab liveMatchTab)
+        private void WireLiveMatchButtons(TabLiveMatch liveMatchTab)
         {
             liveMatchTab.btnStartPause.Click += BtnStartPause_Click;
             liveMatchTab.btnFlagPlusA.Click += BtnFlagPlusA_Click;
@@ -333,6 +333,10 @@ namespace NerfWarsLeaderboard
             projectorWindow.ProjectorGame.Visibility = Visibility.Visible;
             projectorWindow.ProjectorLadder.Visibility = Visibility.Hidden;
             projectorWindow.ProjectorStandby.Visibility = Visibility.Hidden;
+
+            mainWindow.ProjectorGame.Visibility = Visibility.Visible;
+            mainWindow.ProjectorLadder.Visibility = Visibility.Hidden;
+            mainWindow.ProjectorStandby.Visibility = Visibility.Hidden;
         }
 
         void btnLadder_Click(object sender, RoutedEventArgs e)
@@ -341,6 +345,10 @@ namespace NerfWarsLeaderboard
             projectorWindow.ProjectorGame.Visibility = Visibility.Hidden;
             projectorWindow.ProjectorLadder.Visibility = Visibility.Visible;
             projectorWindow.ProjectorStandby.Visibility = Visibility.Hidden;
+
+            mainWindow.ProjectorGame.Visibility = Visibility.Hidden;
+            mainWindow.ProjectorLadder.Visibility = Visibility.Visible;
+            mainWindow.ProjectorStandby.Visibility = Visibility.Hidden;
         }
 
         void btnStandby_Click(object sender, RoutedEventArgs e)
@@ -349,6 +357,10 @@ namespace NerfWarsLeaderboard
             projectorWindow.ProjectorGame.Visibility = Visibility.Hidden;
             projectorWindow.ProjectorLadder.Visibility = Visibility.Hidden;
             projectorWindow.ProjectorStandby.Visibility = Visibility.Visible;
+
+            mainWindow.ProjectorGame.Visibility = Visibility.Hidden;
+            mainWindow.ProjectorLadder.Visibility = Visibility.Hidden;
+            mainWindow.ProjectorStandby.Visibility = Visibility.Visible;
         }
 
         /// <summary>

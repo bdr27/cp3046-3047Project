@@ -24,6 +24,7 @@ namespace NerfWarsLeaderboard.Model
 
         public void Show()
         {
+            teamEditModal.SetEdit();
             buttonAction = ButtonAction.NONE;
             teamEditModal.UpdateCombo(teams);
             teamEditModal.ShowDialog();

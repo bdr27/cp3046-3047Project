@@ -11,14 +11,14 @@ namespace NerfWarsLeaderboard.Model
 {
     public class PlayerEditModel
     {
-        private PlayerWindow playerEdit;
+        private ModalPlayer playerEdit;
         private Player player;
         private List<Player> currentPlayers;
         private ButtonAction buttonAction;
 
         public PlayerEditModel(Window window)
         {
-            playerEdit = new PlayerWindow();
+            playerEdit = new ModalPlayer();
             playerEdit.Owner = window;
             WireHandlers();
         }

@@ -16,12 +16,19 @@ namespace NerfWarsLeaderboard
 
         }
 
-        public ModalTeamEditDelete(string newTextBlock, string newButtonContent)
+        public void SetEdit()
         {
-            InitializeComponent();
-            tblSelectATeam.Text = newTextBlock;
-            btnModalTeamEdit.Content = newButtonContent;
-            btnModalTeamEdit.Background = Brushes.LightCoral;
+            BorderBrush = Brushes.LightBlue;
+            BorderThickness = new Thickness(2);
+            btnModalTeamEdit.Content = "Edit";
+            tblSelectATeam.Text = "Edit Team";
+        }
+
+        public void SetDelete()
+        {
+            BorderBrush = Brushes.LightCoral;
+            BorderThickness = new Thickness(2);
+            btnModalTeamEdit.Content = "Delete";
         }
 
         public void UpdateCombo(List<Team> teams)

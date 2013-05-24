@@ -11,14 +11,15 @@ namespace NerfWarsLeaderboard.Model
 {
     public class PlayerAddModel
     {
-        private PlayerWindow playerAdd;
+        private ModalPlayer playerAdd;
         private Player player;
         private List<Player> currentPlayers;
         private ButtonAction buttonAction;
 
         public PlayerAddModel(Window window)
         {
-            playerAdd = new PlayerWindow();
+            playerAdd = new ModalPlayer();
+            playerAdd.SetAdd();
             playerAdd.Owner = window;
             WireHandlers();
         }
@@ -71,6 +72,11 @@ namespace NerfWarsLeaderboard.Model
         public ButtonAction GetButtonAction()
         {
             return buttonAction;
+        }
+
+        public void SetEdit()
+        {
+            playerAdd.SetEdit();
         }
     }
 }

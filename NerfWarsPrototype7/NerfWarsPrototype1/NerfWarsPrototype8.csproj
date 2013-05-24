@@ -91,8 +91,8 @@
     <Compile Include="Utility\GameState.cs" />
     <Compile Include="Utility\MOCKDataBaseHandler.cs" />
     <Compile Include="Utility\Player.cs" />
-    <Compile Include="PlayerWindow.xaml.cs">
-      <DependentUpon>PlayerWindow.xaml</DependentUpon>
+    <Compile Include="ModalPlayer.xaml.cs">
+      <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
     <Compile Include="ModalPlayerEditDelete.xaml.cs">
       <DependentUpon>ModalPlayerEditDelete.xaml</DependentUpon>
@@ -100,23 +100,23 @@
     <Compile Include="ModalTeamEditDelete.xaml.cs">
       <DependentUpon>ModalTeamEditDelete.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LiveMatchTab.xaml.cs">
-      <DependentUpon>LiveMatchTab.xaml</DependentUpon>
+    <Compile Include="TabLiveMatch.xaml.cs">
+      <DependentUpon>TabLiveMatch.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectionWindow.xaml.cs">
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationTab.xaml.cs">
-      <DependentUpon>RegistrationTab.xaml</DependentUpon>
+    <Compile Include="TabRegistration.xaml.cs">
+      <DependentUpon>TabRegistration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\ProjectorState.cs" />
     <Compile Include="Utility\Team.cs" />
     <Compile Include="Utility\PlayTeam.cs" />
-    <Compile Include="TeamWindow.xaml.cs">
-      <DependentUpon>TeamWindow.xaml</DependentUpon>
+    <Compile Include="ModalTeam.xaml.cs">
+      <DependentUpon>ModalTeam.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\Winner.cs" />
-    <Page Include="PlayerWindow.xaml">
+    <Page Include="ModalPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +128,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LiveMatchTab.xaml">
+    <Page Include="TabLiveMatch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,11 +164,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistrationTab.xaml">
+    <Page Include="TabRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TeamWindow.xaml">
+    <Page Include="ModalTeam.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
