@@ -25,6 +25,7 @@ namespace NerfWarsLeaderboard.Model
         public void Show()
         {
             buttonAction = ButtonAction.NONE;
+            teamEditModal.UpdateCombo(teams);
             teamEditModal.ShowDialog();
         }
 
@@ -55,6 +56,11 @@ namespace NerfWarsLeaderboard.Model
         public ButtonAction GetButtonAction()
         {
             return buttonAction;
+        }
+
+        public Team GetTeam()
+        {
+            return teamEditModal.GetTeam();
         }
     }
 }

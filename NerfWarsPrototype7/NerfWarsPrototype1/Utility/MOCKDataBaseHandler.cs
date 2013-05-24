@@ -64,7 +64,7 @@ namespace NerfWarsLeaderboard.Utility
 
         public void UpdateTeam(Team team)
         {
-            throw new NotImplementedException();
+            //I do nothing in this version
         }
 
         public void InsertTeam(Team team)
