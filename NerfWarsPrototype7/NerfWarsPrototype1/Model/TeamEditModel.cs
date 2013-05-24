@@ -45,7 +45,7 @@ namespace NerfWarsLeaderboard.Model
         private void BtnEditTeamCancel_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I cancel and close the window");
-            buttonAction = ButtonAction.NONE;
+            buttonAction = ButtonAction.CLOSE;
             teamEditModal.Hide();
         }
         public void UpdateTeams(List<Team> teams)

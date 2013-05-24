@@ -144,17 +144,20 @@ namespace NerfWarsLeaderboard
 
         private void openEditTeamDialog()
         {
-            teamEditModel.UpdateTeams(teams);
-            teamEditModel.Show();
-            if (teamEditModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            do
             {
-                Team team = teamEditModel.GetTeam();
-                TeamAddModel teamEdit = new TeamAddModel(mainWindow);
-                teamEdit.SetTeam(team);
-                teamEdit.Show();
-                dbHandler.UpdateTeam(team);
-                Debug.WriteLine("Display the team add window with the ability to edit");
-            }
+                teamEditModel.UpdateTeams(teams);
+                teamEditModel.Show();
+                if (teamEditModel.GetButtonAction().Equals(ButtonAction.CONFIRM))
+                {
+                    Team team = teamEditModel.GetTeam();
+                    TeamAddModel teamEdit = new TeamAddModel(mainWindow);
+                    teamEdit.SetTeam(team);
+                    teamEdit.Show();
+                    dbHandler.UpdateTeam(team);
+                    Debug.WriteLine("Display the team add window with the ability to edit");
+                }
+            } while (!teamEditModel.GetButtonAction().Equals(ButtonAction.CLOSE));
         }
 
         private void openAddTeamDialog()
