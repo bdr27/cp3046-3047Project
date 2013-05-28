@@ -6,10 +6,10 @@ namespace NerfWarsLeaderboard
     /// <summary>
     /// Interaction logic for RegistrationMenu.xaml
     /// </summary>
-    public partial class RegistrationTab : UserControl
+    public partial class TabRegistration : UserControl
     {
 
-        public RegistrationTab()
+        public TabRegistration()
         {
             InitializeComponent();
         }
