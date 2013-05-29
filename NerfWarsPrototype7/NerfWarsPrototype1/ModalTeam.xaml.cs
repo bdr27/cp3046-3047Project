@@ -31,8 +31,12 @@ namespace NerfWarsLeaderboard
 
         public void ShowDetails(Team team)
         {
+            foreach(string player in team.GetPlayerFirstName())
+            {
+                lvPlayers.Items.Add(player);
+            }
             //dataGridPlayerNames.Items.Clear();
-            tbCreateTeamName.Text = team.GetTeamName();
+           /* lvPlayers.Text = team.GetTeamName();
             if (team.GetPlayerFirstName().Count > 0)
             {
                 tbCreateTeamContact.Text = team.GetPlayerFirstName()[0];
@@ -40,7 +44,7 @@ namespace NerfWarsLeaderboard
                 {
                     //dataGridPlayerNames.Items.Add(player);
                 }
-            }
+            }*/
             
         }
 

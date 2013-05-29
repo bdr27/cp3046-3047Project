@@ -15,6 +15,6 @@
 
             <Button x:Name="btnTeamClear" Content="Clear" HorizontalAlignment="Left" Margin="10,368,0,0" VerticalAlignment="Top" Width="75"/>
             <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Left" Margin="215,368,0,0" VerticalAlignment="Top" Width="75"/>
-            <ListView HorizontalAlignment="Left" Height="174" Margin="12,189,0,0" VerticalAlignment="Top" Width="278" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+            <ListView x:Name="lvPlayers" HorizontalAlignment="Left" Height="174" Margin="12,189,0,0" VerticalAlignment="Top" Width="278" ScrollViewer.VerticalScrollBarVisibility="Visible" />
         </Grid>
 </Window>
