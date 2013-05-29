@@ -31,21 +31,11 @@ namespace NerfWarsLeaderboard
 
         public void ShowDetails(Team team)
         {
+            lvPlayers.Items.Clear();
             foreach(string player in team.GetPlayerFirstName())
             {
                 lvPlayers.Items.Add(player);
-            }
-            //dataGridPlayerNames.Items.Clear();
-           /* lvPlayers.Text = team.GetTeamName();
-            if (team.GetPlayerFirstName().Count > 0)
-            {
-                tbCreateTeamContact.Text = team.GetPlayerFirstName()[0];
-                foreach (var player in team.GetPlayerFirstName())
-                {
-                    //dataGridPlayerNames.Items.Add(player);
-                }
-            }*/
-            
+            }            
         }
 
         public string GetTeamName()

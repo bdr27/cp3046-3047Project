@@ -129,6 +129,7 @@ namespace NerfWarsLeaderboard
                     openEditTeamDialog();
                     break;
             }
+            LoadTeamComboBoxes(mainWindow.playGame, teams);
             teams = dbHandler.GetTeams();
         }
 
@@ -221,6 +222,7 @@ namespace NerfWarsLeaderboard
             }
             //Update the players
             players = dbHandler.GetPlayers();
+            LoadTeamComboBoxes(mainWindow.playGame, teams);
         }
 
         private void openDeletePlayerDialog()
