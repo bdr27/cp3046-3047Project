@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using NerfWarsLeaderboard.Utility;
+using System.Windows;
 
 namespace NerfWarsLeaderboard
 {
@@ -10,6 +11,16 @@ namespace NerfWarsLeaderboard
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void updateProjectorGame(Game game)
+        {
+            ProjectorGame.UpdateGameDetails(game);
+        }
+
+        public void updateProjectorTeam(Team teamA, Team teamB)
+        {
+            ProjectorGame.LoadTeams(teamA, teamB);
         }
     }
 }

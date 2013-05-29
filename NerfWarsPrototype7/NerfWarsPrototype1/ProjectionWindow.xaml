@@ -6,6 +6,6 @@
   <Grid x:Name="myGridTest">
         <local:ProjectorGame x:Name="ProjectorGame" Visibility="Hidden"/>
         <local:ProjectorLadder x:Name="ProjectorLadder" Visibility="Hidden"/>
-        <local:ProjectorStandby x:Name="ProjectorStandby" Visibility="Hidden"/>
+        <local:ProjectorStandby x:Name="ProjectorStandby" Visibility="Visible"/>
     </Grid>
 </Window>

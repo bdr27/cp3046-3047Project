@@ -39,11 +39,11 @@
                     <Button Grid.Column="1" Grid.Row="1" Content="Default" Margin="50,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Projector">
+            <TabItem Header="Projector" x:Name="projectorTab">
                 <Grid>
                     <local:ProjectorGame x:Name="ProjectorGame" Visibility="Hidden"/>
                     <local:ProjectorLadder x:Name="ProjectorLadder" Visibility="Hidden"/>
-                    <local:ProjectorStandby x:Name="ProjectorStandby" Visibility="Hidden"/>
+                    <local:ProjectorStandby x:Name="ProjectorStandby" Visibility="Visible"/>
                 </Grid>
             </TabItem>
         </TabControl>

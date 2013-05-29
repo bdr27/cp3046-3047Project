@@ -37,11 +37,11 @@ namespace NerfWarsLeaderboard
         public App()
             : base()
         {
+            
             mainWindow = new MainWindow();
             projectorWindow = new ProjectorWindow();
-            projectorState = ProjectorState.EMTPY;
+            projectorState = ProjectorState.STANDBY;
             projectorWindow.Show();
-           // projectorWindow.Show();
             mainWindow.Show();
 
             dbHandler = new MOCKDataBaseHandler();
@@ -538,6 +538,7 @@ namespace NerfWarsLeaderboard
             else
             {
                 projectorWindow.LoadTeams(teamA, teamB);
+                mainWindow.updateProjectorTeam(teamA, teamB);
                 gameState = GameState.IN_GAME;
                 DisableTeamComboBoxes();
                 DisableReset();
@@ -641,6 +642,7 @@ namespace NerfWarsLeaderboard
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Label>(SetTeamBCap), playGame.lblFlagB);
         
             projectorWindow.UpdateGameDetails(game);
+            mainWindow.updateProjectorGame(game);
         }
 
         private void SetTeamATag(Label lblTagA)
