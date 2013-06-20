@@ -1,0 +1,7 @@
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\bin\Release\Tests.dll
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\bin\Release\Tests.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\bin\Release\NerfWarsPrototype.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\bin\Release\NerfWarsPrototype.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Release\NerfWarsTests.csprojResolveAssemblyReference.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Release\Tests.dll
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\Tests\obj\Release\Tests.pdb

@@ -1,0 +1,58 @@
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe.config
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.exe
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.exe
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype1.pdb
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype7.csprojResolveAssemblyReference.cache
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\PlayerWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\App.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.cache
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1_MarkupCompile.lref
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.g.resources
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype1.Properties.Resources.resources
+E:\Documents\Google Drive\CP3046-3047\NerfWarsPrototype Iterations\cp3046-3047Project-master v7\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype7.csproj.GenerateResource.Cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\PlayerWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\LiveMatchTab.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ProjectionWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\RegistrationTab.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\TeamWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\PlayerWindow.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalPlayerEditDelete.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ModalTeamEditDelete.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\LiveMatchTab.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\MainWindow.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\ProjectionWindow.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\RegistrationTab.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\TeamWindow.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\App.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\MainWindow.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype7.csproj.GenerateResource.Cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.exe.config
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype_MarkupCompile.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype_MarkupCompile.lref
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\bin\Debug\NerfWarsPrototype.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype.g.resources
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsLeaderboard.Properties.Resources.resources
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Debug\NerfWarsPrototype7.csprojResolveAssemblyReference.cache
