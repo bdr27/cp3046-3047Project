@@ -54,8 +54,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Enum\ButtonAction.cs" />
+    <Compile Include="Enum\SelectedTab.cs" />
+    <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
-    <Compile Include="ModalControl\SuperModal.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>

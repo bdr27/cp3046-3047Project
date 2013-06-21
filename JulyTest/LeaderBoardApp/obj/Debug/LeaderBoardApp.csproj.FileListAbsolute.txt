@@ -28,3 +28,4 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Windows\ProjectionWindow.baml
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayer.baml
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayer.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\LeaderBoardApp.csprojResolveAssemblyReference.cache

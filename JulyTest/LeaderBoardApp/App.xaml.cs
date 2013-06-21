@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using LeaderBoardApp.Windows;
 using LeaderBoardApp.ModalControl;
+using LeaderBoardApp.Enum;
 
 namespace LeaderBoardApp
 {
@@ -25,10 +26,31 @@ namespace LeaderBoardApp
             mainWindow = new MainWindow();
             projectionWindow = new ProjectionWindow();
             WireRegistraionTab();
+            WireMainWindow();
 
             projectionWindow.Show();
             mainWindow.Show();
         }
+
+        
+
+        #region MainWindowTabSelection
+        private void WireMainWindow()
+        {
+            mainWindow.AddTabControl(HandleTab_SelectionChange);
+        }
+
+        private void HandleTab_SelectionChange(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            var selectedTab = mainWindow.GetSelectedTab();
+            switch (selectedTab)
+            {
+                case SelectedTab.LIVE_MATCH:
+                    //LoadUp Combo Boxes
+                    break;
+            }
+        }
+        #endregion
 
         #region RegistraionTab
 
@@ -43,11 +65,22 @@ namespace LeaderBoardApp
             regMenu.AddDeleteTeamHandler(HandleDeleteTeam_Click);
         }
 
+        private void DisplayModal(ModalInterface modal)
+        {
+            modal.SetOwner(mainWindow);
+            modal.ShowDialog();
+        }
+
         private void HandleNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I add players");
-            var addPlayer = new PlayerAdd(mainWindow);
-            addPlayer.ShowModal();
+            var addPlayer = new PlayerAdd();
+            DisplayModal(addPlayer);
+            if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                var newPlayer = addPlayer.GetPlayer();
+                Debug.WriteLine(newPlayer.Details());
+            }            
         }
 
         private void HandleNewTeam_Click(object sender, RoutedEventArgs e)

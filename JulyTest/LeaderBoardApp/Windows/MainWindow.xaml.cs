@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LeaderBoardApp.Enum;
 
 namespace LeaderBoardApp
 {
@@ -23,6 +25,18 @@ namespace LeaderBoardApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void AddTabControl(SelectionChangedEventHandler handler)
+        {
+            MainWindowTabControl.SelectionChanged += handler;
+        }
+
+        public SelectedTab GetSelectedTab()
+        {
+            var selectedTab = (SelectedTab) MainWindowTabControl.SelectedIndex;
+            Debug.WriteLine(selectedTab);
+            return selectedTab;
         }
     }
 }

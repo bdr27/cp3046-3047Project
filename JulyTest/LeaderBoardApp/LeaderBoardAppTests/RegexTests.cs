@@ -7,6 +7,62 @@ namespace LeaderBoardAppTests
     [TestClass]
     public class RegexTest
     {
+        #region IsValidAges Tests
+        [TestMethod]
+        public void CheckRegexAgeValid()
+        {
+            for (int i = 0; i < 150; i++)
+            {
+                Assert.IsTrue(CheckRegex.IsValidAge(i.ToString()));
+            }
+        }
+
+        [TestMethod]
+        public void CheckRegexAgeEmpty()
+        {
+            Assert.IsFalse(CheckRegex.IsValidAge(""));
+        }
+
+        [TestMethod]
+        public void CheckRegexAgeAsWord()
+        {
+            Assert.IsFalse(CheckRegex.IsValidAge("nine"));
+        }
+
+        [TestMethod]
+        public void CheckRegexAgeWithSpace()
+        {
+            Assert.IsFalse(CheckRegex.IsValidAge("1 3"));
+        }
+        #endregion
+
+        #region IsValidGuardian Tests
+        [TestMethod]
+        public void CheckRegexGuardianValidTwoNames()
+        {
+            Assert.IsTrue(CheckRegex.IsValidGuardian("jill smith"));
+        }
+
+        [TestMethod]
+        public void CheckRegexGuardianValidTwoNamesJoinedLast()
+        {
+            Assert.IsTrue(CheckRegex.IsValidGuardian("jill smith-smith"));
+        }
+
+        [TestMethod]
+        public void CheckRegexGuardianInvalidTooManyNames()
+        {
+            Assert.IsFalse(CheckRegex.IsValidGuardian("jill smith dude"));
+        }
+
+        [TestMethod]
+        public void CheckRegexGuardianValidSingleName()
+        {
+            Assert.IsTrue(CheckRegex.IsValidGuardian("jill"));
+        }
+        #endregion
+
+        #region IsValidName Tests
         [TestMethod]
         public void CheckRegexNameValid()
         {
@@ -32,48 +88,42 @@ namespace LeaderBoardAppTests
         }
 
         [TestMethod]
-        public void CheckRegexAgeValid()
+        public void CheckRegexNameWithDash()
         {
-            for (int i = 0; i < 10000; i++)
-            {
-                Assert.IsTrue(CheckRegex.IsValidAge(i.ToString()));
-            }
+            Assert.IsTrue(CheckRegex.IsValidName("Cloud-Lockheart"));
         }
+        #endregion
 
-        [TestMethod]
-        public void CheckRegexAgeEmpty()
-        {
-            Assert.IsFalse(CheckRegex.IsValidAge(""));
-        }
-
-        [TestMethod]
-        public void CheckRegexAgeAsWord()
-        {
-            Assert.IsFalse(CheckRegex.IsValidAge("nine"));
-        }
-
-        [TestMethod]
-        public void CheckRegexAgeWithSpace()
-        {
-            Assert.IsFalse(CheckRegex.IsValidAge("1 3"));
-        }
-
+        #region IsValidNumber Tests
         [TestMethod]
         public void CheckRegexNumberValid()
         {
-            Assert.IsTrue(CheckRegex.IsValidNumber("40000000"));
+            Assert.IsTrue(CheckRegex.IsValidContact("40000000"));
+        }
+
+        [TestMethod]
+        public void CheckRegexNumberValidWithSpace()
+        {
+            Assert.IsTrue(CheckRegex.IsValidContact("4000 0000"));
+        }
+
+        [TestMethod]
+        public void CheckRegexNumberValidWithDash()
+        {
+            Assert.IsTrue(CheckRegex.IsValidContact("4000-0000"));
         }
 
         [TestMethod]
         public void CheckRegexNumberNoNumber()
         {
-            Assert.IsFalse(CheckRegex.IsValidNumber(""));
+            Assert.IsFalse(CheckRegex.IsValidContact(""));
         }
 
         [TestMethod]
         public void CheckRegexNumberName()
         {
-            Assert.IsFalse(CheckRegex.IsValidNumber("john"));
+            Assert.IsFalse(CheckRegex.IsValidContact("john"));
         }
+        #endregion
     }
 }

@@ -20,6 +20,8 @@ namespace LeaderBoardApp.Modals
     /// </summary>
     public partial class ModalPlayer : Window
     {
+        private Player newPlayer;
+
         public ModalPlayer()
         {
             InitializeComponent();
@@ -30,7 +32,73 @@ namespace LeaderBoardApp.Modals
             btnConfirm.Click += handler;
         }
 
-        public void ClearText()
+        public Player GetPlayer()
+        {
+            return newPlayer;
+        }
+
+        public void DisplayError()
+        {
+            tbInputError.Visibility = Visibility.Visible;
+            if (!CheckRegex.IsValidAge(GetAge()))
+            {
+                SetTextBoxError(tbAge);
+            }
+            else
+            {
+                SetTextBoxCorrect(tbAge);
+            }
+            if (!CheckRegex.IsValidName(GetFirstName()))
+            {
+                SetTextBoxError(tbFirstName);
+            }
+            else
+            {
+                SetTextBoxCorrect(tbFirstName);
+            }
+            if(!CheckRegex.IsValidName(GetLastName()))
+            {
+                SetTextBoxError(tbLastName);
+            }
+            else
+            {
+                SetTextBoxCorrect(tbLastName);
+            }
+            if (!CheckRegex.IsValidContact(GetContact()))
+            {
+                SetTextBoxError(tbContact);
+            }
+            else
+            {
+                SetTextBoxCorrect(tbContact);
+            }
+        }
+
+        public bool IsValidPlayer()
+        {
+            if (CheckRegex.IsValidAge(GetAge()))
+            {
+                int age = Int32.Parse(GetAge());
+                newPlayer = new Player(GetFirstName(), GetLastName(), age, GetGuardian(), GetContact(), GetMedical());
+                if (newPlayer.IsValidPlayer())
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void SetTextBoxError(TextBox tb)
+        {
+            tb.Background = Brushes.Red;
+        }
+
+        private void SetTextBoxCorrect(TextBox tb)
+        {
+            tb.Background = Brushes.White;
+        }
+
+        private void ClearText()
         {
             tbAge.Text = "";
             tbContact.Text = "";
@@ -50,9 +118,34 @@ namespace LeaderBoardApp.Modals
             Close();
         }
 
-        public Player GetPlayer()
+        private string GetAge()
         {
-            throw new NotImplementedException();
+            return tbAge.Text;
+        }
+
+        private string GetContact()
+        {
+            return tbContact.Text;
+        }
+
+        private string GetFirstName()
+        {
+            return tbFirstName.Text;
+        }
+
+        private string GetGuardian()
+        {
+            return tbGuardian.Text;
+        }
+
+        private string GetLastName()
+        {
+            return tbLastName.Text;
+        }
+
+        private string GetMedical()
+        {
+            return tbMedical.Text;
         }
     }
 }

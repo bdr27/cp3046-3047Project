@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace LeaderBoardApp.Utility
 {
+    /// <summary>
+    /// Player class contains the information for each player. 
+    /// By Default a Player will not have a p_ID. This will be used for editing and possibly in game and team purposes.
+    /// IMPORTANT
+    /// Error checking for age being an int is not done in this class Must be checked before input
+    /// </summary>
     public class Player
     {
         //P_ID will mainly be used for editing purposes
@@ -29,7 +35,17 @@ namespace LeaderBoardApp.Utility
 
         public bool IsValidPlayer()
         {
-            throw new NotImplementedException();
+            if (CheckRegex.IsValidName(fName) && CheckRegex.IsValidName(lName) && CheckRegex.IsValidContact(pContact))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public string Details()
+        {
+            return string.Format("fname: {0}, lname: {1}, age: {2}, guardian: {3}, contact: {4} medical: {5}",
+                fName, lName, age, guardian, pContact, medical);
         }
 
         public void SetFName(string fName)
