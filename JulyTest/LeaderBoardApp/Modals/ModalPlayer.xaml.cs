@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.Modals
 {
@@ -47,6 +48,11 @@ namespace LeaderBoardApp.Modals
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        public Player GetPlayer()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -53,10 +53,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Enum\ButtonAction.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
+    <Compile Include="ModalControl\SuperModal.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utility\CheckRegex.cs" />
+    <Compile Include="Utility\Player.cs" />
     <Compile Include="Windows\ProjectionWindow.xaml.cs">
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>
     </Compile>
@@ -150,9 +154,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enum\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
