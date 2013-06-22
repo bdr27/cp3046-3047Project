@@ -58,13 +58,15 @@
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
     <Compile Include="ModalControl\PlayerEdit.cs" />
+    <Compile Include="ModalControl\PlayerSelect.cs" />
+    <Compile Include="ModalControl\PlayerSelectDelete.cs" />
     <Compile Include="ModalControl\PlayerSelectEdit.cs" />
     <Compile Include="ModalControl\PlayerSuper.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modals\ModalSelectEdit.xaml.cs">
-      <DependentUpon>ModalSelectEdit.xaml</DependentUpon>
+    <Compile Include="Modals\ModalSelect.xaml.cs">
+      <DependentUpon>ModalSelect.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modals\StylesModal.cs" />
     <Compile Include="Utility\CheckRegex.cs" />
@@ -80,7 +82,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modals\ModalSelectEdit.xaml">
+    <Page Include="Modals\ModalSelect.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

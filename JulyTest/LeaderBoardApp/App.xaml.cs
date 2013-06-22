@@ -95,7 +95,7 @@ namespace LeaderBoardApp
             var editPlayers = new PlayerSelectEdit(fileHandler.GetPlayers());
             ModalDisplay.ShowModal(editPlayers, mainWindow);
             var oldPlayers = fileHandler.GetPlayers();
-            foreach (var playerID in editPlayers.GetPlayersIDEdited())
+            foreach (var playerID in editPlayers.GetPlayersIDSelected())
             {
                 fileHandler.UpdatePlayer(oldPlayers[playerID]);
             }
@@ -108,7 +108,14 @@ namespace LeaderBoardApp
 
         private void HandleDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("I delete players");
+            var deletePlayers = new PlayerSelectDelete(fileHandler.GetPlayers());
+            ModalDisplay.ShowModal(deletePlayers, mainWindow);
+            var playersToDelete = deletePlayers.GetPlayersIDSelected();
+            var oldPlayers = fileHandler.GetPlayers();
+            foreach (var playerID in playersToDelete)
+            {
+                fileHandler.DeletePlayer(oldPlayers[playerID]);
+            }
         }
 
         private void HandleDeleteTeam_Click(object sender, RoutedEventArgs e)

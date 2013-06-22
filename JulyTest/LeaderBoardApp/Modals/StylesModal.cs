@@ -35,7 +35,7 @@ namespace LeaderBoardApp.Modals
         public static void EditButton(Button btnPlayerModalEdit)
         {
             btnPlayerModalEdit.Background = editColour;
-            btnPlayerModalEdit = "Edit";
+            btnPlayerModalEdit.Content = "Edit";
         }
 
         public static void DeleteButton(Button btnModalEditDelete)

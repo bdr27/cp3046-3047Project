@@ -8,38 +8,25 @@ using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.ModalControl
 {
-    public class PlayerSelectEdit : ModalInterface
+    public class PlayerSelectEdit : PlayerSelect, ModalInterface
     {
-        private ModalSelect playerSelectEdit;
-        private ButtonAction buttonAction;
-        private Dictionary<int, Player> players;
-        private List<int> playersIDEdited;
-
         public PlayerSelectEdit(Dictionary<int, Player> players)
+            : base(players)
         {
-            this.players = players;
-            playersIDEdited = new List<int>();
-            playerSelectEdit = new ModalSelect();
-            buttonAction = ButtonAction.NONE;
-            playerSelectEdit.SetPlayerEdit();
+            modalSelect.SetPlayerEdit();
             WireHandlers();
-        }
-
-        public List<int> GetPlayersIDEdited()
-        {
-            return playersIDEdited;
         }
 
         #region ModalInterface Members
 
         public void SetOwner(Window window)
         {
-            playerSelectEdit.Owner = window;
+            modalSelect.Owner = window;
         }
 
         public void ShowDialog()
         {
-            playerSelectEdit.ShowDialog();
+            modalSelect.ShowDialog();
         }
 
         public ButtonAction GetButtonAction()
@@ -51,14 +38,12 @@ namespace LeaderBoardApp.ModalControl
 
         private void WireHandlers()
         {
-            playerSelectEdit.DisplayPlayers(players);
-            playerSelectEdit.AddTbSearchTextChangedHandler(HandleSearch_TextChanged);
-            playerSelectEdit.AddBtnModalEditHandler(HandlerEditButton_Click);
+            modalSelect.AddBtnModalEditHandler(HandlerEditButton_Click);
         }
 
         private void HandlerEditButton_Click(object sender, RoutedEventArgs e)
         {
-            var playerSelected = playerSelectEdit.GetSelectedPlayer();
+            var playerSelected = modalSelect.GetSelectedPlayer();
             if (playerSelected != null)
             {
                 var playerID = (int)playerSelected;
@@ -70,28 +55,17 @@ namespace LeaderBoardApp.ModalControl
         {
             var playerEdit = new PlayerEdit();
             playerEdit.SetPlayerDetails(players[playerID]);
-            ModalDisplay.ShowModal(playerEdit, playerSelectEdit);
+            ModalDisplay.ShowModal(playerEdit, modalSelect);
             if (playerEdit.GetButtonAction().Equals(ButtonAction.CONFIRM))
             {
                 players[playerID] = playerEdit.GetPlayer();
                 players[playerID].SetP_ID(playerID);
-                if (!playersIDEdited.Contains(playerID))
+                if (!playersIDSelected.Contains(playerID))
                 {
-                    playersIDEdited.Add(playerID);
+                    playersIDSelected.Add(playerID);
                 }
-                playerSelectEdit.DisplayPlayers(players);
+                modalSelect.DisplayPlayers(players);
             }
-        }
-
-        private void HandleSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var lastName = playerSelectEdit.GetSearch();
-            var displayPlayers = players;
-            if (lastName != "")
-            {
-                displayPlayers = LINQQueries.SearchLastName(players, lastName);
-            }
-            playerSelectEdit.DisplayPlayers(displayPlayers);
-        }
+        }        
     }
 }
