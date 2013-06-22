@@ -73,6 +73,11 @@ namespace LeaderBoardApp.Utility
             this.age = age;
         }
 
+        public void SetP_ID(int p_ID)
+        {
+            this.p_ID = p_ID;
+        }
+
         public int GetP_ID()
         {
             return p_ID;

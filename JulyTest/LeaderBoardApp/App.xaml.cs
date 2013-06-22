@@ -9,6 +9,7 @@ using System.Windows;
 using LeaderBoardApp.Windows;
 using LeaderBoardApp.ModalControl;
 using LeaderBoardApp.Enum;
+using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp
 {
@@ -19,17 +20,26 @@ namespace LeaderBoardApp
     {
         MainWindow mainWindow;
         ProjectionWindow projectionWindow;
+        FileHandler fileHandler;
 
         public App()
             : base()
         {
             mainWindow = new MainWindow();
             projectionWindow = new ProjectionWindow();
+
+            LoadFileHandler();
             WireRegistraionTab();
             WireMainWindow();
 
             projectionWindow.Show();
             mainWindow.Show();
+        }
+
+        private void LoadFileHandler()
+        {
+            fileHandler = new MOCKFileHandler();
+            fileHandler.LoadPlayers();
         }
 
         
@@ -73,12 +83,12 @@ namespace LeaderBoardApp
 
         private void HandleNewPlayer_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("I add players");
             var addPlayer = new PlayerAdd();
             DisplayModal(addPlayer);
             if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
             {
                 var newPlayer = addPlayer.GetPlayer();
+                fileHandler.InsertPlayer(newPlayer);
                 Debug.WriteLine(newPlayer.Details());
             }            
         }
@@ -90,7 +100,8 @@ namespace LeaderBoardApp
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("I edit players");
+            var editPlayers = new PlayerEdit(fileHandler.GetPlayers());
+            DisplayModal(editPlayers);
         }
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)

@@ -22,6 +22,7 @@ namespace LeaderBoardApp.ModalControl
         {
             playerAdd = new ModalPlayer();
             buttonAction = ButtonAction.NONE;
+            playerAdd.SetAdd();
             WireHandlers();
         }
         public Player GetPlayer()
@@ -58,6 +59,7 @@ namespace LeaderBoardApp.ModalControl
             Debug.WriteLine("I confirm");
             if (playerAdd.IsValidPlayer())
             {
+                buttonAction = ButtonAction.CONFIRM;
                 newPlayer = playerAdd.GetPlayer();
                 playerAdd.Close();
             }

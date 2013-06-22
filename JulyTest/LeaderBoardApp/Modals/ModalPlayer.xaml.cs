@@ -32,6 +32,18 @@ namespace LeaderBoardApp.Modals
             btnConfirm.Click += handler;
         }
 
+        public void SetAdd()
+        {
+            StylesModal.AddWindow(this);
+            lblPlayerWindowTitle.Content = "Add Player";
+        }
+
+        public void SetEdit()
+        {
+            StylesModal.EditWindow(this);
+            lblPlayerWindowTitle.Content = "Edit Player";
+        }
+
         public Player GetPlayer()
         {
             return newPlayer;
@@ -120,27 +132,27 @@ namespace LeaderBoardApp.Modals
 
         private string GetAge()
         {
-            return tbAge.Text;
+            return tbAge.Text.Trim();
         }
 
         private string GetContact()
         {
-            return tbContact.Text;
+            return tbContact.Text.Trim();
         }
 
         private string GetFirstName()
         {
-            return tbFirstName.Text;
+            return tbFirstName.Text.Trim();
         }
 
         private string GetGuardian()
         {
-            return tbGuardian.Text;
+            return tbGuardian.Text.Trim();
         }
 
         private string GetLastName()
         {
-            return tbLastName.Text;
+            return tbLastName.Text.Trim();
         }
 
         private string GetMedical()

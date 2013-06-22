@@ -57,15 +57,26 @@
     <Compile Include="Enum\SelectedTab.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
+    <Compile Include="ModalControl\PlayerEdit.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modals\ModalSelectEdit.xaml.cs">
+      <DependentUpon>ModalSelectEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\StylesModal.cs" />
     <Compile Include="Utility\CheckRegex.cs" />
+    <Compile Include="Utility\FileHandler.cs" />
+    <Compile Include="Utility\MOCKFileHandler.cs" />
     <Compile Include="Utility\Player.cs" />
     <Compile Include="Windows\ProjectionWindow.xaml.cs">
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Modals\ModalPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modals\ModalSelectEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
