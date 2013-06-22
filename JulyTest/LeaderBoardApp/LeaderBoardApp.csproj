@@ -58,6 +58,8 @@
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
     <Compile Include="ModalControl\PlayerEdit.cs" />
+    <Compile Include="ModalControl\PlayerSelectEdit.cs" />
+    <Compile Include="ModalControl\PlayerSuper.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
@@ -67,7 +69,9 @@
     <Compile Include="Modals\StylesModal.cs" />
     <Compile Include="Utility\CheckRegex.cs" />
     <Compile Include="Utility\FileHandler.cs" />
+    <Compile Include="Utility\LINQQueries.cs" />
     <Compile Include="Utility\MOCKFileHandler.cs" />
+    <Compile Include="Utility\ModalDisplay.cs" />
     <Compile Include="Utility\Player.cs" />
     <Compile Include="Windows\ProjectionWindow.xaml.cs">
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>

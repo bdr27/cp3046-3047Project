@@ -44,8 +44,13 @@ namespace LeaderBoardApp.Utility
 
         public string Details()
         {
-            return string.Format("fname: {0}, lname: {1}, age: {2}, guardian: {3}, contact: {4} medical: {5}",
-                fName, lName, age, guardian, pContact, medical);
+            return string.Format("fname: {0}, lname: {1}, age: {2}, guardian: {3}, contact: {4}, medical: {5}, ID: {6}",
+                fName, lName, age, guardian, pContact, medical, p_ID);
+        }
+
+        public Player Clone()
+        {
+            return new Player(fName, lName, age, guardian, pContact, medical);
         }
 
         public void SetFName(string fName)

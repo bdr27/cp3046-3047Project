@@ -20,7 +20,7 @@ namespace LeaderBoardApp.Modals
     /// </summary>
     public partial class ModalPlayer : Window
     {
-        private Player newPlayer;
+        private Player player;
 
         public ModalPlayer()
         {
@@ -46,7 +46,7 @@ namespace LeaderBoardApp.Modals
 
         public Player GetPlayer()
         {
-            return newPlayer;
+            return player;
         }
 
         public void DisplayError()
@@ -91,8 +91,8 @@ namespace LeaderBoardApp.Modals
             if (CheckRegex.IsValidAge(GetAge()))
             {
                 int age = Int32.Parse(GetAge());
-                newPlayer = new Player(GetFirstName(), GetLastName(), age, GetGuardian(), GetContact(), GetMedical());
-                if (newPlayer.IsValidPlayer())
+                player = new Player(GetFirstName(), GetLastName(), age, GetGuardian(), GetContact(), GetMedical());
+                if (player.IsValidPlayer())
                 {
                     return true;
                 }
@@ -158,6 +158,16 @@ namespace LeaderBoardApp.Modals
         private string GetMedical()
         {
             return tbMedical.Text;
+        }
+
+        public void SetPlayerDetails(Player editingPlayer)
+        {
+            tbAge.Text = editingPlayer.GetAge().ToString();
+            tbContact.Text = editingPlayer.GetContact();
+            tbFirstName.Text = editingPlayer.GetFName();
+            tbGuardian.Text = editingPlayer.GetGuardian();
+            tbLastName.Text = editingPlayer.GetLName();
+            tbMedical.Text = editingPlayer.GetMedical();
         }
     }
 }

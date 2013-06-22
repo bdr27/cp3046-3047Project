@@ -12,61 +12,30 @@ using LeaderBoardApp.Utility;
 namespace LeaderBoardApp.ModalControl
 {
     //TODO change it to an interface
-    public class PlayerAdd : ModalInterface
+    public class PlayerAdd : PlayerSuper, ModalInterface
     {
-        private ButtonAction buttonAction;
-        private ModalPlayer playerAdd;
-        private Player newPlayer;
-
         public PlayerAdd()
         {
-            playerAdd = new ModalPlayer();
-            buttonAction = ButtonAction.NONE;
-            playerAdd.SetAdd();
-            WireHandlers();
-        }
-        public Player GetPlayer()
-        {
-            return newPlayer;
+            modalPlayer.SetAdd();
         }
 
         #region ModalInterface Members
 
+        public void SetOwner(Window window)
+        {
+            modalPlayer.Owner = window;
+        }
+
         public void ShowDialog()
         {
-            playerAdd.ShowDialog();
+            modalPlayer.ShowDialog();
         }
 
-        public void SetOwner(Window mainWindow)
-        {
-            playerAdd.Owner = mainWindow;
-        }
-
-        public Enum.ButtonAction GetButtonAction()
+        public ButtonAction GetButtonAction()
         {
             return buttonAction;
         }
 
         #endregion
-
-        private void WireHandlers()
-        {
-            playerAdd.AddBtnConfirm(HandleBtnConfirm_Click);
-        }
-
-        private void HandleBtnConfirm_Click(object sender, RoutedEventArgs e)
-        {
-            Debug.WriteLine("I confirm");
-            if (playerAdd.IsValidPlayer())
-            {
-                buttonAction = ButtonAction.CONFIRM;
-                newPlayer = playerAdd.GetPlayer();
-                playerAdd.Close();
-            }
-            else
-            {
-                playerAdd.DisplayError();
-            }
-        }
     }
 }

@@ -7,6 +7,23 @@ namespace LeaderBoardAppTests
     [TestClass]
     public class PlayerTests
     {
+        #region Clone Tests
+        [TestMethod]
+        public void PlayerClone()
+        {
+            string fName = "John";
+            string lName = "Smith";
+            int age = 15;
+            string guardian = "Julie";
+            string pContact = "40404040";
+            string medical = "sickish";
+
+            var player = new Player(fName, lName, age, guardian, pContact, medical);
+            var newPlayer = player.Clone();
+            Assert.AreNotSame(newPlayer, player);
+        }
+        #endregion
+
         #region Details Tests
         [TestMethod]
         public void PlayerDetails()
@@ -19,8 +36,8 @@ namespace LeaderBoardAppTests
             string medical = "sickish";
 
             Player player = new Player(fName, lName, age, guardian, pContact, medical);
-            Assert.AreEqual(string.Format("fname: {0}, lname: {1}, age: {2}, guardian: {3}, contact: {4} medical: {5}",
-                fName, lName, age, guardian, pContact, medical), player.Details());
+            Assert.AreEqual(string.Format("fname: {0}, lname: {1}, age: {2}, guardian: {3}, contact: {4}, medical: {5}, ID: {6}",
+                fName, lName, age, guardian, pContact, medical, 0), player.Details());
         }
         #endregion
 

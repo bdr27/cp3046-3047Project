@@ -1,41 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using LeaderBoardApp.Enum;
-using LeaderBoardApp.Modals;
 using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.ModalControl
 {
-    public class PlayerEdit : ModalInterface
+    public class PlayerEdit : PlayerSuper, ModalInterface
     {
-        ModalSelectEdit playerSelectEdit;
-        ButtonAction buttonAction;
-        Dictionary<int, Player> players;
-        public PlayerEdit(Dictionary<int, Player> players)
+        public PlayerEdit()
         {
-            this.players = players;
-            playerSelectEdit = new ModalSelectEdit();
-            buttonAction = ButtonAction.NONE;
-            playerSelectEdit.SetPlayerEdit();
-            WireHandlers();
+            modalPlayer.SetEdit();   
         }
 
         #region ModalInterface Members
 
-        public void SetOwner(Window mainWindow)
+        public void SetOwner(Window window)
         {
-            playerSelectEdit.Owner = mainWindow;
+            modalPlayer.Owner = window;
         }
 
         public void ShowDialog()
         {
-            playerSelectEdit.ShowDialog();
+            modalPlayer.ShowDialog();
         }
 
         public ButtonAction GetButtonAction()
@@ -45,31 +35,9 @@ namespace LeaderBoardApp.ModalControl
 
         #endregion
 
-        private void WireHandlers()
+        public void SetPlayerDetails(Player editingPlayer)
         {
-            playerSelectEdit.ShowPlayers(players);
-            playerSelectEdit.AddTbSearchTextChangedHandler(FindPlayerLastNames);
-           // throw new NotImplementedException();
-        }
-
-        private void FindPlayerLastNames(object sender, TextChangedEventArgs e)
-        {
-            var searchLastName = playerSelectEdit.GetSearch();
-            if (searchLastName != "")
-            {
-                var searchPlayers = new Dictionary<int, Player>();
-                var queryResults = from Player in players where Player.Value.GetLName().ToLower().StartsWith(searchLastName) select Player;
-                //This needs to be changed at a later date
-                foreach (var player in queryResults)
-                {
-                    searchPlayers.Add(player.Key, player.Value);
-                }
-                playerSelectEdit.ShowPlayers(searchPlayers);
-            }
-            else
-            {
-                playerSelectEdit.ShowPlayers(players);
-            }
+            modalPlayer.SetPlayerDetails(editingPlayer);
         }
     }
 }

@@ -18,13 +18,11 @@ namespace LeaderBoardApp.Modals
     /// <summary>
     /// Interaction logic for ModalSelectEdit.xaml
     /// </summary>
-    public partial class ModalSelectEdit : Window
+    public partial class ModalSelect : Window
     {
-        public ModalSelectEdit()
+        public ModalSelect()
         {
-            InitializeComponent();
-            StylesModal.EditWindow(this);
-            StylesModal.EditButton(btnModalEdit);
+            InitializeComponent();   
             BindDictionary();
         }
 
@@ -32,6 +30,16 @@ namespace LeaderBoardApp.Modals
         {
             lblSearch.Content = "Last Name";
             tblSearchAPlayerorTeam.Text = "Search For Player To Edit";
+            StylesModal.EditWindow(this);
+            StylesModal.EditButton(btnModalEditDelete);
+        }
+
+        public void SetPlayerDelete()
+        {
+            lblSearch.Content = "Last Name";
+            tblSearchAPlayerorTeam.Text = "Search For Player To Delete";
+            StylesModal.DeleteWindow(this);
+            StylesModal.DeleteButton(btnModalEditDelete);
         }
 
         public void AddTbSearchTextChangedHandler(TextChangedEventHandler handler)
@@ -41,13 +49,24 @@ namespace LeaderBoardApp.Modals
 
         public void AddBtnModalEditHandler(RoutedEventHandler handler)
         {
-            btnModalEdit.Click += handler;
+            btnModalEditDelete.Click += handler;
         }
 
-        public void ShowPlayers(Dictionary<int, Player> players)
+        public void AddCmbNamesHandler(SelectionChangedEventHandler handler)
         {
-           var orderedPlayers =  players.OrderBy(lastName => lastName.Value.GetLName().ToLower()).ThenBy(firstName => firstName.Value.GetFName().ToLower()).ThenBy(age => age.Value.GetAge());
-           cmbNames.ItemsSource = orderedPlayers;            
+            cmbNames.SelectionChanged += handler;
+        }
+
+        public void DisplayPlayers(Dictionary<int, Player> players)
+        {
+            var orderedPlayers = players.OrderBy(lastName => lastName.Value.GetLName().ToLower()).ThenBy(firstName => firstName.Value.GetFName().ToLower()).ThenBy(age => age.Value.GetAge());
+            cmbNames.ItemsSource = orderedPlayers;
+            cmbNames.SelectedIndex = 0;
+        }
+
+        public object GetSelectedPlayer()
+        {
+            return cmbNames.SelectedValue;
         }
 
         public string GetSearch()
@@ -65,5 +84,7 @@ namespace LeaderBoardApp.Modals
         {
             Close();
         }
+
+        
     }
 }

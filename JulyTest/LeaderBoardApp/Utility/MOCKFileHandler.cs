@@ -13,16 +13,24 @@ namespace LeaderBoardApp.Utility
 
         public MOCKFileHandler()
         {
-            counter = 0;
+            //Default to 1 so that players without ID set will be 0
+            counter = 1;
             players = new Dictionary<int, Player>();
         }
         #region FileHandler Members
 
         public void LoadPlayers()
         {
+            Console.WriteLine("Loading players");
+
             players.Add(counter++, new Player("john", "smith", 24, "", "40404040", ""));
             players.Add(counter++, new Player("Jill", "smith", 12, "", "40404034", ""));
             players.Add(counter++, new Player("Geroge", "Lucas", 25, "Marie", "5556565", "I like starwars"));
+            foreach (var player in players)
+            {
+                player.Value.SetP_ID(player.Key);
+                Console.WriteLine("\t" + player.Value.Details());
+            }
         }
 
         public Dictionary<int, Player> GetPlayers()

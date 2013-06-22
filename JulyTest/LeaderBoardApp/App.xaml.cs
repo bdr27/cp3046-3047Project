@@ -40,9 +40,7 @@ namespace LeaderBoardApp
         {
             fileHandler = new MOCKFileHandler();
             fileHandler.LoadPlayers();
-        }
-
-        
+        }        
 
         #region MainWindowTabSelection
         private void WireMainWindow()
@@ -75,16 +73,10 @@ namespace LeaderBoardApp
             regMenu.AddDeleteTeamHandler(HandleDeleteTeam_Click);
         }
 
-        private void DisplayModal(ModalInterface modal)
-        {
-            modal.SetOwner(mainWindow);
-            modal.ShowDialog();
-        }
-
         private void HandleNewPlayer_Click(object sender, RoutedEventArgs e)
         {
             var addPlayer = new PlayerAdd();
-            DisplayModal(addPlayer);
+            ModalDisplay.ShowModal(addPlayer, mainWindow);
             if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
             {
                 var newPlayer = addPlayer.GetPlayer();
@@ -100,8 +92,13 @@ namespace LeaderBoardApp
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            var editPlayers = new PlayerEdit(fileHandler.GetPlayers());
-            DisplayModal(editPlayers);
+            var editPlayers = new PlayerSelectEdit(fileHandler.GetPlayers());
+            ModalDisplay.ShowModal(editPlayers, mainWindow);
+            var oldPlayers = fileHandler.GetPlayers();
+            foreach (var playerID in editPlayers.GetPlayersIDEdited())
+            {
+                fileHandler.UpdatePlayer(oldPlayers[playerID]);
+            }
         }
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)

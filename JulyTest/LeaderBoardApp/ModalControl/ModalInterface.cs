@@ -10,7 +10,7 @@ namespace LeaderBoardApp.ModalControl
 {
     public interface ModalInterface
     {
-        void SetOwner(Window mainWindow);
+        void SetOwner(Window window);
         void ShowDialog();
         ButtonAction GetButtonAction();
     }
