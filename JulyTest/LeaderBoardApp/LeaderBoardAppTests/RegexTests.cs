@@ -125,5 +125,15 @@ namespace LeaderBoardAppTests
             Assert.IsFalse(CheckRegex.IsValidContact("john"));
         }
         #endregion
+
+        #region IsValidTeamName Tests
+        [TestMethod]
+        public void RegexTestTeamNameValid()
+        {
+            Assert.IsTrue(CheckRegex.IsValidTeamName("Wild cats"));
+            Assert.IsTrue(CheckRegex.IsValidTeamName("Yolo"));
+        }
+
+        #endregion
     }
 }

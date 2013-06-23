@@ -42,6 +42,14 @@ namespace LeaderBoardApp.Modals
             StylesModal.DeleteButton(btnModalEditDelete);
         }
 
+        public void SetAddPlayer()
+        {
+            lblSearch.Content = "Last Name";
+            tblSearchAPlayerorTeam.Text = "Search For Player To Add";
+            StylesModal.AddWindow(this);
+            StylesModal.AddButton(btnModalEditDelete);
+        }
+
         public void AddTbSearchTextChangedHandler(TextChangedEventHandler handler)
         {
             tbSearch.TextChanged += handler;
@@ -59,7 +67,7 @@ namespace LeaderBoardApp.Modals
 
         public void DisplayPlayers(Dictionary<int, Player> players)
         {
-            var orderedPlayers = players.OrderBy(lastName => lastName.Value.GetLName().ToLower()).ThenBy(firstName => firstName.Value.GetFName().ToLower()).ThenBy(age => age.Value.GetAge());
+            var orderedPlayers = LINQQueries.OrderPlayers(players);//players.OrderBy(lastName => lastName.Value.GetLName().ToLower()).ThenBy(firstName => firstName.Value.GetFName().ToLower()).ThenBy(age => age.Value.GetAge());
             cmbNames.ItemsSource = orderedPlayers;
             cmbNames.SelectedIndex = 0;
         }
@@ -84,7 +92,5 @@ namespace LeaderBoardApp.Modals
         {
             Close();
         }
-
-        
     }
 }

@@ -32,16 +32,21 @@ namespace LeaderBoardApp.Modals
             deleteWindow.BorderThickness = new Thickness(2);
         }
 
-        public static void EditButton(Button btnPlayerModalEdit)
+        public static void EditButton(Button btnModalEditDelete)
         {
-            btnPlayerModalEdit.Background = editColour;
-            btnPlayerModalEdit.Content = "Edit";
+            btnModalEditDelete.Background = editColour;
+            btnModalEditDelete.Content = "Edit";
         }
 
         public static void DeleteButton(Button btnModalEditDelete)
         {
             btnModalEditDelete.Background = deleteColour;
             btnModalEditDelete.Content = "Delete";
+        }
+
+        public static void AddButton(Button btnModalEditDelete)
+        {
+            btnModalEditDelete.Content = "Add";
         }
     }
 }

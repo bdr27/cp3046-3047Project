@@ -11,37 +11,26 @@ namespace LeaderBoardApp.Utility
     {
         public static bool IsValidAge(string age)
         {
-            if (Regex.Match(age, @"^[0-9]+$").Success)
-            {
-                return true;
-            }
-            return false;
+            return Regex.Match(age, @"^[0-9]+$").Success;
         }
 
         public static bool IsValidGuardian(string guardian)
         {
-            if (Regex.Match(guardian, @"^[a-zA-Z\-]+ [a-zA-Z\-]+$").Success || Regex.Match(guardian, @"^[a-zA-Z\-]+$").Success)
-            {
-                return true;
-            }
-            return false;
+            return Regex.Match(guardian, @"^[a-zA-Z\-]+ [a-zA-Z\-]+$").Success || Regex.Match(guardian, @"^[a-zA-Z\-]+$").Success;
         }
         public static bool IsValidName(string name)
         {
-            if (Regex.Match(name, @"^[a-zA-Z\-]+$").Success)
-            {
-                return true;
-            }
-            return false;
+            return Regex.Match(name, @"^[a-zA-Z\-]+$").Success;
         }
 
         public static bool IsValidContact(string number)
         {
-            if (Regex.Match(number, @"^([0-9]|[0-9] |[0-9]-)+$").Success)
-            {
-                return true;
-            }
-            return false;
+            return Regex.Match(number, @"^([0-9]|[0-9] |[0-9]-)+$").Success;
+        }
+
+        public static bool IsValidTeamName(string teamName)
+        {
+            return Regex.Match(teamName, @"^[a-zA-Z\-\ ]+$").Success;
         }
     }
 }

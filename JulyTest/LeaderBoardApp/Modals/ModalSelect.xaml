@@ -4,13 +4,13 @@
         Title="EditDeletePlayerModal" Height="175" Width="335"
         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
     <Grid>
-        <TextBlock x:Name="tblSearchAPlayerorTeam" Margin="10,10,0,0" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Top"/>
+        <TextBlock x:Name="tblSearchAPlayerorTeam" Margin="10,10,10,0" TextWrapping="Wrap" FontSize="15" VerticalAlignment="Top"/>
         <Label x:Name="lblSearch" Margin="10,47,0,0" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
-        <TextBox x:Name="tbSearch" HorizontalAlignment="Left" Height="23" Margin="94,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151" />
-        <ComboBox x:Name="cmbNames" HorizontalAlignment="Left" Text="test" Margin="10,88,0,0" VerticalAlignment="Top" Width="313"/>
-        <Button x:Name="btnModalEditDelete" Content="Edit" HorizontalAlignment="Left" Margin="43,140,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="btnModalDone" Content="Done" HorizontalAlignment="Left" Margin="196,140,0,0" VerticalAlignment="Top" Width="75" Click="btnPlayerModalDone_Click"/>
+        <TextBox x:Name="tbSearch" HorizontalAlignment="Center" Height="23" Margin="0,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" />
+        <ComboBox x:Name="cmbNames" HorizontalAlignment="Center" Text="test" Margin="0,88,0,0" VerticalAlignment="Top" Width="310"/>
+        <Button x:Name="btnModalEditDelete" Content="Edit" HorizontalAlignment="Left" Margin="50,0,0,13" VerticalAlignment="Bottom" Width="75" />
+        <Button x:Name="btnModalDone" Content="Done" HorizontalAlignment="Right" Margin="0,0,50,13" VerticalAlignment="Bottom" Width="75" Click="btnPlayerModalDone_Click"/>
 
     </Grid>
 </Window>

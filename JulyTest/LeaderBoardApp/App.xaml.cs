@@ -87,7 +87,13 @@ namespace LeaderBoardApp
 
         private void HandleNewTeam_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("I add teams");
+            var addTeam = new TeamAdd(fileHandler);
+            ModalDisplay.ShowModal(addTeam, mainWindow);
+            if (addTeam.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                var newTeam = addTeam.GetTeam();
+                fileHandler.InsertTeam(newTeam);
+            }
         }
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
