@@ -42,6 +42,14 @@ namespace LeaderBoardApp.Modals
             StylesModal.DeleteButton(btnModalEditDelete);
         }
 
+        public void SetTeamEdit()
+        {
+            lblSearch.Content = "Team Name";
+            tblSearchAPlayerorTeam.Text = "Search For Team To Edit";
+            StylesModal.EditWindow(this);
+            StylesModal.EditButton(btnModalEditDelete);
+        }
+
         public void SetAddPlayer()
         {
             lblSearch.Content = "Last Name";
@@ -72,6 +80,13 @@ namespace LeaderBoardApp.Modals
             cmbNames.SelectedIndex = 0;
         }
 
+        public void DisplayTeams(Dictionary<int, Team> teams)
+        {
+            var orderedTeams = LINQQueries.OrderTeams(teams);
+            cmbNames.ItemsSource = orderedTeams;
+            cmbNames.SelectedIndex = 0;
+        }
+
         public object GetSelectedPlayer()
         {
             return cmbNames.SelectedValue;
@@ -91,6 +106,11 @@ namespace LeaderBoardApp.Modals
         private void btnPlayerModalDone_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        public void ShowBox()
+        {
+            //TODO show dropdown
         }
     }
 }

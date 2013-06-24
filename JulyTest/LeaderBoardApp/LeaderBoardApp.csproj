@@ -64,6 +64,8 @@
     <Compile Include="ModalControl\PlayerSelectToTeam.cs" />
     <Compile Include="ModalControl\PlayerSuper.cs" />
     <Compile Include="ModalControl\TeamAdd.cs" />
+    <Compile Include="ModalControl\TeamSelect.cs" />
+    <Compile Include="ModalControl\TeamSelectEdit.cs" />
     <Compile Include="ModalControl\TeamSuper.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>

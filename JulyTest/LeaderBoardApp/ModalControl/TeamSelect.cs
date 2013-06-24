@@ -10,43 +10,42 @@ using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.ModalControl
 {
-    public class PlayerSelect
+    public class TeamSelect
     {
         protected ModalSelect modalSelect;
         protected ButtonAction buttonAction;
-        protected Dictionary<int, Player> players;
-        protected List<int> playersIDSelected;
+        protected Dictionary<int, Team> teams;
+        protected List<int> editedTeamsID;
 
-        public PlayerSelect(Dictionary<int, Player> players)
+        public TeamSelect(Dictionary<int, Team> teams)
         {
-            this.players = players;
-            playersIDSelected = new List<int>();
+            this.teams = teams;
+            editedTeamsID = new List<int>();
             modalSelect = new ModalSelect();
             buttonAction = ButtonAction.NONE;
             WireCommonHandlers();
-            modalSelect.DisplayPlayers(players);
+            modalSelect.DisplayTeams(teams);
         }
 
-        public List<int> GetPlayersIDSelected()
+        public List<int> GetEditedTeamsID()
         {
-            return playersIDSelected;
+            return editedTeamsID;
         }
 
-        public void WireCommonHandlers()
+        private void WireCommonHandlers()
         {
             modalSelect.AddTbSearchTextChangedHandler(HandleSearch_TextChanged);
         }
 
         private void HandleSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var lastName = modalSelect.GetSearch();
-            var displayPlayers = players;
-            if (lastName != "")
+            var teamName = modalSelect.GetSearch();
+            var displayTeams = teams;
+            if (teamName != "")
             {
-                displayPlayers = LINQQueries.SearchLastName(players, lastName);
+                displayTeams = LINQQueries.SearchTeamName(teams, teamName);
             }
-            modalSelect.DisplayPlayers(displayPlayers);
-            modalSelect.ShowBox();
+            modalSelect.DisplayTeams(displayTeams);
         }
     }
 }

@@ -74,7 +74,7 @@ namespace LeaderBoardApp.Utility
 
         public Dictionary<int, Team> GetTeams()
         {
-            throw new NotImplementedException();
+            return teams;
         }
 
         public void InsertTeam(Team team)
@@ -84,7 +84,7 @@ namespace LeaderBoardApp.Utility
 
         public void UpdateTeam(Team team)
         {
-            throw new NotImplementedException();
+            teams[team.GetTeamID()] = team;
         }
 
         public void DeleteTeam(Team team)

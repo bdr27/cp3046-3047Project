@@ -98,18 +98,24 @@ namespace LeaderBoardApp
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            var editPlayers = new PlayerSelectEdit(fileHandler.GetPlayers());
-            ModalDisplay.ShowModal(editPlayers, mainWindow);
-            var oldPlayers = fileHandler.GetPlayers();
+            var players = fileHandler.GetPlayers();
+            var editPlayers = new PlayerSelectEdit(players);
+            ModalDisplay.ShowModal(editPlayers, mainWindow);            
             foreach (var playerID in editPlayers.GetPlayersIDSelected())
             {
-                fileHandler.UpdatePlayer(oldPlayers[playerID]);
+                fileHandler.UpdatePlayer(players[playerID]);
             }
         }
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("I edit teams");
+            var teams = fileHandler.GetTeams();
+            var editTeams = new TeamSelectEdit(teams);
+            ModalDisplay.ShowModal(editTeams, mainWindow);            
+            foreach (var teamID in editTeams.GetEditedTeamsID())
+            {
+                fileHandler.UpdateTeam(teams[teamID]);
+            }
         }
 
         private void HandleDeletePlayer_Click(object sender, RoutedEventArgs e)

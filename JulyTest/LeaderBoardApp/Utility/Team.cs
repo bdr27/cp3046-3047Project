@@ -60,6 +60,16 @@ namespace LeaderBoardApp.Utility
             return teamContact;
         }
 
+        public void SetTeamID(int teamID)
+        {
+            this.teamID = teamID; 
+        }
+
+        public int GetTeamID()
+        {
+            return teamID;
+        }
+
         public bool IsValidTeam()
         {
             return CheckRegex.IsValidContact(teamContact) && CheckRegex.IsValidTeamName(teamName);
@@ -78,6 +88,11 @@ namespace LeaderBoardApp.Utility
         public Team Clone()
         {
             return new Team(GetTeamName(), GetTeamContact(), ClonePlayerIDs());
+        }
+
+        public override string ToString()
+        {
+            return teamName;
         }
     }
 }
