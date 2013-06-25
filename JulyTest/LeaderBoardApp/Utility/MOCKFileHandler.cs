@@ -52,9 +52,9 @@ namespace LeaderBoardApp.Utility
             players[editPlayer.GetP_ID()] = editPlayer;
         }
 
-        public void DeletePlayer(Player deletePlayer)
+        public void DeletePlayer(int deletePlayer)
         {
-            players.Remove(deletePlayer.GetP_ID());
+            players.Remove(deletePlayer);
         }
 
         public int GetCurrentPlayerID()
@@ -87,9 +87,9 @@ namespace LeaderBoardApp.Utility
             teams[team.GetTeamID()] = team;
         }
 
-        public void DeleteTeam(Team team)
+        public void DeleteTeam(int teamID)
         {
-            throw new NotImplementedException();
+            teams.Remove(teamID);
         }
 
         public int GetCurrentTeamID()

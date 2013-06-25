@@ -11,8 +11,8 @@ namespace LeaderBoardApp.ModalControl
 {
     public class TeamSelectEdit : TeamSelect, ModalInterface
     {
-        public TeamSelectEdit(Dictionary<int, Team> teams)
-            : base (teams)
+        public TeamSelectEdit(Dictionary<int, Team> teams, Dictionary<int, Player> players)
+            : base(teams, players)
         {
             modalSelect.SetTeamEdit();
             WireHandlers();

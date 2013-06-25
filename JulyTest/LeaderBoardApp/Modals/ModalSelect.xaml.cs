@@ -50,6 +50,15 @@ namespace LeaderBoardApp.Modals
             StylesModal.EditButton(btnModalEditDelete);
         }
 
+
+        public void SetTeamDelete()
+        {
+            lblSearch.Content = "Team Name";
+            tblSearchAPlayerorTeam.Text = "Search For Team To Delete";
+            StylesModal.DeleteWindow(this);
+            StylesModal.DeleteButton(btnModalEditDelete);
+        }
+
         public void SetAddPlayer()
         {
             lblSearch.Content = "Last Name";
@@ -111,6 +120,12 @@ namespace LeaderBoardApp.Modals
         public void ShowBox()
         {
             //TODO show dropdown
+        }
+
+
+        public int GetSelectedItem()
+        {
+            throw new NotImplementedException();
         }
     }
 }

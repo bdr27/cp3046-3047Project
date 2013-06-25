@@ -81,7 +81,7 @@ namespace LeaderBoardAppTests
             var playerDeleted = 0;
             DeletePlayer.SetP_ID(playerDeleted);
             testPlayers.Remove(playerDeleted);
-            testHandler.DeletePlayer(DeletePlayer);
+            testHandler.DeletePlayer(DeletePlayer.GetP_ID());
 
             foreach (var item in testPlayers)
             {

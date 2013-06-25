@@ -15,9 +15,10 @@ namespace LeaderBoardApp.ModalControl
         protected ModalSelect modalSelect;
         protected ButtonAction buttonAction;
         protected Dictionary<int, Team> teams;
+        protected Dictionary<int, Player> players;
         protected List<int> editedTeamsID;
 
-        public TeamSelect(Dictionary<int, Team> teams)
+        public TeamSelect(Dictionary<int, Team> teams, Dictionary<int, Player> players)
         {
             this.teams = teams;
             editedTeamsID = new List<int>();
