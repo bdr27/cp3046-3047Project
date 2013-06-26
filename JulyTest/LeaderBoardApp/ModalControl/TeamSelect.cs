@@ -17,15 +17,27 @@ namespace LeaderBoardApp.ModalControl
         protected Dictionary<int, Team> teams;
         protected Dictionary<int, Player> players;
         protected List<int> editedTeamsID;
+        protected FileHandler fileHandler;
 
-        public TeamSelect(Dictionary<int, Team> teams, Dictionary<int, Player> players)
+        public TeamSelect(FileHandler fileHandler)
         {
-            this.teams = teams;
+            this.fileHandler = fileHandler;
+            teams = fileHandler.GetTeams();
             editedTeamsID = new List<int>();
             modalSelect = new ModalSelect();
             buttonAction = ButtonAction.NONE;
             WireCommonHandlers();
             modalSelect.DisplayTeams(teams);
+        }
+
+        public Dictionary<int, Team> GetTeams()
+        {
+            return teams;
+        }
+
+        public Dictionary<int, Player> GetPlayers()
+        {
+            return players;
         }
 
         public List<int> GetEditedTeamsID()

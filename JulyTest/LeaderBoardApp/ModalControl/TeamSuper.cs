@@ -37,6 +37,11 @@ namespace LeaderBoardApp.ModalControl
             this.team = team;
         }
 
+        public void SetPlayers(Dictionary<int, Player> players)
+        {
+            teamPlayers = players;
+        }
+
         private void WireHandlers()
         {
             modalTeam.AddBtnAddPlayerHander(HandleBtnAddPlayer_Click);

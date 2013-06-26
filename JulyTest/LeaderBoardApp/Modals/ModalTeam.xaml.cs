@@ -139,5 +139,30 @@ namespace LeaderBoardApp.Modals
             tbCreateTeamName.Text = "";
             tbCreateTeamContact.Text = "";
         }
+
+        public void ShowTeam(Team team, Dictionary<int, Player> players)
+        {
+            SetTeamName(team.GetTeamName());
+            SetTeamContact(team.GetTeamContact());
+            lvPlayers.Items.Clear();
+            /*
+            var teamPlayers = new Dictionary<int, Player>();
+            foreach (var playerID in team.GetPlayerIDs())
+            {
+                teamPlayers.Add(playerID, players[playerID]);
+            }
+             * */
+            lvPlayers.ItemsSource = players;
+        }
+
+        private void SetTeamName(string teamName)
+        {
+            tbCreateTeamName.Text = teamName;
+        }
+
+        private void SetTeamContact(string teamContact)
+        {
+            tbCreateTeamContact.Text = teamContact;
+        }
     }
 }

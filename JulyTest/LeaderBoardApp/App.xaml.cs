@@ -111,10 +111,11 @@ namespace LeaderBoardApp
         {
             var teams = fileHandler.GetTeams();
             var players = fileHandler.GetPlayers();
-            var editTeams = new TeamSelectEdit(teams, players);
+            var editTeams = new TeamSelectEdit(fileHandler);
             ModalDisplay.ShowModal(editTeams, mainWindow);            
             foreach (var teamID in editTeams.GetEditedTeamsID())
             {
+                teams[teamID].SetTeamID(teamID);
                 fileHandler.UpdateTeam(teams[teamID]);
             }
         }
@@ -134,7 +135,7 @@ namespace LeaderBoardApp
         private void HandleDeleteTeam_Click(object sender, RoutedEventArgs e)
         {
             var oldTeam = fileHandler.GetTeams();
-            var deleteTeams = new TeamSelectDelete(oldTeam);
+            var deleteTeams = new TeamSelectDelete(fileHandler);
             ModalDisplay.ShowModal(deleteTeams, mainWindow);
             var teamsToDelete = deleteTeams.GetDeletedTeams();
             foreach (var teamID in teamsToDelete)

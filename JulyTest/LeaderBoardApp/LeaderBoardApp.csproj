@@ -64,6 +64,7 @@
     <Compile Include="ModalControl\PlayerSelectToTeam.cs" />
     <Compile Include="ModalControl\PlayerSuper.cs" />
     <Compile Include="ModalControl\TeamAdd.cs" />
+    <Compile Include="ModalControl\TeamEdit.cs" />
     <Compile Include="ModalControl\TeamSelect.cs" />
     <Compile Include="ModalControl\TeamSelectDelete.cs" />
     <Compile Include="ModalControl\TeamSelectEdit.cs" />

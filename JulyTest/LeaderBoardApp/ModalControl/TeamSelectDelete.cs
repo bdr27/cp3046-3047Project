@@ -13,8 +13,8 @@ namespace LeaderBoardApp.ModalControl
     {
         private List<int> deletedTeams;
 
-        public TeamSelectDelete(Dictionary<int, Team> teams)
-            : base(teams, new Dictionary<int, Player>())
+        public TeamSelectDelete(FileHandler fileHandler)
+            : base(fileHandler)
         {
             deletedTeams = new List<int>();
             modalSelect.SetTeamDelete();
