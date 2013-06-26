@@ -18,7 +18,12 @@ namespace LeaderBoardApp.ModalControl
 
         public void ShowTeam()
         {
-            modalTeam.ShowTeam(team, fileHandler.GetPlayers());
+            var players = new Dictionary<int, Player>();
+            foreach (var playerID in team.GetPlayerIDs())
+            {
+                players.Add(playerID, fileHandler.GetPlayer(playerID));
+            }
+            modalTeam.ShowTeam(team, players);
         }
 
         #region ModalInterface Members
