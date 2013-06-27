@@ -29,20 +29,30 @@ namespace LeaderBoardApp.ModalControl
             if(tempTeamID != null)
             {
                 var teamID = (int) tempTeamID;
-                var teamEdit = new TeamEdit(fileHandler, teamID);
-                teams[teamID].SetTeamID(teamID);
-                teamEdit.SetTeam(teams[teamID]);
-                teamEdit.ShowTeam();
-                ModalDisplay.ShowModal(teamEdit, modalSelect);
-                if (teamEdit.GetButtonAction().Equals(ButtonAction.CONFIRM))
-                {
-                    teams[teamID] = teamEdit.GetTeam();
-                    if (!editedTeamsID.Contains(teamID))
-                    {
-                        editedTeamsID.Add(teamID);
-                    }
-                    modalSelect.DisplayTeams(teams);
-                }
+                ShowEditDialog(teamID);
+            }
+        }
+
+        private void ShowEditDialog(int teamID)
+        {
+            var teamEdit = new TeamEdit(fileHandler);
+            var team = fileHandler.GetTeam(teamID);
+            teamEdit.SetTeam(team);
+            var playerIDs = team.GetPlayerIDs();
+            var teamPlayers = new Dictionary<int, Player>();
+            foreach (var playerID in playerIDs)
+            {
+                teamPlayers.Add(playerID, fileHandler.GetPlayers()[playerID]);
+            }
+            teamEdit.SetPlayers(teamPlayers);
+            teamEdit.ShowTeam();
+            ModalDisplay.ShowModal(teamEdit, modalSelect);
+            if (teamEdit.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            {
+                var newTeam = teamEdit.GetTeam();
+                newTeam.SetTeamID(teamID);
+                fileHandler.UpdateTeam(newTeam);
+                modalSelect.DisplayTeams(fileHandler.GetTeams());
             }
         }
 

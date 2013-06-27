@@ -32,12 +32,12 @@ namespace LeaderBoardApp.ModalControl
 
         private void DeletePlayer(int playerID)
         {
-            players.Remove(playerID);
-            modalSelect.DisplayPlayers(players);
             if (!playersIDSelected.Contains(playerID))
             {
                 playersIDSelected.Add(playerID);
-            }
+            } 
+            players.Remove(playerID);
+            modalSelect.DisplayPlayers(players);
         }
 
         #region ModalInterface Members
@@ -49,7 +49,7 @@ namespace LeaderBoardApp.ModalControl
 
         public void ShowDialog()
         {
-            modalSelect.Show();
+            modalSelect.ShowDialog();
         }
 
         public ButtonAction GetButtonAction()

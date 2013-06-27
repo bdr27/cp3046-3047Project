@@ -55,6 +55,20 @@ namespace LeaderBoardApp.Utility
         public void DeletePlayer(int deletePlayer)
         {
             players.Remove(deletePlayer);
+            var editedTeams = new Dictionary<int, Team>();
+            foreach (var team in teams)
+            {
+                var teamValue = team.Value;
+                if (teamValue.GetPlayerIDs().Contains(deletePlayer))
+                {
+                    teamValue.RemovePlayer(deletePlayer);
+                    editedTeams.Add(team.Key, teamValue);
+                }
+            }
+            foreach (var editedTeam in editedTeams)
+            {
+                teams[editedTeam.Key] = editedTeam.Value;
+            }
         }
 
         public int GetCurrentPlayerID()
@@ -99,7 +113,7 @@ namespace LeaderBoardApp.Utility
 
         public Team GetTeam(int teamID)
         {
-            throw new NotImplementedException();
+            return teams[teamID];
         }
 
         #endregion

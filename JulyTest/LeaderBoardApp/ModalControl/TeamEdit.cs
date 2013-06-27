@@ -11,18 +11,14 @@ namespace LeaderBoardApp.ModalControl
 {
     public class TeamEdit : TeamSuper, ModalInterface
     {
-        public TeamEdit(FileHandler fileHandler, int teamIDSelected)
+        public TeamEdit(FileHandler fileHandler)
             :base(fileHandler)
         {
+            modalTeam.SetEdit();
         }
 
         public void ShowTeam()
         {
-            var players = new Dictionary<int, Player>();
-            foreach (var playerID in team.GetPlayerIDs())
-            {
-                players.Add(playerID, fileHandler.GetPlayer(playerID));
-            }
             modalTeam.ShowTeam(team, players);
         }
 
@@ -47,7 +43,7 @@ namespace LeaderBoardApp.ModalControl
 
         public Dictionary<int, Player> GetPlayers()
         {
-            return teamPlayers;
+            return players;
         }
     }
 }

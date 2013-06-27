@@ -15,12 +15,12 @@ namespace LeaderBoardApp.ModalControl
         protected ModalTeam modalTeam;
         protected ButtonAction buttonAction;
         protected FileHandler fileHandler;
-        protected Dictionary<int, Player> teamPlayers;
+        protected Dictionary<int, Player> players;
         protected Team team;
 
         public TeamSuper(FileHandler fileHandler)
         {
-            teamPlayers = new Dictionary<int, Player>();
+            players = new Dictionary<int, Player>();
             this.fileHandler = fileHandler;
             modalTeam = new ModalTeam();
             buttonAction = ButtonAction.NONE;
@@ -39,7 +39,7 @@ namespace LeaderBoardApp.ModalControl
 
         public void SetPlayers(Dictionary<int, Player> players)
         {
-            teamPlayers = players;
+            this.players = players;
         }
 
         private void WireHandlers()
@@ -67,7 +67,7 @@ namespace LeaderBoardApp.ModalControl
         private List<int> GetTeamPlayerIDs()
         {
             var playerIDs = new List<int>();
-            foreach (var player in teamPlayers)
+            foreach (var player in players)
             {
                 playerIDs.Add(player.Key);
             }
@@ -86,8 +86,8 @@ namespace LeaderBoardApp.ModalControl
 
         private void HandleBtnClear_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            teamPlayers = new Dictionary<int, Player>();
-            modalTeam.ShowPlayers(teamPlayers);
+            players = new Dictionary<int, Player>();
+            modalTeam.ShowPlayers(players);
             modalTeam.ClearValue();
         }
 
@@ -121,10 +121,10 @@ namespace LeaderBoardApp.ModalControl
 
         private void AddPlayerToTeam(int playerID, Player player)
         {
-            if (!teamPlayers.ContainsKey(playerID))
+            if (!players.ContainsKey(playerID))
             {
-                teamPlayers.Add(playerID, player);
-                modalTeam.ShowPlayers(teamPlayers);
+                players.Add(playerID, player);
+                modalTeam.ShowPlayers(players);
             }
         }
     }
