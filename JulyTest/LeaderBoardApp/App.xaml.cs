@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows;
-using LeaderBoardApp.Windows;
-using LeaderBoardApp.ModalControl;
 using LeaderBoardApp.Enum;
+using LeaderBoardApp.ModalControl;
 using LeaderBoardApp.Utility;
+using LeaderBoardApp.Windows;
 
 namespace LeaderBoardApp
 {

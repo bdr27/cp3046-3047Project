@@ -1,9 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.Windows;
-using System.Windows.Controls;
 using LeaderBoardApp.Enum;
-using LeaderBoardApp.Modals;
 using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.ModalControl
