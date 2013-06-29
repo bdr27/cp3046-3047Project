@@ -80,7 +80,9 @@ namespace LeaderBoardApp.Utility
 
         public void LoadTeams()
         {
-            throw new NotImplementedException();
+            teams.Add(teamCounter++, new Team("WildCats", "6565656", new List<int> { 1 }));
+            teams.Add(teamCounter++, new Team("WildCats", "5454545", new List<int> { 2 }));
+            teams.Add(teamCounter++, new Team("BobCats", "43434343", new List<int> { 3 }));
         }
 
         public Dictionary<int, Team> GetTeams()
@@ -105,7 +107,7 @@ namespace LeaderBoardApp.Utility
 
         public int GetCurrentTeamID()
         {
-            throw new NotImplementedException();
+            return teamCounter;
         }
 
         public Team GetTeam(int teamID)

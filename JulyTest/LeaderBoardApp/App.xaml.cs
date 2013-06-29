@@ -1,5 +1,7 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
+using LeaderBoardApp.AppLog;
 using LeaderBoardApp.Enum;
 using LeaderBoardApp.ModalControl;
 using LeaderBoardApp.Utility;
@@ -15,17 +17,20 @@ namespace LeaderBoardApp
         MainWindow mainWindow;
         ProjectionWindow projectionWindow;
         FileHandler fileHandler;
+        AL log;
+        ProjectorState projectorState;
 
         public App()
             : base()
         {
+            log = new ConsoleAL();
             mainWindow = new MainWindow();
             projectionWindow = new ProjectionWindow();
+            projectorState = ProjectorState.STAND_BY;
 
+            log.StartLog();
             LoadFileHandler();
-            WireRegistraionTab();
-            WireMainWindow();
-
+            WireHandlers();
             projectionWindow.Show();
             mainWindow.Show();
         }
@@ -34,23 +39,69 @@ namespace LeaderBoardApp
         {
             fileHandler = new MOCKFileHandler();
             fileHandler.LoadPlayers();
-        }        
+            fileHandler.LoadTeams();
+        }
+
+        private void WireHandlers()
+        {
+            WireTabSelection();
+            WireSideMenu();
+            WireRegistraionTab();
+        }
+
+        
 
         #region MainWindowTabSelection
-        private void WireMainWindow()
+
+        private void WireTabSelection()
         {
             mainWindow.AddTabControl(HandleTab_SelectionChange);
         }
-
+        
         private void HandleTab_SelectionChange(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
             var selectedTab = mainWindow.GetSelectedTab();
+            var liveMatch = mainWindow.liveMatch;
             switch (selectedTab)
             {
                 case SelectedTab.LIVE_MATCH:
-                    //LoadUp Combo Boxes
+                    liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
                     break;
             }
+        }
+        #endregion
+
+        #region SideMenuSelection
+
+        private void WireSideMenu()
+        {
+            mainWindow.AddSideMenuControlLiveMatch(HandleSideMenuControlLiveMatch_Click);
+            mainWindow.AddSideMenuControlLadder(HandleSideMenuControlLadder_Click);
+            mainWindow.AddSideMenuControlStandBy(HandleSideMenuControlStandBy_Click);
+        }
+
+        private void HandleSideMenuControlStandBy_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress(sender.ToString());
+            projectorState = ProjectorState.STAND_BY;
+            mainWindow.ChangeDisplay(projectorState);
+            projectionWindow.ChangeDisplay(projectorState);
+        }
+
+        private void HandleSideMenuControlLadder_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress(sender.ToString());
+            projectorState = ProjectorState.LADDER;
+            mainWindow.ChangeDisplay(projectorState);
+            projectionWindow.ChangeDisplay(projectorState);
+        }
+
+        private void HandleSideMenuControlLiveMatch_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress(sender.ToString());
+            projectorState = ProjectorState.LIVE_MATCH;
+            mainWindow.ChangeDisplay(projectorState);
+            projectionWindow.ChangeDisplay(projectorState);
         }
         #endregion
 
@@ -69,6 +120,7 @@ namespace LeaderBoardApp
 
         private void HandleNewPlayer_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var addPlayer = new PlayerAdd();
             ModalDisplay.ShowModal(addPlayer, mainWindow);
             if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
@@ -81,6 +133,7 @@ namespace LeaderBoardApp
 
         private void HandleNewTeam_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var addTeam = new TeamAdd(fileHandler);
             ModalDisplay.ShowModal(addTeam, mainWindow);
             if (addTeam.GetButtonAction().Equals(ButtonAction.CONFIRM))
@@ -92,6 +145,7 @@ namespace LeaderBoardApp
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var players = fileHandler.GetPlayers();
             var editPlayers = new PlayerSelectEdit(players);
             ModalDisplay.ShowModal(editPlayers, mainWindow);            
@@ -103,6 +157,7 @@ namespace LeaderBoardApp
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var teams = fileHandler.GetTeams();
             var players = fileHandler.GetPlayers();
             var editTeams = new TeamSelectEdit(fileHandler);
@@ -116,6 +171,7 @@ namespace LeaderBoardApp
 
         private void HandleDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var deletePlayers = new PlayerSelectDelete(fileHandler.GetPlayers());
             ModalDisplay.ShowModal(deletePlayers, mainWindow);
             var playersToDelete = deletePlayers.GetPlayersIDSelected();
@@ -128,6 +184,7 @@ namespace LeaderBoardApp
 
         private void HandleDeleteTeam_Click(object sender, RoutedEventArgs e)
         {
+            log.ButtonPress(sender.ToString());
             var oldTeam = fileHandler.GetTeams();
             var deleteTeams = new TeamSelectDelete(fileHandler);
             ModalDisplay.ShowModal(deleteTeams, mainWindow);
@@ -137,6 +194,10 @@ namespace LeaderBoardApp
                 fileHandler.DeleteTeam(teamID);
             }
         }
+
+        #endregion
+
+        #region LiveMatchTab
 
         #endregion
     }

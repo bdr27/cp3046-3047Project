@@ -53,7 +53,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppLog\AL.cs" />
+    <Compile Include="AppLog\ConsoleAL.cs" />
     <Compile Include="Enum\ButtonAction.cs" />
+    <Compile Include="Enum\ProjectorState.cs" />
     <Compile Include="Enum\SelectedTab.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
@@ -89,6 +92,7 @@
     <Compile Include="Windows\ProjectionWindow.xaml.cs">
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ProjectorUpdate.cs" />
     <Page Include="Modals\ModalPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

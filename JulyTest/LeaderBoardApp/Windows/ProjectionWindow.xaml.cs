@@ -11,5 +11,10 @@ namespace LeaderBoardApp.Windows
         {
             InitializeComponent();
         }
+
+        public void ChangeDisplay(Enum.ProjectorState projectorState)
+        {
+            ProjectorUpdate.Action(projectorState, projectorLiveMatch, projectorLadder, projectorStandby);
+        }
     }
 }

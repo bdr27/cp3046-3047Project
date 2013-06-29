@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace LeaderBoardApp.Tabs
 {
@@ -10,6 +11,21 @@ namespace LeaderBoardApp.Tabs
         public ProjectorController()
         {
             InitializeComponent();
+        }
+
+        public void AddBtnLiveMatchHandler(RoutedEventHandler handler)
+        {
+            btnLiveMatch.Click += handler;
+        }
+
+        public void AddBtnLadderHandler(RoutedEventHandler handler)
+        {
+            btnLadder.Click += handler;
+        }
+
+        public void AddBtnStandByHandler(RoutedEventHandler handler)
+        {
+            btnStandby.Click += handler;
         }
     }
 }

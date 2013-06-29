@@ -17,7 +17,7 @@
             </TabItem>
             <TabItem x:Name="TabLiveMatch" Header="Live Match">
                 <Grid>
-                 <local:LiveMatch x:Name="playGame" Visibility="Visible" />
+                 <local:LiveMatch x:Name="liveMatch" Visibility="Visible" />
                 </Grid>
             </TabItem>
             <TabItem Header="Ladder">
@@ -42,9 +42,9 @@
             </TabItem>
             <TabItem Header="Projector" x:Name="projectorTab">
                 <Grid>
-                    <projector:ProjectorGame x:Name="ProjectorGame" Visibility="Hidden"/>
-                    <projector:ProjectorLadder x:Name="ProjectorLadder" Visibility="Hidden"/>
-                    <projector:ProjectorStandby x:Name="ProjectorStandby" Visibility="Visible"/>
+                    <projector:ProjectorGame x:Name="projectorLiveMatch" Visibility="Hidden"/>
+                    <projector:ProjectorLadder x:Name="projectorLadder" Visibility="Hidden"/>
+                    <projector:ProjectorStandby x:Name="projectorStandby" Visibility="Visible"/>
                 </Grid>
             </TabItem>
         </TabControl>

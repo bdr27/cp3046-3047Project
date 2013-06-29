@@ -4,9 +4,9 @@
         xmlns:projector="clr-namespace:LeaderBoardApp.ProjectorDisplay"
         Height="768" Width="1024" Background="WhiteSmoke">
     <Grid x:Name="myGridTest">
-        <projector:ProjectorGame x:Name="ProjectorGame" Visibility="Hidden"/>
-        <projector:ProjectorLadder x:Name="ProjectorLadder" Visibility="Hidden"/>
-        <projector:ProjectorStandby x:Name="ProjectorStandby" Visibility="Visible"/>
+        <projector:ProjectorGame x:Name="projectorLiveMatch" Visibility="Hidden"/>
+        <projector:ProjectorLadder x:Name="projectorLadder" Visibility="Hidden"/>
+        <projector:ProjectorStandby x:Name="projectorStandby" Visibility="Visible"/>
     </Grid>
 </Window>
 
