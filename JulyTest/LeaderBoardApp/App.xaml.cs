@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Controls;
 using LeaderBoardApp.AppLog;
 using LeaderBoardApp.Enum;
 using LeaderBoardApp.ModalControl;
+using LeaderBoardApp.ProjectorDisplay;
+using LeaderBoardApp.Tabs;
 using LeaderBoardApp.Utility;
 using LeaderBoardApp.Windows;
 
@@ -14,25 +18,45 @@ namespace LeaderBoardApp
     /// </summary>
     public partial class App : Application
     {
-        MainWindow mainWindow;
-        ProjectionWindow projectionWindow;
-        FileHandler fileHandler;
-        AL log;
-        ProjectorState projectorState;
+        public MainWindow mainWindow;
+        public ProjectionWindow projectionWindow;
+        public FileHandler fileHandler;
+        public AL log;
+        public ProjectorState projectorState;
+        public LiveMatch liveMatch;
+        public GameState gameState;
+        public Game game;
+        public SelectedTab selectedTab;
+        public List<ScoreDisplay> displays;
 
         public App()
             : base()
         {
             log = new ConsoleAL();
             mainWindow = new MainWindow();
-            projectionWindow = new ProjectionWindow();
+            projectionWindow = new ProjectionWindow();            
+            game = new Game();
+            displays = new List<ScoreDisplay>();
             projectorState = ProjectorState.STAND_BY;
+            gameState = GameState.WAITING;
+            liveMatch = mainWindow.liveMatch;
+            selectedTab = mainWindow.GetSelectedTab();
 
             log.StartLog();
+
+            LoadDisplays();
             LoadFileHandler();
             WireHandlers();
             projectionWindow.Show();
             mainWindow.Show();
+        }
+
+        private void LoadDisplays()
+        {
+            displays.Add(mainWindow.projectorLiveMatch);
+            displays.Add(projectionWindow.projectorLiveMatch);
+            displays.Add(mainWindow);
+            UpdateScores();
         }
 
         private void LoadFileHandler()
@@ -47,9 +71,10 @@ namespace LeaderBoardApp
             WireTabSelection();
             WireSideMenu();
             WireRegistraionTab();
+            WireLiveMatch();
         }
 
-        
+
 
         #region MainWindowTabSelection
 
@@ -57,17 +82,22 @@ namespace LeaderBoardApp
         {
             mainWindow.AddTabControl(HandleTab_SelectionChange);
         }
-        
-        private void HandleTab_SelectionChange(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+
+        private void HandleTab_SelectionChange(object sender, SelectionChangedEventArgs e)
         {
-            var selectedTab = mainWindow.GetSelectedTab();
-            var liveMatch = mainWindow.liveMatch;
-            switch (selectedTab)
+            if (!selectedTab.Equals(mainWindow.GetSelectedTab()))
             {
-                case SelectedTab.LIVE_MATCH:
-                    liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
-                    break;
+                selectedTab = mainWindow.GetSelectedTab();
+                var liveMatch = mainWindow.liveMatch;
+                log.TabSelect(selectedTab.ToString());
+                switch (selectedTab)
+                {
+                    case SelectedTab.LIVE_MATCH:
+                        liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+                        break;
+                }
             }
+            
         }
         #endregion
 
@@ -82,7 +112,7 @@ namespace LeaderBoardApp
 
         private void HandleSideMenuControlStandBy_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Stand By");
             projectorState = ProjectorState.STAND_BY;
             mainWindow.ChangeDisplay(projectorState);
             projectionWindow.ChangeDisplay(projectorState);
@@ -90,7 +120,7 @@ namespace LeaderBoardApp
 
         private void HandleSideMenuControlLadder_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Ladder");
             projectorState = ProjectorState.LADDER;
             mainWindow.ChangeDisplay(projectorState);
             projectionWindow.ChangeDisplay(projectorState);
@@ -98,7 +128,7 @@ namespace LeaderBoardApp
 
         private void HandleSideMenuControlLiveMatch_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Live Match");
             projectorState = ProjectorState.LIVE_MATCH;
             mainWindow.ChangeDisplay(projectorState);
             projectionWindow.ChangeDisplay(projectorState);
@@ -120,7 +150,7 @@ namespace LeaderBoardApp
 
         private void HandleNewPlayer_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Add Player");
             var addPlayer = new PlayerAdd();
             ModalDisplay.ShowModal(addPlayer, mainWindow);
             if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
@@ -128,12 +158,12 @@ namespace LeaderBoardApp
                 var newPlayer = addPlayer.GetPlayer();
                 fileHandler.InsertPlayer(newPlayer);
                 Debug.WriteLine(newPlayer.Details());
-            }            
+            }
         }
 
         private void HandleNewTeam_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Add Team");
             var addTeam = new TeamAdd(fileHandler);
             ModalDisplay.ShowModal(addTeam, mainWindow);
             if (addTeam.GetButtonAction().Equals(ButtonAction.CONFIRM))
@@ -145,10 +175,10 @@ namespace LeaderBoardApp
 
         private void HandleEditPlayer_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Edit Player");
             var players = fileHandler.GetPlayers();
             var editPlayers = new PlayerSelectEdit(players);
-            ModalDisplay.ShowModal(editPlayers, mainWindow);            
+            ModalDisplay.ShowModal(editPlayers, mainWindow);
             foreach (var playerID in editPlayers.GetPlayersIDSelected())
             {
                 fileHandler.UpdatePlayer(players[playerID]);
@@ -157,11 +187,11 @@ namespace LeaderBoardApp
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Edit Team");
             var teams = fileHandler.GetTeams();
             var players = fileHandler.GetPlayers();
             var editTeams = new TeamSelectEdit(fileHandler);
-            ModalDisplay.ShowModal(editTeams, mainWindow);            
+            ModalDisplay.ShowModal(editTeams, mainWindow);
             foreach (var teamID in editTeams.GetEditedTeamsID())
             {
                 teams[teamID].SetTeamID(teamID);
@@ -171,7 +201,7 @@ namespace LeaderBoardApp
 
         private void HandleDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Delete Player");
             var deletePlayers = new PlayerSelectDelete(fileHandler.GetPlayers());
             ModalDisplay.ShowModal(deletePlayers, mainWindow);
             var playersToDelete = deletePlayers.GetPlayersIDSelected();
@@ -184,7 +214,7 @@ namespace LeaderBoardApp
 
         private void HandleDeleteTeam_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress(sender.ToString());
+            log.ButtonPress("Delete Team");
             var oldTeam = fileHandler.GetTeams();
             var deleteTeams = new TeamSelectDelete(fileHandler);
             ModalDisplay.ShowModal(deleteTeams, mainWindow);
@@ -198,6 +228,153 @@ namespace LeaderBoardApp
         #endregion
 
         #region LiveMatchTab
+
+        private void WireLiveMatch()
+        {
+            liveMatch.NoMatchInProgress();
+            liveMatch.AddEndGameHandler(HandleEndGame_Click);
+            liveMatch.AddResetHandler(HandleResetGame_Click);
+            liveMatch.AddStartPauseHandler(HandleStartPause_Click);
+            liveMatch.AddTeamAFlagMinusHandler(HandleTeamAFlagMinus_Click);
+            liveMatch.AddTeamAFlagPlusHandler(HandleTeamAFlagPlus_Click);
+            liveMatch.AddTeamATagMinusHandler(HandleTeamATagMinus_Click);
+            liveMatch.AddTeamATagPlusHandler(HandleTeamATagPlus_Click);
+            liveMatch.AddTeamBFlagMinusHandler(HandleTeamBFlagMinus_Click);
+            liveMatch.AddTeamBFlagPlusHandler(HandleTeamBFlagPlus_Click);
+            liveMatch.AddTeamBTagMinusHandler(HandleTeamBTagMinus_Click);
+            liveMatch.AddTeamBTagPlusHandler(HandleTeamBTagPlus_Click);
+        }
+
+        private void StartGame()
+        {
+            liveMatch.MatchInProgress();
+            var teamAID = liveMatch.GetTeamA();
+            var teamBID = liveMatch.GetTeamB();
+            var fullTeamA = fileHandler.GetTeam(teamAID);
+            var fullTeamB = fileHandler.GetTeam(teamBID);
+            var teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
+            var teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
+            SetTeamsProjectorGame(teamA, teamB);
+            game.NewGame();
+            log.GameTeam(teamA, "A");
+            log.GameTeam(teamB, "B");
+            log.TeamAID(teamAID);
+            log.TeamBID(teamBID);
+        }
+
+        private void SetTeamsProjectorGame(GameTeam teamA, GameTeam teamB)
+        {
+            foreach (var display in displays)
+            {
+                display.SetTeamA(teamA);
+                display.SetTeamB(teamB);
+            }
+        }
+
+        private void UpdateScores()
+        {
+            foreach (var display in displays)
+            {
+                display.SetTeamAFlag(game.GetTeamAFlag());
+                display.SetTeamAScore(game.GetTeamAScore());
+                display.SetTeamATag(game.GetTeamATag());
+                display.SetTeamBFlag(game.GetTeamBFlag());
+                display.SetTeamBScore(game.GetTeamBScore());
+                display.SetTeamBTag(game.GetTeamBTag());
+            }
+        }
+
+        private void HandleEndGame_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("End Game");
+            liveMatch.NoMatchInProgress();
+            gameState = GameState.WAITING;
+        }
+
+        private void HandleResetGame_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Reset Game");
+            liveMatch.NoMatchInProgress();
+            gameState = GameState.WAITING;
+        }
+
+        private void HandleStartPause_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Start/Pause");
+            switch (gameState)
+            {
+                case GameState.WAITING:
+                    StartGame();                    
+                    gameState = GameState.IN_PROGRESS;
+                    break;
+                case GameState.PAUSED:
+                    gameState = GameState.FINISHED;
+                    break;
+                case GameState.IN_PROGRESS:
+                    gameState = GameState.PAUSED;
+                    break;
+                case GameState.FINISHED:
+                    gameState = GameState.OVERTIME;
+                    break;
+            }
+            
+        }
+
+        private void HandleTeamAFlagMinus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team A Flag Minus");
+            game.TeamAMinusFlag();
+            UpdateScores();
+        }
+
+        private void HandleTeamAFlagPlus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team A Flag Plus");
+            game.TeamAaddFlag();
+            UpdateScores();
+        }
+
+        private void HandleTeamATagMinus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team A Tag Minus");
+            game.TeamAMinusTag();
+            UpdateScores();
+        }
+
+        private void HandleTeamATagPlus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team A Tag Plus");
+            game.TeamAaddTag();
+            UpdateScores();
+        }
+
+        private void HandleTeamBFlagMinus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team B Flag Minus");
+            game.TeamBMinusFlag();
+            UpdateScores();
+        }
+
+        private void HandleTeamBFlagPlus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team B Flag Plus");
+            game.TeamBaddFlag();
+            UpdateScores();
+        }
+
+        private void HandleTeamBTagMinus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team B Tag Minus");
+            game.TeamBMinusTag();
+            UpdateScores();
+        }
+
+        private void HandleTeamBTagPlus_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("Team B Tag Plus");
+            game.TeamBaddTag();
+            UpdateScores();
+        }
 
         #endregion
     }

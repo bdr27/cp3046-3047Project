@@ -12,6 +12,7 @@ namespace LeaderBoardApp.Utility
         void DeletePlayer(int playerID);
         int GetCurrentPlayerID();
         Player GetPlayer(int playerID);
+        List<string> GetPlayersFirstName(int teamID);
         #endregion
         #region Team
         void LoadTeams();

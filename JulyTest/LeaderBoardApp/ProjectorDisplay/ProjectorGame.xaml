@@ -28,30 +28,30 @@
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="0" Name="lblTimeProjector" Content="5:00" FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
-        <Label Grid.Column="0" Name="lblTeamAScoreProjector" Content="0"  FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="2" Name="lblTeamBScoreProjector" Content="0"  FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="0" Name="lblTimeProjector" Content="0:00" FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label Grid.Column="0" Grid.Row="0" Name="lblTeamAScoreProjector" Content="0" FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="2" Grid.Row="0" Name="lblTeamBScoreProjector" Content="0" FontFamily="Adobe Gothic Std B" FontSize="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <GridSplitter Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Height="15" HorizontalAlignment="Stretch" Background="#FFE0E0E0" Grid.ColumnSpan="9" IsEnabled="False"/>
-        <GridSplitter Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="15" Background="#FFE0E0E0" Grid.RowSpan="20" IsEnabled="False"/>
+        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Height="15" HorizontalAlignment="Stretch" Background="#FFE0E0E0" Grid.ColumnSpan="9" IsEnabled="False"/>
+        <Label Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Width="15" Background="#FFE0E0E0" Grid.RowSpan="20" IsEnabled="False"/>
 
-        <Label Grid.Column="0" Grid.Row="1" Name="lblTeamAProjector" Content="Team A" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="0" Grid.Row="2" Name="lblTeamAPlayer1" Content="Player 1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="0" Grid.Row="3" Name="lblTeamAPlayer2" Content="Player 2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="0" Grid.Row="4" Name="lblTeamAPlayer3" Content="Player 3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="0" Grid.Row="5" Name="lblTeamAPlayer4" Content="Player 4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="1" Name="lblTeamAName" Content="Team A" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Grid.Row="2" Name="lblTeamAPlayer1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="3" Name="lblTeamAPlayer2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="4" Name="lblTeamAPlayer3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="5" Name="lblTeamAPlayer4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
         <Label Grid.Column="0" Grid.Row="6" Name="lblTeamAPlayer5" Content="" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2" Visibility="Hidden"/>
-        <Label Grid.Column="0" Grid.Row="8" Name="lblTeamATagCount" Content="Tags: XX" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="0" Grid.Row="9" Name="lblTeamAFlagCount" Content="Flags Captured: X" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="8" Name="lblTeamATagCount" Content="Tag: 0" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="0" Grid.Row="9" Name="lblTeamAFlagCount" Content="Flag: 0" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
 
-        <Label Grid.Column="2" Grid.Row="1" Name="lblTeamBProjector" Content="Team B" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Label Grid.Column="2" Grid.Row="2" Name="lblTeamBPlayer1" Content="Player 1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="2" Grid.Row="3" Name="lblTeamBPlayer2" Content="Player 2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="2" Grid.Row="4" Name="lblTeamBPlayer3" Content="Player 3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="2" Grid.Row="5" Name="lblTeamBPlayer4" Content="Player 4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="2" Grid.Row="6" Name="lblTeamBPlayer5" Content="" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2" Visibility="Hidden"/>
-        <Label Grid.Column="2" Grid.Row="8" Name="lblTeamBTagCount" Content="Tags: XX" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
-        <Label Grid.Column="2" Grid.Row="9" Name="lblTeamBFlagCount" Content="Flags Captured: X" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="1" Name="lblTeamBName" Content="Team B" FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="2" Grid.Row="2" Name="lblTeamBPlayer1" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="3" Name="lblTeamBPlayer2" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="4" Name="lblTeamBPlayer3" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="5" Name="lblTeamBPlayer4" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="6" Name="lblTeamBPlayer5" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2" Visibility="Hidden"/>
+        <Label Grid.Column="2" Grid.Row="8" Name="lblTeamBTagCount" Content="Tag: 0" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
+        <Label Grid.Column="2" Grid.Row="9" Name="lblTeamBFlagCount" Content="Flag: 0" FontSize="25" HorizontalAlignment="Center" Grid.RowSpan="2"/>
 
 
 

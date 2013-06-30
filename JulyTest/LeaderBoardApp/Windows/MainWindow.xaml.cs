@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using LeaderBoardApp.Enum;
+using LeaderBoardApp.Utility;
 using LeaderBoardApp.Windows;
 
 namespace LeaderBoardApp
@@ -9,7 +10,7 @@ namespace LeaderBoardApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, ScoreDisplay
     {
         public MainWindow()
         {
@@ -47,5 +48,49 @@ namespace LeaderBoardApp
         {
             ProjectorUpdate.Action(projectorState, projectorLiveMatch, projectorLadder, projectorStandby);
         }
+
+        #region ScoreDisplay Members
+
+        public void SetTeamAFlag(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblFlagA.Content = "Flag: " + p);
+        }
+
+        public void SetTeamAScore(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblScoreA.Content = "Score: " + p);
+        }
+
+        public void SetTeamATag(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblTagA.Content = "Tag: " + p);
+        }
+
+        public void SetTeamBFlag(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblFlagB.Content = "Flag: " + p);
+        }
+
+        public void SetTeamBScore(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblScoreB.Content = "Score: " + p);
+        }
+
+        public void SetTeamBTag(int p)
+        {
+            Dispatcher.Invoke(() => liveMatch.lblTagB.Content = "Tag: " + p);
+        }
+
+        public void SetTeamA(GameTeam team)
+        {
+            
+        }
+
+        public void SetTeamB(GameTeam team)
+        {
+            
+        }
+
+        #endregion
     }
 }

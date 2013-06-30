@@ -1,46 +1,24 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-[assembly: InternalsVisibleTo("NerfWarsTests")]
-
-namespace NerfWarsLeaderboard.Utility
+namespace LeaderBoardApp.Utility
 {
-    public class PlayTeam
+    public class Score
     {
-        private const int FLAG_SCORE = 5;
-        private const int TAG_SCORE = 1;
-        private string teamName;
-        private List<string> playerNames;
+        private const int FLAG_SCORE = 1;
+        private const int TAG_SCORE = 5;
         private int flag;
         private int tag;
         private int score;
 
-        public PlayTeam(List<string> playerNames, string teamName)
+        public Score()
         {
-            this.playerNames = playerNames;
-            this.teamName = teamName;
-            flag = 0;
-            tag = 0;
-        }
-
-        public int GetCapScore()
-        {
-            return FLAG_SCORE;
-        }
-
-        public int GetTagScore()
-        {
-            return FLAG_SCORE;
-        }
-
-        public List<string> GetPlayerNames()
-        {
-            return playerNames;
-        }
-
-        public string GetTeamName()
-        {
-            return teamName;
+            flag = 0; 
+            tag = 0; 
+            score = 0;
         }
 
         public int GetFlag()
@@ -76,7 +54,7 @@ namespace NerfWarsLeaderboard.Utility
             {
                 flag--;
                 UpdateScore();
-            }            
+            }
         }
 
         public void MinusTag()
@@ -85,7 +63,7 @@ namespace NerfWarsLeaderboard.Utility
             {
                 tag--;
                 UpdateScore();
-            }            
+            }
         }
 
         private void UpdateScore()
@@ -93,7 +71,7 @@ namespace NerfWarsLeaderboard.Utility
             score = tag * TAG_SCORE + flag * FLAG_SCORE;
         }
 
-        public void ResetScore()
+        internal void ResetScore()
         {
             tag = 0;
             flag = 0;

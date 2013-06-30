@@ -78,10 +78,22 @@ namespace LeaderBoardApp.Utility
             return players[playerID];
         }
 
+        public List<string> GetPlayersFirstName(int teamID)
+        {
+            var team = teams[teamID];
+            var playerNames = new List<string>();
+            foreach (var playerID in team.GetPlayerIDs())
+            {
+                var player = players[playerID];
+                playerNames.Add(player.GetFName());
+            }
+            return playerNames;
+        }
+
         public void LoadTeams()
         {
             teams.Add(teamCounter++, new Team("WildCats", "6565656", new List<int> { 1 }));
-            teams.Add(teamCounter++, new Team("WildCats", "5454545", new List<int> { 2 }));
+            teams.Add(teamCounter++, new Team("Wildcats", "5454545", new List<int> { 2 }));
             teams.Add(teamCounter++, new Team("BobCats", "43434343", new List<int> { 3 }));
         }
 
