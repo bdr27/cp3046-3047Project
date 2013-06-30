@@ -91,6 +91,12 @@ namespace LeaderBoardApp
             
         }
 
+        public void SetTime(int min, int sec)
+        {
+            Dispatcher.Invoke(() => liveMatch.TbMinutes.Text = "" + min);
+            Dispatcher.Invoke(() => liveMatch.TbSeconds.Text = "" + sec);
+        }
+
         #endregion
     }
 }

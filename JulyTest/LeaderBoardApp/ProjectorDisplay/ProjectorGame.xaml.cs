@@ -82,5 +82,15 @@ namespace LeaderBoardApp.ProjectorDisplay
         {
             Dispatcher.Invoke(() => lblTeamBTagCount.Content = "Tag: " + p);
         }
+
+        public void SetTime(int min, int sec)
+        {
+            var strSec = "" + sec;
+            if (sec < 10)
+            {
+                strSec = "0" + strSec;
+            }
+            Dispatcher.Invoke(() => lblTimeProjector.Content = min + ":" + strSec);
+        }
     }
 }

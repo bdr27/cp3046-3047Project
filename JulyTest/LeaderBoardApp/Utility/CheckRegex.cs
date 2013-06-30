@@ -27,5 +27,15 @@ namespace LeaderBoardApp.Utility
         {
             return Regex.Match(teamName, @"^[a-zA-Z\-\ ]+$").Success;
         }
+
+        public static bool IsValidInt(string number)
+        {
+            return Regex.Match(number, @"^[0-9]+$").Success;
+        }
+
+        public static bool IsValidSecond(string sec)
+        {
+            return Regex.Match(sec, @"^[0-9]$").Success || Regex.Match(sec, @"^[0-5][0-9]$").Success;
+        }
     }
 }

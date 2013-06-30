@@ -16,5 +16,6 @@ namespace LeaderBoardApp.Utility
         void SetTeamBTag(int p);
         void SetTeamA(GameTeam team);
         void SetTeamB(GameTeam team);
+        void SetTime(int min, int sec);
     }
 }

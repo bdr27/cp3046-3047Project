@@ -3,6 +3,9 @@ using System.Windows;
 using System.Linq;
 using System.Windows.Controls;
 using LeaderBoardApp.Utility;
+using System;
+using System.Windows.Input;
+using System.Diagnostics;
 
 namespace LeaderBoardApp.Tabs
 {
@@ -145,13 +148,60 @@ namespace LeaderBoardApp.Tabs
         {
             var team = (int) cmbTeamA.SelectedValue;
             return team;
-          //  return team.GetTeamID();
         }
 
         public int GetTeamB()
         {
             var team = (int)cmbTeamB.SelectedValue;
             return team;
+        }
+
+        public void SetStartPause(GameState gameState)
+        {
+            var message = "";
+            switch(gameState)
+            {
+                case GameState.IN_PROGRESS:
+                    message = "Pause";
+                    break;
+                case GameState.PAUSED:
+                case GameState.WAITING:
+                    message = "Start";
+                    break;
+            }
+            SetButtonContent(btnStartPause, message);
+        }
+
+        private void SetButtonContent(Button button, string message)
+        {
+            Dispatcher.Invoke(() => button.Content = message);
+        }
+
+        public int GetMin()
+        {
+            return Int32.Parse(TbMinutes.Text);
+        }
+
+        public int GetSec()
+        {
+            return Int32.Parse(TbSeconds.Text);
+        }
+
+        public void DisableTimeInput()
+        {
+            TbMinutes.IsEnabled = false;
+            TbSeconds.IsEnabled = false;
+        }
+
+        public void EnableTimeInput()
+        {
+            TbMinutes.IsEnabled = true;
+            TbSeconds.IsEnabled = true;
+        }
+
+        public bool ValidTime()
+        {
+            return CheckRegex.IsValidInt(TbMinutes.Text) && CheckRegex.IsValidSecond(TbSeconds.Text);
         }
     }
 }

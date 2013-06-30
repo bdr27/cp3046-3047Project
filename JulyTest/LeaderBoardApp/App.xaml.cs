@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using LeaderBoardApp.AppLog;
@@ -28,6 +29,8 @@ namespace LeaderBoardApp
         public Game game;
         public SelectedTab selectedTab;
         public List<ScoreDisplay> displays;
+        public Timer gameTimer;
+        public int TIMER_INTERVAL = 1000;
 
         public App()
             : base()
@@ -44,11 +47,19 @@ namespace LeaderBoardApp
 
             log.StartLog();
 
+            SetupTimer();
             LoadDisplays();
             LoadFileHandler();
             WireHandlers();
             projectionWindow.Show();
             mainWindow.Show();
+        }
+
+        private void SetupTimer()
+        {
+            gameTimer = new Timer();
+            gameTimer.Elapsed += GameTimer_Tick;
+            gameTimer.Interval = TIMER_INTERVAL;
         }
 
         private void LoadDisplays()
@@ -245,21 +256,44 @@ namespace LeaderBoardApp
             liveMatch.AddTeamBTagPlusHandler(HandleTeamBTagPlus_Click);
         }
 
+        private void GameTimer_Tick(object sender, ElapsedEventArgs e)
+        {
+            if (game.CountDown())
+            {
+               // GameOver();
+            }
+            else
+            {
+                UpdateTime();
+            }
+        }
+
         private void StartGame()
         {
-            liveMatch.MatchInProgress();
             var teamAID = liveMatch.GetTeamA();
             var teamBID = liveMatch.GetTeamB();
-            var fullTeamA = fileHandler.GetTeam(teamAID);
-            var fullTeamB = fileHandler.GetTeam(teamBID);
-            var teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
-            var teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
-            SetTeamsProjectorGame(teamA, teamB);
-            game.NewGame();
-            log.GameTeam(teamA, "A");
-            log.GameTeam(teamB, "B");
+
+                liveMatch.MatchInProgress();
+                liveMatch.DisableTimeInput();
+                var fullTeamA = fileHandler.GetTeam(teamAID);
+                var fullTeamB = fileHandler.GetTeam(teamBID);
+                var teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
+                var teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
+                SetTeamsProjectorGame(teamA, teamB);
+                game.NewGame();
+                GetTime();
+                gameTimer.Start();
+
+                log.GameTeam(teamA, "A");
+                log.GameTeam(teamB, "B");
             log.TeamAID(teamAID);
             log.TeamBID(teamBID);
+        }
+
+        private void GetTime()
+        {
+            game.SetMin(liveMatch.GetMin());
+            game.SetSec(liveMatch.GetSec());
         }
 
         private void SetTeamsProjectorGame(GameTeam teamA, GameTeam teamB)
@@ -271,6 +305,13 @@ namespace LeaderBoardApp
             }
         }
 
+        private void UpdateTime()
+        {
+            foreach (var display in displays)
+            {
+                display.SetTime(game.GetMin(), game.GetSec());
+            }
+        }
         private void UpdateScores()
         {
             foreach (var display in displays)
@@ -280,7 +321,7 @@ namespace LeaderBoardApp
                 display.SetTeamATag(game.GetTeamATag());
                 display.SetTeamBFlag(game.GetTeamBFlag());
                 display.SetTeamBScore(game.GetTeamBScore());
-                display.SetTeamBTag(game.GetTeamBTag());
+                display.SetTeamBTag(game.GetTeamBTag());                
             }
         }
 
@@ -289,6 +330,7 @@ namespace LeaderBoardApp
             log.ButtonPress("End Game");
             liveMatch.NoMatchInProgress();
             gameState = GameState.WAITING;
+            ResetGame();
         }
 
         private void HandleResetGame_Click(object sender, RoutedEventArgs e)
@@ -296,28 +338,63 @@ namespace LeaderBoardApp
             log.ButtonPress("Reset Game");
             liveMatch.NoMatchInProgress();
             gameState = GameState.WAITING;
+            ResetGame();
         }
 
         private void HandleStartPause_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Start/Pause");
-            switch (gameState)
+            if (liveMatch.ValidTime())
             {
-                case GameState.WAITING:
-                    StartGame();                    
-                    gameState = GameState.IN_PROGRESS;
-                    break;
-                case GameState.PAUSED:
-                    gameState = GameState.FINISHED;
-                    break;
-                case GameState.IN_PROGRESS:
-                    gameState = GameState.PAUSED;
-                    break;
-                case GameState.FINISHED:
-                    gameState = GameState.OVERTIME;
-                    break;
+                switch (gameState)
+                {
+                    case GameState.WAITING:
+                        if (UniqueTeams())
+                        {
+                            StartGame();
+                            gameState = GameState.IN_PROGRESS;
+                        }
+                        break;
+                    case GameState.PAUSED:
+                        ResumeGame();
+                        gameState = GameState.IN_PROGRESS;
+                        break;
+                    case GameState.IN_PROGRESS:
+                        PauseGame();
+                        gameState = GameState.PAUSED;
+                        break;
+                    case GameState.FINISHED:
+                        gameState = GameState.OVERTIME;
+                        break;
+                }
+                liveMatch.SetStartPause(gameState);
             }
-            
+        }
+
+        private bool UniqueTeams()
+        {
+            return liveMatch.GetTeamA() != liveMatch.GetTeamB();
+        }
+
+        private void ResetGame()
+        {
+            game.NewGame();
+            liveMatch.EnableTimeInput();
+            liveMatch.SetStartPause(gameState);
+            UpdateScores();
+        }
+
+        private void ResumeGame()
+        {
+            liveMatch.DisableTimeInput();
+            GetTime();
+            gameTimer.Start();
+        }
+
+        private void PauseGame()
+        {
+            liveMatch.EnableTimeInput();
+            gameTimer.Stop();            
         }
 
         private void HandleTeamAFlagMinus_Click(object sender, RoutedEventArgs e)

@@ -8,8 +8,8 @@ namespace LeaderBoardApp.Utility
 {
     public class Score
     {
-        private const int FLAG_SCORE = 1;
-        private const int TAG_SCORE = 5;
+        private const int FLAG_SCORE = 5;
+        private const int TAG_SCORE = 1;
         private int flag;
         private int tag;
         private int score;
@@ -71,7 +71,7 @@ namespace LeaderBoardApp.Utility
             score = tag * TAG_SCORE + flag * FLAG_SCORE;
         }
 
-        internal void ResetScore()
+        public void ResetScore()
         {
             tag = 0;
             flag = 0;

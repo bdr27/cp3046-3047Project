@@ -10,8 +10,6 @@ namespace LeaderBoardApp.Utility
     {
         private int min;
         private int sec;
-        private int teamAID;
-        private int teamBID;
         private Score teamAScore;
         private Score teamBScore;
 
@@ -96,6 +94,45 @@ namespace LeaderBoardApp.Utility
         public void TeamBMinusFlag()
         {
             teamBScore.MinusFlag();
+        }
+
+        public void SetMin(int min)
+        {
+            this.min = min;
+        }
+
+        public void SetSec(int sec)
+        {
+            this.sec = sec;
+        }
+
+        public int GetSec()
+        {
+            return sec;
+        }
+
+        public int GetMin()
+        {
+            return min;
+        }
+
+        public bool CountDown()
+        {
+            bool timerFinished = false;
+            if (sec == 0 && min != 0)
+            {
+                sec = 59;
+                min -= 1;
+            }
+            else if (sec == 0 && min == 0)
+            {
+                timerFinished = true;
+            }
+            else
+            {
+                sec -= 1;
+            }
+            return timerFinished;
         }
     }
 }
