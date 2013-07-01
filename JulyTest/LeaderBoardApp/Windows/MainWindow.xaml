@@ -35,9 +35,9 @@
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="6*"/>
                     </Grid.RowDefinitions>
-                    <TextBox Grid.Column="0" HorizontalAlignment="Center" Height="151" TextWrapping="Wrap" Text="Please Standby" VerticalAlignment="Center" Width="424" Grid.ColumnSpan="3"/>
-                    <Button Grid.Column="0" Grid.Row="1" Content="Set Message" Margin="0,0,50,0" HorizontalAlignment="Right" Width="74" Height="22" VerticalAlignment="Top" />
-                    <Button Grid.Column="1" Grid.Row="1" Content="Default" Margin="50,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
+                    <TextBox Grid.Column="0" x:Name="tbStandBy" HorizontalAlignment="Center" Height="151" TextWrapping="Wrap" Text="Please Standby" VerticalAlignment="Center" Width="424" Grid.ColumnSpan="3"/>
+                    <Button Grid.Column="0" x:Name="btnSetStandByMessge" Grid.Row="1" Content="Set Message" Margin="0,0,50,0" HorizontalAlignment="Right" Width="74" Height="22" VerticalAlignment="Top" />
+                    <Button Grid.Column="1" x:Name="btnDefaultStandByMessage" Grid.Row="1" Content="Default" Margin="50,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Projector" x:Name="projectorTab">

@@ -37,6 +37,16 @@ namespace LeaderBoardApp
             projectorController.AddBtnStandByHandler(handler);
         }
 
+        public void AddBtnSetStandByMessageHandler(RoutedEventHandler handler)
+        {
+            btnSetStandByMessge.Click += handler;
+        }
+
+        public void AddBtnDefaultStandByMessageHandler(RoutedEventHandler handler)
+        {
+            btnDefaultStandByMessage.Click += handler;
+        }
+
         public SelectedTab GetSelectedTab()
         {
             var selectedTab = (SelectedTab) MainWindowTabControl.SelectedIndex;
@@ -47,6 +57,16 @@ namespace LeaderBoardApp
         public void ChangeDisplay(ProjectorState projectorState)
         {
             ProjectorUpdate.Action(projectorState, projectorLiveMatch, projectorLadder, projectorStandby);
+        }
+
+        public string GetStandByMessage()
+        {
+            return tbStandBy.Text;
+        }
+
+        public void SetStandByMessage(string message)
+        {
+            projectorStandby.lblStandBy.Text = message;
         }
 
         #region ScoreDisplay Members

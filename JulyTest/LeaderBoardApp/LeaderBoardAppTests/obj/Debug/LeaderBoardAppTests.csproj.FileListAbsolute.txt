@@ -5,3 +5,4 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Debug\LeaderBoardApp.pdb
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\Debug\LeaderBoardAppTests.dll
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\Debug\LeaderBoardAppTests.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Debug\System.Data.SQLite.dll

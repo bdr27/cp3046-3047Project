@@ -16,5 +16,10 @@ namespace LeaderBoardApp.Windows
         {
             ProjectorUpdate.Action(projectorState, projectorLiveMatch, projectorLadder, projectorStandby);
         }
+
+        public void SetStandByMessage(string message)
+        {
+            projectorStandby.lblStandBy.Text = message;
+        }
     }
 }

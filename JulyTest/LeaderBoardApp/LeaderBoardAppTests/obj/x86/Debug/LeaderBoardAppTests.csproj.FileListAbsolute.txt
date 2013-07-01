@@ -1,0 +1,8 @@
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\x86\Debug\LeaderBoardAppTests.dll
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\x86\Debug\LeaderBoardAppTests.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\x86\Debug\LeaderBoardApp.exe
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\x86\Debug\System.Data.SQLite.dll
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\x86\Debug\LeaderBoardApp.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\x86\Debug\LeaderBoardAppTests.csprojResolveAssemblyReference.cache
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\x86\Debug\LeaderBoardAppTests.dll
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\x86\Debug\LeaderBoardAppTests.pdb

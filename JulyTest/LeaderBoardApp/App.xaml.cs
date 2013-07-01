@@ -31,6 +31,7 @@ namespace LeaderBoardApp
         public List<ScoreDisplay> displays;
         public Timer gameTimer;
         public int TIMER_INTERVAL = 1000;
+        public const string DEFAULT_MESSAGE = "Please Stand By";
 
         public App()
             : base()
@@ -72,7 +73,7 @@ namespace LeaderBoardApp
 
         private void LoadFileHandler()
         {
-            fileHandler = new MOCKFileHandler();
+            fileHandler = new SqliteFileHandler();
             fileHandler.LoadPlayers();
             fileHandler.LoadTeams();
         }
@@ -83,6 +84,7 @@ namespace LeaderBoardApp
             WireSideMenu();
             WireRegistraionTab();
             WireLiveMatch();
+            WireStandByMessage();
         }
 
 
@@ -104,7 +106,10 @@ namespace LeaderBoardApp
                 switch (selectedTab)
                 {
                     case SelectedTab.LIVE_MATCH:
-                        liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+                        if (gameState.Equals(GameState.WAITING) || gameState.Equals(GameState.FINISHED))
+                        {
+                            liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+                        }
                         break;
                 }
             }
@@ -451,6 +456,34 @@ namespace LeaderBoardApp
             log.ButtonPress("Team B Tag Plus");
             game.TeamBaddTag();
             UpdateScores();
+        }
+
+        #endregion
+
+        #region StandByMessage
+
+        private void WireStandByMessage()
+        {
+            mainWindow.AddBtnDefaultStandByMessageHandler(HandleBtnDefaultStandByMessage_Click);
+            mainWindow.AddBtnSetStandByMessageHandler(HandleBtnSetStandByMessage_Click);
+        }
+
+        private void HandleBtnDefaultStandByMessage_Click(object sender, RoutedEventArgs e)
+        {
+            var message = DEFAULT_MESSAGE;
+            SetStandByMessage(message);
+        }
+
+        private void HandleBtnSetStandByMessage_Click(object sender, RoutedEventArgs e)
+        {
+            var message = mainWindow.GetStandByMessage();
+            SetStandByMessage(message);
+        }
+
+        private void SetStandByMessage(string message)
+        {
+            mainWindow.SetStandByMessage(message);
+            projectionWindow.SetStandByMessage(message);
         }
 
         #endregion

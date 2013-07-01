@@ -41,7 +41,7 @@ namespace LeaderBoardApp.ModalControl
         {
             teams.Remove(teamID);
             modalSelect.DisplayTeams(teams);
-            if (deletedTeams.Contains(teamID))
+            if (!deletedTeams.Contains(teamID))
             {
                 deletedTeams.Add(teamID);
             }

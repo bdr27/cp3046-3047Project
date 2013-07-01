@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d">
     <Grid>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Please Standby" VerticalAlignment="Center" TextAlignment="Justify" FontSize="100"/>
+        <TextBlock HorizontalAlignment="Center" x:Name="lblStandBy" TextWrapping="Wrap" Text="Please Standby" VerticalAlignment="Center" TextAlignment="Justify" FontSize="100"/>
     </Grid>
 </UserControl>
 
