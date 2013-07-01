@@ -73,7 +73,7 @@ namespace LeaderBoardApp
 
         private void LoadFileHandler()
         {
-            fileHandler = new SqliteFileHandler();
+            fileHandler = new MOCKFileHandler();
             fileHandler.LoadPlayers();
             fileHandler.LoadTeams();
         }
