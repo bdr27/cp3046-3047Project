@@ -18,6 +18,7 @@ namespace LeaderBoardApp
     /// Interaction logic for App.xaml
     /// This is the main controller for the leaderboard application
     /// Written By: Brendan Russo, Andrew Martini and Alex Lakh
+    /// 
     /// </summary>
     public partial class App : Application
     {
