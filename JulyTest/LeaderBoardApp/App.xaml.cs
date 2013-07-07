@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
 using System.Timers;
 using System.Windows;
@@ -7,7 +6,6 @@ using System.Windows.Controls;
 using LeaderBoardApp.AppLog;
 using LeaderBoardApp.Enum;
 using LeaderBoardApp.ModalControl;
-using LeaderBoardApp.ProjectorDisplay;
 using LeaderBoardApp.Tabs;
 using LeaderBoardApp.Utility;
 using LeaderBoardApp.Windows;
@@ -17,8 +15,7 @@ namespace LeaderBoardApp
     /// <summary>
     /// Interaction logic for App.xaml
     /// This is the main controller for the leaderboard application
-    /// Written By: Brendan Russo, Andrew Martini and Alex Lakh
-    /// 
+    /// Written By: Brendan Russo, Andrew Martini and Alex Lakh    /// 
     /// </summary>
     public partial class App : Application
     {
