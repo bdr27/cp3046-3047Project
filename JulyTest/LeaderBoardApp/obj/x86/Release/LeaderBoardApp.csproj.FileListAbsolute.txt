@@ -33,3 +33,4 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.csproj.GenerateResource.Cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.exe
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.pdb
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.csprojResolveAssemblyReference.cache
