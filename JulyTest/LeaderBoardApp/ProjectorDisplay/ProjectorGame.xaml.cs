@@ -40,6 +40,10 @@ namespace LeaderBoardApp.ProjectorDisplay
 
         private void SetPlayerNames(List<Label> playerNameLabels, List<string> playerNames)
         {
+            if (playerNames == null)
+            {
+                playerNames = new List<string>();
+            }
             for (int i = 0; i < playerNameLabels.Count; i++)
             {
                 if (i < playerNames.Count)
@@ -50,7 +54,7 @@ namespace LeaderBoardApp.ProjectorDisplay
                 {
                     playerNameLabels[i].Content = "";
                 }
-            }
+            }           
         }
 
         public void SetTeamAFlag(int p)
@@ -91,6 +95,26 @@ namespace LeaderBoardApp.ProjectorDisplay
                 strSec = "0" + strSec;
             }
             Dispatcher.Invoke(() => lblTimeProjector.Content = min + ":" + strSec);
+        }
+
+        public void ResetScoreBoard(int min, int sec)
+        {
+            SetTime(min, sec);
+            SetTeamA(ResetTeam("Team A"));
+            SetTeamB(ResetTeam("Team B"));
+            SetTeamAFlag(0);
+            SetTeamAScore(0);
+            SetTeamATag(0);
+            SetTeamBFlag(0);
+            SetTeamBScore(0);
+            SetTeamBTag(0);
+        }
+
+        private GameTeam ResetTeam(string p)
+        {
+            var team = new GameTeam();
+            team.teamName = p;
+            return team;
         }
     }
 }

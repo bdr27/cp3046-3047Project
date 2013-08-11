@@ -21,5 +21,10 @@ namespace LeaderBoardApp.Windows
         {
             projectorStandby.lblStandBy.Text = message;
         }
+
+        public void ResetScoreBoard(int min, int sec)
+        {
+            projectorLiveMatch.ResetScoreBoard(min, sec);
+        }
     }
 }

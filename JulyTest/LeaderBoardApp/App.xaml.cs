@@ -32,6 +32,8 @@ namespace LeaderBoardApp
         public Timer gameTimer;
         public int TIMER_INTERVAL = 1000;
         public const string DEFAULT_MESSAGE = "Please Stand By";
+        public const int DEFAULT_MIN = 5;
+        public const int DEFAULT_SEC = 0;
 
         public App()
             : base()
@@ -55,6 +57,9 @@ namespace LeaderBoardApp
             projectionWindow.Show();
             mainWindow.Show();
         }
+
+        #region SETUP
+       
 
         private void SetupTimer()
         {
@@ -87,7 +92,7 @@ namespace LeaderBoardApp
             WireStandByMessage();
         }
 
-
+        #endregion
 
         #region MainWindowTabSelection
 
@@ -289,6 +294,7 @@ namespace LeaderBoardApp
                 GetTime();
                 gameTimer.Start();
 
+                UpdateTime();
                 log.GameTeam(teamA, "A");
                 log.GameTeam(teamB, "B");
             log.TeamAID(teamAID);
@@ -384,9 +390,14 @@ namespace LeaderBoardApp
         private void ResetGame()
         {
             game.NewGame();
+
+            //Improve this at some point
+            game.SetMin(DEFAULT_MIN);
+            game.SetMin(DEFAULT_SEC);
+            liveMatch.SetTime(DEFAULT_MIN, DEFAULT_SEC);
             liveMatch.EnableTimeInput();
             liveMatch.SetStartPause(gameState);
-            UpdateScores();
+            projectionWindow.ResetScoreBoard(DEFAULT_MIN, DEFAULT_SEC);
         }
 
         private void ResumeGame()

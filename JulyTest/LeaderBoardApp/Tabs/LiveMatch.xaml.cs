@@ -203,5 +203,11 @@ namespace LeaderBoardApp.Tabs
         {
             return CheckRegex.IsValidInt(TbMinutes.Text) && CheckRegex.IsValidSecond(TbSeconds.Text);
         }
+
+        public void SetTime(int DEFAULT_MIN, int DEFAULT_SEC)
+        {
+            TbMinutes.Text = "" + DEFAULT_MIN;
+            TbSeconds.Text = "" + DEFAULT_SEC;
+        }
     }
 }
