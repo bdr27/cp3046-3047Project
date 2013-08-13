@@ -7,8 +7,8 @@ namespace LeaderBoardApp.ModalControl
 {
     class PlayerSelectToTeam : PlayerSelect, ModalInterface
     {
-        public PlayerSelectToTeam(Dictionary<int, Player> players)
-            : base(players)
+        public PlayerSelectToTeam(FileHandler fileHandler)
+            : base(fileHandler)
         {
             modalSelect.SetAddPlayer();
             WireHandlers();

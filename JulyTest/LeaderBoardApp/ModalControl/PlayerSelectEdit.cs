@@ -7,8 +7,8 @@ namespace LeaderBoardApp.ModalControl
 {
     public class PlayerSelectEdit : PlayerSelect, ModalInterface
     {
-        public PlayerSelectEdit(Dictionary<int, Player> players)
-            : base(players)
+        public PlayerSelectEdit(FileHandler fileHandler)
+            : base(fileHandler)
         {
             modalSelect.SetPlayerEdit();
             WireHandlers();
@@ -57,10 +57,11 @@ namespace LeaderBoardApp.ModalControl
             {
                 players[playerID] = playerEdit.GetPlayer();
                 players[playerID].SetP_ID(playerID);
-                if (!playersIDSelected.Contains(playerID))
+                fileHandler.UpdatePlayer(players[playerID]);
+     /*           if (!playersIDSelected.Contains(playerID))
                 {
                     playersIDSelected.Add(playerID);
-                }
+                }*/
                 modalSelect.DisplayPlayers(players);
             }
         }        

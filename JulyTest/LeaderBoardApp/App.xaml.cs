@@ -78,7 +78,7 @@ namespace LeaderBoardApp
 
         private void LoadFileHandler()
         {
-            fileHandler = new MOCKFileHandler();
+            fileHandler = new SqliteFileHandler();
             fileHandler.LoadPlayers();
             fileHandler.LoadTeams();
         }
@@ -198,12 +198,12 @@ namespace LeaderBoardApp
         {
             log.ButtonPress("Edit Player");
             var players = fileHandler.GetPlayers();
-            var editPlayers = new PlayerSelectEdit(players);
+            var editPlayers = new PlayerSelectEdit(fileHandler);
             ModalDisplay.ShowModal(editPlayers, mainWindow);
-            foreach (var playerID in editPlayers.GetPlayersIDSelected())
+            /*foreach (var playerID in editPlayers.GetPlayersIDSelected())
             {
                 fileHandler.UpdatePlayer(players[playerID]);
-            }
+            }*/
         }
 
         private void HandleEditTeam_Click(object sender, RoutedEventArgs e)
@@ -213,24 +213,24 @@ namespace LeaderBoardApp
             var players = fileHandler.GetPlayers();
             var editTeams = new TeamSelectEdit(fileHandler);
             ModalDisplay.ShowModal(editTeams, mainWindow);
-            foreach (var teamID in editTeams.GetEditedTeamsID())
-            {
-                teams[teamID].SetTeamID(teamID);
-                fileHandler.UpdateTeam(teams[teamID]);
-            }
+            /*  foreach (var teamID in editTeams.GetEditedTeamsID())
+              {
+                  teams[teamID].SetTeamID(teamID);
+                  fileHandler.UpdateTeam(teams[teamID]);
+              }*/
         }
 
         private void HandleDeletePlayer_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Delete Player");
-            var deletePlayers = new PlayerSelectDelete(fileHandler.GetPlayers());
+            var deletePlayers = new PlayerSelectDelete(fileHandler);
             ModalDisplay.ShowModal(deletePlayers, mainWindow);
-            var playersToDelete = deletePlayers.GetPlayersIDSelected();
+            /*var playersToDelete = deletePlayers.GetPlayersIDSelected();
             var oldPlayers = fileHandler.GetPlayers();
             foreach (var playerID in playersToDelete)
             {
                 fileHandler.DeletePlayer(playerID);
-            }
+            }*/
         }
 
         private void HandleDeleteTeam_Click(object sender, RoutedEventArgs e)
@@ -239,11 +239,11 @@ namespace LeaderBoardApp
             var oldTeam = fileHandler.GetTeams();
             var deleteTeams = new TeamSelectDelete(fileHandler);
             ModalDisplay.ShowModal(deleteTeams, mainWindow);
-            var teamsToDelete = deleteTeams.GetDeletedTeams();
-            foreach (var teamID in teamsToDelete)
-            {
-                fileHandler.DeleteTeam(teamID);
-            }
+            /*  var teamsToDelete = deleteTeams.GetDeletedTeams();
+              foreach (var teamID in teamsToDelete)
+              {
+                  fileHandler.DeleteTeam(teamID);
+              }*/
         }
 
         #endregion

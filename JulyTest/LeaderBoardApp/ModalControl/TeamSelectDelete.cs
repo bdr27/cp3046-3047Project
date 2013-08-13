@@ -40,12 +40,13 @@ namespace LeaderBoardApp.ModalControl
         private void DeleteTeam(int teamID)
         {
             teams.Remove(teamID);
+            fileHandler.DeleteTeam(teamID);
             modalSelect.DisplayTeams(teams);
-            if (!deletedTeams.Contains(teamID))
+ /*           if (!deletedTeams.Contains(teamID))
             {
                 deletedTeams.Add(teamID);
             }
-        }
+   */     }
 
 
         #region ModalInterface Members

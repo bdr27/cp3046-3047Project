@@ -7,8 +7,8 @@ namespace LeaderBoardApp.ModalControl
 {
     public class PlayerSelectDelete : PlayerSelect, ModalInterface
     {
-        public PlayerSelectDelete(Dictionary<int, Player> players)
-            : base(players)
+        public PlayerSelectDelete(FileHandler fileHandler)
+            : base(fileHandler)
         {
             modalSelect.SetPlayerDelete();
             WireHandlers();
@@ -31,11 +31,8 @@ namespace LeaderBoardApp.ModalControl
 
         private void DeletePlayer(int playerID)
         {
-            if (!playersIDSelected.Contains(playerID))
-            {
-                playersIDSelected.Add(playerID);
-            } 
             players.Remove(playerID);
+            fileHandler.DeletePlayer(playerID);
             modalSelect.DisplayPlayers(players);
         }
 

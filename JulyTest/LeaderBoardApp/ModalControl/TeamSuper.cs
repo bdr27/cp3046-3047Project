@@ -89,7 +89,7 @@ namespace LeaderBoardApp.ModalControl
 
         private void HandleBtnAddExistingPlayer_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            var playerSelect = new PlayerSelectToTeam(fileHandler.GetPlayers());
+            var playerSelect = new PlayerSelectToTeam(fileHandler);
             ModalDisplay.ShowModal(playerSelect, modalTeam);
             if (playerSelect.GetButtonAction().Equals(ButtonAction.CONFIRM))
             {

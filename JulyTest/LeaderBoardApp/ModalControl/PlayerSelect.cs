@@ -12,10 +12,12 @@ namespace LeaderBoardApp.ModalControl
         protected ButtonAction buttonAction;
         protected Dictionary<int, Player> players;
         protected List<int> playersIDSelected;
+        protected FileHandler fileHandler;
 
-        public PlayerSelect(Dictionary<int, Player> players)
+        public PlayerSelect(FileHandler fileHandler)
         {
-            this.players = players;
+            this.fileHandler = fileHandler;
+            this.players = fileHandler.GetPlayers();
             playersIDSelected = new List<int>();
             modalSelect = new ModalSelect();
             buttonAction = ButtonAction.NONE;
