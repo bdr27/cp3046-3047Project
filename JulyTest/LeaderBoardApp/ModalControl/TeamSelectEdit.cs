@@ -43,7 +43,7 @@ namespace LeaderBoardApp.ModalControl
             teamEdit.SetPlayers(teamPlayers);
             teamEdit.ShowTeam();
             ModalDisplay.ShowModal(teamEdit, modalSelect);
-            if (teamEdit.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (teamEdit.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 var newTeam = teamEdit.GetTeam();
                 newTeam.SetTeamID(teamID);

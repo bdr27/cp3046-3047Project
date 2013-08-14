@@ -174,7 +174,7 @@ namespace LeaderBoardApp
             log.ButtonPress("Add Player");
             var addPlayer = new PlayerAdd();
             ModalDisplay.ShowModal(addPlayer, mainWindow);
-            if (addPlayer.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (addPlayer.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 var newPlayer = addPlayer.GetPlayer();
                 fileHandler.InsertPlayer(newPlayer);
@@ -187,7 +187,7 @@ namespace LeaderBoardApp
             log.ButtonPress("Add Team");
             var addTeam = new TeamAdd(fileHandler);
             ModalDisplay.ShowModal(addTeam, mainWindow);
-            if (addTeam.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (addTeam.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 var newTeam = addTeam.GetTeam();
                 fileHandler.InsertTeam(newTeam);

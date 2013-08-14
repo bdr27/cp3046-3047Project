@@ -18,9 +18,9 @@ namespace LeaderBoardApp.Modals
             InitializeComponent();
         }
 
-        public void AddBtnConfirm(RoutedEventHandler handler)
+        public void AddBtnDone(RoutedEventHandler handler)
         {
-            btnConfirm.Click += handler;
+            btnDone.Click += handler;
         }
 
         public void SetAdd()
@@ -116,7 +116,7 @@ namespace LeaderBoardApp.Modals
             ClearText();
         }
 
-        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

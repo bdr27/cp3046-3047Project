@@ -53,7 +53,7 @@ namespace LeaderBoardApp.ModalControl
             var playerEdit = new PlayerEdit();
             playerEdit.SetPlayerDetails(players[playerID]);
             ModalDisplay.ShowModal(playerEdit, modalSelect);
-            if (playerEdit.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (playerEdit.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 players[playerID] = playerEdit.GetPlayer();
                 players[playerID].SetP_ID(playerID);

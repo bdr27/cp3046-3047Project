@@ -23,7 +23,7 @@ namespace LeaderBoardApp.ModalControl
         {
             if (modalSelect.GetSelectedPlayer() != null)
             {
-                buttonAction = ButtonAction.CONFIRM;
+                buttonAction = ButtonAction.DONE;
                 modalSelect.Close();
             }
         }

@@ -39,9 +39,9 @@ namespace LeaderBoardApp.Modals
             btnTeamAddExistingPlayer.Click += handler;
         }
 
-        public void AddBtnConfirmHandler(RoutedEventHandler handler)
+        public void AddBtnDoneHandler(RoutedEventHandler handler)
         {
-            btnTeamConfirm.Click += handler;
+            btnTeamDone.Click += handler;
         }
 
         public void AddBtnClearHandler(RoutedEventHandler handler)
@@ -49,7 +49,7 @@ namespace LeaderBoardApp.Modals
             btnTeamClear.Click += handler;
         }
 
-        private void btnTeamClose_Click(object sender, RoutedEventArgs e)
+        private void btnTeamCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }

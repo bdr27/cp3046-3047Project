@@ -43,15 +43,15 @@ namespace LeaderBoardApp.ModalControl
             modalTeam.AddBtnAddPlayerHander(HandleBtnAddPlayer_Click);
             modalTeam.AddBtnAddExistingPlayerHandler(HandleBtnAddExistingPlayer_Click);
             modalTeam.AddBtnClearHandler(HandleBtnClear_Click);
-            modalTeam.AddBtnConfirmHandler(HandleBtnConfirm_Click);
+            modalTeam.AddBtnDoneHandler(HandleBtnDone_Click);
         }
 
-        private void HandleBtnConfirm_Click(object sender, System.Windows.RoutedEventArgs e)
+        private void HandleBtnDone_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             team = new Team(GetTeamName(), GetTeamContanct(), GetTeamPlayerIDs());
             if (team.IsValidTeam())
             {
-                buttonAction = ButtonAction.CONFIRM;
+                buttonAction = ButtonAction.DONE;
                 modalTeam.Close();
             }
             else
@@ -91,7 +91,7 @@ namespace LeaderBoardApp.ModalControl
         {
             var playerSelect = new PlayerSelectToTeam(fileHandler);
             ModalDisplay.ShowModal(playerSelect, modalTeam);
-            if (playerSelect.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (playerSelect.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 var playerID = (int) playerSelect.GetSelectedPlayer();    
                 var player = fileHandler.GetPlayer(playerID);
@@ -104,7 +104,7 @@ namespace LeaderBoardApp.ModalControl
         {
             var playerAdd = new PlayerAdd();
             ModalDisplay.ShowModal(playerAdd, modalTeam);
-            if (playerAdd.GetButtonAction().Equals(ButtonAction.CONFIRM))
+            if (playerAdd.GetButtonAction().Equals(ButtonAction.DONE))
             {
                 var newPlayer = playerAdd.GetPlayer();
                 var playerID = fileHandler.GetCurrentPlayerID();

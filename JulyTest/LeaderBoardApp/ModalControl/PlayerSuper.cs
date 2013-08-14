@@ -26,15 +26,15 @@ namespace LeaderBoardApp.ModalControl
 
         private void WireHandlers()
         {
-            modalPlayer.AddBtnConfirm(HandleBtnConfirm_Click);
+            modalPlayer.AddBtnDone(HandleBtnDone_Click);
         }
 
-        private void HandleBtnConfirm_Click(object sender, RoutedEventArgs e)
+        private void HandleBtnDone_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("I confirm");
             if (modalPlayer.IsValidPlayer())
             {
-                buttonAction = ButtonAction.CONFIRM;
+                buttonAction = ButtonAction.DONE;
                 player = modalPlayer.GetPlayer();
                 modalPlayer.Close();
             }
