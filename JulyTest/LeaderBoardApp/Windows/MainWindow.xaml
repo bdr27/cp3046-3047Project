@@ -15,6 +15,9 @@
                     <local:Registration x:Name="regMenu" Visibility="Visible"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="View" x:Name="tabView">
+                
+            </TabItem>
             <TabItem x:Name="TabLiveMatch" Header="Live Match">
                 <Grid>
                  <local:LiveMatch x:Name="liveMatch" Visibility="Visible" />
@@ -45,6 +48,11 @@
                     <projector:ProjectorGame x:Name="projectorLiveMatch" Visibility="Hidden"/>
                     <projector:ProjectorLadder x:Name="projectorLadder" Visibility="Hidden"/>
                     <projector:ProjectorStandby x:Name="projectorStandby" Visibility="Visible"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="About" x:Name="tabAbout">
+                <Grid>
+                    <TextBlock Text="By Brendan Russo, Alex Lakh and Andrew Martini"></TextBlock>
                 </Grid>
             </TabItem>
         </TabControl>
