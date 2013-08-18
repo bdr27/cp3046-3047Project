@@ -113,10 +113,11 @@ namespace LeaderBoardApp.Modals
             //TODO show dropdown
         }
 
-
-        public int GetSelectedItem()
+        public void SetPlayerView()
         {
-            throw new NotImplementedException();
+            lblSearch.Content = "Last Name";
+            tblSearchAPlayerorTeam.Text = "Search For Player To View";
+            StylesModal.ViewButton(btnModalEditDelete);
         }
     }
 }

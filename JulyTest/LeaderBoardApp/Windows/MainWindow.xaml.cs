@@ -47,6 +47,16 @@ namespace LeaderBoardApp
             btnDefaultStandByMessage.Click += handler;
         }
 
+        public void AddViewPlayerHandler(RoutedEventHandler handler)
+        {
+            ViewMenu.AddViewPlayerHandler(handler);
+        }
+
+        public void AddTeamPlayerHander(RoutedEventHandler handler)
+        {
+            ViewMenu.AddViewTeamHandler(handler);
+        }
+
         public SelectedTab GetSelectedTab()
         {
             var selectedTab = (SelectedTab) MainWindowTabControl.SelectedIndex;

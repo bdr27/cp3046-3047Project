@@ -109,14 +109,19 @@
     <Compile Include="ModalControl\PlayerSelectEdit.cs" />
     <Compile Include="ModalControl\PlayerSelectToTeam.cs" />
     <Compile Include="ModalControl\PlayerSuper.cs" />
+    <Compile Include="ModalControl\PlayerView.cs" />
     <Compile Include="ModalControl\TeamAdd.cs" />
     <Compile Include="ModalControl\TeamEdit.cs" />
     <Compile Include="ModalControl\TeamSelect.cs" />
     <Compile Include="ModalControl\TeamSelectDelete.cs" />
     <Compile Include="ModalControl\TeamSelectEdit.cs" />
     <Compile Include="ModalControl\TeamSuper.cs" />
+    <Compile Include="ModalControl\PlayerSelectView.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\ModalPlayerView.xaml.cs">
+      <DependentUpon>ModalPlayerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modals\ModalSelect.xaml.cs">
       <DependentUpon>ModalSelect.xaml</DependentUpon>
@@ -146,6 +151,10 @@
     </Compile>
     <Compile Include="Windows\ProjectorUpdate.cs" />
     <Page Include="Modals\ModalPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modals\ModalPlayerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

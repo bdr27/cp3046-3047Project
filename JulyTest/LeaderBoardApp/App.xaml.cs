@@ -90,6 +90,7 @@ namespace LeaderBoardApp
             WireRegistraionTab();
             WireLiveMatch();
             WireStandByMessage();
+            WireViewTabHandlers();
         }
 
         #endregion
@@ -497,6 +498,27 @@ namespace LeaderBoardApp
             projectionWindow.SetStandByMessage(message);
         }
 
+        #endregion
+
+        #region ViewTab
+
+        private void WireViewTabHandlers()
+        {
+            mainWindow.AddViewPlayerHandler(HandleBtnViewPlayer_Click);
+            mainWindow.AddTeamPlayerHander(HandlerBtnViewTeam_Click);
+        }
+
+        private void HandlerBtnViewTeam_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("View Team");
+        }
+
+        private void HandleBtnViewPlayer_Click(object sender, RoutedEventArgs e)
+        {
+            log.ButtonPress("View Player");
+            var viewPlayer = new PlayerSelectView(fileHandler);
+            ModalDisplay.ShowModal(viewPlayer, mainWindow);
+        }
         #endregion
     }
 }

@@ -43,5 +43,10 @@ namespace LeaderBoardApp.Modals
         {
             btnModalEditDelete.Content = "Add";
         }
+
+        public static void ViewButton(Button btnModalEditDelete)
+        {
+            btnModalEditDelete.Content = "View";
+        }
     }
 }
