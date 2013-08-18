@@ -1,38 +1,34 @@
 ﻿using LeaderBoardApp.Enum;
-using LeaderBoardApp.Modals;
 using LeaderBoardApp.Utility;
 using System.Diagnostics;
 using System.Windows;
 
 namespace LeaderBoardApp.ModalControl
 {
-    public class PlayerSelectView : PlayerSelect, ModalInterface
+    class TeamSelectView : TeamSelect, ModalInterface
     {
-        public PlayerSelectView(FileHandler fileHandler)
+        public TeamSelectView(FileHandler fileHandler)
             :base (fileHandler)
         {
-            modalSelect.SetPlayerView();
+            modalSelect.SetTeamView();
             WireHandlers();
         }
 
         private void WireHandlers()
         {
-            modalSelect.AddBtnModalEditHandler(HandleBtnModalView_Click);
+            modalSelect.AddBtnModalEditHandler(HandlerBtnModalView_Click);
         }
 
-        private void HandleBtnModalView_Click(object sender, RoutedEventArgs e)
+        private void HandlerBtnModalView_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("VIEW IT");
             modalSelect.Hide();
-            var playerView = new PlayerView(fileHandler);
-            playerView.SetPlayerDetails((int)modalSelect.GetSelectedPlayer());
-            ModalDisplay.ShowModal(playerView, modalSelect);
-            modalSelect.DisplayPlayers(fileHandler.GetPlayers());
+            //var playerView = new TeamView(fileHandler);
+            //playerView.SetPlayerDetails((int)modalSelect.GetSelectedPlayer());
+            //ModalDisplay.ShowModal(playerView, modalSelect);
             modalSelect.Show();
         }
 
-        #region ModalInterface
-        
         public void SetOwner(Window window)
         {
             modalSelect.Owner = window;
@@ -47,7 +43,5 @@ namespace LeaderBoardApp.ModalControl
         {
             return buttonAction;
         }
-
-        #endregion
     }
 }

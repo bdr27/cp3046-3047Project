@@ -119,5 +119,12 @@ namespace LeaderBoardApp.Modals
             tblSearchAPlayerorTeam.Text = "Search For Player To View";
             StylesModal.ViewButton(btnModalEditDelete);
         }
+
+        public void SetTeamView()
+        {
+            lblSearch.Content = "Team Name";
+            tblSearchAPlayerorTeam.Text = "Search For Team To View";
+            StylesModal.ViewButton(btnModalEditDelete);
+        }
     }
 }

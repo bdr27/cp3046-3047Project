@@ -115,6 +115,7 @@
     <Compile Include="ModalControl\TeamSelect.cs" />
     <Compile Include="ModalControl\TeamSelectDelete.cs" />
     <Compile Include="ModalControl\TeamSelectEdit.cs" />
+    <Compile Include="ModalControl\TeamSelectView.cs" />
     <Compile Include="ModalControl\TeamSuper.cs" />
     <Compile Include="ModalControl\PlayerSelectView.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">

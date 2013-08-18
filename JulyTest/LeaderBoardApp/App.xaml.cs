@@ -511,6 +511,8 @@ namespace LeaderBoardApp
         private void HandlerBtnViewTeam_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("View Team");
+            var viewTeam = new TeamSelectView(fileHandler);
+            ModalDisplay.ShowModal(viewTeam, mainWindow);
         }
 
         private void HandleBtnViewPlayer_Click(object sender, RoutedEventArgs e)

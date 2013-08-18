@@ -16,6 +16,7 @@ namespace LeaderBoardApp.ModalControl
         ButtonAction buttonAction;
         FileHandler fileHandler;
         private Player player;
+        private int playerID;
 
         public PlayerView(FileHandler fileHandler)
         {
@@ -30,6 +31,7 @@ namespace LeaderBoardApp.ModalControl
         {
             var tempPlayer = fileHandler.GetPlayer(playerID);
             player = tempPlayer.Clone();
+            this.playerID = playerID;
             playerView.SetPlayerDetails(player);
         }
 
@@ -45,6 +47,7 @@ namespace LeaderBoardApp.ModalControl
             playerView.Hide();
             ModalDisplay.ShowModal(playerEdit, playerView);
             player = playerEdit.GetPlayer();
+            player.SetP_ID(playerID);
             fileHandler.UpdatePlayer(player);
             playerView.SetPlayerDetails(player);
             playerView.Show();
