@@ -16,7 +16,7 @@
                 </Grid>
             </TabItem>
             <TabItem Header="View" x:Name="tabView">
-                
+                <local:View x:Name="ViewMenu" Visibility="Visible"/>
             </TabItem>
             <TabItem x:Name="TabLiveMatch" Header="Live Match">
                 <Grid>

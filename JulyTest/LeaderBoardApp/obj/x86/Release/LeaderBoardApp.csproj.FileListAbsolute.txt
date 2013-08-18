@@ -70,3 +70,5 @@ D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.g.resources
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.Properties.Resources.resources
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\LeaderBoardApp.csproj.GenerateResource.Cache
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\Tabs\View.baml
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\Tabs\View.g.cs

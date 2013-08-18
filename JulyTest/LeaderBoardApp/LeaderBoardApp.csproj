@@ -125,6 +125,9 @@
       <DependentUpon>ModalTeam.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modals\StylesModal.cs" />
+    <Compile Include="Tabs\View.xaml.cs">
+      <DependentUpon>View.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utility\CheckRegex.cs" />
     <Compile Include="Utility\FileHandler.cs" />
     <Compile Include="Utility\Game.cs" />
@@ -175,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Tabs\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
