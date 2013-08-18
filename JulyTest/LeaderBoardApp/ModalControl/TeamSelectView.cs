@@ -23,9 +23,10 @@ namespace LeaderBoardApp.ModalControl
         {
             Debug.WriteLine("VIEW IT");
             modalSelect.Hide();
-            //var playerView = new TeamView(fileHandler);
-            //playerView.SetPlayerDetails((int)modalSelect.GetSelectedPlayer());
-            //ModalDisplay.ShowModal(playerView, modalSelect);
+            var teamView = new TeamView(fileHandler);
+            teamView.SetTeamDetail((int)modalSelect.GetSelectedPlayer());
+            ModalDisplay.ShowModal(teamView, modalSelect);
+            modalSelect.DisplayTeams(teams);
             modalSelect.Show();
         }
 

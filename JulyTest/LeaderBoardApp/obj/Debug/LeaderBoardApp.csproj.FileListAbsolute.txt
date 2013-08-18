@@ -74,3 +74,5 @@ D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\LeaderBoardApp.csproj.GenerateResource.Cache
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.baml
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.g.cs
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.baml
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.g.cs

@@ -118,6 +118,7 @@
     <Compile Include="ModalControl\TeamSelectView.cs" />
     <Compile Include="ModalControl\TeamSuper.cs" />
     <Compile Include="ModalControl\PlayerSelectView.cs" />
+    <Compile Include="ModalControl\TeamView.cs" />
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
@@ -129,6 +130,9 @@
     </Compile>
     <Compile Include="Modals\ModalTeam.xaml.cs">
       <DependentUpon>ModalTeam.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modals\ModalTeamView.xaml.cs">
+      <DependentUpon>ModalTeamView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modals\StylesModal.cs" />
     <Compile Include="Tabs\View.xaml.cs">
@@ -164,6 +168,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Modals\ModalTeam.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modals\ModalTeamView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

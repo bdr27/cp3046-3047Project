@@ -1,0 +1,18 @@
+﻿<Window x:Class="LeaderBoardApp.Modals.ModalTeamView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Title="TeamWindow" Height="400" Width="310"
+        WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <Label Name="lblTeamWindowTitle" Content="View Team" FontWeight="Bold" FontSize="17" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,10,0,357"/>
+
+        <Label HorizontalAlignment="Left" Margin="10,64,0,0" Content="Team Name" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="10,92,0,0" Content="Team Contact" VerticalAlignment="Top"/>
+        <Label x:Name="lblTeamName" HorizontalAlignment="Right" Height="23" Margin="0,64,40,0" VerticalAlignment="Top" Width="163"/>
+        <Label x:Name="lblTeamContact" HorizontalAlignment="Right" Height="23" Margin="0,92,40,0" VerticalAlignment="Top" Width="163"/>
+
+        <Button x:Name="btnTeamEdit" Content="Edit" HorizontalAlignment="Left" Margin="10,0,0,30" VerticalAlignment="Bottom" Width="75" />
+        <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Right" Margin="0,0,10,30" VerticalAlignment="Bottom" Width="75" Click="btnTeamDone_Click" />
+        <ListView x:Name="lvPlayers" HorizontalAlignment="Center" Height="174" Margin="0,0,0,65" VerticalAlignment="Bottom" Width="290" ScrollViewer.VerticalScrollBarVisibility="Visible" />
+    </Grid>
+</Window>
