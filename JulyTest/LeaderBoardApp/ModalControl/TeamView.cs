@@ -52,10 +52,13 @@ namespace LeaderBoardApp.ModalControl
             teamEdit.ShowTeam();           
             teamView.Hide();
             ModalDisplay.ShowModal(teamEdit, teamView);
-            team = teamEdit.GetTeam();
-            team.SetTeamID(teamID);
-            fileHandler.UpdateTeam(team);
-            SetTeamDetail(teamID);
+            if (teamEdit.GetButtonAction().Equals(ButtonAction.DONE))
+            {
+                team = teamEdit.GetTeam();
+                team.SetTeamID(teamID);
+                fileHandler.UpdateTeam(team);
+                SetTeamDetail(teamID);
+            }
             teamView.ShowDialog();
         }
 

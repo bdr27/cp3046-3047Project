@@ -76,3 +76,9 @@ D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.g.cs
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.baml
 D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Tabs\View.baml
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.g.cs
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Tabs\View.g.cs

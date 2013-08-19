@@ -46,10 +46,13 @@ namespace LeaderBoardApp.ModalControl
             playerEdit.SetPlayerDetails(player);
             playerView.Hide();
             ModalDisplay.ShowModal(playerEdit, playerView);
-            player = playerEdit.GetPlayer();
-            player.SetP_ID(playerID);
-            fileHandler.UpdatePlayer(player);
-            playerView.SetPlayerDetails(player);
+            if (playerEdit.GetButtonAction().Equals(ButtonAction.DONE))
+            {
+                player = playerEdit.GetPlayer();
+                player.SetP_ID(playerID);
+                fileHandler.UpdatePlayer(player);
+                playerView.SetPlayerDetails(player);
+            }
             playerView.Show();
         }
 

@@ -60,6 +60,21 @@ namespace LeaderBoardApp.Modals
             MouseRightButtonDown += handler;
         }
 
+        public void AddContextMenuView(RoutedEventHandler handler)
+        {
+            cmView.Click += handler;
+        }
+
+        public void AddContextMenuEdit(RoutedEventHandler handler)
+        {
+            cmEdit.Click += handler;
+        }
+
+        public void AddContextMenuDelete(RoutedEventHandler handler)
+        {
+            cmDelete.Click += handler;
+        }
+
         public string GetTeamContact()
         {
             return tbCreateTeamContact.Text;
@@ -152,6 +167,11 @@ namespace LeaderBoardApp.Modals
         private void SetTeamContact(string teamContact)
         {
             tbCreateTeamContact.Text = teamContact;
+        }
+
+        public int GetSelectedPlayerID()
+        {
+            return (int) lvPlayers.SelectedValue;
         }
     }
 }

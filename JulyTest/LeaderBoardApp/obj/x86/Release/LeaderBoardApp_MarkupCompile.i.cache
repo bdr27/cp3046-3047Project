@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\x86\Release\
 LeaderBoardApp
 none
 false
 TRACE
-D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\JulyTest\LeaderBoardApp\App.xaml
-12-1526720792
+E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\App.xaml
+14-1997285821
 
-551059858479
-13-261984273
-Modals\ModalPlayer.xaml;Modals\ModalSelect.xaml;Modals\ModalTeam.xaml;ProjectorDisplay\ProjectorGame.xaml;ProjectorDisplay\ProjectorLadder.xaml;ProjectorDisplay\ProjectorStandby.xaml;Tabs\LiveMatch.xaml;Tabs\ProjectorController.xaml;Tabs\Registration.xaml;Tabs\View.xaml;Windows\MainWindow.xaml;Windows\ProjectionWindow.xaml;
+61-1434662328
+131750876750
+Modals\ModalPlayer.xaml;Modals\ModalPlayerView.xaml;Modals\ModalSelect.xaml;Modals\ModalTeam.xaml;Modals\ModalTeamView.xaml;ProjectorDisplay\ProjectorGame.xaml;ProjectorDisplay\ProjectorLadder.xaml;ProjectorDisplay\ProjectorStandby.xaml;Tabs\LiveMatch.xaml;Tabs\ProjectorController.xaml;Tabs\Registration.xaml;Tabs\View.xaml;Windows\MainWindow.xaml;Windows\ProjectionWindow.xaml;
 
-False
+True
 

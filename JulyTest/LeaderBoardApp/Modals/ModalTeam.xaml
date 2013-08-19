@@ -21,9 +21,9 @@
             Source from: http://code.msdn.microsoft.com/windowsdesktop/WPF-Listview-Context-Menu-24185fb0 -->
             <ListView.ContextMenu>
                 <ContextMenu x:Name="TestList" StaysOpen="True" >
-                    <MenuItem Header="View"/>
-                    <MenuItem Header="Edit"/>
-                    <MenuItem Header="Delete"/>
+                    <MenuItem Header="View" x:Name="cmView"/>
+                    <MenuItem Header="Edit" x:Name="cmEdit"/>
+                    <MenuItem Header="Delete" x:Name="cmDelete"/>
                 </ContextMenu>
             </ListView.ContextMenu>
         </ListView>

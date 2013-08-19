@@ -22,12 +22,12 @@ namespace LeaderBoardApp.ModalControl
         private void HandlerBtnModalView_Click(object sender, RoutedEventArgs e)
         {
             Debug.WriteLine("VIEW IT");
-            modalSelect.Hide();
+           // modalSelect.Hide();
             var teamView = new TeamView(fileHandler);
             teamView.SetTeamDetail((int)modalSelect.GetSelectedPlayer());
             ModalDisplay.ShowModal(teamView, modalSelect);
             modalSelect.DisplayTeams(teams);
-            modalSelect.Show();
+            //modalSelect.Show();
         }
 
         public void SetOwner(Window window)

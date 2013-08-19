@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows;
 using LeaderBoardApp.Enum;
 using LeaderBoardApp.Modals;
 using LeaderBoardApp.Utility;
@@ -44,6 +45,51 @@ namespace LeaderBoardApp.ModalControl
             modalTeam.AddBtnAddExistingPlayerHandler(HandleBtnAddExistingPlayer_Click);
             modalTeam.AddBtnClearHandler(HandleBtnClear_Click);
             modalTeam.AddBtnDoneHandler(HandleBtnDone_Click);
+            modalTeam.AddContextMenuView(HandleContextMenuView_Click);
+            modalTeam.AddContextMenuEdit(HandleContextMenuEdit_Click);
+            modalTeam.AddContextMenuDelete(HandleContextMenuDelete_Click);
+        }
+
+        private void HandleContextMenuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            //Show Dialog
+            var playerID = modalTeam.GetSelectedPlayerID();
+            //Update Player Names
+        }
+
+        private void HandleContextMenuEdit_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var editPlayer = new PlayerEdit();
+            var playerID = modalTeam.GetSelectedPlayerID();
+            editPlayer.SetPlayerDetails(fileHandler.GetPlayer(playerID).Clone());
+            ModalDisplay.ShowModal(editPlayer, modalTeam.Owner);
+            if (editPlayer.GetButtonAction().Equals(ButtonAction.DONE))
+            {
+                var player = editPlayer.GetPlayer();
+                player.SetP_ID(playerID);
+                fileHandler.UpdatePlayer(player);
+                modalTeam.ShowPlayers(GetTeamPlayers());
+            }
+        }
+
+        private void HandleContextMenuView_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            var viewPlayer = new PlayerView(fileHandler);
+            var playerID = modalTeam.GetSelectedPlayerID();
+            Debug.WriteLine(playerID);
+            viewPlayer.SetPlayerDetails(playerID);
+            ModalDisplay.ShowModal(viewPlayer, modalTeam.Owner);
+            modalTeam.ShowPlayers(GetTeamPlayers());
+        }
+
+        private Dictionary<int, Player> GetTeamPlayers()
+        {
+            var players = new Dictionary<int, Player>();
+            foreach (var ID in team.GetPlayerIDs())
+            {
+                players.Add(ID, fileHandler.GetPlayer(ID));
+            }
+            return players;
         }
 
         private void HandleBtnDone_Click(object sender, System.Windows.RoutedEventArgs e)
