@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using LeaderBoardApp.Utility;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
-using LeaderBoardApp.Utility;
 
 namespace LeaderBoardApp.Modals
 {
@@ -52,6 +53,11 @@ namespace LeaderBoardApp.Modals
         private void btnTeamCancel_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void AddContextMenu(MouseButtonEventHandler handler)
+        {
+            MouseRightButtonDown += handler;
         }
 
         public string GetTeamContact()
