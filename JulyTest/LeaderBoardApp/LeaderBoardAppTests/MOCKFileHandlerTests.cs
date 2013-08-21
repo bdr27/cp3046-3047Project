@@ -88,5 +88,27 @@ namespace LeaderBoardAppTests
                 Assert.AreEqual(item.Value.Details(), testHandlerPlayers[item.Key].Details());
             }
         }
+
+        [TestMethod]
+        public void MOCKFileHandlerDeleteTeamPlayer()
+        {
+            var teamID = 1;
+            var playerID = 1;
+            var testHandler = new MOCKFileHandler();
+            testHandler.LoadPlayers();
+            testHandler.LoadTeams();
+            var testHandlerPlayers = testHandler.GetPlayers();
+            var testPlayers = TestPlayers();
+            var team = testHandler.GetTeam(teamID);
+            team.SetTeamID(teamID);
+            var player = testHandler.GetPlayer(1);
+            var testPlayer = new Player("john", "smith", 24, "", "40404040", "");
+            testPlayer.SetP_ID(playerID);
+            Assert.AreEqual(player.Details(), testPlayer.Details());
+            testHandler.DeleteTeamPlayer(team.GetTeamID(), playerID);
+            Assert.AreEqual(0, testHandler.GetTeam(1).GetPlayerIDs().Count);            
+            team.RemovePlayer(player.GetP_ID());
+            Assert.AreEqual(team.GetPlayerIDs(), testHandler.GetTeam(teamID).GetPlayerIDs());
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace LeaderBoardApp.Utility
         void InsertTeam(Team team);
         void UpdateTeam(Team team);
         void DeleteTeam(int teamID);
+        void DeleteTeamPlayer(int teamID, int playerID);
         int GetCurrentTeamID();
         Team GetTeam(int teamID);
         #endregion

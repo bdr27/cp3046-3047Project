@@ -117,6 +117,11 @@ namespace LeaderBoardApp.Utility
             teams.Remove(teamID);
         }
 
+        public void DeleteTeamPlayer(int teamID, int playerID)
+        {
+            teams[teamID].RemovePlayer(playerID);
+        }
+
         public int GetCurrentTeamID()
         {
             return teamCounter;
