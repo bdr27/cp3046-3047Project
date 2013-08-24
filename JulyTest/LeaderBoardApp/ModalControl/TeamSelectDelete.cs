@@ -32,8 +32,12 @@ namespace LeaderBoardApp.ModalControl
             var teamSelected = modalSelect.GetSelectedPlayer();
             if (teamSelected != null)
             {
-                var teamID = (int)teamSelected;
-                DeleteTeam(teamID);
+                var result = MessageBox.Show("Are you sure you want to Delete?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    var teamID = (int)teamSelected;
+                    DeleteTeam(teamID);
+                }
             }
         }
 

@@ -14,10 +14,12 @@ namespace LeaderBoardApp.ModalControl
         protected FileHandler fileHandler;
         protected Dictionary<int, Player> players;
         protected Team team;
+        protected List<int> deletedPlayers;
 
         public TeamSuper(FileHandler fileHandler)
         {
             players = new Dictionary<int, Player>();
+            deletedPlayers = new List<int>();
             this.fileHandler = fileHandler;
             modalTeam = new ModalTeam();
             buttonAction = ButtonAction.NONE;
@@ -52,13 +54,17 @@ namespace LeaderBoardApp.ModalControl
 
         private void HandleContextMenuDelete_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            //Show Dialog
-            var playerID = modalTeam.GetSelectedPlayerID();
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to Delete?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                var playerID = modalTeam.GetSelectedPlayerID();
+            }
             //Update Player Names
         }
 
         private void HandleContextMenuEdit_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            //Change this otherwise cancel is useless
             var editPlayer = new PlayerEdit();
             var playerID = modalTeam.GetSelectedPlayerID();
             editPlayer.SetPlayerDetails(fileHandler.GetPlayer(playerID).Clone());
@@ -135,6 +141,7 @@ namespace LeaderBoardApp.ModalControl
 
         private void HandleBtnAddExistingPlayer_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            //Rewrite this for the cancel buttons
             var playerSelect = new PlayerSelectToTeam(fileHandler);
             ModalDisplay.ShowModal(playerSelect, modalTeam);
             if (playerSelect.GetButtonAction().Equals(ButtonAction.DONE))
@@ -143,7 +150,6 @@ namespace LeaderBoardApp.ModalControl
                 var player = fileHandler.GetPlayer(playerID);
                 AddPlayerToTeam(playerID, player.Clone());
             }
-            
         }
 
         private void HandleBtnAddPlayer_Click(object sender, System.Windows.RoutedEventArgs e)

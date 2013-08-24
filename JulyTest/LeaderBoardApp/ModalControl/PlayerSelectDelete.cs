@@ -24,8 +24,12 @@ namespace LeaderBoardApp.ModalControl
             var playerSelected = modalSelect.GetSelectedPlayer();
             if (playerSelected != null)
             {
-                var playerID = (int)playerSelected;
-                DeletePlayer(playerID);
+                 var result = MessageBox.Show("Are you sure you want to Delete?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                 if (result == MessageBoxResult.Yes)
+                 {
+                     var playerID = (int)playerSelected;
+                     DeletePlayer(playerID);
+                 }
             }
         }
 
