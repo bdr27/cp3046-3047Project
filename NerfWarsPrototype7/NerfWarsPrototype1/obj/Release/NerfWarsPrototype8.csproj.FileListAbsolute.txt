@@ -35,3 +35,6 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Release\NerfWarsPrototype8.csproj.GenerateResource.Cache
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Release\NerfWarsPrototype.exe
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Release\NerfWarsPrototype.pdb
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\bin\Release\NerfWarsPrototype.exe.config
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Release\NerfWarsPrototype.exe
+D:\Users\Brendan\Documents\GitHub\cp3046-3047Project\NerfWarsPrototype7\NerfWarsPrototype1\obj\Release\NerfWarsPrototype.pdb

@@ -16,6 +16,7 @@
         <Button x:Name="btnTeamCancel" Content="Cancel" HorizontalAlignment="Left" Margin="10,0,0,30" VerticalAlignment="Bottom" Width="75" Click="btnTeamCancel_Click"/>
         <Button x:Name="btnTeamClear" Content="Clear" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,30" Width="75" />
         <Button x:Name="btnTeamDone" Content="Done" HorizontalAlignment="Right" Margin="0,0,10,30" VerticalAlignment="Bottom" Width="75" />
+        <!-- Need to figure out how to classify this -->
         <ListView x:Name="lvPlayers" HorizontalAlignment="Center" Height="174" Margin="0,0,0,65" VerticalAlignment="Bottom" Width="290" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <!--
             Source from: http://code.msdn.microsoft.com/windowsdesktop/WPF-Listview-Context-Menu-24185fb0 -->
