@@ -82,3 +82,6 @@ E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Pr
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalPlayerView.g.cs
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Modals\ModalTeamView.g.cs
 E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\Tabs\View.g.cs
+D:\Users\Brendan\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\bin\Debug\LeaderBoardApp.exe.config
+D:\Users\Brendan\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\LeaderBoardApp.exe
+D:\Users\Brendan\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\obj\Debug\LeaderBoardApp.pdb

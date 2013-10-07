@@ -77,5 +77,10 @@ namespace LeaderBoardApp.Utility
             flag = 0;
             UpdateScore();
         }
+
+        public override string ToString()
+        {
+            return string.Format("tag: {0}, flag: {1}, score {2}", tag, flag, score);
+        }
     }
 }

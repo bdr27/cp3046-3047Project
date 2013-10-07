@@ -205,5 +205,20 @@ namespace LeaderBoardApp.Utility
         }
 
         #endregion
+
+        #region FileHandler Members
+
+
+        public Dictionary<int, MatchResult> GetMatchResults()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddMatchResult(MatchResult match)
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }

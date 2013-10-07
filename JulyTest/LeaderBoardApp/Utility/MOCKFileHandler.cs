@@ -7,16 +7,20 @@ namespace LeaderBoardApp.Utility
     {
         private int playerCounter;
         private int teamCounter;
+        private int matchCounter;
         private Dictionary<int, Player> players;
         private Dictionary<int, Team> teams;
+        private Dictionary<int, MatchResult> matchResults;
 
         public MOCKFileHandler()
         {
             //Default to 1 so that players without ID set will be 0
             playerCounter = 1;
             teamCounter = 1;
+            matchCounter = 1;
             players = new Dictionary<int, Player>();
             teams = new Dictionary<int, Team>();
+            matchResults = new Dictionary<int, MatchResult>();
         }
         #region FileHandler Members
 
@@ -130,6 +134,18 @@ namespace LeaderBoardApp.Utility
         public Team GetTeam(int teamID)
         {
             return teams[teamID];
+        }
+
+        public Dictionary<int, MatchResult> GetMatchResults()
+        {
+            return matchResults;
+        }
+
+        public void AddMatchResult(MatchResult match)
+        {
+            var matchResult = match.Clone();
+            matchResult.SetTeamBID(matchCounter);
+            matchResults.Add(matchCounter++, matchResult);            
         }
 
         #endregion

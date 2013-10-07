@@ -34,6 +34,8 @@ namespace LeaderBoardApp
         public const string DEFAULT_MESSAGE = "Please Stand By";
         public const int DEFAULT_MIN = 5;
         public const int DEFAULT_SEC = 0;
+        private int teamAID;
+        private int teamBID;
 
         public App()
             : base()
@@ -78,7 +80,7 @@ namespace LeaderBoardApp
 
         private void LoadFileHandler()
         {
-            fileHandler = new SqliteFileHandler();
+            fileHandler = new MOCKFileHandler();
             fileHandler.LoadPlayers();
             fileHandler.LoadTeams();
         }
@@ -271,7 +273,7 @@ namespace LeaderBoardApp
         {
             if (game.CountDown())
             {
-               // GameOver();
+                GameOver();
             }
             else
             {
@@ -279,10 +281,22 @@ namespace LeaderBoardApp
             }
         }
 
+        private void GameOver()
+        {
+            if (game.GetTeamAScore() == game.GetTeamBScore())
+            {
+                PauseGame();
+            }
+            else
+            {
+                gameTimer.Stop();
+            }
+        }
+
         private void StartGame()
         {
-            var teamAID = liveMatch.GetTeamA();
-            var teamBID = liveMatch.GetTeamB();
+            teamAID = liveMatch.GetTeamA();
+            teamBID = liveMatch.GetTeamB();
 
                 liveMatch.MatchInProgress();
                 liveMatch.DisableTimeInput();
@@ -339,18 +353,28 @@ namespace LeaderBoardApp
 
         private void HandleEndGame_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress("End Game");
-            liveMatch.NoMatchInProgress();
-            gameState = GameState.WAITING;
-            ResetGame();
+            var box = MessageBox.Show("Do you want to end the match", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (box == MessageBoxResult.Yes)
+            {
+                gameTimer.Stop();
+                var mr = game.GetMatchResult(teamAID, teamBID);
+                log.ButtonPress("End Game");
+                liveMatch.NoMatchInProgress();
+                gameState = GameState.WAITING;
+                ResetGame();
+            }
         }
 
         private void HandleResetGame_Click(object sender, RoutedEventArgs e)
         {
-            log.ButtonPress("Reset Game");
-            liveMatch.NoMatchInProgress();
-            gameState = GameState.WAITING;
-            ResetGame();
+            var box = MessageBox.Show("Do you want to reset the match", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (box == MessageBoxResult.Yes)
+            {
+                log.ButtonPress("Reset Game");
+                liveMatch.NoMatchInProgress();
+                gameState = GameState.WAITING;
+                ResetGame();
+            }
         }
 
         private void HandleStartPause_Click(object sender, RoutedEventArgs e)
