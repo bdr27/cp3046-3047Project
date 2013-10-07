@@ -54,6 +54,21 @@ namespace LeaderBoardApp.Utility
             return mr;
         }
 
+        public int GetWinner()
+        {
+            //Draw
+            var winner = -1;
+            if (teamAScore.GetScore() > teamBScore.GetScore())
+            {
+                winner = teamAID;
+            }
+            else if (teamBScore.GetScore() > teamAScore.GetScore()) 
+            {
+                winner = teamBID;
+            }
+            return winner;
+        }
+
         public override string ToString()
         {
             return String.Format("{0}: {1}, {2}: {3}", teamAID, teamAScore, teamBID, teamBScore);

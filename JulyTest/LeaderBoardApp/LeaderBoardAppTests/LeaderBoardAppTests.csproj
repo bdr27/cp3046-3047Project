@@ -75,6 +75,7 @@
     <Compile Include="MOCKFileHandlerTests.cs" />
     <Compile Include="TeamTests.cs" />
     <Compile Include="MatchTest.cs" />
+    <Compile Include="GameTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeaderBoardApp.csproj">
