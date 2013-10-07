@@ -1,5 +1,0 @@
-Start Time>>> 30/06/2013 9:20:23 AM
-Loading players
-	fname: john, lname: smith, age: 24, guardian: , contact: 40404040, medical: , ID: 1
-	fname: Jill, lname: smith, age: 12, guardian: , contact: 40404034, medical: , ID: 2
-	fname: Geroge, lname: Lucas, age: 25, guardian: Marie, contact: 5556565, medical: I like starwars, ID: 3
