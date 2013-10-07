@@ -9,13 +9,15 @@ namespace LeaderBoardApp.Utility
     public class Ladder
     {
         private LadderTier[] ladderTiers;
+        private List<int> teamIDs;
         private int teamCount;
         private int tierCount;
         private int currentTier;
         
-        public Ladder(int teamCount)
+        public Ladder(List<int> teamIDs)
         {
-            this.teamCount = teamCount;
+            this.teamIDs = teamIDs;
+            teamCount = teamIDs.Count;
         }
 
         //TestcOmment
@@ -38,10 +40,14 @@ namespace LeaderBoardApp.Utility
 
         private int GetTierCount(int teamCount)
         {
-            var result = (Math.Log(teamCount)) / (Math.Log(2));
-            if (result % 1 != 0)
+            var result = 1.0;
+            if (teamCount > 1)
             {
-                result++;
+                result = (Math.Log(teamCount)) / (Math.Log(2));
+                if (result % 1 != 0)
+                {
+                    result++;
+                }
             }
             return (int)result;
         }

@@ -12,22 +12,51 @@ namespace LeaderBoardAppTests
     public class LadderTests
     {
         [TestMethod]
-        public void LadderTierTest()
+        public void LadderTierExactTest()
         {
             for (int i = 1; i < 20; i++)
             {
-                var ladder = new Ladder((int)Math.Pow(2, i));
+                var ladder = new Ladder(getTeamIDList((int)Math.Pow(2, i)));
                 ladder.GenerateLadder();
                 Assert.AreEqual(i, ladder.GetTierCount());
             }
+
+        }
+
+        [TestMethod]
+        public void LadderTierOddLowerTest()
+        {
             for (int i = 1; i < 20; i++)
             {
                 var number = Math.Pow(2, i);
-                number = number - i;
-                var ladder = new Ladder((int)Math.Pow(2, i));
+                number = number - 1;
+                var ladder = new Ladder(getTeamIDList((int)number));
                 ladder.GenerateLadder();
                 Assert.AreEqual(i, ladder.GetTierCount());
             }
+        }
+
+        [TestMethod]
+        public void LadderTierOddHigherTest()
+        {
+            for (int i = 1; i < 20; i++)
+            {
+                var number = Math.Pow(2, i);
+                number = number + 1;
+                var ladder = new Ladder(getTeamIDList((int)number));
+                ladder.GenerateLadder();
+                Assert.AreEqual(i + 1, ladder.GetTierCount());
+            }
+        }
+
+        private List<int> getTeamIDList(int p)
+        {
+            var teams = new List<int>();
+            for (int i = 1; i <= p; i++)
+            {
+                teams.Add(i);
+            }
+            return teams;
         }
     }
 }
