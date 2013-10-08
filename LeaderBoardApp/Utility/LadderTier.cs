@@ -15,12 +15,25 @@ namespace LeaderBoardApp.Utility
         {
         }
 
-        public Dictionary<int, MatchResult> GetMatches()
+        public Dictionary<int, MatchResult> GetAllMatches()
         {
             var tm = new Dictionary<int, MatchResult>();
             foreach (var match in matches)
             {
                 tm.Add(match.Key, match.Value.Clone());
+            }
+            return tm;
+        }
+
+        public Dictionary<int, MatchResult> GetAllUnplayedMatches()
+        {
+            var tm = new Dictionary<int, MatchResult>();
+            foreach (var match in matches)
+            {
+                if (!match.Value.GetPlayed())
+                {
+                    tm.Add(match.Key, match.Value);
+                }
             }
             return tm;
         }

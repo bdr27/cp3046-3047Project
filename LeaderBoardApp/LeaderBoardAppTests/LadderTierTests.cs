@@ -16,7 +16,7 @@ namespace LeaderBoardAppTests
             var teamIDs = GetTeamIDs(totalTeams);
             var testIds = GetTeamIDs(totalTeams);
             lt.GenerateMatches(teamIDs);
-            var matches = lt.GetMatches();
+            var matches = lt.GetAllMatches();
             foreach (var match in matches.Values)
             {
                 Assert.IsTrue(testIds.Contains(match.GetTeamAID()));
@@ -33,7 +33,7 @@ namespace LeaderBoardAppTests
             var teamIDs = GetTeamIDs(totalTeams);
             var testIds = GetTeamIDs(totalTeams);
             lt.GenerateMatches(teamIDs);
-            var matches = lt.GetMatches();
+            var matches = lt.GetAllMatches();
             foreach (var match in matches.Values)
             {
                 Assert.IsTrue(testIds.Contains(match.GetTeamAID()));
@@ -70,7 +70,7 @@ namespace LeaderBoardAppTests
             var totalTeams = 16;
             var teamIDs = GetTeamIDs(totalTeams);
             lt.GenerateMatches(teamIDs);
-            var matches = lt.GetMatches();
+            var matches = lt.GetAllMatches();
             var scoreA = new Score();
             scoreA.AddFlag();
             var scoreB = new Score();
@@ -88,5 +88,36 @@ namespace LeaderBoardAppTests
             Assert.IsTrue(lt.AllMatchesPlayed());
         }
 
+        [TestMethod]
+        public void LadderTierUnplayedMatches()
+        {
+            var lt = new LadderTier();
+            var totalTeams = 16;
+            var teamIDs = GetTeamIDs(totalTeams);
+            lt.GenerateMatches(teamIDs);
+            var matches = lt.GetAllMatches();
+            var scoreA = new Score();
+            scoreA.AddFlag();
+            var scoreB = new Score();
+            scoreB.AddTag();
+            int i = 0;
+            foreach (var match in matches)
+            {
+                if (i == 4)
+                {
+                    break;
+                }
+                var key = match.Key;
+                var value = match.Value;
+                var teamAID = match.Value.GetTeamAID();
+                value.SetTeamAScore(scoreA);
+                value.SetTeamBScore(scoreB);
+                lt.SetMatch(key, value);
+                Assert.AreEqual(teamAID, lt.GetWinner(key));
+                i++;
+            }
+            var played = lt.GetAllUnplayedMatches();
+            Assert.AreEqual(4, played.Count);
+        }
     }
 }

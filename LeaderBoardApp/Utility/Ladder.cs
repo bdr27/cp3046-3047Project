@@ -41,7 +41,7 @@ namespace LeaderBoardApp.Utility
 
         public Dictionary<int, MatchResult> GetMatches()
         {
-            return ladderTiers[currentTier].GetMatches();
+            return ladderTiers[currentTier].GetAllMatches();
         }
 
         public void MatchPlayed(int ID, MatchResult mr)
