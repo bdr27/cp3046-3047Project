@@ -28,5 +28,6 @@ namespace LeaderBoardApp.Utility
         Dictionary<int, MatchResult> GetMatchResults();
         void AddMatchResult(MatchResult match);
         #endregion
+
     }
 }

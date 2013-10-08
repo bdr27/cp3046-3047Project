@@ -144,6 +144,7 @@
     <Compile Include="Utility\GameTeam.cs" />
     <Compile Include="Utility\Ladder.cs" />
     <Compile Include="Utility\LadderTier.cs" />
+    <Compile Include="Utility\LadderUtil.cs" />
     <Compile Include="Utility\LINQQueries.cs" />
     <Compile Include="Utility\MatchResult.cs" />
     <Compile Include="Utility\MOCKFileHandler.cs" />

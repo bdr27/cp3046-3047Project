@@ -76,6 +76,7 @@
     <Compile Include="TeamTests.cs" />
     <Compile Include="MatchTest.cs" />
     <Compile Include="GameTest.cs" />
+    <Compile Include="LadderTierTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LeaderBoardApp.csproj">

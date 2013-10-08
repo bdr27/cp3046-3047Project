@@ -13,9 +13,20 @@ namespace LeaderBoardApp.Utility
         Score teamBScore;
         int teamAID;
         int teamBID;
+        bool played;
 
         public MatchResult()
         {
+            played = false;
+        }
+        public bool GetPlayed()
+        {
+            return played;
+        }
+
+        public void SetPlayed(bool played)
+        {
+            this.played = played;
         }
 
         public void SetMatchID(int matchID)
@@ -51,6 +62,7 @@ namespace LeaderBoardApp.Utility
             mr.SetTeamAScore(teamAScore);
             mr.SetTeamBID(teamBID);
             mr.SetTeamBScore(teamBScore);
+            mr.SetPlayed(played);
             return mr;
         }
 
@@ -67,6 +79,26 @@ namespace LeaderBoardApp.Utility
                 winner = teamBID;
             }
             return winner;
+        }
+
+        public int GetTeamAID()
+        {
+            return teamAID;
+        }
+
+        public int GetTeamBID()
+        {
+            return teamBID;
+        }
+
+        public Score GetTeamAScore()
+        {
+            return teamAScore;
+        }
+
+        public Score GetTeamBScore()
+        {
+            return teamBScore;
         }
 
         public override string ToString()

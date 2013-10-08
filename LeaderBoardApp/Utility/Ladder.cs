@@ -9,6 +9,7 @@ namespace LeaderBoardApp.Utility
     public class Ladder
     {
         private LadderTier[] ladderTiers;
+        private int currentMatch;
         private List<int> teamIDs;
         private int teamCount;
         private int tierCount;
@@ -18,14 +19,36 @@ namespace LeaderBoardApp.Utility
         {
             this.teamIDs = teamIDs;
             teamCount = teamIDs.Count;
+            currentTier = 0;
+            currentMatch = 0;
         }
 
-        //TestcOmment
         public void GenerateLadder()
-        {
-            currentTier = 0;
-            tierCount = GetTierCount(teamCount);
+        {            
+            tierCount = LadderUtil.GetTierCount(teamCount);
             ladderTiers = new LadderTier[tierCount];
+            ladderTiers[currentTier] = new LadderTier();
+            ladderTiers[currentTier].GenerateMatches(teamIDs);
+        }
+
+        public void GetNextMatch()
+        {
+            if (ladderTiers[currentTier].IsNextMatch(currentMatch))
+            {
+                //var match = ladderTiers[currentTier].GetNextMatch(currentMatch++);
+            }            
+        }
+
+        public Dictionary<int, MatchResult> GetMatches()
+        {
+            return ladderTiers[currentTier].GetMatches();
+        }
+
+        public void MatchPlayed(int ID, MatchResult mr)
+        {
+            mr.SetPlayed(true);
+            ladderTiers[currentTier].SetMatch(ID, mr);
+
         }
 
         public int GetTierCount()
@@ -33,23 +56,14 @@ namespace LeaderBoardApp.Utility
             return tierCount;
         }
 
+        public LadderTier getCurrentLadderTier()
+        {
+            return ladderTiers[currentTier];
+        }
+
         public int GetTeamCount()
         {
             return teamCount;
-        }
-
-        private int GetTierCount(int teamCount)
-        {
-            var result = 1.0;
-            if (teamCount > 1)
-            {
-                result = (Math.Log(teamCount)) / (Math.Log(2));
-                if (result % 1 != 0)
-                {
-                    result++;
-                }
-            }
-            return (int)result;
         }
     }
 }
