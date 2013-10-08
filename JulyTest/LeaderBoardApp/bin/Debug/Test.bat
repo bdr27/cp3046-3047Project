@@ -1,1 +1,0 @@
-LeaderBoardApp.exe > output.txt

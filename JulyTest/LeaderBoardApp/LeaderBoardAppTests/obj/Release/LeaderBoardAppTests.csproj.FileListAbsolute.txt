@@ -1,8 +1,0 @@
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Release\LeaderBoardAppTests.dll
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Release\LeaderBoardAppTests.pdb
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Release\LeaderBoardApp.exe
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Release\System.Data.SQLite.dll
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\bin\Release\LeaderBoardApp.pdb
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\Release\LeaderBoardAppTests.csprojResolveAssemblyReference.cache
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\Release\LeaderBoardAppTests.dll
-E:\Documents\Dropbox\University\2013S1\CP3046\SchoolHolidayProject\cp3046-3047Project\JulyTest\LeaderBoardApp\LeaderBoardAppTests\obj\Release\LeaderBoardAppTests.pdb
