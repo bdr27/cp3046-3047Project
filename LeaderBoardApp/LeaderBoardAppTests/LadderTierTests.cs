@@ -15,7 +15,7 @@ namespace LeaderBoardAppTests
             var totalTeams = 22;
             var teamIDs = GetTeamIDs(totalTeams);
             var testIds = GetTeamIDs(totalTeams);
-            lt.GenerateMatches(teamIDs);
+            lt.GenerateRandomMatches(teamIDs);
             var matches = lt.GetAllMatches();
             foreach (var match in matches.Values)
             {
@@ -32,7 +32,7 @@ namespace LeaderBoardAppTests
             var totalTeams = 16;
             var teamIDs = GetTeamIDs(totalTeams);
             var testIds = GetTeamIDs(totalTeams);
-            lt.GenerateMatches(teamIDs);
+            lt.GenerateRandomMatches(teamIDs);
             var matches = lt.GetAllMatches();
             foreach (var match in matches.Values)
             {
@@ -59,7 +59,7 @@ namespace LeaderBoardAppTests
             var lt = new LadderTier();
             var totalTeams = 16;
             var teamIDs = GetTeamIDs(totalTeams);
-            lt.GenerateMatches(teamIDs);
+            lt.GenerateRandomMatches(teamIDs);
             Assert.IsFalse(lt.AllMatchesPlayed());
         }
 
@@ -69,7 +69,7 @@ namespace LeaderBoardAppTests
             var lt = new LadderTier();
             var totalTeams = 16;
             var teamIDs = GetTeamIDs(totalTeams);
-            lt.GenerateMatches(teamIDs);
+            lt.GenerateRandomMatches(teamIDs);
             var matches = lt.GetAllMatches();
             var scoreA = new Score();
             scoreA.AddFlag();
@@ -94,7 +94,7 @@ namespace LeaderBoardAppTests
             var lt = new LadderTier();
             var totalTeams = 16;
             var teamIDs = GetTeamIDs(totalTeams);
-            lt.GenerateMatches(teamIDs);
+            lt.GenerateRandomMatches(teamIDs);
             var matches = lt.GetAllMatches();
             var scoreA = new Score();
             scoreA.AddFlag();
@@ -118,6 +118,23 @@ namespace LeaderBoardAppTests
             }
             var played = lt.GetAllUnplayedMatches();
             Assert.AreEqual(4, played.Count);
+        }
+
+        [TestMethod]
+        public void LadderTierAddMatches()
+        {
+            var lt = new LadderTier();
+            var matchCounter = 0;
+            var teamAID = 3;
+            var teamBID = 2;
+            lt.AddTeam(3,matchCounter++);
+            lt.AddTeam(2,matchCounter++);
+            var matches = lt.GetAllUnplayedMatches();
+            foreach(var match in matches.Values)
+            {
+                Assert.AreEqual(teamAID, match.GetTeamAID());
+                Assert.AreEqual(teamBID, match.GetTeamBID());
+            }
         }
     }
 }

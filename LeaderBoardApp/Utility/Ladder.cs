@@ -23,32 +23,39 @@ namespace LeaderBoardApp.Utility
             currentMatch = 0;
         }
 
+        public void SetTeams(List<int> teamIDs)
+        {
+            this.teamIDs = teamIDs;
+        }
+
         public void GenerateLadder()
         {            
             tierCount = LadderUtil.GetTierCount(teamCount);
             ladderTiers = new LadderTier[tierCount];
             ladderTiers[currentTier] = new LadderTier();
-            ladderTiers[currentTier].GenerateMatches(teamIDs);
+            ladderTiers[currentTier].GenerateRandomMatches(teamIDs);
         }
 
-        public void GetNextMatch()
+        public int GetCurrentTeir()
         {
-            if (ladderTiers[currentTier].IsNextMatch(currentMatch))
-            {
-                //var match = ladderTiers[currentTier].GetNextMatch(currentMatch++);
-            }            
+            return currentTier;
         }
 
-        public Dictionary<int, MatchResult> GetMatches()
+        public Dictionary<int, MatchPlayed> GetMatches()
         {
             return ladderTiers[currentTier].GetAllMatches();
         }
 
-        public void MatchPlayed(int ID, MatchResult mr)
+        public void MatchPlayed(int ID, MatchPlayed mr)
         {
             mr.SetPlayed(true);
             ladderTiers[currentTier].SetMatch(ID, mr);
-
+            var winnerID = mr.GetWinner();
+            ladderTiers[currentTier + 1].AddTeam(winnerID, ID);
+            if (ladderTiers[currentTier].AllMatchesPlayed())
+            {
+                currentTier++;
+            }
         }
 
         public int GetTierCount()

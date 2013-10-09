@@ -8,26 +8,49 @@ namespace LeaderBoardApp.Utility
 {
     public class LadderTier
     {
-        private Dictionary<int, MatchResult> matches;
+        private Dictionary<int, MatchPlayed> matches;
         private List<int> currentTeams;
 
         public LadderTier()
         {
+            matches = new Dictionary<int, MatchPlayed>();
+            currentTeams = new List<int>();
         }
 
-        public Dictionary<int, MatchResult> GetAllMatches()
+        public Dictionary<int, MatchPlayed> GetAllMatches()
         {
-            var tm = new Dictionary<int, MatchResult>();
+            var tm = new Dictionary<int, MatchPlayed>();
             foreach (var match in matches)
             {
-                tm.Add(match.Key, match.Value.Clone());
+                if (!match.Value.GetDummyGame())
+                {
+                    tm.Add(match.Key, match.Value.Clone());
+                }
+           }
+            return tm;
+        }
+
+        public Dictionary<int, MatchPlayed> GetAllBreaks()
+        {
+            var tm = new Dictionary<int, MatchPlayed>();
+            foreach (var match in matches)
+            {
+                if (match.Value.GetDummyGame())
+                {
+                    tm.Add(match.Key, match.Value.Clone());
+                }
             }
             return tm;
         }
 
-        public Dictionary<int, MatchResult> GetAllUnplayedMatches()
+        public int GetAmountMatches()
         {
-            var tm = new Dictionary<int, MatchResult>();
+            return matches.Count;
+        }
+
+        public Dictionary<int, MatchPlayed> GetAllUnplayedMatches()
+        {
+            var tm = new Dictionary<int, MatchPlayed>();
             foreach (var match in matches)
             {
                 if (!match.Value.GetPlayed())
@@ -38,15 +61,13 @@ namespace LeaderBoardApp.Utility
             return tm;
         }
 
-        public void GenerateMatches(List<int> teamIDs)
+        public void GenerateRandomMatches(List<int> teamIDs)
         {
-            var cloneTeamIDs = LadderUtil.CloneIntList(teamIDs);
-            matches = new Dictionary<int, MatchResult>();
+            var cloneTeamIDs = LadderUtil.CloneIntList(teamIDs);            
             var totalTeams = cloneTeamIDs.Count;
             var totalMatches = 0;
             var nextTier = LadderUtil.GetTierCount(totalTeams);
             totalMatches = (int)(totalTeams - Math.Pow(2, nextTier - 1));
-            currentTeams = new List<int>();
             
             for (int i = 0; i < totalMatches; i++)
             {
@@ -55,9 +76,20 @@ namespace LeaderBoardApp.Utility
                 currentTeams.Add(teamAID);
                 currentTeams.Add(teamBID);
                
-                var match = new MatchResult();
+                var match = new MatchPlayed();
                 match.SetTeamAID(teamAID);
                 match.SetTeamBID(teamBID);
+                matches.Add(i, match);
+            }
+
+            var tierMatches = Math.Pow(2, nextTier - 1);
+            for (int i = totalMatches; i < tierMatches; i++)
+            {
+                var teamAId = GetRandomTeam(cloneTeamIDs);
+                currentTeams.Add(teamAId);
+                var match = new MatchPlayed();
+                match.SetTeamAID(teamAId);
+                match.SetDummyGame(true);
                 matches.Add(i, match);
             }
         }
@@ -100,10 +132,43 @@ namespace LeaderBoardApp.Utility
             return matches[number].GetWinner();
         }
 
-        public void SetMatch(int ID, MatchResult mr)
+        public void SetMatch(int ID, MatchPlayed mr)
         {
             mr.SetPlayed(true);
             matches[ID] = mr.Clone();
+        }
+
+        public void AddTeam(int winnerID, int matchID)
+        {
+            var nextRound = matchID / 2;
+            if (!matches.ContainsKey(nextRound))
+            {
+                matches.Add(nextRound, new MatchPlayed());
+            }
+            if (IsOdd(matchID))
+            {
+                matches[nextRound].SetTeamBID(winnerID);
+            }
+            else
+            {
+                matches[nextRound].SetTeamAID(winnerID);
+            }
+        }
+
+        public List<int> GetPlayingTeamIDs()
+        {
+            var playingTeamIDs = new List<int>();
+            foreach (var match in matches.Values)
+            {
+                playingTeamIDs.Add(match.GetTeamAID());
+                playingTeamIDs.Add(match.GetTeamBID());
+            }
+            return playingTeamIDs;
+        }
+
+        public int GetTotalTeams()
+        {
+            return currentTeams.Count;
         }
     }
 }

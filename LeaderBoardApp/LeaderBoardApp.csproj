@@ -134,6 +134,9 @@
       <DependentUpon>ModalTeamView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modals\StylesModal.cs" />
+    <Compile Include="Tabs\LadderTab.xaml.cs">
+      <DependentUpon>LadderTab.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tabs\View.xaml.cs">
       <DependentUpon>View.xaml</DependentUpon>
     </Compile>
@@ -145,7 +148,7 @@
     <Compile Include="Utility\LadderTier.cs" />
     <Compile Include="Utility\LadderUtil.cs" />
     <Compile Include="Utility\LINQQueries.cs" />
-    <Compile Include="Utility\MatchResult.cs" />
+    <Compile Include="Utility\MatchPlayed.cs" />
     <Compile Include="Utility\MOCKFileHandler.cs" />
     <Compile Include="Utility\ModalDisplay.cs" />
     <Compile Include="Utility\Player.cs" />
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ProjectorDisplay\ProjectorStandby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tabs\LadderTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

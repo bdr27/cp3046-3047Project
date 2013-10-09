@@ -25,8 +25,8 @@ namespace LeaderBoardApp.Utility
         Team GetTeam(int teamID);
         #endregion
         #region Results
-        Dictionary<int, MatchResult> GetMatchResults();
-        void AddMatchResult(MatchResult match);
+        Dictionary<int, MatchPlayed> GetMatchResults();
+        void AddMatchResult(MatchPlayed match);
         #endregion
 
     }

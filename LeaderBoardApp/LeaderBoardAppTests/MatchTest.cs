@@ -11,7 +11,7 @@ namespace LeaderBoardAppTests
         [TestMethod]
         public void MatchStringTest()
         {
-            var match = new MatchResult();
+            var match = new MatchPlayed();
             match.SetTeamAID(1);
             match.SetTeamBID(2);
             var scoreTeamA = new Score();
@@ -24,7 +24,7 @@ namespace LeaderBoardAppTests
         [TestMethod]
         public void MatchWinnerTests()
         {
-            var match = new MatchResult();
+            var match = new MatchPlayed();
             match.SetTeamAID(1);
             match.SetTeamBID(2);
             var scoreTeamA = new Score();

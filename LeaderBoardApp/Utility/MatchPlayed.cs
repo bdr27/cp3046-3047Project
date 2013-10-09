@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaderBoardApp.Utility
 {
-    public class MatchResult
+    public class MatchPlayed
     {
         int matchID;
         Score teamAScore;
@@ -14,11 +14,24 @@ namespace LeaderBoardApp.Utility
         int teamAID;
         int teamBID;
         bool played;
+        bool dummyGame;
 
-        public MatchResult()
+        public MatchPlayed()
         {
             played = false;
         }
+
+        public void SetDummyGame(bool dummyGame)
+        {
+            this.dummyGame = dummyGame;
+            played = true;
+        }
+
+        public bool GetDummyGame()
+        {
+            return dummyGame;
+        }
+
         public bool GetPlayed()
         {
             return played;
@@ -54,9 +67,9 @@ namespace LeaderBoardApp.Utility
             teamBScore = score;
         }
 
-        public MatchResult Clone()
+        public MatchPlayed Clone()
         {
-            var mr = new MatchResult();
+            var mr = new MatchPlayed();
             mr.SetMatchID(matchID);
             mr.SetTeamAID(teamAID);
             mr.SetTeamAScore(teamAScore);
@@ -68,6 +81,10 @@ namespace LeaderBoardApp.Utility
 
         public int GetWinner()
         {
+            if (dummyGame)
+            {
+                return teamAID;
+            }
             //Draw
             var winner = -1;
             if (teamAScore.GetScore() > teamBScore.GetScore())

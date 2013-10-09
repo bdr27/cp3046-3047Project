@@ -25,6 +25,7 @@
             </TabItem>
             <TabItem Header="Ladder">
                 <Grid>
+                    <local:LadderTab x:Name="ladderView" Visibility="Visible" />
                 </Grid>
             </TabItem>
             <TabItem Header="Standby Message">

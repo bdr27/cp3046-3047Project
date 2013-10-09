@@ -36,6 +36,7 @@ namespace LeaderBoardApp
         public const int DEFAULT_SEC = 0;
         private int teamAID;
         private int teamBID;
+        private Ladder ladder;
 
         public App()
             : base()
@@ -93,6 +94,7 @@ namespace LeaderBoardApp
             WireLiveMatch();
             WireStandByMessage();
             WireViewTabHandlers();
+            WireLadderTabHanders();
         }
 
         #endregion
@@ -544,6 +546,29 @@ namespace LeaderBoardApp
             log.ButtonPress("View Player");
             var viewPlayer = new PlayerSelectView(fileHandler);
             ModalDisplay.ShowModal(viewPlayer, mainWindow);
+        }
+        #endregion
+
+        #region LadderTab
+        private void WireLadderTabHanders()
+        {
+            var ladder = mainWindow.ladderView;
+            ladder.AddLadderGenerateHandler(HandleBtnLadderGenerate_Click);
+        }
+
+        private void HandleBtnLadderGenerate_Click(object sender, RoutedEventArgs e)
+        {
+            var teams = fileHandler.GetTeams().Values;
+            var teamIDs = new List<int>();
+            foreach (var team in teams)
+            {
+                teamIDs.Add(team.GetTeamID());
+            }
+            ladder = new Ladder(teamIDs);
+            ladder.GenerateLadder();
+            var matches = ladder.GetMatches();
+            var ladderTab = mainWindow.ladderView;
+            ladderTab.SetMatches(matches);
         }
         #endregion
     }
