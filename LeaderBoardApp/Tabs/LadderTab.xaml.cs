@@ -54,11 +54,11 @@ namespace LeaderBoardApp.Tabs
 
         public MatchPlayed GetTeamsSelectedTeam()
         {
-            var mr = new MatchPlayed();
             if (lvLadder.SelectedValue != null)
             {
                 var id = (int)lvLadder.SelectedValue;
                 var game = matches[id];
+                game.SetMatchID(id);
                 if (game != null)
                 {
                     return game;

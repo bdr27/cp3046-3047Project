@@ -199,8 +199,10 @@ namespace LeaderBoardApp.Tabs
 
         public void EnableTimeInput()
         {
-            TbMinutes.IsEnabled = true;
-            TbSeconds.IsEnabled = true;
+            Dispatcher.Invoke(() =>
+            TbMinutes.IsEnabled = true);
+            Dispatcher.Invoke(() =>
+            TbSeconds.IsEnabled = true);
         }
 
         public bool ValidTime()

@@ -13,6 +13,7 @@ namespace LeaderBoardApp
     public partial class MainWindow : Window, ScoreDisplay
     {
         private int liveMatchTabIndex = 2;
+        private int ladderTabIndex = 3;
         public MainWindow()
         {
             InitializeComponent();
@@ -133,6 +134,11 @@ namespace LeaderBoardApp
         public void ChangeLiveMatch()
         {
             MainWindowTabControl.SelectedIndex = liveMatchTabIndex;
+        }
+
+        public void ChangeLadder()
+        {
+            MainWindowTabControl.SelectedIndex = ladderTabIndex;
         }
     }
 }

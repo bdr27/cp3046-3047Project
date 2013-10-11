@@ -364,9 +364,27 @@ namespace LeaderBoardApp
                 var mr = game.GetMatchResult(teamAID, teamBID);
                 log.ButtonPress("End Game");
                 liveMatch.NoMatchInProgress();
+                if (liveMatch.GetMatchType().Equals(MatchType.Ladder))
+                {
+                    mainWindow.ChangeLadder();
+                    /*
+                    var teamA = liveMatch.GetTeamA();
+                    var teamB = liveMatch.GetTeamB();
+                    var scoreA = GetScores(game.GetTeamAFlag(), game.GetTeamATag());
+                    var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());*/
+                    //ladder.SetMatch(matchID, matchPlayed);
+                }
                 gameState = GameState.WAITING;
                 ResetGame();
             }
+        }
+
+        private Score GetScores(int flag, int tag)
+        {
+            var score = new Score();
+            score.SetFlag(flag);
+            score.SetTag(tag);
+            return score;
         }
 
         private void HandleResetGame_Click(object sender, RoutedEventArgs e)

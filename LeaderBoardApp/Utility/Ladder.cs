@@ -28,6 +28,11 @@ namespace LeaderBoardApp.Utility
             this.teamIDs = teamIDs;
         }
 
+        public void SetMatch(int matchID, MatchPlayed matchPlayed)
+        {
+            ladderTiers[currentTier].SetMatch(ID, mr);
+        }
+
         public void GenerateLadder()
         {            
             tierCount = LadderUtil.GetTierCount(teamCount);

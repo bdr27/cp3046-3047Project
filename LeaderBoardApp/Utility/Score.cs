@@ -20,6 +20,17 @@ namespace LeaderBoardApp.Utility
             tag = 0; 
             score = 0;
         }
+        public void SetFlag(int flag)
+        {
+            this.flag = flag;
+            UpdateScore();
+        }
+
+        public void SetTag(int tag)
+        {
+            this.tag = tag;
+            UpdateScore();
+        }
 
         public int GetFlag()
         {
