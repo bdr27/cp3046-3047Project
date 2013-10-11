@@ -6,6 +6,7 @@ using LeaderBoardApp.Utility;
 using System;
 using System.Windows.Input;
 using System.Diagnostics;
+using LeaderBoardApp.Enum;
 
 namespace LeaderBoardApp.Tabs
 {
@@ -15,6 +16,9 @@ namespace LeaderBoardApp.Tabs
     public partial class LiveMatch : UserControl
     {
         IOrderedEnumerable<KeyValuePair<int, Team>> orderedTeams;
+        private MatchPlayed matchPlayed;
+        private MatchType matchType;
+
         public LiveMatch()
         {
             InitializeComponent();
@@ -208,6 +212,31 @@ namespace LeaderBoardApp.Tabs
         {
             TbMinutes.Text = "" + DEFAULT_MIN;
             TbSeconds.Text = "" + DEFAULT_SEC;
+        }
+
+        public void SetPlayed(MatchPlayed matchPlayed)
+        {
+            this.matchPlayed = matchPlayed;
+            SetTeams(matchPlayed.GetTeamAID(), matchPlayed.GetTeamAName(), cmbTeamA);
+            SetTeams(matchPlayed.GetTeamBID(), matchPlayed.GetTeamBName(), cmbTeamB);
+        }
+
+        public void SetMatchType(MatchType mt)
+        {
+            matchType = mt;
+        }
+
+        public MatchType GetMatchType()
+        {
+            return matchType;
+        }
+
+        private void SetTeams(int id, string name, ComboBox cmb)
+        {
+            var dict = new Dictionary<int, string>();
+            dict.Add(id, name);
+            cmb.ItemsSource = dict;
+            cmb.SelectedIndex = 0;
         }
     }
 }

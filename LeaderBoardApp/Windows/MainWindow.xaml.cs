@@ -12,6 +12,7 @@ namespace LeaderBoardApp
     /// </summary>
     public partial class MainWindow : Window, ScoreDisplay
     {
+        private int liveMatchTabIndex = 2;
         public MainWindow()
         {
             InitializeComponent();
@@ -128,5 +129,10 @@ namespace LeaderBoardApp
         }
 
         #endregion
+
+        public void ChangeLiveMatch()
+        {
+            MainWindowTabControl.SelectedIndex = liveMatchTabIndex;
+        }
     }
 }

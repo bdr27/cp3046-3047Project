@@ -97,9 +97,11 @@
     <Compile Include="AppLog\AL.cs" />
     <Compile Include="AppLog\ConsoleAL.cs" />
     <Compile Include="Enum\ButtonAction.cs" />
+    <Compile Include="Enum\MatchType.cs" />
     <Compile Include="Enum\ProjectorState.cs" />
     <Compile Include="Enum\SelectedTab.cs" />
     <Compile Include="Enum\GameState.cs" />
+    <Compile Include="Exceptions\NoGameSelectedException.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
     <Compile Include="ModalControl\PlayerEdit.cs" />

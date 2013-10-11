@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using LeaderBoardApp.AppLog;
 using LeaderBoardApp.Enum;
+using LeaderBoardApp.Exceptions;
 using LeaderBoardApp.ModalControl;
 using LeaderBoardApp.Tabs;
 using LeaderBoardApp.Utility;
@@ -554,11 +556,13 @@ namespace LeaderBoardApp
         {
             var ladder = mainWindow.ladderView;
             ladder.AddLadderGenerateHandler(HandleBtnLadderGenerate_Click);
+            ladder.AddLadderDoubleClick(HandleListView_DoubleClick);
         }
 
         private void HandleBtnLadderGenerate_Click(object sender, RoutedEventArgs e)
         {
             var teams = fileHandler.GetTeams().Values;
+            MatchPlayed.SetTeams(fileHandler.GetTeams());
             var teamIDs = new List<int>();
             foreach (var team in teams)
             {
@@ -570,6 +574,27 @@ namespace LeaderBoardApp
             var ladderTab = mainWindow.ladderView;
             ladderTab.SetMatches(matches);
         }
+
+        private void HandleListView_DoubleClick(object sender, RoutedEventArgs e)
+        {
+            var ladderTab = mainWindow.ladderView;
+            try
+            {
+                var matchSelected = ladderTab.GetTeamsSelectedTeam();
+                LaunchGame(matchSelected);
+            }
+            catch (NoGameSelectedException)
+            {
+                Console.WriteLine("No game selected");
+            }
+        }
         #endregion
+
+        private void LaunchGame(MatchPlayed matchPlayed)
+        {
+            var liveMatchTab = mainWindow.liveMatch;
+            mainWindow.ChangeLiveMatch();
+            liveMatchTab.SetPlayed(matchPlayed);
+        }
     }
 }

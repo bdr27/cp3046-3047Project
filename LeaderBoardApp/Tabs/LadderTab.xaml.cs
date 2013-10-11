@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using LeaderBoardApp.Exceptions;
 
 namespace LeaderBoardApp.Tabs
 {
@@ -43,6 +45,26 @@ namespace LeaderBoardApp.Tabs
         public void AddLadderGenerateHandler(RoutedEventHandler handler)
         {
             btnGenerateLadder.Click += handler;
+        }
+
+        public void AddLadderDoubleClick(MouseButtonEventHandler handler)
+        {
+            lvLadder.MouseDoubleClick += handler;
+        }
+
+        public MatchPlayed GetTeamsSelectedTeam()
+        {
+            var mr = new MatchPlayed();
+            if (lvLadder.SelectedValue != null)
+            {
+                var id = (int)lvLadder.SelectedValue;
+                var game = matches[id];
+                if (game != null)
+                {
+                    return game;
+                }
+            }
+            throw new NoGameSelectedException();
         }
     }
 }

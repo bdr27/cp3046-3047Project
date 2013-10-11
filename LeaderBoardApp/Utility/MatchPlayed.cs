@@ -8,17 +8,33 @@ namespace LeaderBoardApp.Utility
 {
     public class MatchPlayed
     {
-        int matchID;
-        Score teamAScore;
-        Score teamBScore;
-        int teamAID;
-        int teamBID;
-        bool played;
-        bool dummyGame;
+        private static Dictionary<int, Team> teams;
+        private int matchID;
+        private Score teamAScore;
+        private Score teamBScore;
+        private int teamAID;
+        private int teamBID;
+        private bool played;
+        private bool dummyGame;
 
         public MatchPlayed()
         {
             played = false;
+        }
+
+        public static void SetTeams(Dictionary<int,Team> tempTeams)
+        {
+            teams = tempTeams;
+        }
+
+        public string GetTeamAName()
+        {
+            return teams[teamAID].GetTeamName();
+        }
+
+        public string GetTeamBName()
+        {
+            return teams[teamBID].GetTeamName();
         }
 
         public void SetDummyGame(bool dummyGame)
@@ -120,7 +136,13 @@ namespace LeaderBoardApp.Utility
 
         public override string ToString()
         {
-            return String.Format("{0}: {1}, {2}: {3}", teamAID, teamAScore, teamBID, teamBScore);
+            return string.Format("{0} vs {1}", GetTeamName(teamAID), GetTeamName(teamBID));
+           // return String.Format("{0}: {1}, {2}: {3}", teamAID, teamAScore, teamBID, teamBScore);
+        }
+
+        private string GetTeamName(int teamID)
+        {
+            return teams[teamID].GetTeamName();
         }
     }
 }
