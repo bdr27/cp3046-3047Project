@@ -24,6 +24,7 @@ namespace LeaderBoardApp.Tabs
     public partial class LadderTab : UserControl
     {
         private Dictionary<int, MatchPlayed> matches;
+        private int currentMatch;
 
         public LadderTab()
         {
@@ -37,9 +38,13 @@ namespace LeaderBoardApp.Tabs
 
         private void LoadTeamsToList()
         {
+            lvLadder.Items.Clear();
             lvLadder.SelectedValuePath = "Key";
             lvLadder.DisplayMemberPath = "Value";
-            lvLadder.ItemsSource = matches;
+            foreach (var match in matches)
+            {
+                lvLadder.Items.Add(match);
+            }
         }
 
         public void AddLadderGenerateHandler(RoutedEventHandler handler)
@@ -56,15 +61,24 @@ namespace LeaderBoardApp.Tabs
         {
             if (lvLadder.SelectedValue != null)
             {
-                var id = (int)lvLadder.SelectedValue;
-                var game = matches[id];
-                game.SetMatchID(id);
+                currentMatch = (int)lvLadder.SelectedValue;
+                var game = matches[currentMatch];
+                game.SetMatchID(currentMatch);
                 if (game != null)
                 {
                     return game;
                 }
             }
             throw new NoGameSelectedException();
+        }
+
+        public void SetResult(Score scoreA, Score scoreB)
+        {
+            var game = matches[currentMatch];
+            game.SetPlayed(true);
+            game.SetTeamAScore(scoreA);
+            game.SetTeamBScore(scoreB);
+            LoadTeamsToList();
         }
     }
 }

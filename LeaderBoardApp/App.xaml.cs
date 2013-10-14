@@ -39,6 +39,7 @@ namespace LeaderBoardApp
         private int teamAID;
         private int teamBID;
         private Ladder ladder;
+        private MatchPlayed matchSelected;
 
         public App()
             : base()
@@ -366,13 +367,11 @@ namespace LeaderBoardApp
                 liveMatch.NoMatchInProgress();
                 if (liveMatch.GetMatchType().Equals(MatchType.Ladder))
                 {
-                    mainWindow.ChangeLadder();
-                    /*
-                    var teamA = liveMatch.GetTeamA();
-                    var teamB = liveMatch.GetTeamB();
                     var scoreA = GetScores(game.GetTeamAFlag(), game.GetTeamATag());
-                    var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());*/
-                    //ladder.SetMatch(matchID, matchPlayed);
+                    var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());
+                    var lv = mainWindow.ladderView;
+                    lv.SetResult(scoreA, scoreB);
+                    mainWindow.ChangeLadder(); 
                 }
                 gameState = GameState.WAITING;
                 ResetGame();
@@ -598,8 +597,11 @@ namespace LeaderBoardApp
             var ladderTab = mainWindow.ladderView;
             try
             {
-                var matchSelected = ladderTab.GetTeamsSelectedTeam();
-                LaunchGame(matchSelected);
+                matchSelected = ladderTab.GetTeamsSelectedTeam();
+                if (!matchSelected.GetPlayed())
+                {
+                    LaunchGame(matchSelected);
+                }
             }
             catch (NoGameSelectedException)
             {
@@ -610,6 +612,8 @@ namespace LeaderBoardApp
 
         private void LaunchGame(MatchPlayed matchPlayed)
         {
+
+            //Have to clear the scores
             var liveMatchTab = mainWindow.liveMatch;
             mainWindow.ChangeLiveMatch();
             liveMatchTab.SetPlayed(matchPlayed);

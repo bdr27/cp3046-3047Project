@@ -30,7 +30,7 @@ namespace LeaderBoardApp.Utility
 
         public void SetMatch(int matchID, MatchPlayed matchPlayed)
         {
-            ladderTiers[currentTier].SetMatch(ID, mr);
+            ladderTiers[currentTier].SetMatch(matchID, matchPlayed);
         }
 
         public void GenerateLadder()

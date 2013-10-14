@@ -10,6 +10,7 @@ namespace LeaderBoardApp.Utility
     {
         private static Dictionary<int, Team> teams;
         private int matchID;
+        private int tierID;
         private Score teamAScore;
         private Score teamBScore;
         private int teamAID;
@@ -25,6 +26,16 @@ namespace LeaderBoardApp.Utility
         public static void SetTeams(Dictionary<int,Team> tempTeams)
         {
             teams = tempTeams;
+        }
+
+        public void SetTierID(int tierID)
+        {
+            this.tierID = tierID;
+        }
+
+        public int GetTierID()
+        {
+            return tierID;
         }
 
         public string GetTeamAName()
@@ -136,8 +147,12 @@ namespace LeaderBoardApp.Utility
 
         public override string ToString()
         {
-            return string.Format("{0} vs {1}", GetTeamName(teamAID), GetTeamName(teamBID));
-           // return String.Format("{0}: {1}, {2}: {3}", teamAID, teamAScore, teamBID, teamBScore);
+            var message = string.Format("{0} vs {1}", GetTeamName(teamAID), GetTeamName(teamBID));
+            if (played)
+            {
+                message += string.Format(" {0}: {1}", teamAScore.GetScore(), teamBScore.GetScore());
+            }
+            return message;
         }
 
         private string GetTeamName(int teamID)
