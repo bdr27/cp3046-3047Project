@@ -28,7 +28,7 @@ namespace LeaderBoardApp.Utility
             this.teamIDs = teamIDs;
         }
 
-        public void SetMatch(int matchID, MatchPlayed matchPlayed)
+        public void SetMatch(int matchID, MatchResult matchPlayed)
         {
             ladderTiers[currentTier].SetMatch(matchID, matchPlayed);
         }
@@ -37,7 +37,10 @@ namespace LeaderBoardApp.Utility
         {            
             tierCount = LadderUtil.GetTierCount(teamCount);
             ladderTiers = new LadderTier[tierCount];
-            ladderTiers[currentTier] = new LadderTier();
+            for (int i = 0; i < tierCount; i++)
+            {
+                ladderTiers[i] = new LadderTier();
+            }
             ladderTiers[currentTier].GenerateRandomMatches(teamIDs);
         }
 
@@ -46,20 +49,27 @@ namespace LeaderBoardApp.Utility
             return currentTier;
         }
 
-        public Dictionary<int, MatchPlayed> GetMatches()
+        public Dictionary<int, MatchResult> GetMatches()
         {
             return ladderTiers[currentTier].GetAllMatches();
         }
 
-        public void MatchPlayed(int ID, MatchPlayed mr)
+        public void MatchPlayed(int ID, MatchResult mr)
         {
             mr.SetPlayed(true);
             ladderTiers[currentTier].SetMatch(ID, mr);
             var winnerID = mr.GetWinner();
-            ladderTiers[currentTier + 1].AddTeam(winnerID, ID);
-            if (ladderTiers[currentTier].AllMatchesPlayed())
+            if (winnerID != -1)
             {
-                currentTier++;
+                ladderTiers[currentTier + 1].AddTeam(winnerID, ID);
+                if (ladderTiers[currentTier].AllMatchesPlayed())
+                {
+                    currentTier++;
+                }
+            }
+            else
+            {
+                mr.SetPlayed(false);
             }
         }
 

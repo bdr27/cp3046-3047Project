@@ -23,14 +23,14 @@ namespace LeaderBoardApp.Tabs
     /// </summary>
     public partial class LadderTab : UserControl
     {
-        private Dictionary<int, MatchPlayed> matches;
+        private Dictionary<int, MatchResult> matches;
         private int currentMatch;
 
         public LadderTab()
         {
             InitializeComponent();
         }
-        public void SetMatches(Dictionary<int, MatchPlayed> matches)
+        public void SetMatches(Dictionary<int, MatchResult> matches)
         {
             this.matches = matches;
             LoadTeamsToList();
@@ -57,14 +57,14 @@ namespace LeaderBoardApp.Tabs
             lvLadder.MouseDoubleClick += handler;
         }
 
-        public MatchPlayed GetTeamsSelectedTeam()
+        public MatchResult GetTeamsSelectedTeam()
         {
             if (lvLadder.SelectedValue != null)
             {
                 currentMatch = (int)lvLadder.SelectedValue;
                 var game = matches[currentMatch];
                 game.SetMatchID(currentMatch);
-                if (game != null)
+                if (game.GetPlayed() == false)
                 {
                     return game;
                 }

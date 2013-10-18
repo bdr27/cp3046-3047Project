@@ -10,7 +10,7 @@ namespace LeaderBoardApp.Utility
         private int matchCounter;
         private Dictionary<int, Player> players;
         private Dictionary<int, Team> teams;
-        private Dictionary<int, MatchPlayed> matchResults;
+        private Dictionary<int, MatchResult> matchResults;
 
         public MOCKFileHandler()
         {
@@ -20,7 +20,7 @@ namespace LeaderBoardApp.Utility
             matchCounter = 1;
             players = new Dictionary<int, Player>();
             teams = new Dictionary<int, Team>();
-            matchResults = new Dictionary<int, MatchPlayed>();
+            matchResults = new Dictionary<int, MatchResult>();
         }
         #region FileHandler Members
 
@@ -140,12 +140,12 @@ namespace LeaderBoardApp.Utility
             return teams[teamID];
         }
 
-        public Dictionary<int, MatchPlayed> GetMatchResults()
+        public Dictionary<int, MatchResult> GetMatchResults()
         {
             return matchResults;
         }
 
-        public void AddMatchResult(MatchPlayed match)
+        public void AddMatchResult(MatchResult match)
         {
             var matchResult = match.Clone();
             matchResult.SetTeamBID(matchCounter);

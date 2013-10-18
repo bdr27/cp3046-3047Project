@@ -39,7 +39,7 @@ namespace LeaderBoardApp
         private int teamAID;
         private int teamBID;
         private Ladder ladder;
-        private MatchPlayed matchSelected;
+        private MatchResult matchSelected;
 
         public App()
             : base()
@@ -309,24 +309,27 @@ namespace LeaderBoardApp
             liveMatch.DisableGenericButton();
             Team fullTeamA;
             Team fullTeamB;
-            GameTeam teamA;
-            GameTeam teamB;
 
+            List<string> teamAPlayers = fileHandler.GetPlayersFirstName(teamAID);
+            List<string> teamBPlayers = fileHandler.GetPlayersFirstName(teamBID);
             if (liveMatch.GetMatchType().Equals(MatchType.Generic))
             {
                 fullTeamA = liveMatch.GetGenericTeamGreen();
                 fullTeamB = liveMatch.GetGenericTeamOrange();
-                teamA = new GameTeam { ID = -1, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = new List<string>() };
-                teamB = new GameTeam { ID = -2, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = new List<string>() };
+                teamAID = -1;
+                teamBID = -2;
+                teamAPlayers = new List<string>();
+                teamBPlayers = new List<string>();
             }
             else
             {
                 fullTeamA = fileHandler.GetTeam(teamAID);
                 fullTeamB = fileHandler.GetTeam(teamBID);
-                teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
-                teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
             }
-            
+
+            var teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = teamAPlayers };
+            var teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = teamBPlayers };
+           
             SetTeamsProjectorGame(teamA, teamB);
             game.NewGame();
             GetTime();
@@ -381,17 +384,24 @@ namespace LeaderBoardApp
             {
                 gameTimer.Stop();
                 var mr = game.GetMatchResult(teamAID, teamBID);
-                log.ButtonPress("End Game");
-                liveMatch.NoMatchInProgress();
+                log.ButtonPress("End Game");                
                 if (liveMatch.GetMatchType().Equals(MatchType.Ladder))
                 {
                     var scoreA = GetScores(game.GetTeamAFlag(), game.GetTeamATag());
                     var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());
-                    var lv = mainWindow.ladderView;
-                    lv.SetResult(scoreA, scoreB);
-              //      ladder.AddMatch(lv.GetMatchResult());
-                    mainWindow.ChangeLadder(); 
+                    if (scoreA.GetScore() != scoreB.GetScore())
+                    {
+                        var lv = mainWindow.ladderView;
+                        lv.SetResult(scoreA, scoreB);
+                        ladder.MatchPlayed(mr.GetMatchID(), mr);
+                        mainWindow.ChangeLadder();
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
+                liveMatch.NoMatchInProgress();
                 gameState = GameState.WAITING;
                 ResetGame();
             }
@@ -623,7 +633,7 @@ namespace LeaderBoardApp
         private void HandleBtnLadderGenerate_Click(object sender, RoutedEventArgs e)
         {
             var teams = fileHandler.GetTeams().Values;
-            MatchPlayed.SetTeams(fileHandler.GetTeams());
+            MatchResult.SetTeams(fileHandler.GetTeams());
             var teamIDs = new List<int>();
             foreach (var team in teams)
             {
@@ -655,7 +665,7 @@ namespace LeaderBoardApp
         }
         #endregion
 
-        private void LaunchGame(MatchPlayed matchPlayed)
+        private void LaunchGame(MatchResult matchPlayed)
         {
             //Have to clear the scores
             var liveMatchTab = mainWindow.liveMatch;

@@ -209,12 +209,12 @@ namespace LeaderBoardApp.Utility
         #region FileHandler Members
 
 
-        public Dictionary<int, MatchPlayed> GetMatchResults()
+        public Dictionary<int, MatchResult> GetMatchResults()
         {
             throw new NotImplementedException();
         }
 
-        public void AddMatchResult(MatchPlayed match)
+        public void AddMatchResult(MatchResult match)
         {
             throw new NotImplementedException();
         }

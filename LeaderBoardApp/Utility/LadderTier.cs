@@ -8,18 +8,18 @@ namespace LeaderBoardApp.Utility
 {
     public class LadderTier
     {
-        private Dictionary<int, MatchPlayed> matches;
+        private Dictionary<int, MatchResult> matches;
         private List<int> currentTeams;
 
         public LadderTier()
         {
-            matches = new Dictionary<int, MatchPlayed>();
+            matches = new Dictionary<int, MatchResult>();
             currentTeams = new List<int>();
         }
 
-        public Dictionary<int, MatchPlayed> GetAllMatches()
+        public Dictionary<int, MatchResult> GetAllMatches()
         {
-            var tm = new Dictionary<int, MatchPlayed>();
+            var tm = new Dictionary<int, MatchResult>();
             foreach (var match in matches)
             {
                 if (!match.Value.GetDummyGame())
@@ -30,9 +30,9 @@ namespace LeaderBoardApp.Utility
             return tm;
         }
 
-        public Dictionary<int, MatchPlayed> GetAllBreaks()
+        public Dictionary<int, MatchResult> GetAllBreaks()
         {
-            var tm = new Dictionary<int, MatchPlayed>();
+            var tm = new Dictionary<int, MatchResult>();
             foreach (var match in matches)
             {
                 if (match.Value.GetDummyGame())
@@ -48,9 +48,9 @@ namespace LeaderBoardApp.Utility
             return matches.Count;
         }
 
-        public Dictionary<int, MatchPlayed> GetAllUnplayedMatches()
+        public Dictionary<int, MatchResult> GetAllUnplayedMatches()
         {
-            var tm = new Dictionary<int, MatchPlayed>();
+            var tm = new Dictionary<int, MatchResult>();
             foreach (var match in matches)
             {
                 if (!match.Value.GetPlayed())
@@ -76,9 +76,10 @@ namespace LeaderBoardApp.Utility
                 currentTeams.Add(teamAID);
                 currentTeams.Add(teamBID);
                
-                var match = new MatchPlayed();
+                var match = new MatchResult();
                 match.SetTeamAID(teamAID);
                 match.SetTeamBID(teamBID);
+                match.SetMatchID(i);
                 matches.Add(i, match);
             }
 
@@ -87,7 +88,7 @@ namespace LeaderBoardApp.Utility
             {
                 var teamAId = GetRandomTeam(cloneTeamIDs);
                 currentTeams.Add(teamAId);
-                var match = new MatchPlayed();
+                var match = new MatchResult();
                 match.SetTeamAID(teamAId);
                 match.SetDummyGame(true);
                 matches.Add(i, match);
@@ -132,7 +133,7 @@ namespace LeaderBoardApp.Utility
             return matches[number].GetWinner();
         }
 
-        public void SetMatch(int ID, MatchPlayed mr)
+        public void SetMatch(int ID, MatchResult mr)
         {
             mr.SetPlayed(true);
             matches[ID] = mr.Clone();
@@ -143,7 +144,7 @@ namespace LeaderBoardApp.Utility
             var nextRound = matchID / 2;
             if (!matches.ContainsKey(nextRound))
             {
-                matches.Add(nextRound, new MatchPlayed());
+                matches.Add(nextRound, new MatchResult());
             }
             if (IsOdd(matchID))
             {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeaderBoardApp.Utility
 {
-    public class MatchPlayed
+    public class MatchResult
     {
         private static Dictionary<int, Team> teams;
         private int matchID;
@@ -18,7 +18,7 @@ namespace LeaderBoardApp.Utility
         private bool played;
         private bool dummyGame;
 
-        public MatchPlayed()
+        public MatchResult()
         {
             played = false;
         }
@@ -26,6 +26,11 @@ namespace LeaderBoardApp.Utility
         public static void SetTeams(Dictionary<int,Team> tempTeams)
         {
             teams = tempTeams;
+        }
+
+        public int GetMatchID()
+        {
+            return matchID;
         }
 
         public void SetTierID(int tierID)
@@ -94,9 +99,9 @@ namespace LeaderBoardApp.Utility
             teamBScore = score;
         }
 
-        public MatchPlayed Clone()
+        public MatchResult Clone()
         {
-            var mr = new MatchPlayed();
+            var mr = new MatchResult();
             mr.SetMatchID(matchID);
             mr.SetTeamAID(teamAID);
             mr.SetTeamAScore(teamAScore);

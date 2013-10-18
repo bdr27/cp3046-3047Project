@@ -16,13 +16,15 @@ namespace LeaderBoardApp.Tabs
     public partial class LiveMatch : UserControl
     {
         IOrderedEnumerable<KeyValuePair<int, Team>> orderedTeams;
-        private MatchPlayed matchPlayed;
+        private MatchResult matchPlayed;
         private MatchType matchType;
 
         public LiveMatch()
         {
             matchType = MatchType.General;
             InitializeComponent();
+            HelpComboDisplay(cmbTeamA);
+            HelpComboDisplay(cmbTeamB);
         }
 
         private void HelpComboDisplay(ComboBox cmb)
@@ -36,8 +38,6 @@ namespace LeaderBoardApp.Tabs
             btnGenericMatch.Content = "Generic Match";
             cmbTeamA.IsEnabled = true;
             cmbTeamB.IsEnabled = true;
-            HelpComboDisplay(cmbTeamA);
-            HelpComboDisplay(cmbTeamB);
             orderedTeams = LINQQueries.OrderTeams(teams);
             cmbTeamA.ItemsSource = orderedTeams;
             cmbTeamB.ItemsSource = orderedTeams;
@@ -225,7 +225,7 @@ namespace LeaderBoardApp.Tabs
             TbSeconds.Text = "" + DEFAULT_SEC;
         }
 
-        public void SetPlayed(MatchPlayed matchPlayed)
+        public void SetPlayed(MatchResult matchPlayed)
         {
             this.matchPlayed = matchPlayed;
             SetTeams(matchPlayed.GetTeamAID(), matchPlayed.GetTeamAName(), cmbTeamA);

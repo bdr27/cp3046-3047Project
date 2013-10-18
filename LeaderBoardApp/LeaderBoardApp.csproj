@@ -101,6 +101,7 @@
     <Compile Include="Enum\ProjectorState.cs" />
     <Compile Include="Enum\SelectedTab.cs" />
     <Compile Include="Enum\GameState.cs" />
+    <Compile Include="Exceptions\DrawGameException.cs" />
     <Compile Include="Exceptions\NoGameSelectedException.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
@@ -150,7 +151,7 @@
     <Compile Include="Utility\LadderTier.cs" />
     <Compile Include="Utility\LadderUtil.cs" />
     <Compile Include="Utility\LINQQueries.cs" />
-    <Compile Include="Utility\MatchPlayed.cs" />
+    <Compile Include="Utility\MatchResult.cs" />
     <Compile Include="Utility\MOCKFileHandler.cs" />
     <Compile Include="Utility\ModalDisplay.cs" />
     <Compile Include="Utility\Player.cs" />

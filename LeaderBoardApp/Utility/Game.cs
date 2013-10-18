@@ -135,9 +135,9 @@ namespace LeaderBoardApp.Utility
             return timerFinished;
         }
 
-        public MatchPlayed GetMatchResult(int teamAID, int teamBID)
+        public MatchResult GetMatchResult(int teamAID, int teamBID)
         {
-            var mr = new MatchPlayed();
+            var mr = new MatchResult();
             mr.SetTeamAID(teamAID);
             mr.SetTeamBID(teamBID);
             mr.SetTeamAScore(teamAScore);
