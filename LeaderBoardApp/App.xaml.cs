@@ -149,25 +149,27 @@ namespace LeaderBoardApp
         private void HandleSideMenuControlStandBy_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Stand By");
-            projectorState = ProjectorState.STAND_BY;
-            mainWindow.ChangeDisplay(projectorState);
-            projectionWindow.ChangeDisplay(projectorState);
+            changeProjector(ProjectorState.STAND_BY);
         }
 
         private void HandleSideMenuControlLadder_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Ladder");
-            projectorState = ProjectorState.LADDER;
-            mainWindow.ChangeDisplay(projectorState);
-            projectionWindow.ChangeDisplay(projectorState);
+            changeProjector(ProjectorState.LADDER);
+
         }
 
         private void HandleSideMenuControlLiveMatch_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Live Match");
-            projectorState = ProjectorState.LIVE_MATCH;
-            mainWindow.ChangeDisplay(projectorState);
-            projectionWindow.ChangeDisplay(projectorState);
+            changeProjector(ProjectorState.LIVE_MATCH);
+        }
+
+        private void changeProjector(ProjectorState ps)
+        {
+            projectorState = ps;
+            mainWindow.ChangeDisplay(ps);
+            projectionWindow.ChangeDisplay(ps);
         }
         #endregion
 
@@ -301,6 +303,8 @@ namespace LeaderBoardApp
 
         private void StartGame()
         {
+            changeProjector(ProjectorState.LIVE_MATCH);
+
             teamAID = liveMatch.GetTeamA();
             teamBID = liveMatch.GetTeamB();
 
@@ -462,6 +466,7 @@ namespace LeaderBoardApp
                         break;
                     case GameState.PAUSED:
                         ResumeGame();
+                        UpdateTime();
                         gameState = GameState.IN_PROGRESS;
                         break;
                     case GameState.IN_PROGRESS:
@@ -492,6 +497,7 @@ namespace LeaderBoardApp
             liveMatch.EnableTimeInput();
             liveMatch.SetStartPause(gameState);
             projectionWindow.ResetScoreBoard(DEFAULT_MIN, DEFAULT_SEC);
+            mainWindow.projectorLiveMatch.ResetScoreBoard(DEFAULT_MIN, DEFAULT_SEC);
             liveMatch.ResetLiveMatch();
             liveMatch.EnableGenericButton();
         }
