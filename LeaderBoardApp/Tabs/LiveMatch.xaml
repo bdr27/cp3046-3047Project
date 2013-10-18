@@ -76,6 +76,7 @@
                 <RowDefinition Height="3*"/>
             </Grid.RowDefinitions>
 
+            <Button x:Name="btnGenericMatch" Grid.Row="0" Content="Generic Match" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100" Height="25" Margin="0,0,10,5"/>
 
             <WrapPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                 <Label Content="Timer" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="17"/>
@@ -85,12 +86,13 @@
                 <Label Content="seconds" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.212,0.346"/>
                 <Button Margin="10,0,0,0" x:Name="btnStartPause" Content="Start" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25"/>
                 <Button Margin="10,0,0,0" x:Name="btnReset" Content="Reset" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25" IsEnabled="True"/>
+
             </WrapPanel>
 
             <WrapPanel Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label x:Name="lblEndOfMatch" Content="End match and save results" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                 <Button Margin="10,0,0,0" x:Name="btnEndMatch" Content="End match" HorizontalAlignment="Left" VerticalContentAlignment="Center" Width="72" Height="25"/>
-            </WrapPanel>
+            </WrapPanel>            
         </Grid>
     </Grid>
 </UserControl>

@@ -80,5 +80,10 @@ namespace LeaderBoardApp.Tabs
             game.SetTeamBScore(scoreB);
             LoadTeamsToList();
         }
+
+        public object GetMatchResult()
+        {
+            return matches[currentMatch];
+        }
     }
 }

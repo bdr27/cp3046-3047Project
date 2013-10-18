@@ -21,9 +21,8 @@ namespace LeaderBoardApp.Tabs
 
         public LiveMatch()
         {
+            matchType = MatchType.General;
             InitializeComponent();
-            HelpComboDisplay(cmbTeamA);
-            HelpComboDisplay(cmbTeamB);
         }
 
         private void HelpComboDisplay(ComboBox cmb)
@@ -34,6 +33,11 @@ namespace LeaderBoardApp.Tabs
 
         public void LoadTeamComboBox(Dictionary<int, Team> teams)
         {
+            btnGenericMatch.Content = "Generic Match";
+            cmbTeamA.IsEnabled = true;
+            cmbTeamB.IsEnabled = true;
+            HelpComboDisplay(cmbTeamA);
+            HelpComboDisplay(cmbTeamB);
             orderedTeams = LINQQueries.OrderTeams(teams);
             cmbTeamA.ItemsSource = orderedTeams;
             cmbTeamB.ItemsSource = orderedTeams;
@@ -94,6 +98,11 @@ namespace LeaderBoardApp.Tabs
         public void AddEndGameHandler(RoutedEventHandler handler)
         {
             btnEndMatch.Click += handler;
+        }
+
+        public void AddGenericMatchHandler(RoutedEventHandler handler)
+        {
+            btnGenericMatch.Click += handler;
         }
 
         public void MatchInProgress()
@@ -239,6 +248,61 @@ namespace LeaderBoardApp.Tabs
             dict.Add(id, name);
             cmb.ItemsSource = dict;
             cmb.SelectedIndex = 0;
+        }
+
+        public void ResetLiveMatch()
+        {
+            matchType = MatchType.General;
+            ResetLabel("Flag: ", lblFlagA);
+            ResetLabel("Flag: ", lblFlagB);
+            ResetLabel("Score: ", lblScoreA);
+            ResetLabel("Score: ", lblScoreB);
+            ResetLabel("Tag: ", lblTagA);
+            ResetLabel("Tag: ", lblTagB);
+        }
+
+        public void ResetLabel(string message, Label lb)
+        {
+            Dispatcher.Invoke(() => lb.Content = (message + "0"));
+        }
+
+        public void GenericMatch()
+        {
+            btnGenericMatch.Content = "General Match";
+            var teams = new Dictionary<int, Team>();
+            teams.Add(1, GetGenericTeamGreen());
+            teams.Add(2, GetGenericTeamOrange());
+            LoadComboBox(cmbTeamA, teams);
+            LoadComboBox(cmbTeamB, teams);
+            cmbTeamA.SelectedIndex = 0;
+            cmbTeamB.SelectedIndex = 1;
+            cmbTeamA.IsEnabled = false;
+            cmbTeamB.IsEnabled = false;
+        }
+
+        private void LoadComboBox(ComboBox cb, Dictionary<int, Team> teams)
+        {
+            cb.ItemsSource = teams;
+        }
+
+        public void EnableGenericButton()
+        {
+            btnGenericMatch.Visibility = Visibility.Visible;
+        }
+
+        public void DisableGenericButton()
+        {
+            btnGenericMatch.Visibility = Visibility.Hidden;
+        }
+
+        public Team GetGenericTeamGreen()
+        {
+            return new Team("Green Team", "", new List<int>());
+        }
+
+        public Team GetGenericTeamOrange()
+        {
+            return new Team("Orange Team", "", new List<int>());
         }
     }
 }

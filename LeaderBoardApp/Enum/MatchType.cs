@@ -8,6 +8,6 @@ namespace LeaderBoardApp.Enum
 {
     public enum MatchType
     {
-        Ladder, General
+        Ladder, General, Generic
     }
 }

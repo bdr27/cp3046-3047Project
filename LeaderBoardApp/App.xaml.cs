@@ -117,16 +117,23 @@ namespace LeaderBoardApp
                 var liveMatch = mainWindow.liveMatch;
                 log.TabSelect(selectedTab.ToString());
                 switch (selectedTab)
-                {
+                {       
                     case SelectedTab.LIVE_MATCH:
-                        if (gameState.Equals(GameState.WAITING) || gameState.Equals(GameState.FINISHED))
+                      if (gameState.Equals(GameState.WAITING) || gameState.Equals(GameState.FINISHED))
                         {
-                            liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+                            if (liveMatch.GetMatchType().Equals(MatchType.General))
+                            {
+                                liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+                                liveMatch.EnableGenericButton();
+                            }
+                            else if (liveMatch.GetMatchType().Equals(MatchType.Ladder)) 
+                            {
+                                liveMatch.DisableGenericButton();
+                            }
                         }
                         break;
                 }
-            }
-            
+            }            
         }
         #endregion
 
@@ -272,6 +279,7 @@ namespace LeaderBoardApp
             liveMatch.AddTeamBFlagPlusHandler(HandleTeamBFlagPlus_Click);
             liveMatch.AddTeamBTagMinusHandler(HandleTeamBTagMinus_Click);
             liveMatch.AddTeamBTagPlusHandler(HandleTeamBTagPlus_Click);
+            liveMatch.AddGenericMatchHandler(HandleGenericMatch_Click);
         }
 
         private void GameTimer_Tick(object sender, ElapsedEventArgs e)
@@ -288,14 +296,7 @@ namespace LeaderBoardApp
 
         private void GameOver()
         {
-            if (game.GetTeamAScore() == game.GetTeamBScore())
-            {
-                PauseGame();
-            }
-            else
-            {
-                gameTimer.Stop();
-            }
+            PauseGame();
         }
 
         private void StartGame()
@@ -303,20 +304,37 @@ namespace LeaderBoardApp
             teamAID = liveMatch.GetTeamA();
             teamBID = liveMatch.GetTeamB();
 
-                liveMatch.MatchInProgress();
-                liveMatch.DisableTimeInput();
-                var fullTeamA = fileHandler.GetTeam(teamAID);
-                var fullTeamB = fileHandler.GetTeam(teamBID);
-                var teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
-                var teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
-                SetTeamsProjectorGame(teamA, teamB);
-                game.NewGame();
-                GetTime();
-                gameTimer.Start();
+            liveMatch.MatchInProgress();
+            liveMatch.DisableTimeInput();
+            liveMatch.DisableGenericButton();
+            Team fullTeamA;
+            Team fullTeamB;
+            GameTeam teamA;
+            GameTeam teamB;
 
-                UpdateTime();
-                log.GameTeam(teamA, "A");
-                log.GameTeam(teamB, "B");
+            if (liveMatch.GetMatchType().Equals(MatchType.Generic))
+            {
+                fullTeamA = liveMatch.GetGenericTeamGreen();
+                fullTeamB = liveMatch.GetGenericTeamOrange();
+                teamA = new GameTeam { ID = -1, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = new List<string>() };
+                teamB = new GameTeam { ID = -2, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = new List<string>() };
+            }
+            else
+            {
+                fullTeamA = fileHandler.GetTeam(teamAID);
+                fullTeamB = fileHandler.GetTeam(teamBID);
+                teamA = new GameTeam { ID = teamAID, teamContact = fullTeamA.GetTeamContact(), teamName = fullTeamA.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamAID) };
+                teamB = new GameTeam { ID = teamBID, teamContact = fullTeamB.GetTeamContact(), teamName = fullTeamB.GetTeamName(), teamPlayers = fileHandler.GetPlayersFirstName(teamBID) };
+            }
+            
+            SetTeamsProjectorGame(teamA, teamB);
+            game.NewGame();
+            GetTime();
+            gameTimer.Start();
+
+            UpdateTime();
+            log.GameTeam(teamA, "A");
+            log.GameTeam(teamB, "B");
             log.TeamAID(teamAID);
             log.TeamBID(teamBID);
         }
@@ -371,6 +389,7 @@ namespace LeaderBoardApp
                     var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());
                     var lv = mainWindow.ladderView;
                     lv.SetResult(scoreA, scoreB);
+              //      ladder.AddMatch(lv.GetMatchResult());
                     mainWindow.ChangeLadder(); 
                 }
                 gameState = GameState.WAITING;
@@ -384,6 +403,25 @@ namespace LeaderBoardApp
             score.SetFlag(flag);
             score.SetTag(tag);
             return score;
+        }
+
+        private void HandleGenericMatch_Click(object sender, RoutedEventArgs e)
+        {
+            GenericMatch();
+        }
+
+        private void GenericMatch()
+        {
+            if (!liveMatch.GetMatchType().Equals(MatchType.Generic))
+            {
+                liveMatch.SetMatchType(MatchType.Generic);
+                liveMatch.GenericMatch();
+            }
+            else
+            {
+                liveMatch.SetMatchType(MatchType.General);
+                liveMatch.LoadTeamComboBox(fileHandler.GetTeams());
+            }
         }
 
         private void HandleResetGame_Click(object sender, RoutedEventArgs e)
@@ -444,6 +482,8 @@ namespace LeaderBoardApp
             liveMatch.EnableTimeInput();
             liveMatch.SetStartPause(gameState);
             projectionWindow.ResetScoreBoard(DEFAULT_MIN, DEFAULT_SEC);
+            liveMatch.ResetLiveMatch();
+            liveMatch.EnableGenericButton();
         }
 
         private void ResumeGame()
@@ -455,6 +495,8 @@ namespace LeaderBoardApp
 
         private void PauseGame()
         {
+            gameState = GameState.PAUSED;
+            liveMatch.SetStartPause(gameState);
             liveMatch.EnableTimeInput();
             gameTimer.Stop();            
         }
@@ -469,6 +511,7 @@ namespace LeaderBoardApp
         private void HandleTeamAFlagPlus_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Team A Flag Plus");
+            PauseGame();
             game.TeamAaddFlag();
             UpdateScores();
         }
@@ -497,6 +540,7 @@ namespace LeaderBoardApp
         private void HandleTeamBFlagPlus_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Team B Flag Plus");
+            PauseGame();
             game.TeamBaddFlag();
             UpdateScores();
         }
@@ -600,6 +644,7 @@ namespace LeaderBoardApp
                 matchSelected = ladderTab.GetTeamsSelectedTeam();
                 if (!matchSelected.GetPlayed())
                 {
+                    liveMatch.SetMatchType(MatchType.Ladder);
                     LaunchGame(matchSelected);
                 }
             }
@@ -612,7 +657,6 @@ namespace LeaderBoardApp
 
         private void LaunchGame(MatchPlayed matchPlayed)
         {
-
             //Have to clear the scores
             var liveMatchTab = mainWindow.liveMatch;
             mainWindow.ChangeLiveMatch();
