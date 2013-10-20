@@ -103,6 +103,7 @@
     <Compile Include="Enum\GameState.cs" />
     <Compile Include="Exceptions\DrawGameException.cs" />
     <Compile Include="Exceptions\NoGameSelectedException.cs" />
+    <Compile Include="Exceptions\TournamentWinnerException.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
     <Compile Include="ModalControl\PlayerEdit.cs" />

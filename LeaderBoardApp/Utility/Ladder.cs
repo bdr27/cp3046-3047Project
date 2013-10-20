@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeaderBoardApp.Exceptions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ namespace LeaderBoardApp.Utility
         private int teamCount;
         private int tierCount;
         private int currentTier;
+        private int tournamentWinnerID = -1;
         
         public Ladder(List<int> teamIDs)
         {
@@ -53,6 +55,10 @@ namespace LeaderBoardApp.Utility
         {
             return ladderTiers[currentTier].GetAllMatches();
         }
+        public int GetTournamentWinnerID()
+        {
+            return tournamentWinnerID;
+        }
 
         public void MatchPlayed(int ID, MatchResult mr)
         {
@@ -61,15 +67,32 @@ namespace LeaderBoardApp.Utility
             var winnerID = mr.GetWinner();
             if (winnerID != -1)
             {
-                ladderTiers[currentTier + 1].AddTeam(winnerID, ID);
-                if (ladderTiers[currentTier].AllMatchesPlayed())
+                if (currentTier + 1 != tierCount)
                 {
-                    currentTier++;
+                    ladderTiers[currentTier + 1].AddTeam(winnerID, ID);
+                    if (ladderTiers[currentTier].AllMatchesPlayed())
+                    {
+                        var breakTeams = ladderTiers[currentTier++].GetAllBreaks();
+                        AddBreakTeams(breakTeams);
+                    }
+                }
+                else
+                {
+                    this.tournamentWinnerID = winnerID;
+                    throw new TournamentWinnerException(winnerID);
                 }
             }
             else
             {
                 mr.SetPlayed(false);
+            }
+        }
+
+        private void AddBreakTeams(Dictionary<int, MatchResult> breakTeams)
+        {
+            foreach (var mr in breakTeams)
+            {
+                ladderTiers[currentTier].AddTeam(mr.Value.GetWinner(), mr.Key);
             }
         }
 
@@ -86,6 +109,23 @@ namespace LeaderBoardApp.Utility
         public int GetTeamCount()
         {
             return teamCount;
+        }
+
+        public Dictionary<int, MatchResult> GetAllMatches()
+        {
+            var matches = new Dictionary<int, MatchResult>();
+            var totalMatches = 0;
+            for (int i = 0; i <= currentTier; i++)
+            {
+                foreach (var match in ladderTiers[i].GetAllMatches())
+                {
+                    if (!match.Value.GetDummyGame())
+                    {
+                        matches.Add(totalMatches++, match.Value);
+                    }
+                }
+            }
+            return matches;
         }
     }
 }

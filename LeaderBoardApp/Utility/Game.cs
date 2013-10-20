@@ -144,5 +144,12 @@ namespace LeaderBoardApp.Utility
             mr.SetTeamBScore(teamBScore);
             return mr;
         }
+
+        public MatchResult GetMatchResult(int teamAID, int teamBID, int matchID)
+        {
+            var mr = GetMatchResult(teamAID, teamBID);
+            mr.SetMatchID(matchID);
+            return mr;
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace LeaderBoardApp.Tabs
         {
             InitializeComponent();
         }
+
         public void SetMatches(Dictionary<int, MatchResult> matches)
         {
             this.matches = matches;
@@ -63,7 +64,6 @@ namespace LeaderBoardApp.Tabs
             {
                 currentMatch = (int)lvLadder.SelectedValue;
                 var game = matches[currentMatch];
-                game.SetMatchID(currentMatch);
                 if (game.GetPlayed() == false)
                 {
                     return game;

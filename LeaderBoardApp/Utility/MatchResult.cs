@@ -108,6 +108,10 @@ namespace LeaderBoardApp.Utility
             mr.SetTeamBID(teamBID);
             mr.SetTeamBScore(teamBScore);
             mr.SetPlayed(played);
+            if (dummyGame)
+            {
+                mr.SetDummyGame(dummyGame);
+            }
             return mr;
         }
 

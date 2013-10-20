@@ -145,6 +145,7 @@ namespace LeaderBoardApp.Utility
             if (!matches.ContainsKey(nextRound))
             {
                 matches.Add(nextRound, new MatchResult());
+                matches[nextRound].SetMatchID(nextRound);
             }
             if (IsOdd(matchID))
             {

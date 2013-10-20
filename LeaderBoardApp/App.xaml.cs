@@ -40,6 +40,7 @@ namespace LeaderBoardApp
         private int teamBID;
         private Ladder ladder;
         private MatchResult matchSelected;
+        private int currentMatchID;
 
         public App()
             : base()
@@ -387,17 +388,26 @@ namespace LeaderBoardApp
             if (box == MessageBoxResult.Yes)
             {
                 gameTimer.Stop();
-                var mr = game.GetMatchResult(teamAID, teamBID);
-                log.ButtonPress("End Game");                
+                MatchResult mr;
+                log.ButtonPress("End Game");
                 if (liveMatch.GetMatchType().Equals(MatchType.Ladder))
                 {
+                    mr = game.GetMatchResult(teamAID, teamBID, currentMatchID);
                     var scoreA = GetScores(game.GetTeamAFlag(), game.GetTeamATag());
                     var scoreB = GetScores(game.GetTeamBFlag(), game.GetTeamBTag());
                     if (scoreA.GetScore() != scoreB.GetScore())
                     {
                         var lv = mainWindow.ladderView;
                         lv.SetResult(scoreA, scoreB);
-                        ladder.MatchPlayed(mr.GetMatchID(), mr);
+                        try
+                        {
+                            ladder.MatchPlayed(mr.GetMatchID(), mr);
+                        }
+                        catch (TournamentWinnerException)
+                        {
+                            ShowWinner(ladder.GetTournamentWinnerID());
+                        }
+                        lv.SetMatches(ladder.GetAllMatches());
                         mainWindow.ChangeLadder();
                     }
                     else
@@ -405,10 +415,21 @@ namespace LeaderBoardApp
                         return;
                     }
                 }
+                else
+                {
+                    mr = game.GetMatchResult(teamAID, teamBID);
+                }
                 liveMatch.NoMatchInProgress();
                 gameState = GameState.WAITING;
                 ResetGame();
             }
+        }
+
+        private void ShowWinner(int winner)
+        {
+            var team = fileHandler.GetTeam(winner);
+            var message = string.Format("Congratulations {0} you are the winners of this tournament", team.GetTeamName());
+            var winnerBox = MessageBox.Show(message);
         }
 
         private Score GetScores(int flag, int tag)
@@ -660,6 +681,7 @@ namespace LeaderBoardApp
                 matchSelected = ladderTab.GetTeamsSelectedTeam();
                 if (!matchSelected.GetPlayed())
                 {
+                    currentMatchID = matchSelected.GetMatchID();
                     liveMatch.SetMatchType(MatchType.Ladder);
                     LaunchGame(matchSelected);
                 }
