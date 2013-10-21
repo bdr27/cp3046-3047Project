@@ -147,22 +147,34 @@ namespace LeaderBoardApp
             mainWindow.AddSideMenuControlStandBy(HandleSideMenuControlStandBy_Click);
         }
 
+        private void CheckWindow()
+        {
+            if (!projectionWindow.IsWindowVisible())
+            {
+                projectionWindow = new ProjectionWindow();
+                LoadDisplays();
+                projectionWindow.Show();
+            }
+        }
+
         private void HandleSideMenuControlStandBy_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Stand By");
+            CheckWindow();
             changeProjector(ProjectorState.STAND_BY);
         }
 
         private void HandleSideMenuControlLadder_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Ladder");
+            CheckWindow();
             changeProjector(ProjectorState.LADDER);
-
         }
 
         private void HandleSideMenuControlLiveMatch_Click(object sender, RoutedEventArgs e)
         {
             log.ButtonPress("Live Match");
+            CheckWindow();
             changeProjector(ProjectorState.LIVE_MATCH);
         }
 

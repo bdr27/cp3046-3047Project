@@ -26,5 +26,10 @@ namespace LeaderBoardApp.Windows
         {
             projectorLiveMatch.ResetScoreBoard(min, sec);
         }
+
+        public bool IsWindowVisible()
+        {
+            return this.IsVisible;
+        }
     }
 }
