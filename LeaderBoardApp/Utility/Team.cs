@@ -5,6 +5,7 @@ namespace LeaderBoardApp.Utility
     public class Team
     {
         private int teamID;
+        private bool deletedTeam = false;
         private string teamName;
         private string teamContact;
         private List<int> playerIDs;
@@ -14,6 +15,25 @@ namespace LeaderBoardApp.Utility
             this.teamName = teamName;
             this.teamContact = teamContact;
             this.playerIDs = playerIDs;
+        }
+
+        public Team(string teamName, int teamID)
+        {
+            this.teamName = teamName;
+            this.teamID = teamID;
+            DeleteTeam();
+        }
+
+        public bool GetDeletedTeam()
+        {
+            return deletedTeam;
+        }
+
+        public void DeleteTeam()
+        {
+            deletedTeam = true;
+            teamContact = "";
+            playerIDs = new List<int>();
         }
 
         public void SetPlayerIDs(List<int> playerIDs)

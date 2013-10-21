@@ -103,11 +103,16 @@ namespace LeaderBoardApp.Utility
 
         public Dictionary<int, Team> GetTeams()
         {
+            var validTeams = new Dictionary<int, Team>();
             foreach (var team in teams)
             {
-                team.Value.SetTeamID(team.Key);
+                if (!team.Value.GetDeletedTeam())
+                {
+                    team.Value.SetTeamID(team.Key);
+                    validTeams.Add(team.Key, team.Value);
+                }
             }
-            return teams;
+            return validTeams;
         }
 
         public void InsertTeam(Team team)
@@ -122,7 +127,8 @@ namespace LeaderBoardApp.Utility
 
         public void DeleteTeam(int teamID)
         {
-            teams.Remove(teamID);
+            teams[teamID].DeleteTeam();
+            //teams.Remove(teamID);
         }
 
         public void DeleteTeamPlayer(int teamID, int playerID)
