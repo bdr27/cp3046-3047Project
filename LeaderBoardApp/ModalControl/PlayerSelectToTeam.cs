@@ -33,7 +33,6 @@ namespace LeaderBoardApp.ModalControl
             return (int) modalSelect.GetSelectedPlayer();
         }
 
-
         #region ModalInterface Members
 
         public void SetOwner(Window window)
