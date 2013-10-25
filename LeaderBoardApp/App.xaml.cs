@@ -413,6 +413,7 @@ namespace LeaderBoardApp
                         lv.SetResult(scoreA, scoreB);
                         try
                         {
+                            fileHandler.AddMatchResult(mr);
                             ladder.MatchPlayed(mr.GetMatchID(), mr);
                         }
                         catch (TournamentWinnerException)
@@ -682,6 +683,7 @@ namespace LeaderBoardApp
             ladder.GenerateLadder();
             var matches = ladder.GetMatches();
             var ladderTab = mainWindow.ladderView;
+            fileHandler.SaveLadder(ladder);
             ladderTab.SetMatches(matches);
         }
 

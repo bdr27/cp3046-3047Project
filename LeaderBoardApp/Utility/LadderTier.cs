@@ -172,5 +172,26 @@ namespace LeaderBoardApp.Utility
         {
             return currentTeams.Count;
         }
+
+        public LadderTier Clone()
+        {
+            var clone = new LadderTier();
+            var ts = new List<int>();
+
+            foreach (var team in currentTeams)
+            {
+                ts.Add(team);
+            }
+            clone.currentTeams = ts;
+
+            var mr = new Dictionary<int, MatchResult>();
+
+            foreach (var match in matches)
+            {
+                mr.Add(match.Key, match.Value.Clone());
+            }
+
+            return clone;
+        }
     }
 }

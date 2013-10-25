@@ -29,5 +29,11 @@ namespace LeaderBoardApp.Utility
         void AddMatchResult(MatchResult match);
         #endregion
 
+        #region Ladder
+        void SaveLadder(Ladder ladder);
+        Ladder GetLadder(int ladderID);
+        Dictionary<int, Ladder> GetLadders();
+        #endregion
+
     }
 }

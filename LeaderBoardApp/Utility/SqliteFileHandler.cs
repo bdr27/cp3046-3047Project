@@ -204,17 +204,27 @@ namespace LeaderBoardApp.Utility
             return teams[teamID];
         }
 
-        #endregion
-
-        #region FileHandler Members
-
-
         public Dictionary<int, MatchResult> GetMatchResults()
         {
             throw new NotImplementedException();
         }
 
         public void AddMatchResult(MatchResult match)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SaveLadder(Ladder ladder)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Ladder GetLadder(int ladderID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Dictionary<int, Ladder> GetLadders()
         {
             throw new NotImplementedException();
         }

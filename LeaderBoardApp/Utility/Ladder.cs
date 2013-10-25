@@ -25,6 +25,11 @@ namespace LeaderBoardApp.Utility
             currentMatch = 0;
         }
 
+        public int GetCurrentTier()
+        {
+            return currentTier;
+        }
+
         public void SetTeams(List<int> teamIDs)
         {
             this.teamIDs = teamIDs;
@@ -126,6 +131,29 @@ namespace LeaderBoardApp.Utility
                 }
             }
             return matches;
+        }
+
+        public Ladder Clone()
+        {
+            var teams = new List<int>();
+            foreach (var team in this.teamIDs)
+            {
+                teams.Add(team);
+            }
+            Ladder ladder = new Ladder(teams);
+
+           ladder.currentMatch = currentMatch;
+           ladder.teamCount = teamCount;
+           ladder.currentTier = currentTier;
+           ladder.tournamentWinnerID = tournamentWinnerID;
+
+           ladder.ladderTiers = new LadderTier[tierCount];
+           for (int i = 0; i < tierCount; i++)
+           {
+               ladder.ladderTiers[i] = ladderTiers[i].Clone();
+           }
+            
+           return ladder;
         }
     }
 }

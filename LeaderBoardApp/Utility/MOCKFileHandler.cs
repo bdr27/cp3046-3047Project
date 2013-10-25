@@ -8,9 +8,12 @@ namespace LeaderBoardApp.Utility
         private int playerCounter;
         private int teamCounter;
         private int matchCounter;
+        private int ladderCounter;
+        private int currentLadder;
         private Dictionary<int, Player> players;
         private Dictionary<int, Team> teams;
         private Dictionary<int, MatchResult> matchResults;
+        private Dictionary<int, Ladder> ladders;
 
         public MOCKFileHandler()
         {
@@ -18,9 +21,12 @@ namespace LeaderBoardApp.Utility
             playerCounter = 1;
             teamCounter = 1;
             matchCounter = 1;
+            currentLadder = 1;
+            ladderCounter = 1;
             players = new Dictionary<int, Player>();
             teams = new Dictionary<int, Team>();
             matchResults = new Dictionary<int, MatchResult>();
+            ladders = new Dictionary<int, Ladder>();
         }
         #region FileHandler Members
 
@@ -154,8 +160,23 @@ namespace LeaderBoardApp.Utility
         public void AddMatchResult(MatchResult match)
         {
             var matchResult = match.Clone();
-            matchResult.SetTeamBID(matchCounter);
-            matchResults.Add(matchCounter++, matchResult);            
+            ladders[currentLadder].MatchPlayed(matchResult.GetMatchID(), matchResult);         
+        }
+
+        public void SaveLadder(Ladder ladder)
+        {
+            ladders.Add(++currentLadder, ladder.Clone());
+            ladderCounter++;
+        }
+
+        public Ladder GetLadder(int ladderID)
+        {
+            return ladders[ladderID];
+        }
+
+        public Dictionary<int, Ladder> GetLadders()
+        {
+            return ladders;
         }
 
         #endregion
