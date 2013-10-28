@@ -672,19 +672,28 @@ namespace LeaderBoardApp
 
         private void HandleBtnLadderGenerate_Click(object sender, RoutedEventArgs e)
         {
-            var teams = fileHandler.GetTeams().Values;
-            MatchResult.SetTeams(fileHandler.GetTeams());
-            var teamIDs = new List<int>();
-            foreach (var team in teams)
+            var modal = new NameLadder();
+            modal.SetOwner(mainWindow);
+            modal.ShowDialog();
+            var action = modal.GetButtonAction();
+            if (action.Equals(ButtonAction.DONE))
             {
-                teamIDs.Add(team.GetTeamID());
+                var name = modal.GetName();
+                var teams = fileHandler.GetTeams().Values;
+                MatchResult.SetTeams(fileHandler.GetTeams());
+                var teamIDs = new List<int>();
+                foreach (var team in teams)
+                {
+                    teamIDs.Add(team.GetTeamID());
+                }                
+                ladder = new Ladder(teamIDs);
+                ladder.SetLadderName(name);
+                ladder.GenerateLadder();
+                var matches = ladder.GetMatches();
+                var ladderTab = mainWindow.ladderView;
+                fileHandler.SaveLadder(ladder);
+                ladderTab.SetMatches(matches);
             }
-            ladder = new Ladder(teamIDs);
-            ladder.GenerateLadder();
-            var matches = ladder.GetMatches();
-            var ladderTab = mainWindow.ladderView;
-            fileHandler.SaveLadder(ladder);
-            ladderTab.SetMatches(matches);
         }
 
         private void HandleListView_DoubleClick(object sender, RoutedEventArgs e)

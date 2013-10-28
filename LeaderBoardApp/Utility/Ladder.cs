@@ -9,6 +9,7 @@ namespace LeaderBoardApp.Utility
 {
     public class Ladder
     {
+        private string name;
         private LadderTier[] ladderTiers;
         private int currentMatch;
         private List<int> teamIDs;
@@ -23,6 +24,11 @@ namespace LeaderBoardApp.Utility
             teamCount = teamIDs.Count;
             currentTier = 0;
             currentMatch = 0;
+        }
+
+        public void SetLadderName(string name)
+        {
+            this.name = name;
         }
 
         public int GetCurrentTier()
@@ -142,6 +148,7 @@ namespace LeaderBoardApp.Utility
             }
             Ladder ladder = new Ladder(teams);
 
+            ladder.name = name;
            ladder.currentMatch = currentMatch;
            ladder.teamCount = teamCount;
            ladder.currentTier = currentTier;

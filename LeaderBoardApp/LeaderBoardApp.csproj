@@ -105,6 +105,7 @@
     <Compile Include="Exceptions\NoGameSelectedException.cs" />
     <Compile Include="Exceptions\TournamentWinnerException.cs" />
     <Compile Include="ModalControl\ModalInterface.cs" />
+    <Compile Include="ModalControl\NameLadder.cs" />
     <Compile Include="ModalControl\PlayerAdd.cs" />
     <Compile Include="ModalControl\PlayerEdit.cs" />
     <Compile Include="ModalControl\PlayerSelect.cs" />
@@ -122,6 +123,9 @@
     <Compile Include="ModalControl\TeamSuper.cs" />
     <Compile Include="ModalControl\PlayerSelectView.cs" />
     <Compile Include="ModalControl\TeamView.cs" />
+    <Compile Include="Modals\ModalNameLadder.xaml.cs">
+      <DependentUpon>ModalNameLadder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modals\ModalPlayer.xaml.cs">
       <DependentUpon>ModalPlayer.xaml</DependentUpon>
     </Compile>
@@ -165,6 +169,10 @@
       <DependentUpon>ProjectionWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ProjectorUpdate.cs" />
+    <Page Include="Modals\ModalNameLadder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Modals\ModalPlayer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
