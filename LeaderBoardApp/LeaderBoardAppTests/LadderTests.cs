@@ -25,7 +25,7 @@ namespace LeaderBoardAppTests
         [TestMethod]
         public void LadderOddLowerTest()
         {
-            for (int i = 1; i < 20; i++)
+            for (int i = 1; i < 8; i++)
             {
                 var number = Math.Pow(2, i);
                 number = number - 1;
@@ -38,7 +38,7 @@ namespace LeaderBoardAppTests
         [TestMethod]
         public void LadderOddHigherTest()
         {
-            for (int i = 1; i < 20; i++)
+            for (int i = 1; i < 8; i++)
             {
                 var number = Math.Pow(2, i);
                 number = number + 1;
