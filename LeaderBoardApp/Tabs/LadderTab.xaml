@@ -10,7 +10,12 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="btnGenerateLadder" Grid.Row="0" Content="Generate Ladder" />
-        <ListView x:Name="lvLadder" Grid.Row="2"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnGenerateLadder" Grid.Row="0" Grid.Column="0" Content="Generate Ladder"/>
+        <Button x:Name="btnLoadLadder" Grid.Row="0" Grid.Column="1" Content="Load Ladder" />
+        <ListView x:Name="lvLadder" Grid.Row="1" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>
