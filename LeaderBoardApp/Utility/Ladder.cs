@@ -66,6 +66,7 @@ namespace LeaderBoardApp.Utility
         {
             return ladderTiers[currentTier].GetAllMatches();
         }
+
         public int GetTournamentWinnerID()
         {
             return tournamentWinnerID;
@@ -152,6 +153,7 @@ namespace LeaderBoardApp.Utility
            ladder.currentMatch = currentMatch;
            ladder.teamCount = teamCount;
            ladder.currentTier = currentTier;
+           ladder.tierCount = tierCount;
            ladder.tournamentWinnerID = tournamentWinnerID;
 
            ladder.ladderTiers = new LadderTier[tierCount];
@@ -161,6 +163,24 @@ namespace LeaderBoardApp.Utility
            }
             
            return ladder;
+        }
+
+        public override string ToString()
+        {
+            return name;
+        }
+
+        public Dictionary<int, MatchResult> GetLoadMatches()
+        {
+            var matches = new Dictionary<int, MatchResult>();
+            for(int i = 0; i < tierCount; i++)
+            {
+                foreach (var match in ladderTiers[i].GetAllMatches())
+                {
+                    matches.Add(match.Key, match.Value);
+                }
+            }
+            return matches;
         }
     }
 }

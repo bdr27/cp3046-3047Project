@@ -416,9 +416,9 @@ namespace LeaderBoardApp
                             fileHandler.AddMatchResult(mr);
                             ladder.MatchPlayed(mr.GetMatchID(), mr);
                         }
-                        catch (TournamentWinnerException)
+                        catch (TournamentWinnerException twe)
                         {
-                            ShowWinner(ladder.GetTournamentWinnerID());
+                            ShowWinner(twe.GetWinner());
                         }
                         lv.SetMatches(ladder.GetAllMatches());
                         mainWindow.ChangeLadder();
@@ -668,11 +668,12 @@ namespace LeaderBoardApp
             var ladder = mainWindow.ladderView;
             ladder.AddLadderGenerateHandler(HandleBtnLadderGenerate_Click);
             ladder.AddLadderDoubleClick(HandleListView_DoubleClick);
+            ladder.AddLadderLoadLadder(HandleBtnLadderLoad_Click);
         }
 
         private void HandleBtnLadderGenerate_Click(object sender, RoutedEventArgs e)
         {
-            var modal = new NameLadder();
+            var modal = new LadderName();
             modal.SetOwner(mainWindow);
             modal.ShowDialog();
             var action = modal.GetButtonAction();
@@ -689,6 +690,24 @@ namespace LeaderBoardApp
                 ladder = new Ladder(teamIDs);
                 ladder.SetLadderName(name);
                 ladder.GenerateLadder();
+                var matches = ladder.GetMatches();
+                var ladderTab = mainWindow.ladderView;
+                fileHandler.SaveLadder(ladder);
+                ladderTab.SetMatches(matches);
+            }
+        }
+
+        private void HandleBtnLadderLoad_Click(object sender, RoutedEventArgs e)
+        {
+            var modal = new LadderPrevious();
+            modal.SetLadders(fileHandler.GetLadders());
+            modal.SetOwner(mainWindow);
+            modal.ShowDialog();
+            var action = modal.GetButtonAction();
+            if (action.Equals(ButtonAction.DONE))
+            {
+                var ladderID = modal.GetLadderID();
+                var ladder = fileHandler.GetLadder(ladderID);
                 var matches = ladder.GetMatches();
                 var ladderTab = mainWindow.ladderView;
                 fileHandler.SaveLadder(ladder);

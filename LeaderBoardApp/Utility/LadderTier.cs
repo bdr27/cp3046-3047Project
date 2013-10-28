@@ -190,8 +190,14 @@ namespace LeaderBoardApp.Utility
             {
                 mr.Add(match.Key, match.Value.Clone());
             }
+            clone.SetMatches(mr);
 
             return clone;
+        }
+
+        public void SetMatches(Dictionary<int, MatchResult> matches)
+        {
+            this.matches = matches;
         }
     }
 }

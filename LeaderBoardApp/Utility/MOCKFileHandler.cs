@@ -160,7 +160,13 @@ namespace LeaderBoardApp.Utility
         public void AddMatchResult(MatchResult match)
         {
             var matchResult = match.Clone();
-            ladders[currentLadder].MatchPlayed(matchResult.GetMatchID(), matchResult);         
+            try
+            {
+                ladders[currentLadder].MatchPlayed(matchResult.GetMatchID(), matchResult);
+            }
+            catch (Exception e)
+            {
+            }
         }
 
         public void SaveLadder(Ladder ladder)

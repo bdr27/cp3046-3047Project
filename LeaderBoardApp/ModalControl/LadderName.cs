@@ -7,11 +7,11 @@ using LeaderBoardApp.Modals;
 
 namespace LeaderBoardApp.ModalControl
 {
-    public class NameLadder : ModalInterface
+    public class LadderName : ModalInterface
     {
         ModalNameLadder mdl;
 
-        public NameLadder()
+        public LadderName()
         {
             mdl = new ModalNameLadder();
         }

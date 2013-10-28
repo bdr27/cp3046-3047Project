@@ -1,0 +1,11 @@
+﻿<Window x:Class="LeaderBoardApp.Modals.ModalLoadLadder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ModalNameLadder" Height="100" Width="300"
+         WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid>
+        <ComboBox x:Name="cmbLadder"  Width="250" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 10 0 0"/>
+        <Button Content="Done" Height="25" Width="75" Margin="54,50,172,25" Click="BtnDone_Click"/>
+        <Button Content="Cancel" Height="25" Width="75" Margin="170,50,54,25" Click="BtnCancel_Click"/>
+    </Grid>
+</Window>

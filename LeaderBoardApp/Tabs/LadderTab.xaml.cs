@@ -85,5 +85,10 @@ namespace LeaderBoardApp.Tabs
         {
             return matches[currentMatch];
         }
+
+        public void AddLadderLoadLadder(RoutedEventHandler handler)
+        {
+            btnLoadLadder.Click += handler;
+        }
     }
 }
