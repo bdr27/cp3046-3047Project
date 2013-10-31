@@ -49,8 +49,8 @@ namespace LeaderBoardApp.Modals
 
         public void SetLadders(Dictionary<int, Utility.Ladder> dic)
         {
-            this.currentLadder = dic;
             cmbLadder.Items.Clear();
+            this.currentLadder = dic;
             cmbLadder.ItemsSource = dic;
             cmbLadder.SelectedIndex = 0;
         }
