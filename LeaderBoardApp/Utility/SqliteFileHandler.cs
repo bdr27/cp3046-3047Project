@@ -8,8 +8,13 @@ namespace LeaderBoardApp.Utility
     {
         private int playerCounter;
         private int teamCounter;
+        private int ladderCounter;
+        private int matchCounter;
+        private int currentLadder;
+        private Dictionary<int, Ladder> ladders;
         private Dictionary<int, Player> players;
         private Dictionary<int, Team> teams;
+        private Dictionary<int, MatchResult> matchResults;
         private SQLiteConnection dbConnection;
 
         public SqliteFileHandler()
@@ -18,15 +23,20 @@ namespace LeaderBoardApp.Utility
             dbConnection.Open();
             players = new Dictionary<int, Player>();
             teams = new Dictionary<int, Team>();
+            matchResults = new Dictionary<int, MatchResult>();
+            ladders = new Dictionary<int, Ladder>();
             playerCounter = 0;
             teamCounter = 0;
+            matchCounter = 1;
+            currentLadder = 1;
+            ladderCounter = 1;
         }
 
         #region FileHandler Members
 
         public void LoadPlayers()
         {
-            var playerSelect = SqlQueries.SelectAllPlayers(); ;
+            var playerSelect = SqlQueries.SelectAllPlayers();
             var command = new SQLiteCommand(playerSelect, dbConnection);
             var reader = command.ExecuteReader();
             var playerID = 1;
@@ -206,27 +216,50 @@ namespace LeaderBoardApp.Utility
 
         public Dictionary<int, MatchResult> GetMatchResults()
         {
-            throw new NotImplementedException();
+            return matchResults; 
         }
 
         public void AddMatchResult(MatchResult match)
         {
-            throw new NotImplementedException();
+            var matchResult = match.Clone();
+            try
+            {
+                ladders[currentLadder].MatchPlayed(matchResult.GetMatchID(), matchResult);
+                //Sql here
+            }
+            catch (Exception e)
+            {
+            }
+        }
+
+        public void LoadLadders()
+        {
         }
 
         public void SaveLadder(Ladder ladder)
         {
-            throw new NotImplementedException();
+            ladders.Add(++currentLadder, ladder.Clone());
+
+            //sql here
+            var lq = ladders[currentLadder];
+            //var queries = new List<string>();
+            //queries.Add(SqlQueries.InsertLadder(currentLadder, lq.GetName(), lq.GetCurrrentMatch, lq.));
+            //foreach (var query in queries)
+            //{
+              //  var command = new SQLiteCommand(query, dbConnection);
+                //command.ExecuteNonQuery();
+            //}
+            ladderCounter++;
         }
 
         public Ladder GetLadder(int ladderID)
         {
-            throw new NotImplementedException();
+            return ladders[ladderID];
         }
 
         public Dictionary<int, Ladder> GetLadders()
         {
-            throw new NotImplementedException();
+            return ladders;
         }
 
         #endregion

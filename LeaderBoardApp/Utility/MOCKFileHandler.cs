@@ -168,6 +168,9 @@ namespace LeaderBoardApp.Utility
             {
             }
         }
+        public void LoadLadders()
+        {
+        }
 
         public void SaveLadder(Ladder ladder)
         {
